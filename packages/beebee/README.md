@@ -1,4 +1,4 @@
-# BeeBee (Ate) [![npm](https://img.shields.io/npm/v/@the-holocron/beebee)](https://www.npmjs.com/package/beebee)
+# BeeBee (Ate) [![npm](https://img.shields.io/npm/v/@theholocron/beebee)](https://www.npmjs.com/package/@theholocron/beebee)
 
 A set of single-purpose, functional utilities for writing JavaScript within the Galaxy.
 
@@ -11,6 +11,7 @@ $ npm install --save-dev @the-holocron/beebee
 ## Table of Contents
 
 * [Usage](#usage)
+* [Documentation](#documentation)
 * [Change Log](#how-we-track-changes)
 * [Versioning](#how-we-version)
 * [Contribution](#how-to-contribute)
