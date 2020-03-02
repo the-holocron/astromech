@@ -1,6 +1,8 @@
 # BeeBee (Ate) [![npm](https://img.shields.io/npm/v/@theholocron/beebee)](https://www.npmjs.com/package/@theholocron/beebee)
 
-A set of single-purpose, functional utilities for writing JavaScript within the Galaxy.
+ This utility droid provides a set of single-purpose, functional utilities for writing Javascript within the Galaxy.
+
+![bee bee ate](./beebee.png)
 
 ## Installation
 
