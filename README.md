@@ -2,7 +2,7 @@
 
 This utility droid provides a set of single-purpose, functional JavaScript, Node, and/or (S)CSS utilities for writing code within the Galaxy.
 
-![astromech](./astromech.png)
+![astromech](./astromech.jpg)
 
 ## Installation
 
