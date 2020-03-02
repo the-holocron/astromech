@@ -1,7 +1,7 @@
 {
-  "name": "@theholocron/beebee",
-  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/beebee#readme",
-  "description": "This utility droid provides a set of single-purpose, functional utilities for writing Javascript within the Galaxy.",
+  "name": "@theholocron/chopper",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/chopper#readme",
+  "description": "This utility droid provides a set of single-purpose, functional utilities for writing NodeJS within the Galaxy.",
   "author": "Newton Koumantzelis",
   "version": "0.1.0",
   "main": "dist/index.js",
@@ -25,18 +25,7 @@
     "extends": "@theholocron"
   },
   "jest": {
-    "coverageThreshold": {
-      "global": {
-        "statements": 94.44,
-        "branches": 86.05,
-        "lines": 94.32,
-        "functions": 90
-      }
-    },
-    "preset": "@theholocron/jest-preset",
-    "setupFiles": [
-      "jest-localstorage-mock"
-    ]
+    "preset": "@theholocron/jest-preset"
   },
   "publishConfig": {
     "access": "public"
@@ -46,7 +35,11 @@
     "lint": "eslint .",
     "test": "jest --coverage"
   },
-  "devDependencies": {
-    "jest-localstorage-mock": "^2.4.0"
+  "dependencies": {
+    "@theholocron/beebee": "file:../beebee",
+    "chalk": "^3.0.0",
+    "diff": "^4.0.2",
+    "semver": "^7.1.3",
+    "simple-git": "^1.131.0"
   }
 }

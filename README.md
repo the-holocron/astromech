@@ -33,6 +33,7 @@ Check the README for each utility within the `packages` directory for specific u
 ## The Packages We Maintain
 
 - [BB8](./packages/beebee#readme) - A set of JavaScript/ES6 utilities.
+- [Chopper](./packages/chopper#readme) - A set of NodeJS utilities.
 
 ## Where to Find Documentation
 

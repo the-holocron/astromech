@@ -43,10 +43,15 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@theholocron/babel-preset": "latest",
     "@theholocron/browserslist-config": "latest",
     "@theholocron/commitlint-config": "latest",
     "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
     "lerna": "^3.20.2"
+  },
+  "dependencies": {
+    "@theholocron/beebee": "file:packages/beebee",
+    "@theholocron/chopper": "file:packages/chopper"
   }
 }
