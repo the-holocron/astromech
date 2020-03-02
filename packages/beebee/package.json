@@ -1,0 +1,57 @@
+{
+  "name": "@theholocron/beebee",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/beebee#readme",
+  "description": "This utility droid provides a set of single-purpose, functional utilities for writing Javascript within the Galaxy.",
+  "author": "Newton Koumantzelis",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": "https://github.com/the-holocron/astromech.git",
+  "bugs": "https://github.com/the-holocron/astromech/issues",
+  "releases": "https://github.com/the-holocron/astromech/releases",
+  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "license": "GPL-3.0",
+  "babel": {
+    "presets": [
+      "@theholocron"
+    ]
+  },
+  "browserslist": [
+    "extends @theholocron/browserslist-config"
+  ],
+  "eslintConfig": {
+    "extends": "@theholocron"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "statements": 94.44,
+        "branches": 86.05,
+        "lines": 94.32,
+        "functions": 90
+      }
+    },
+    "preset": "@theholocron/jest-preset",
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dist": "babel src -d ./dist",
+    "lint": "eslint .",
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "@theholocron/babel-preset": "latest",
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/eslint-config": "latest",
+    "@theholocron/jest-preset": "latest",
+    "jest-localstorage-mock": "^2.4.0"
+  }
+}

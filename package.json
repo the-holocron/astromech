@@ -1,0 +1,51 @@
+{
+  "name": "@theholocron/astromech",
+  "homepage": "https://github.com/the-holocron/astromech#readme",
+  "description": "This utility droid provides a set of single-purpose, functional JavaScript and (S)CSS utilities for use within any modern front-end application or library.",
+  "author": "Newton Koumantzelis",
+  "version": "0.0.0",
+  "repository": "https://github.com/the-holocron/astromech.git",
+  "bugs": "https://github.com/the-holocron/astromech/issues",
+  "releases": "https://github.com/the-holocron/astromech/releases",
+  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "license": "GPL-3.0",
+  "alex": {
+    "allow": [
+      "color",
+      "colors",
+      "dead",
+      "disabled",
+      "invalid"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@theholocron"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged --config @theholocron/lint-staged-config"
+    }
+  },
+  "release": {
+    "extends": "@theholocron/semantic-release-config",
+    "branch": "master"
+  },
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "commit": "commit",
+    "lint": "lerna run lint",
+    "prerelease": "lerna version --conventional-commits",
+    "release": "lerna publish from-package",
+    "test": "lerna run test"
+  },
+  "devDependencies": {
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/commitlint-config": "latest",
+    "@theholocron/eslint-config": "latest",
+    "@theholocron/jest-preset": "latest",
+    "lerna": "^3.20.2"
+  }
+}
