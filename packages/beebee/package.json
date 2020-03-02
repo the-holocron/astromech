@@ -6,8 +6,7 @@
   "version": "0.1.0",
   "main": "dist/index.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "repository": "https://github.com/the-holocron/astromech.git",
   "bugs": "https://github.com/the-holocron/astromech/issues",

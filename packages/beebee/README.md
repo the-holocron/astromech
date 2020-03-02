@@ -19,13 +19,22 @@ $ npm install --save-dev @the-holocron/beebee
 
 ## Usage
 
-```scss
-// how to use this thing
+```javascript
+import beebee from '@theholocron/beebee';
+
+beebee.arr.toSentence([ 'foo', 'bar', 'baz' ], ', ', 'or '); // foo, bar, or baz
+beebee.clipboard.copy('bar') // void (copies to OS pasteboard)
+beebee.func.noop() // undefined
+beebee.storage.get('foo') // retreives 'bar' from localstorage at key 'foo'
+beebee.str.isInvalidEmail('foo@example.com') // false
+beebee.uri.isValid('example.com') // false
 ```
+
+The previous examples are only a sample of what utilities are available.
 
 ## Documentation
 
-The best way to find out what's available is to check out the [documentation site](), but if you like digging through source code, then each directory has a README file to describe each feature.
+The best way to find out what's available is to check out the source code.  More documentation and a possible site to explore are set to come.
 
 ## How We Track Changes [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 
