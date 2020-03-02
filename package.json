@@ -36,6 +36,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "commit": "commit",
+    "dist": "lerna run dist",
     "lint": "lerna run lint",
     "prerelease": "lerna version --conventional-commits",
     "release": "lerna publish from-package",
