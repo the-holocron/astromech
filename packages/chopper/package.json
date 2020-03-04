@@ -3,7 +3,7 @@
   "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/chopper#readme",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing NodeJS within the Galaxy.",
   "author": "Newton Koumantzelis",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/index.js",
   "files": [
     "dist"
