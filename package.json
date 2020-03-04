@@ -38,7 +38,7 @@
     "commit": "commit",
     "dist": "lerna run dist",
     "lint": "lerna run lint",
-    "prerelease": "lerna version --conventional-commits",
+    "prerelease": "npm run dist && lerna version --conventional-commits",
     "release": "lerna publish from-package",
     "test": "lerna run test"
   },
