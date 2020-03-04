@@ -12,7 +12,7 @@ const _exec = command =>
 	});
 
 export const getData = (url, token, params) =>
-	_exec(`curl -H 'Authorization: Bearer ${token}' ${uri.build(url, { ...params })}`)
+	_exec(`curl -H 'Authorization: Bearer ${token}' ${uri.addParams(url, { ...params })}`)
 		.then(stdout => JSON.parse(stdout));
 
 export const getHTTPStatus = (url, token) =>
