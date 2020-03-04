@@ -39,6 +39,55 @@ export const stringToKebabCase = str => str &&
 		.map(str => str.toLowerCase())
 		.join('-');
 
+/**
+ * titleCase
+ *
+ * @param {string} string - A string with 1 or more words separated by a separator
+ * @param {string} [separator='-'] - a single character string separating each word
+ * @return {string} A string with in letter case/[capitalization form](https://en.wikipedia.org/wiki/Capitalization)
+ *
+ * @example
+ *
+ *     titleCase('hello-world')
+ *     // Hello World
+ */
+export function stringToTitleCase (string, separator = '-') {
+	if (typeof string !== 'string') {
+		throw new TypeError(`A string must be passed.  Received a ${typeof string} instead.`);
+	}
+	// allow the user to choose the separator used; by default search for `-`
+	const re = new RegExp(separator, 'gi');
+	// replace all separators with a space
+	const str = string.replace(re, ' ');
+
+	// test the string if there are any spaces
+	if (/\s/g.test(str)) {
+		// replace all words separated by a space and capitalize
+		return str.replace(/\w\S*/g, txt => `${txt.charAt(0).toUpperCase()}${txt.substr(1).toLowerCase()}`);
+	}
+
+	return `${string.charAt(0).toUpperCase()}${string.substr(1).toLowerCase()}`;
+}
+
+/**
+ * pascalCase
+ *
+ * @param {string} string - Any string
+ * @return {string} A string with in letter case/[capitalization form](https://en.wikipedia.org/wiki/Capitalization)
+ *
+ * @example
+ *
+ *     pascalCase('hello world')
+ *     // HelloWorld
+ */
+export const stringToPascalCase = string => {
+	if (typeof string !== 'string') {
+		throw new TypeError(`A string must be passed.  Received a ${typeof string} instead.`);
+	}
+
+	return string.match(/[a-z]+/gi).map(word => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase()).join('');
+};
+
 export default {
 	createUUID,
 	isInvalidEmail,
@@ -46,4 +95,6 @@ export default {
 	isValidUUID,
 	toArray: stringToArray,
 	toKebabCase: stringToKebabCase,
+	toPascalCase: stringToPascalCase,
+	toTitleCase: stringToTitleCase,
 };

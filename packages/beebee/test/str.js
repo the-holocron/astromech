@@ -43,4 +43,60 @@ describe('String utilities', () => {
 		it('should return a string in kebab case when a mixed case string is given', () => expect(str.toKebabCase('AllThe-small Things')).toEqual('all-the-small-things'));
 		it('should return a string in kebab case when a string with all variations is given', () => expect(str.toKebabCase('IAmListeningToFMWhileLoadingDifferentURLOnMyBrowserAndAlsoEditingSomeXMLAndHTML')).toEqual('i-am-listening-to-fm-while-loading-different-url-on-my-browser-and-also-editing-some-xml-and-html'));
 	});
+
+	describe('toPascalCase', () => {
+		const testString = 'THIS is a TeSt string';
+		const testNumbers = 'thIs&is&TEST&10';
+
+		it('should return a string formatted as pascal case when given a string', () => {
+			expect(str.toPascalCase(testString)).toBe('ThisIsATestString');
+		});
+
+		it('should return a string formatted as pascal case when given a single word ', () => {
+			expect(str.toPascalCase('word')).toBe('Word');
+		});
+
+		it('should return a string formatted as pascal case when given a string and a separator', () => {
+			expect(str.toPascalCase(testNumbers)).toBe('ThisIsTest');
+		});
+
+		it('should throw an error when given anything but a string', () => {
+			// number
+			expect(() => str.toPascalCase(10)).toThrow();
+			// object
+			expect(() => str.toPascalCase({ foo: 'bar' })).toThrow();
+			// function
+			expect(() => str.toPascalCase(testString => testString)).toThrow();
+		});
+	});
+
+	describe('toTitleCase', () => {
+		const testString = 'THIS-is-a-TeSt-string';
+		const testNumbers = 'thIs&is&TEST&10';
+
+		it('should return a string formatted as title case when given a string', () => {
+			expect(str.toTitleCase(testString)).toBe('This Is A Test String');
+		});
+
+		it('should return a string formatted as title case when given a single word ', () => {
+			expect(str.toTitleCase('word')).toBe('Word');
+		});
+
+		it('should return a string formatted as title case when given a string and a separator', () => {
+			expect(str.toTitleCase(testNumbers, '&')).toBe('This Is Test 10');
+		});
+
+		it('should return the same string when given a string and non-matching separator', () => {
+			expect(str.toTitleCase(testString, '&')).toBe('This-is-a-test-string');
+		});
+
+		it('should throw an error when given anything but a string', () => {
+			// number
+			expect(() => str.toTitleCase(10)).toThrow();
+			// object
+			expect(() => str.toTitleCase({ foo: 'bar' })).toThrow();
+			// function
+			expect(() => str.toTitleCase(testString => testString)).toThrow();
+		});
+	});
 });
