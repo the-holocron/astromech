@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-$ npm install --save-dev @the-holocron/beebee
+$ npm install --save-dev @theholocron/beebee
 ```
 
 ## Table of Contents
