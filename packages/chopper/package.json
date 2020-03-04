@@ -28,10 +28,10 @@
     "preset": "@theholocron/jest-preset",
     "coverageThreshold": {
       "global": {
-        "statements": 38.71,
-        "branches": 30.77,
-        "lines": 36.04,
-        "functions": 22.22
+        "statements": 38.4,
+        "branches": 30.4,
+        "lines": 35.71,
+        "functions": 21.74
       }
     }
   },

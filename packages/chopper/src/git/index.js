@@ -10,7 +10,12 @@ export async function remote () {
 	return git.listRemote([ '--get-url' ]);
 }
 
+export async function isRepo () {
+	return git.checkIsRepoa();
+}
+
 export default {
 	commitish,
+	isRepo,
 	remote,
 };
