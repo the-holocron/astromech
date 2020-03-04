@@ -1,6 +1,8 @@
-# Chopper [![npm](https://img.shields.io/npm/v/@the-holocron/chopper)](https://www.npmjs.com/package/chopper)
+# Chopper [![npm](https://img.shields.io/npm/v/@the-holocron/chopper)](https://www.npmjs.com/package/@theholocron/chopper)
 
 This utility droid provides a set of single-purpose, functional utilities for writing NodeJS within the Galaxy.
+
+![chopper](./chopper.png)
 
 ## Installation
 
