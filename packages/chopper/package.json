@@ -25,7 +25,15 @@
     "extends": "@theholocron"
   },
   "jest": {
-    "preset": "@theholocron/jest-preset"
+    "preset": "@theholocron/jest-preset",
+    "coverageThreshold": {
+      "global": {
+        "statements": 38.71,
+        "branches": 30.77,
+        "lines": 36.04,
+        "functions": 22.22
+      }
+    }
   },
   "publishConfig": {
     "access": "public"

@@ -1,21 +1,26 @@
-const {
+import {
 	existsSync,
 	mkdir,
 	readFileSync,
-} = require('fs');
-const { string } = require('iamnewton-js-utils');
-const { decode: strDecode } = require('./string');
+} from 'fs';
+import { str } from '@theholocron/beebee';
+import { decode as strDecode } from '../str/';
 
-const decode = file => strDecode(readFileSync(file));
+export const decode = file => strDecode(readFileSync(file));
 
-const getPath = file => {
+export const getPath = file => {
 	const parts = file.split('/');
 	const stripFileName = parts.slice(0, -1);
 
 	return stripFileName.join('/');
 };
 
-const makeDir = fullPath => {
+export const isFileOfType = (file, suffix = 'json') => {
+	const parts = file.split('.');
+	return parts[parts.length - 1] === suffix;
+};
+
+export const makeDir = fullPath => {
 	const path = getPath(fullPath);
 
 	if (path && !existsSync(path)) {
@@ -33,31 +38,26 @@ const makeDir = fullPath => {
 	return path;
 };
 
-const isJSON = file => {
-	const parts = file.split('.');
-	return parts[parts.length - 1] === 'json';
-};
-
-const toJSON = file => {
+export const toJSON = file => {
 	if (!(file && existsSync(file))) {
 		return `${file} does not exist!`;
 	}
 
-	if (!isJSON(file)) {
+	if (!isFileOfType(file)) {
 		return `'${file}' is not a valid JSON file!`;
 	}
 
-	if (!string.isJSON(decode(file))) {
+	if (!str.isJSON(decode(file))) {
 		return `'${file}' does not contain valid JSON!`;
 	}
 
 	return JSON.parse(decode(file));
 };
 
-module.exports = {
+export default {
 	decode,
 	getPath,
-	isJSON,
+	isFileOfType,
 	makeDir,
 	toJSON,
 };

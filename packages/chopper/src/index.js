@@ -1,17 +1,6 @@
-const curl = require('./curl');
-const file = require('./file');
-const git = require('./git');
-const log = require('./log');
-const readline = require('./readline');
-const semver = require('./semver');
-const string = require('./string');
-
-module.exports = {
-	curl,
-	file,
-	git,
-	log,
-	readline,
-	semver,
-	string,
-};
+export { default as curl } from './curl/';
+export { default as file } from './file/';
+export { default as git } from './git/';
+export { default as log } from './log/';
+export { default as semver } from './semver/';
+export { default as str } from './str/';
