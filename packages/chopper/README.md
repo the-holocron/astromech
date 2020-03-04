@@ -25,12 +25,12 @@ $ npm install --save-dev @theholocron/chopper
 ```javascript
 import chopper from '@theholocron/chopper';
 
-chopper.arr.toSentence([ 'foo', 'bar', 'baz' ], ', ', 'or '); // foo, bar, or baz
-chopper.clipboard.copy('bar') // void (copies to OS pasteboard)
-chopper.func.noop() // undefined
-chopper.storage.get('foo') // retreives 'bar' from localstorage at key 'foo'
-chopper.str.isInvalidEmail('foo@example.com') // false
-chopper.uri.isValid('example.com') // false
+chopper.curl.getHTTPStatus('http://example.com'); // 200
+chopper.file.isFileOfType('/foo/bar/baz.json', 'json') // true
+chopper.git.remote() // 'https://github.com/the-holocron/astromech.git'
+chopper.log.error('foo') // [ERROR] foo
+chopper.semver.increment('1.0.0', 'major') // 2.0.0
+chopper.str.encode('foo') // Zm9v
 ```
 
 The previous examples are only a sample of what utilities are available.
