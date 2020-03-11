@@ -91,9 +91,10 @@ Looking to talk to someone or need some help? Please read our [support guideline
 
 ## Tools We Use
 
-- [Babel](https://babeljs.io/) - Used to compile JavaScript 
+- [Babel](https://babeljs.io/) - Used to compile ES Next 
 - [Browserslist](https://github.com/browserslist/browserslist) - Used to share to our code which browsers we support
 - [CommitLint](https://commitlint.js.org/#/) - Used to ensure our commits follow our standards
+- [Dart Sass](https://sass-lang.com/dart-sass) - Used to compile (S)CSS
 - [Conventional Changelog](https://github.com/conventional-changelog/conventional-changelog) - Used to generate our CHANGELOG
 - [ESLint](https://eslint.org/) - Used to lint our JavaScript
 - [Husky](https://github.com/typicode/husky) - Used for auto-fixing linting errors on each commit
@@ -102,6 +103,7 @@ Looking to talk to someone or need some help? Please read our [support guideline
 - [PostCSS](https://postcss.org/) - Used to compile (S)CSS
 - [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) - Used for automating and releasing our library
 - [StyleLint](https://stylelint.io/) - Used to lint our (S)CSS
+- [True](https://www.oddbird.net/true/docs/) - Used to test our (S)CSS mixins and functions
 - [@godban's Browser Support Badges](https://godban.github.io/browsers-support-badges) - The tool used to generate the "Which Browsers [sic] We Support" section
 
 ## References
