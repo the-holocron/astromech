@@ -39,12 +39,12 @@ _The previous examples are only a sample of what utilities are available._
 
 The best way to find out what's available is to check out the source code.  More documentation and a possible site to explore are set to come.
 
-- [**curl**](./curl/README.md) - use NodeJS to curl and grab data from sites and/or APIs.
-- [**file**](./file/README.md) - a set of functions that work with the Filesystem.
-- [**git**](./git/README.md) - a translation of Git operations in NodeJS.
-- [**log**](./log/README.md) - various functions that log different types and levels of output to the console
-- [**semver**](./semver/README.md) - functions to work with Semantic Versioning and verifying numbers and keywords are valid.
-- [**str**](./str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
+- [**curl**](./src/curl/README.md) - use NodeJS to curl and grab data from sites and/or APIs.
+- [**file**](./src/file/README.md) - a set of functions that work with the Filesystem.
+- [**git**](./src/git/README.md) - a translation of Git operations in NodeJS.
+- [**log**](./src/log/README.md) - various functions that log different types and levels of output to the console
+- [**semver**](./src/semver/README.md) - functions to work with Semantic Versioning and verifying numbers and keywords are valid.
+- [**str**](./src/str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
 
 ## How We Track Changes [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 
