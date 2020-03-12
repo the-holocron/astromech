@@ -1,0 +1,18 @@
+@use "sass:color";
+
+////
+/// @author Newton Koumantzelis
+////
+
+/// Lightens a color by mixing it with white
+/// @since 0.1.0
+/// @param {Color} $color - a color
+/// @param {Percentage} $percent - a percentage to mix the color with white
+/// @return {Color} - modified color
+/// @example scss
+///   a:active {
+///     background-color: tint(blue, 20%);
+///   }
+@function tint($color, $percent) {
+	@return color.mix(rgb(255, 255, 255), $color, $percent);
+}

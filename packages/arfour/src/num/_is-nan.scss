@@ -1,0 +1,19 @@
+////
+/// @author Takeru Suzuki
+////
+
+/// Check if value is not a number, eg, NaN or Infinity
+/// @since 0.1.0
+/// @param {Number} $value - a number to check
+/// @return {Bool} - true if not a number, false if it is a number
+/// @example scss
+///   // not a number
+///   is-nan('true');
+///   // true
+///
+///   // is a number
+///   is-nan(1);
+///   // false
+@function is-nan($value) {
+	@return $value / $value != 1;
+}

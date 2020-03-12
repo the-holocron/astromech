@@ -1,0 +1,23 @@
+@use "sass:math";
+
+////
+/// @author Daniel Perez Alvarez
+////
+
+/// Returns a radian when given a degree
+/// @since 0.1.0
+/// @param {Number} $angle
+/// @return {Number} a radian
+/// @example
+///   rad(45deg) // 0.78539816
+@function rad($angle) {
+	$unit: math.unit($angle);
+	$unitless: $angle / ($angle * 0 + 1);
+
+	// If the angle has 'deg' as unit, convert to radians.
+	@if $unit == deg {
+		$unitless: $unitless / 180 * math.$pi;
+	}
+
+	@return $unitless;
+}

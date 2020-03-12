@@ -1,0 +1,86 @@
+@use "sass:color";
+@use "sass:math";
+@use "../color/luminance" as *;
+@use "../color/scale-light" as *;
+@use "../color/scale-luminance" as *;
+@use "../constants" as config;
+@use "./check-contrast" as *;
+@use "./get-contrast-ratio" as *;
+/* stylelint-disable scss/at-function-named-arguments */
+
+////
+/// @author Giana Blantin
+////
+
+/// Tries to fix contrast by adjusting $color1
+/// @link https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure
+/// @since 0.1.0
+/// @param {Color} $color1 - 1st color to test the contrast against
+/// @param {Color} $color2 - 2nd color to test the contrast against
+/// @param {String | Number} $min-ratio ["AA"] - minimum ratio to test against. Accepted values for this ratio argument are AA and AAALG (4.5:1), AALG (3:1) and AAA (7:1) or a number between 1 and 21.
+/// @param {Number} $iterations ["5"] - number of iterations to figure out contrast
+/// @return {Color} - a modified color
+/// @example scss
+///   // using a number as `$min-ratio`
+///   fix-color(#00bdd1, #005da3, 3.75)
+///   // #00d4ea
+///
+///   // using a keyword as `$min-ratio`
+///   fix-color(#3f464a, #678d7e, AAA)
+///   // #000
+///
+///   // usage
+///   .image-caption {
+///     color: fix-color(blue, gray);
+///   }
+@function fix-color($color1, $color2, $min-ratio: config.$default-contrast-ratio, $iterations: 5) {
+	$contrast-ratio: get-contrast-ratio($min-ratio);
+
+	// If check fails, begin conversion
+	@if (not check-contrast($color1, $color2, $contrast-ratio)) {
+		// First get both luminances and clamp so #fff and #000 don't break anything
+		$lum1: math.clamp(.0001, luminance($color1), .9999);
+		$lum2: math.clamp(.0001, luminance($color2), .9999);
+
+		// Defaults we'll set later
+		$target-luminance: $lum1;
+		$operation: "";
+
+		// If the same luminance is passed, lighten/darken one to make conversion possible
+		@if ($lum1 == $lum2) {
+			// Darken light colors and lighten dark colors, so we have more room to scale them (eg, we won't hit #fff or #000 before we can fix them)
+			@if ($lum1 > .5) {
+				$color1: color.scale($color1, $lightness: math.percentage(-1));
+				$lum1: luminance($color1);
+			} @else {
+				$color1: color.adjust($color1, $lightness: math.percentage(1));
+				$lum1: luminance($color1);
+			}
+		}
+
+		// Now let's get the target luminance. This reverses check-contrast(), so we know what luminance to aim for
+		@if (math.max($lum1, $lum2) == $lum1) {
+			$target-luminance: (($lum2 + .05) * $contrast-ratio - .05);
+			$operation: lighten;
+		} @else {
+			$target-luminance: (($lum2 + .05) / $contrast-ratio - .05);
+			$operation: darken;
+		}
+
+		// Skip the whole conversion if we need #fff or #000
+		@if ($target-luminance >= 1) {
+			@return rgb(255, 255, 255);
+		} @else if ($target-luminance <= 0) {
+			@return rgb(0, 0, 0);
+		} @else {
+			// Scale color by calculated difference to arrive at target luminance
+			$color1: scale-luminance($color1, $target-luminance);
+
+			// Try to fix any rounding errors by lightening or darkening
+			$color1: scale-light($color1, $color2, $contrast-ratio, $operation, $iterations);
+		}
+	}
+
+	// Tada
+	@return $color1;
+}

@@ -1,0 +1,20 @@
+@use "sass:math";
+
+////
+/// @author Hugo Giraudel
+////
+
+/// Strip unit from a number
+/// @since 0.1.0
+/// @param {Unit} $number - any valid CSS value with unit
+/// @return {Number} modified number
+/// @example scss
+///   strip-unit(2px) // 2
+///   strip-unit(5em) // 5
+@function strip-unit($number) {
+	@if math.is-unitless($number) {
+		@return $number;
+	}
+
+	@return $number / ($number * 0 + 1);
+}

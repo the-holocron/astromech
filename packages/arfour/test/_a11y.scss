@@ -1,0 +1,108 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/a11y" as *;
+
+@include describe("function: get-contrast-ratio") {
+
+	@include test("it should return a ratio number when a number is given") {
+		$test: get-contrast-ratio(4.5);
+		$expected: 4.5;
+
+		@include assert-equal($test, $expected, "Return the ratio number");
+	}
+
+	@include test("it should return 4.5 when the AA keyword is given") {
+		$test: get-contrast-ratio(AA);
+		$expected: 4.5;
+
+		@include assert-equal($test, $expected, "Return the ratio number");
+	}
+
+	@include test("it should return 4.5 when the AAALG keyword is given") {
+		$test: get-contrast-ratio(AAALG);
+		$expected: 4.5;
+
+		@include assert-equal($test, $expected, "Return the ratio number");
+	}
+
+	@include test("it should return 3 when the AALG keyword is given") {
+		$test: get-contrast-ratio(AALG);
+		$expected: 3;
+
+		@include assert-equal($test, $expected, "Return the ratio number");
+	}
+
+	@include test("it should return 7 when the AAA keyword is given") {
+		$test: get-contrast-ratio(AAA);
+		$expected: 7;
+
+		@include assert-equal($test, $expected, "Return the ratio number");
+	}
+
+	@include test("it should return the default ratio value when an invalid one is given") {
+		$test: get-contrast-ratio('foo');
+		$expected: 4.5;
+
+		@include assert-equal($test, $expected, "Return the default ratio number");
+	}
+}
+
+@include describe("function: best-contrast") {
+
+	@include test("it should return a color that has the best contrast when given 3 colors") {
+		$test: best-contrast(#8ce2d4, #fff, #000, 4.5, 4.5);
+		$expected: #609e94;
+
+		@include assert-equal($test, $expected, "Return the best contrasted color");
+	}
+}
+
+@include describe("function: check-contrast") {
+
+	@include test("it should return true when the contrast is sufficient when given a ratio") {
+		$test: check-contrast(#b4e7ff, #465c67, AALG);
+		$expected: true;
+
+		@include assert-equal($test, $expected, "Return true");
+	}
+
+	@include test("it should return false when the contrast is sufficient when given a ratio") {
+		$test: check-contrast(#6caf93, #9d5937, AALG);
+		$expected: false;
+
+		@include assert-equal($test, $expected, "Return false");
+	}
+
+	@include test("it should return a ratio when the flag is set") {
+		$test: check-contrast(#6caf93, #9d5937, AALG, true);
+		$expected: 2.0907304837;
+
+		@include assert-equal($test, $expected, "Return ratio", true);
+	}
+}
+
+@include describe("function: fix-color") {
+
+	@include test("it should return a color when given 2 colors and a keyword") {
+		$test: fix-color(#3f464a, #678d7e, AAA);
+		$expected: #000;
+
+		@include assert-equal($test, $expected, "Return the correct color");
+	}
+
+	@include test("it should return a color when given 2 colors and a ratio") {
+		$test: fix-color(#00bdd1, #005da3, 3.75);
+		$expected: #00d4ea;
+
+		@include assert-equal(inspect($test), inspect($expected), "Return the correct color");
+	}
+}
+
+@include describe("function: fix-contrast") {
+
+	@include test("it should return a list of colors that are contrasted with the given ratio") {
+		$test: fix-contrast(#f476a6, #b6b6b6, 4.5, 50, true);
+		$expected: (#87405a, #dbdbdb);
+
+		@include assert-equal(inspect($test), inspect($expected), "Return a list of colors modified by the ratio");
+	}
+}

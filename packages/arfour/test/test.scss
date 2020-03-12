@@ -1,0 +1,13 @@
+// Requirements
+@use "true";
+
+// Tests
+@use "./a11y";
+@use "./color";
+@use "./lists";
+@use "./math";
+@use "./num";
+@use "./str";
+
+// Report
+@include true.report;

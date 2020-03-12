@@ -1,0 +1,74 @@
+@use "sass:color";
+@use "sass:map";
+@use "sass:math";
+@use "../constants" as config;
+@use "../num/in-bounds" as *;
+@use "./luminance" as *;
+@use "./srgb" as *;
+@use "./xyz" as *;
+
+////
+/// @author Giana Blantin
+////
+
+/// Changes a color to have the required luminance
+/// @since 0.1.0
+/// @param {Color} $color - Color to be modified
+/// @param {Number} $target-luminance - a number between 0 and 1
+/// @return {Color} - modified color
+/// @todo DRY out the checks on line 36-49
+@function scale-luminance($color, $target-luminance) {
+	// First, scale the channels by the required amount
+	$scale: $target-luminance / luminance($color);
+
+	// And clamp them, so we don't end up dividing by zero... among other things I forget
+	$red: math.clamp(.0001, xyz(color.red($color)), .9999) * $scale;
+	$green: math.clamp(.0001, xyz(color.green($color)), .9999) * $scale;
+	$blue: math.clamp(.0001, xyz(color.blue($color)), .9999) * $scale;
+
+	// Sometimes, that's not enough and one channel hits #ff or #0. We'll need to scale the other channels to compensate
+	$red-passes: in-bounds($red);
+	$green-passes: in-bounds($green);
+	$blue-passes: in-bounds($blue);
+
+	@if (not $red-passes or not $green-passes or not $blue-passes) {
+		// First, pick a channel to be a baseline, so the rest can be expressed as ratios
+		$baseline: math.min($red, $green, $blue);
+
+		// Then set up the variables expressed in terms of the baseline
+		$r: $red / $baseline;
+		$g: $green / $baseline;
+		$b: $blue / $baseline;
+
+		// Subtract any channel no longer in bounds
+		@if (not $red-passes) {
+			$target-luminance: $target-luminance - map.get(config.$luma-coefficients, "red");
+			$r: 0;
+		}
+		@if (not $green-passes) {
+			$target-luminance: $target-luminance - map.get(config.$luma-coefficients, "green");
+			$g: 0;
+		}
+		@if (not $blue-passes) {
+			$target-luminance: $target-luminance - map.get(config.$luma-coefficients, "blue");
+			$b: 0;
+		}
+
+		// Now get the required difference by using the luminance() formula
+		$x: $target-luminance / ($r * map.get(config.$luma-coefficients, "red") + $g * map.get(config.$luma-coefficients, "green") + $b * map.get(config.$luma-coefficients, "blue"));
+
+		// And multiply the channels by this new per-channel luminance
+		@if ($red-passes) {
+			$red: $r * $x;
+		}
+		@if ($green-passes) {
+			$green: $g * $x;
+		}
+		@if ($blue-passes) {
+			$blue: $b * $x;
+		}
+	}
+
+	// Return the new color
+	@return rgb(srgb($red), srgb($green), srgb($blue));
+}

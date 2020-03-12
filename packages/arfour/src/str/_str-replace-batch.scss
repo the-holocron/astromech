@@ -1,0 +1,37 @@
+@use "sass:meta";
+@use "sass:string";
+
+////
+/// @author David Khourshid
+////
+
+/// Replaces a batch of substrings (needles) in a string (haystack)
+/// with a single replacement string.
+/// @since 0.1.0
+/// @param {String} $haystack - string to perform search and replacement on
+/// @param {List | String} $needles - string or list of strings to replace globally
+/// @param {String} $replacement ('') - replacement string to replace needles
+/// @return {String} replaced string
+@function str-replace-batch($haystack, $needles, $replacement: "") {
+	$instances: false;
+
+	@if not meta.type-of($needles) == list {
+		$needles: ($needles);
+	}
+
+	@while ($instances == false) or ($instances > 0) {
+		$instances: 0;
+
+		@each $needle in $needles {
+			$needle-index: string.index($haystack, $needle);
+			$instances: $instances + if($needle-index, 1, 0);
+
+			@if $needle-index {
+				$haystack: string.slice($haystack, 1, $needle-index - 1) + string.slice($haystack, $needle-index + string.length($needle), -1);
+				$haystack: string.insert($haystack, $replacement, $needle-index);
+			}
+		}
+	}
+
+	@return $haystack;
+}

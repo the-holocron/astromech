@@ -1,0 +1,48 @@
+@use "sass:math";
+@use "../color/luminance" as *;
+@use "../constants" as config;
+@use "./get-contrast-ratio" as *;
+
+////
+/// @author Giana Blantin
+////
+
+/// Checks if two colors pass minimum contrast requirements
+/// @link https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure
+/// @since 1.12.0 - The Sith
+/// @param {Color} $color1 - 1st color to test the contrast against
+/// @param {Color} $color2 - 2nd color to test the contrast against
+/// @param {String | Number} $min-ratio ["AA"] - minimum ratio to test against. Accepted values for this ratio argument are AA and AAALG (4.5:1), AALG (3:1) and AAA (7:1) or a number between 1 and 21.
+/// @param {Bool} $return-ratio ["false"] - option to return ratio instead of true/false
+/// @return {Number | Bool} - A ratio or boolean if the colors meet the min-ratio
+/// @example scss
+///   // true/false & using a number as `$min-ratio`
+///   check-contrast(#2aaabf, #2b2f31, 3)
+///   // true
+///
+///   // ratio & using a keyword as `$min-ratio`
+///   check-contrast(#ffbb9b, #91966d, AAALG, true)
+///   // 1.8908
+///
+///   // if contrast between blue & white passes, use gray, otherwise use #fff
+///   .image-caption {
+///     color: if( check-contrast(blue, white, AAA), gray, #fff );
+///   }
+@function check-contrast($color1, $color2, $min-ratio: config.$default-contrast-ratio, $return-ratio: false) {
+	$contrast-ratio: get-contrast-ratio($min-ratio);
+
+	// Check brightness of each color
+	$lum1: luminance($color1);
+	$lum2: luminance($color2);
+
+	// Measure contrast ratio
+	$ratio: (math.max($lum1, $lum2) + .05) / (math.min($lum1, $lum2) + .05);
+
+	// Return ratio if option set
+	@if ($return-ratio) {
+		@return $ratio;
+	}
+
+	// Else return boolean
+	@return if($ratio >= $contrast-ratio, true, false);
+}

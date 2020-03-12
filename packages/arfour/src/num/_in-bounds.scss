@@ -1,0 +1,21 @@
+////
+/// @author Takeru Suzuki
+////
+
+/// Checks if value is within specified bounds, inclusive
+/// @since 0.1.0
+/// @param {Number} $value - a number to check
+/// @param {Number} $min ["0"] - minimum number
+/// @param {Number} $max ["1"] - maximum number
+/// @return {Bool} - if the number is within range
+/// @example scss
+///   // outside the bounds
+///   in-bounds(-1);
+///   // false
+///
+///   //nside the bounds
+///   in-bounds(1);
+///   // true
+@function in-bounds($value, $min: 0, $max: 1) {
+	@return if($value >= $min and $value <= $max, true, false);
+}

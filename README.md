@@ -32,6 +32,7 @@ Check the README for each utility within the `packages` directory for specific u
 
 ## The Packages We Maintain
 
+- [R4](./packages/arfour#readme) - A set of (S)CSS function utilities.
 - [BB8](./packages/beebee#readme) - A set of JavaScript/ES6 utilities.
 - [Chopper](./packages/chopper#readme) - A set of NodeJS utilities.
 

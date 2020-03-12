@@ -1,0 +1,34 @@
+@use "sass:color";
+@use "sass:math";
+@use "../a11y/check-contrast" as *;
+/* stylelint-disable scss/at-function-named-arguments */
+
+////
+/// @author Giana Blantin
+////
+
+/// Scales lightness by .1% while checking contrast ratio.
+/// @link https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure
+/// @since 0.1.0
+/// @param {Color} $color - Color to be modified
+/// @param {Color} $color - Color to be tested against
+/// @param {String | Number} $min-ratio - minimum ratio to test against. Accepted values for this ratio argument are AA and AAALG (4.5:1), AALG (3:1) and AAA (7:1) or a number between 1 and 21.
+/// @param {Function} $operation - darken() or lighten()
+/// @param {Number} $iterations - Number of iterations to perform specified operation
+/// @return {Color} - modified color
+@function scale-light($color1, $color2, $min-ratio, $operation, $iterations) {
+	// Loop this function for however many iterations are passed
+	@for $n from 1 through $iterations {
+		// Return color unchanged if it passes contrast check
+		@if (check-contrast($color1, $color2, $min-ratio)) {
+			@return $color1;
+		} @else {
+			// Otherwise use the built-in lighten() and darken() functions, which change the lightness channel (ie, the L in HSL)
+			// Our previous scale-luminance() function changes both saturation and lightness
+			$color1: if($operation == lighten, color.adjust($color1, $lightness: math.percentage(.1)), color.scale($color1, $lightness: math.percentage(-.1)));
+		}
+	}
+
+	// Return the best color we've got
+	@return $color1;
+}

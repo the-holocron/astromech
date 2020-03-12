@@ -37,6 +37,7 @@
     "bootstrap": "lerna bootstrap",
     "commit": "commit",
     "dist": "lerna run dist",
+    "toc": "lerna run toc",
     "lint": "lerna run lint",
     "prerelease": "npm run dist && lerna version --conventional-commits",
     "release": "lerna publish from-package",
@@ -48,7 +49,8 @@
     "@theholocron/commitlint-config": "latest",
     "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "markdown-toc": "^1.2.0"
   },
   "dependencies": {
     "@theholocron/beebee": "file:packages/beebee",

@@ -1,0 +1,117 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/str" as *;
+
+@include describe("function: str-replace") {
+
+	@include it("it should return a string that has parts replaced by a given input") {
+		$white: rgb(255, 255, 255);
+		$test: str-replace("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$white}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E", "#", "%23");
+		$expected: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E";
+
+		@include assert-equal($test, $expected, "Return the string replaced");
+	}
+
+	@include it("it should return a string when it doesn't find the search item") {
+		$test: str-replace("foo", "#", "%23");
+		$expected: "foo";
+
+		@include assert-equal($test, $expected, "Return the string the same as the input");
+	}
+}
+
+@include describe("function: opposite-direction") {
+
+	@include it("it should return bottom when given top") {
+		$test: inspect(opposite-direction("top"));
+		$expected: bottom;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return left when give right") {
+		$test: inspect(opposite-direction("right"));
+		$expected: left;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return top when given bottom") {
+		$test: inspect(opposite-direction("bottom"));
+		$expected: top;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return right when given left") {
+		$test: inspect(opposite-direction("left"));
+		$expected: right;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return center when given center") {
+		$test: inspect(opposite-direction("center"));
+		$expected: center;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return top when given topleft") {
+		$test: inspect(opposite-direction("topleft"));
+		$expected: top;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return top when given topleft") {
+		$test: inspect(opposite-direction("topleft"));
+		$expected: top;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return bottom when given bottomleft") {
+		$test: inspect(opposite-direction("bottomleft"));
+		$expected: bottom;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return bottom when given bottomright") {
+		$test: inspect(opposite-direction("bottomright"));
+		$expected: bottom;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return rtl when given ltr") {
+		$test: inspect(opposite-direction("ltr"));
+		$expected: rtl;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+
+	@include it("it should return ltr when given rtl") {
+		$test: inspect(opposite-direction("rtl"));
+		$expected: ltr;
+
+		@include assert-equal($test, $expected, "Return the opposite direction");
+	}
+}
+
+@include describe("function: strip-unit") {
+
+	@include it("it should return the number without the unit, when given a unitless number") {
+		$test: strip-unit(4);
+		$expected: 4;
+
+		@include assert-equal($test, $expected, "Return the correct number");
+	}
+
+	@include it("it should return the number without the unit, when given a number with a unit") {
+		$test: strip-unit(4px);
+		$expected: 4;
+
+		@include assert-equal($test, $expected, "Return the correct number");
+	}
+}

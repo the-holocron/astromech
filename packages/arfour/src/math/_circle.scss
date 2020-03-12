@@ -1,0 +1,30 @@
+@use "sass:math";
+
+////
+/// @author Newton Koumantzelis
+////
+
+/// Gives us 45 degrees of a circle
+/// @since 0.1.0
+/// @return {Number} - 45º
+/// @example
+///    deg45 // 0.70710678
+@function deg45() {
+	@return math.$pi / 4;
+}
+
+/// Gets the radius of a circle
+/// @since 0.1.0
+/// @param {CSS Unit} $size - the expected size
+/// @return {CSS Unit} - an offset used for box-shadow
+@function circle-angle($size) {
+	@return math.round($size * math.sin(deg45())) + ($size / 2);
+}
+
+/// Gets the angle of a circle
+/// @since 0.1.0
+/// @param {CSS Unit} $size - the expected size
+/// @return {CSS Unit} - an offset used for box-shadow
+@function circle-normal($size) {
+	@return math.round($size * math.sin(deg45())) + $size;
+}

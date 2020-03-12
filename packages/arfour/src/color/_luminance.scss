@@ -1,0 +1,16 @@
+@use "sass:color";
+@use "sass:map";
+@use "../constants" as config;
+@use "./xyz" as *;
+
+////
+/// @author Giana Blantin
+////
+
+/// Get the luminance of color
+/// @since 0.1.0
+/// @param {Color} $color - Color to be modified
+/// @return {Number} - relative luminance of color
+@function luminance($color) {
+	@return xyz(color.red($color)) * map.get(config.$luma-coefficients, "red") + xyz(color.green($color)) * map.get(config.$luma-coefficients, "green") + xyz(color.blue($color)) * map.get(config.$luma-coefficients, "blue");
+}

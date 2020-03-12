@@ -1,0 +1,46 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+
+// sass-lint:disable property-sort-order
+////
+/// @author Hugo Giraudel
+////
+
+/// Returns the opposite direction of each direction in a list
+/// @since 0.1.0
+/// @param {List} $directions - List of initial directions
+/// @return {List} - List of opposite directions
+/// @throw **@warn** No opposite direction can be found
+/// @example scss
+///    .triange-left {
+///      border-#{opposite-direction(left)}: 1.5em solid gray;
+///    }
+@function opposite-direction($directions) {
+	$opposite-directions: ();
+	$direction-map: (
+		"top": "bottom",
+		"right": "left",
+		"bottom": "top",
+		"left": "right",
+		"center": "center",
+		"topleft": "top",
+		"topright": "top",
+		"bottomleft": "bottom",
+		"bottomright": "bottom",
+		"ltr": "rtl",
+		"rtl": "ltr"
+	);
+
+	@each $direction in $directions {
+		$direction: string.to-lower-case($direction);
+
+		@if map.has-key($direction-map, $direction) {
+			$opposite-directions: list.append($opposite-directions, string.unquote(map.get($direction-map, $direction)));
+		} @else {
+			@warn "No opposite direction can be found for `#{$direction}`. Direction omitted.";
+		}
+	}
+
+	@return $opposite-directions;
+}

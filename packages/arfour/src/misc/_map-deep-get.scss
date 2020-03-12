@@ -1,0 +1,19 @@
+@use "sass:map";
+
+////
+/// @author Hugo Giraudel
+////
+
+/// Searches through maps and grabs the key when it finds the map specified
+/// @since 0.1.0
+/// @access public
+/// @param {Map} $map - a structured map
+/// @param {Arglist} $keys - the key value to grab
+/// @return {*} - Desired value from the map(s)
+@function map-deep-get($map, $keys...) {
+	@each $key in $keys {
+		$map: map.get($map, $key);
+	}
+
+	@return $map;
+}

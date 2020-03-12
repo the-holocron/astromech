@@ -1,0 +1,16 @@
+@use "sass:map";
+@use "sass:math";
+@use "../constants" as config;
+/* stylelint-disable number-max-precision */
+////
+/// @author Giana Blantin
+////
+
+/// Reverse of xyz()
+/// @link https://en.wikipedia.org/wiki/SRGB
+/// @since 0.1.0
+/// @param {Number} $channel - an xyz value
+/// @return {Number} - rgb channel value
+@function srgb($channel) {
+	@return 255 * if($channel <= map.get(config.$srgb-coefficients, "beta"), $channel * map.get(config.$srgb-coefficients, "phi"), map.get(config.$srgb-coefficients, "alpha") * math.pow($channel, 1 / map.get(config.$srgb-coefficients, "gamma")) - map.get(config.$srgb-coefficients, "a"));
+}

@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "sass:math";
+@use "../constants" as config;
+/* stylelint-disable number-max-precision */
+////
+/// @author Giana Blantin
+////
+
+/// Returns an RGB channel processed as XYZ
+/// @link https://en.wikipedia.org/wiki/SRGB
+/// @since 0.1.0
+/// @param {Number} $channel - an RGB channel value
+/// @return {Number} - xyz value
+@function xyz($channel) {
+	$channel: $channel / 255;
+
+	@return if($channel <= map.get(config.$srgb-coefficients, "kappa"), $channel / map.get(config.$srgb-coefficients, "phi"), math.pow((($channel + map.get(config.$srgb-coefficients, "a")) / map.get(config.$srgb-coefficients, "alpha")), map.get(config.$srgb-coefficients, "gamma")));
+}

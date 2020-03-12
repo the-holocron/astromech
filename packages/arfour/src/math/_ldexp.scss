@@ -1,0 +1,29 @@
+@use "sass:math";
+
+////
+/// @author Takeru Suzuki
+////
+
+/// Returns $x * 2^$exp
+/// @since 0.1.0
+/// @param {Number} $x
+/// @param {Number} $exp
+/// @return {Number} - modified number
+@function ldexp($x, $exp) {
+	$b: if($exp >= 0, 2, 1 / 2);
+
+	@if $exp < 0 {
+		$exp: $exp * -1;
+	}
+
+	@while $exp > 0 {
+		@if $exp % 2 == 1 {
+			$x: $x * $b;
+		}
+
+		$b: $b * $b;
+		$exp: math.floor($exp * .5);
+	}
+
+	@return $x;
+}

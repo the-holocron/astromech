@@ -1,0 +1,18 @@
+@use "sass:color";
+
+////
+/// @author Newton Koumantzelis
+////
+
+/// Darkens a color by mixing it with black
+/// @since 0.1.0
+/// @param {Color} $color - a color
+/// @param {Percentage} $percent - a percentage to mix the color with black
+/// @return {Color} - modified color
+/// @example scss
+///   a:hover {
+///     background-color: shade(blue, 50%);
+///   }
+@function shade($color, $percent) {
+	@return color.mix(rgb(0, 0, 0), $color, $percent);
+}

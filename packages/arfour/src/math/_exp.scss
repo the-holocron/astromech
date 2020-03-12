@@ -1,0 +1,23 @@
+@use "sass:math";
+@use "./fact" as *;
+
+////
+/// @author Takeru Suzuki
+////
+
+/// Returns E^x, where x is the argument, and E is Euler's constant, the base of the natural logarithms.
+/// @since 0.1.0
+/// @param {Number} $x - the number to modify exponentially
+/// @return {Number} - a modified number
+/// @example
+///   exp(1)  // 2.71828
+///   exp(-1) // 0.36788
+@function exp($x) {
+	$ret: 0;
+
+	@for $n from 0 to 24 {
+		$ret: $ret + math.pow($x, $n) / fact($n);
+	}
+
+	@return $ret;
+}

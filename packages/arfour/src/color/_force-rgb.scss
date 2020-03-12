@@ -1,0 +1,48 @@
+@use "sass:string";
+
+////
+/// @author Giana Blantin
+////
+
+/// Forces RGB channel values to a rgb() string
+/// @since 0.1.0
+/// @param {Number} $r - R channel value
+/// @param {Number} $g - G channel value
+/// @param {Number} $b - B channel value
+/// @return {String} - RGB string
+/// @example scss
+///   // using strings around rgb components
+///   .blah {
+///     color: rgb('255', '255', '255');
+///   }
+///   // @error: `$red`: "255" is not a number for `rgb`
+///
+///   .blah {
+///     color: force-rgb('255', '255', '255');
+///   }
+///   // color: rgb(255, 255, 255);
+@function force-rgb($r, $g, $b) {
+	@return string.unquote("rgb(#{$r}, #{$g}, #{$b})");
+}
+
+/// Forces RGBA channel values to a rgba() string
+/// @since 0.1.0
+/// @param {Number} $r - R channel value
+/// @param {Number} $g - G channel value
+/// @param {Number} $b - B channel value
+/// @param {Number} $a - A channel value
+/// @return {String} - RGBA string
+/// @example scss
+///   // using strings around rgb components
+///   .blah {
+///     color: rgba('255', '255', '255', '0.5');
+///   }
+///   // @error: `$red`: "255" is not a number for `rgba`
+///
+///   .blah {
+///     color: force-rgba('255', '255', '255', '0.5');
+///   }
+///   // color: rgba(255, 255, 255, .5);
+@function force-rgba($r, $g, $b, $a) {
+	@return string.unquote("rgba(#{$r}, #{$g}, #{$b}, #{$a})");
+}

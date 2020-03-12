@@ -1,0 +1,24 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "../constants" as config;
+
+/// Get a contrast ratio from either a number or keyword
+/// @since 0.1.0
+/// @param {String | Number} $ratio - a number ratio or keyword specifying a type of WCAG contrast specification
+/// @return {Number} - a contrast ratio
+@function get-contrast-ratio($ratio) {
+	@if (meta.type-of($ratio) == "number") {
+		@return $ratio;
+	}
+
+	// normalize all strings to upper case
+	$ratio: string.to-upper-case($ratio);
+
+	@if (map.has-key(config.$contrast-ratio, $ratio)) {
+		@return map.get(config.$contrast-ratio, $ratio);
+	}
+
+	// return the default within _constants
+	@return config.$default-contrast-ratio;
+}

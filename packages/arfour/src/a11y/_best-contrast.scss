@@ -1,0 +1,53 @@
+@use "../color/luminance" as *;
+@use "../color/scale-luminance" as *;
+@use "../constants" as config;
+@use "../math/average" as *;
+@use "./check-contrast" as *;
+@use "./fix-color" as *;
+
+////
+/// @author Giana Blantin
+////
+
+/// Get the best contrasted color when compared against two colors
+/// @link https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure 18th Technique for WCAG 2.0: Contrast Test Procedure
+/// @since 0.1.0
+/// @param {Color} $color - Color to be modified
+/// @param {Color} $color1 - 1st color to test the contrast against
+/// @param {Color} $color2 - 2nd color to test the contrast against
+/// @param {String | Number} $ratio1 ["AA"] - minimum ratio to test against. Accepted values for this ratio argument are AA and AAALG (4.5:1), AALG (3:1) and AAA (7:1) or a number between 1 and 21.
+/// @param {String | Number} $ratio2 ["$ratio1"] - a second minimum ration to test against. Accepted values for this ratio argument are AA and AAALG (4.5:1), AALG (3:1) and AAA (7:1) or a number between 1 and 21.
+/// @return {Color} - Updated color
+/// @throw Warning if color fails to contrast with `$color1` and/or `$color2`
+/// @example scss
+///   // using recommended ratio for links
+///   best-contrast(blue, white, black, 4.5, 3)
+///   // #4d4dff
+///
+///   // usage
+///   .image-caption a {
+///     color: best-contrast(blue, gray, white);
+///   }
+@function best-contrast($color, $color1, $color2, $ratio1: config.$default-contrast-ratio, $ratio2: $ratio1) {
+	@if (not check-contrast($color, $color1, $ratio1) or not check-contrast($color, $color2, $ratio2)) {
+		// First get the luminance of the two static colors
+		$lum1: luminance(fix-color($color1, $color1, $ratio1));
+		$lum2: luminance(fix-color($color2, $color2, $ratio2));
+
+		// Average the luminance together to get the maximum difference
+		$average-lum: average($lum1, $lum2);
+
+		// Then set changing color to this luminance
+		$color: scale-luminance($color, $average-lum);
+
+		// Warn if it fails contrast check
+		@if (not check-contrast($color, $color1, $ratio1)) {
+			@warn "Your color fails to contrast with #{$color1}";
+		}
+		@if (not check-contrast($color, $color2, $ratio2)) {
+			@warn "Your color fails to contrast with #{$color2}";
+		}
+	}
+
+	@return $color;
+}

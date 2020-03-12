@@ -1,0 +1,31 @@
+@use "sass:math";
+@use "sass:meta";
+
+////
+/// @author Adam Giese
+////
+
+/// Creates valid-quantity
+/// @since 0.1.0
+/// @param {Number} $quantity - a valid Number
+/// @return {Bool}
+/// @example scss
+///   @if valid-quanity(4) {
+///     color: blue;
+///   }
+@function valid-quantity($quantity) {
+	@if meta.type-of($quantity) != "number" {
+		@warn "The 'quantity' parameter must be a number!";
+		@return false;
+	}
+	@if not(math.is-unitless($quantity)) {
+		@warn "The 'quantity' parameter must not have a unit!";
+		@return false;
+	}
+	@if $quantity < 0 {
+		@warn "The 'quantity' parameter must be at least 0!";
+		@return false;
+	}
+
+	@return true;
+}
