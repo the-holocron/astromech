@@ -1,6 +1,6 @@
 @use "sass:color";
 @use "../color/luminance" as *;
-@use "../constants" as config;
+@use "../config";
 @use "../num/in-bounds" as *;
 @use "./check-contrast" as *;
 @use "./fix-color" as *;

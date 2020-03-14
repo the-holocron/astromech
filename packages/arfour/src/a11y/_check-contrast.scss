@@ -1,6 +1,6 @@
 @use "sass:math";
 @use "../color/luminance" as *;
-@use "../constants" as config;
+@use "../config";
 @use "./get-contrast-ratio" as *;
 
 ////

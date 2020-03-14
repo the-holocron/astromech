@@ -3,7 +3,7 @@
 @use "../color/luminance" as *;
 @use "../color/scale-light" as *;
 @use "../color/scale-luminance" as *;
-@use "../constants" as config;
+@use "../config";
 @use "./check-contrast" as *;
 @use "./get-contrast-ratio" as *;
 /* stylelint-disable scss/at-function-named-arguments */

@@ -7,16 +7,16 @@ $contrast-ratio: (
 	"AAA": 7,
 	"AALG": 3,
 	"AAALG": 4.5,
-);
+) !default;
 
-$default-contrast-ratio: map.get($contrast-ratio, "AA");
+$default-contrast-ratio: map.get($contrast-ratio, "AA") !default;
 
 /// @link https://en.wikipedia.org/wiki/Luma_(video)
 $luma-coefficients: (
 	"red": .2126,
 	"green": .7152,
 	"blue": .0722,
-);
+) !default;
 
 /// @link https://en.wikipedia.org/wiki/SRGB
 $srgb-coefficients: (
@@ -26,4 +26,4 @@ $srgb-coefficients: (
 	"gamma": 2.4,
 	"kappa": 0.03928,
 	"phi": 12.92,
-);
+) !default;

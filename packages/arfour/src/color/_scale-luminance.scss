@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:map";
 @use "sass:math";
-@use "../constants" as config;
+@use "../config";
 @use "../num/in-bounds" as *;
 @use "./luminance" as *;
 @use "./srgb" as *;

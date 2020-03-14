@@ -1,6 +1,6 @@
 @use "../color/luminance" as *;
 @use "../color/scale-luminance" as *;
-@use "../constants" as config;
+@use "../config";
 @use "../math/average" as *;
 @use "./check-contrast" as *;
 @use "./fix-color" as *;

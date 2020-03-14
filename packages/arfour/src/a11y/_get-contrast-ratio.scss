@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "sass:meta";
 @use "sass:string";
-@use "../constants" as config;
+@use "../config";
 
 /// Get a contrast ratio from either a number or keyword
 /// @since 0.1.0
