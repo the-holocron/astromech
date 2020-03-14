@@ -10,5 +10,5 @@ const loadPath = [
 const file = join(__dirname, 'test.scss');
 runSass({ file, loadPath }, { describe, it, sass });
 
-const fileWithConfig = join(__dirname, 'test-with-configuration.scss');
+const fileWithConfig = join(__dirname, 'configuration.test.scss');
 runSass({ file: fileWithConfig, loadPath }, { describe, it, sass });

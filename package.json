@@ -41,7 +41,8 @@
     "lint": "lerna run lint",
     "prerelease": "npm run dist && lerna version --conventional-commits",
     "release": "lerna publish from-package",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "test:integration": "lerna exec --scope @theholocron/arthree npm run test:integration"
   },
   "devDependencies": {
     "@hidoo/sassdoc-to-markdown": "^0.4.1",
