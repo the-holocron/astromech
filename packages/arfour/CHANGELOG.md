@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/the-holocron/astromech/compare/@theholocron/arfour@0.1.0...@theholocron/arfour@0.1.1) (2020-03-14)
+
+
+### Bug Fixes
+
+* **arfour:** change constants to config ([78ffb4d](https://github.com/the-holocron/astromech/commit/78ffb4dee478007f47cb8985ad89e9cd697a31a4))
+
+
+
+
+
 # 0.1.0 (2020-03-12)
 
 

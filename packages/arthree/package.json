@@ -3,7 +3,7 @@
   "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/arthree#readme",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing (S)CSS animation within the Galaxy.",
   "author": "Newton Koumantzelis",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "main": "src/_index.scss",
   "files": [
     "src"
