@@ -18,6 +18,7 @@ $ npm install --save-dev @theholocron/arfour
 * [Versioning](#how-we-version)
 * [Contribution](#how-to-contribute)
 * [Support](#where-to-find-suport)
+* [Credits](#where-we-get-inspiration)
 * [License](#license)
 
 ## Usage
@@ -93,6 +94,16 @@ Have a bug or a feature request? Looking to contribute to advance the project? R
 ## Where to Find Support [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 Looking to talk to someone or need some help? Please read our [support guidelines](../../.github/SUPPORT.md).
+
+## Where We Get Inspiration
+
+- @gianablantin (A11Y color functions)
+- @terkel (Math constants/functions and number functions)
+- Daniel Perez Alvarez (Rad functions)
+- @mdo (breakpoint function)
+- @HugoGiraudel (various miscellaneous functions)
+- @adamgiese (valid-quantity function)
+- @davidkpiano (str-replace-batch function)
 
 ## License [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
