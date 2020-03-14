@@ -1,0 +1,23 @@
+@use "../config";
+
+/// This will take the element and slide it from the top.
+/// @since 0.1.0
+/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @example scss
+///   @include slide-in-down();
+@mixin slide-in-down($class: config.$base-class) {
+	@keyframes slide-in-down {
+		from {
+			visibility: visible;
+			transform: translate3d(0, -200%, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	#{$class}.slide-in-down {
+		animation-name: slide-in-down;
+	}
+}

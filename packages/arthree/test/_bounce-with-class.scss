@@ -1,0 +1,336 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/bounce" as bclass;
+
+@include describe("mixins: bounce with namespace & custom class") {
+	@include it("should bounce back & forth") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-back-forth('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-back-forth {
+					0% {
+						opacity: .5;
+						width: 20%;
+						margin-left: 0;
+					}
+
+					50% {
+						opacity: .75;
+						width: 100%;
+						margin-left: 0;
+					}
+
+					100% {
+						opacity: .5;
+						width: 20%;
+						margin-left: 80%;
+					}
+				}
+
+				.test.bounce-back-forth {
+					animation-name: bounce-back-forth;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce in & down") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-in-down('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-in-down {
+					from,
+					60%,
+					75%,
+					90%,
+					to {
+						animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+					}
+
+					0% {
+						opacity: 0;
+						transform: translate3d(0, -100vh, 0);
+					}
+
+					60% {
+						opacity: 1;
+						transform: translate3d(0, 1.5625rem, 0);
+					}
+
+					75% {
+						transform: translate3d(0, -.625rem, 0);
+					}
+
+					90% {
+						transform: translate3d(0, .3125rem, 0);
+					}
+
+					to {
+						transform: none;
+					}
+				}
+
+				.test.bounce-in-down {
+					animation-name: bounce-in-down;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce in & left") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-in-left('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-in-left {
+					from,
+					60%,
+					75%,
+					90%,
+					to {
+						animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+					}
+
+					0% {
+						opacity: 0;
+						transform: translate3d(-100vw, 0, 0);
+					}
+
+					60% {
+						opacity: 1;
+						transform: translate3d(1.5625rem, 0, 0);
+					}
+
+					75% {
+						transform: translate3d(-.625rem, 0, 0);
+					}
+
+					90% {
+						transform: translate3d(.3125rem, 0, 0);
+					}
+
+					to {
+						transform: none;
+					}
+				}
+
+				.test.bounce-in-left {
+					animation-name: bounce-in-left;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce in & right") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-in-right('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-in-right {
+					from,
+					60%,
+					75%,
+					90%,
+					to {
+						animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+					}
+
+					from {
+						opacity: 0;
+						transform: translate3d(100vw, 0, 0);
+					}
+
+					60% {
+						opacity: 1;
+						transform: translate3d(-1.5625rem, 0, 0);
+					}
+
+					75% {
+						transform: translate3d(.625rem, 0, 0);
+					}
+
+					90% {
+						transform: translate3d(-.3125rem, 0, 0);
+					}
+
+					to {
+						transform: none;
+					}
+				}
+
+				.test.bounce-in-right {
+					animation-name: bounce-in-right;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce in & up") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-in-up('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-in-up {
+					from,
+					60%,
+					75%,
+					90%,
+					to {
+						animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+					}
+
+					from {
+						opacity: 0;
+						transform: translate3d(0, 100vh, 0);
+					}
+
+					60% {
+						opacity: 1;
+						transform: translate3d(0, -1.5625rem, 0);
+					}
+
+					75% {
+						transform: translate3d(0, .625rem, 0);
+					}
+
+					90% {
+						transform: translate3d(0, -.3125rem, 0);
+					}
+
+					to {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				.test.bounce-in-up {
+					animation-name: bounce-in-up;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce out & down") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-out-down('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-out-down {
+					20% {
+						transform: translate3d(0, .625rem, 0);
+					}
+
+					40%,
+					45% {
+						opacity: 1;
+						transform: translate3d(0, -1.5625rem, 0);
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(0, 100vh, 0);
+					}
+				}
+
+				.test.bounce-out-down {
+					animation-name: bounce-out-down;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce out & left") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-out-left('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-out-left {
+					20% {
+						opacity: 1;
+						transform: translate3d(1.5625rem, 0, 0);
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(-100vw, 0, 0);
+					}
+				}
+
+				.test.bounce-out-left {
+					animation-name: bounce-out-left;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce out & right") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-out-right('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-out-right {
+					20% {
+						opacity: 1;
+						transform: translate3d(-1.5625rem, 0, 0);
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(100vw, 0, 0);
+					}
+				}
+
+				.test.bounce-out-right {
+					animation-name: bounce-out-right;
+				}
+			}
+		}
+	}
+
+	@include it("should bounce out & up") {
+		@include assert() {
+			@include output {
+				@include bclass.bounce-out-up('.test');
+			}
+
+			@include expect {
+				@keyframes bounce-out-up {
+					20% {
+						transform: translate3d(0, -.625rem, 0);
+					}
+
+					40%,
+					45% {
+						opacity: 1;
+						transform: translate3d(0, 1.5625rem, 0);
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(0, -100vh, 0);
+					}
+				}
+
+				.test.bounce-out-up {
+					animation-name: bounce-out-up;
+				}
+			}
+		}
+	}
+}

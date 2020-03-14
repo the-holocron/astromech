@@ -1,0 +1,283 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/fade" as *;
+
+@include describe("mixins: fade") {
+	@include it("should fade & flash") {
+		@include assert() {
+			@include output {
+				@include fade-flash();
+			}
+
+			@include expect {
+				@keyframes flash {
+					from,
+					50%,
+					to {
+						opacity: .8;
+					}
+
+					25%,
+					75% {
+						opacity: .15;
+					}
+				}
+
+				.animate.flash {
+					animation-name: flash;
+				}
+			}
+		}
+	}
+
+	@include it("should fade in & down") {
+		@include assert() {
+			@include output {
+				@include fade-in-down();
+			}
+
+			@include expect {
+				@keyframes fade-in-down {
+					from {
+						opacity: 0;
+						transform: translate3d(0, -100%, 0);
+					}
+
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+
+				.animate.fade-in-down {
+					animation-name: fade-in-down;
+				}
+			}
+		}
+	}
+
+	@include it("should fade in & left") {
+		@include assert() {
+			@include output {
+				@include fade-in-left();
+			}
+
+			@include expect {
+				@keyframes fade-in-left {
+					from {
+						opacity: 0;
+						transform: translate3d(-100%, 0, 0);
+					}
+
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+
+				.animate.fade-in-left {
+					animation-name: fade-in-left;
+				}
+			}
+		}
+	}
+
+	@include it("should fade in & right") {
+		@include assert() {
+			@include output {
+				@include fade-in-right();
+			}
+
+			@include expect {
+				@keyframes fade-in-right {
+					from {
+						opacity: 0;
+						transform: translate3d(100%, 0, 0);
+					}
+
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+
+				.animate.fade-in-right {
+					animation-name: fade-in-right;
+				}
+			}
+		}
+	}
+
+	@include it("should fade in & up") {
+		@include assert() {
+			@include output {
+				@include fade-in-up();
+			}
+
+			@include expect {
+				@keyframes fade-in-up {
+					from {
+						opacity: 0;
+						transform: translate3d(0, 100%, 0);
+					}
+
+					to {
+						opacity: 1;
+						transform: none;
+					}
+				}
+
+				.animate.fade-in-up {
+					animation-name: fade-in-up;
+				}
+			}
+		}
+	}
+
+	@include it("should fade in") {
+		@include assert() {
+			@include output {
+				@include fade-in();
+			}
+
+			@include expect {
+				@keyframes fade-in {
+					from {
+						opacity: 0;
+					}
+
+					to {
+						opacity: 1;
+					}
+				}
+
+				.animate.fade-in {
+					animation-name: fade-in;
+				}
+			}
+		}
+	}
+
+	@include it("should fade out & down") {
+		@include assert() {
+			@include output {
+				@include fade-out-down();
+			}
+
+			@include expect {
+				@keyframes fade-out-down {
+					from {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(0, 100%, 0);
+					}
+				}
+
+				.animate.fade-out-down {
+					animation-name: fade-out-down;
+				}
+			}
+		}
+	}
+
+	@include it("should fade out & left") {
+		@include assert() {
+			@include output {
+				@include fade-out-left();
+			}
+
+			@include expect {
+				@keyframes fade-out-left {
+					from {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(-100%, 0, 0);
+					}
+				}
+
+				.animate.fade-out-left {
+					animation-name: fade-out-left;
+				}
+			}
+		}
+	}
+
+	@include it("should fade out & right") {
+		@include assert() {
+			@include output {
+				@include fade-out-right();
+			}
+
+			@include expect {
+				@keyframes fade-out-right {
+					from {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(100%, 0, 0);
+					}
+				}
+
+				.animate.fade-out-right {
+					animation-name: fade-out-right;
+				}
+			}
+		}
+	}
+
+	@include it("should fade out & up") {
+		@include assert() {
+			@include output {
+				@include fade-out-up();
+			}
+
+			@include expect {
+				@keyframes fade-out-up {
+					from {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+						transform: translate3d(0, -100%, 0);
+					}
+				}
+
+				.animate.fade-out-up {
+					animation-name: fade-out-up;
+				}
+			}
+		}
+	}
+
+	@include it("should fade out") {
+		@include assert() {
+			@include output {
+				@include fade-out();
+			}
+
+			@include expect {
+				@keyframes fade-out {
+					from {
+						opacity: 1;
+					}
+
+					to {
+						opacity: 0;
+					}
+				}
+
+				.animate.fade-out {
+					animation-name: fade-out;
+				}
+			}
+		}
+	}
+}

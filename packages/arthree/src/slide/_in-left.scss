@@ -1,0 +1,23 @@
+@use "../config";
+
+/// This will take the element and slide it from the left.
+/// @since 0.1.0
+/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @example scss
+///   @include slide-in-left();
+@mixin slide-in-left($class: config.$base-class) {
+	@keyframes slide-in-left {
+		from {
+			visibility: visible;
+			transform: translate3d(-200%, 0, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	#{$class}.slide-in-left {
+		animation-name: slide-in-left;
+	}
+}

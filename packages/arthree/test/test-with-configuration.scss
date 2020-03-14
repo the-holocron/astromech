@@ -1,0 +1,10 @@
+// Requirements
+@use "true";
+
+// Tests
+@use "./bounce-with-configuration";
+@use "./fade-with-configuration";
+@use "./slide-with-configuration";
+
+// Report
+@include true.report;

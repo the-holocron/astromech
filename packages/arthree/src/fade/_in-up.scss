@@ -1,0 +1,24 @@
+@use "../config";
+
+/// This will take the element and fade it in from the bottom.
+/// @since 0.1.0
+/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @example scss
+///   @include fade-in-up();
+@mixin fade-in-up($class: config.$base-class) {
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translate3d(0, 100%, 0);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	#{$class}.fade-in-up {
+		animation-name: fade-in-up;
+	}
+}

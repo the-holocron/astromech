@@ -1,0 +1,23 @@
+@use "../config";
+
+/// This will take the element and slide it out from the left.
+/// @since 0.1.0
+/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @example scss
+///   @include slide-out-left();
+@mixin slide-out-left($class: config.$base-class) {
+	@keyframes slide-out-left {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			transform: translate3d(-200%, 0, 0);
+		}
+	}
+
+	#{$class}.slide-out-left {
+		animation-name: slide-out-left;
+	}
+}
