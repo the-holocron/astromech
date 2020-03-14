@@ -44,11 +44,13 @@
     "test": "lerna run test"
   },
   "devDependencies": {
+    "@hidoo/sassdoc-to-markdown": "^0.4.1",
     "@theholocron/babel-preset": "latest",
     "@theholocron/browserslist-config": "latest",
     "@theholocron/commitlint-config": "latest",
     "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
+    "@theholocron/stylelint-config": "latest",
     "lerna": "^3.20.2",
     "markdown-toc": "^1.2.0"
   },

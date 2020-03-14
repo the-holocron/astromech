@@ -30,9 +30,6 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "@hidoo/sassdoc-to-markdown": "^0.4.1",
-    "@theholocron/stylelint-config": "^0.3.3",
-    "markdown-toc": "^1.2.0",
     "mocha": "^7.0.0",
     "sass": "^1.25.0",
     "sass-true": "^5.0.0",
