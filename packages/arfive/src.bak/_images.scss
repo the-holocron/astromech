@@ -1,0 +1,18 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// Responsive images keep images from scaling beyond the width of their parents.
+/// @since 0.1.0 - The O.G.
+/// @example scss - usage
+///   .img-responsive {
+///     @include img-responsive();
+///   }
+@mixin img-fluid() {
+	.img-fluid {
+		display: block !important;
+		max-width: 100% !important; // Part 1: Set a maximum relative to the parent
+		height: auto !important; // Part 2: Scale the height according to the width, otherwise you get stretching
+	}
+}

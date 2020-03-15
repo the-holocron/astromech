@@ -1,0 +1,133 @@
+/* stylelint-disable declaration-no-important, plugin/stylelint-selector-no-empty */
+////
+/// @author Mark Otto
+////
+
+/// Assign responsive-friendly `margin` or `padding` values to an element or a subset of its sides with shorthand classes. Includes support for individual properties, all properties, and vertical and horizontal properties.
+///
+/// #### Notation
+///
+/// The classes are named using the format `{property}-{sides}-{size}`.
+///
+/// Where *property* is one of:
+///
+/// * `m` - for classes that set `margin`
+/// * `p` - for classes that set `padding`
+///
+/// Where *sides* is one of:
+///
+/// * `t` - for classes that set `margin-top` or `padding-top`
+/// * `b` - for classes that set `margin-bottom` or `padding-bottom`
+/// * `l` - for classes that set `margin-left` or `padding-left`
+/// * `r` - for classes that set `margin-right` or `padding-right`
+/// * `x` - for classes that set both `*-left` and `*-right`
+/// * `y` - for classes that set both `*-top` and `*-bottom`
+/// * `a` - for classes that set a `margin` or `padding` on all 4 sides of the element
+///
+/// Where *size* is one of:
+///
+/// * `0` - for classes that eliminate the `margin` or `padding` by setting it to `0`
+/// * `qtr` - (by default) for classes that set the `margin` or `padding` to `$spacer * .25`
+/// * `half` - (by default) for classes that set the `margin` or `padding` to `$spacer * .5`
+/// * `1` - (by default) for classes that set the `margin` or `padding` to `$spacer`
+/// * `2` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
+/// * `3` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
+/// * `auto` - for classes that set the `margin` to auto
+///
+/// (You can add more sizes by adding entries to the `$spacers` Sass map variable.)
+/// @name {property}-{sides}-{size}
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <span class="p-t-qtr bg-gray-lighter">.p-t-qtr</span>
+/// <span class="p-t-half bg-gray-lighter">.p-t-half</span>
+/// <span class="p-t-1 bg-gray-lighter">.p-t-1</span>
+/// <span class="p-t-2 bg-gray-lighter">.p-t-2</span>
+/// <span class="p-t-3 bg-gray-lighter">.p-t-3</span>
+/// <span class="p-b-qtr bg-gray-lighter">.p-b-qtr</span>
+/// <span class="p-b-half bg-gray-lighter">.p-b-half</span>
+/// <span class="p-b-1 bg-gray-lighter">.p-b-1</span>
+/// <span class="p-b-2 bg-gray-lighter">.p-b-2</span>
+/// <span class="p-b-3 bg-gray-lighter">.p-b-3</span>
+/// <div class="m-y-3 spacer"></div>
+/// <span class="m-r-qtr bg-gray-lighter">.m-r-qtr</span>
+/// <span class="m-r-half bg-gray-lighter">.m-r-half</span>
+/// <span class="m-r-1 bg-gray-lighter">.m-r-1</span>
+/// <span class="m-r-2 bg-gray-lighter">.m-r-2</span>
+/// <span class="m-r-3 bg-gray-lighter">.m-r-3</span>
+/// <span class="m-l-qtr bg-gray-lighter">.m-l-qtr</span>
+/// <span class="m-l-half bg-gray-lighter">.m-l-half</span>
+/// <span class="m-l-1 bg-gray-lighter">.m-l-1</span>
+/// <span class="m-l-2 bg-gray-lighter">.m-l-2</span>
+/// <span class="m-l-3 bg-gray-lighter">.m-l-3</span>
+@mixin m-x-auto() {
+	.m-x-auto {
+		margin-right: auto !important;
+		margin-left: auto !important;
+	}
+}
+@mixin spacing-helpers($spacers) {
+	@each $prop, $abbrev in (margin: m, padding: p) {
+		@each $size, $length in map-merge((0: 0), $spacers) {
+			.#{$abbrev}-a-#{$size} {
+				#{$prop}: $length !important;
+			} // a = All sides
+
+			.#{$abbrev}-a-minus-#{$size} {
+				#{$prop}: -$length !important;
+			} // a = All sides
+
+			.#{$abbrev}-t-#{$size} {
+				#{$prop}-top: $length !important;
+			}
+
+			.#{$abbrev}-t-minus-#{$size} {
+				#{$prop}-top: -$length !important;
+			}
+
+			.#{$abbrev}-r-#{$size} {
+				#{$prop}-right: $length !important;
+			}
+
+			.#{$abbrev}-r-minus-#{$size} {
+				#{$prop}-right: -$length !important;
+			}
+
+			.#{$abbrev}-b-#{$size} {
+				#{$prop}-bottom: $length !important;
+			}
+
+			.#{$abbrev}-b-minus-#{$size} {
+				#{$prop}-bottom: -$length !important;
+			}
+
+			.#{$abbrev}-l-#{$size} {
+				#{$prop}-left: $length !important;
+			}
+
+			.#{$abbrev}-l-minus-#{$size} {
+				#{$prop}-left: -$length !important;
+			}
+
+			// Axes
+			.#{$abbrev}-x-#{$size} {
+				#{$prop}-right: $length !important;
+				#{$prop}-left: $length !important;
+			}
+
+			.#{$abbrev}-x-minus-#{$size} {
+				#{$prop}-right: -$length !important;
+				#{$prop}-left: -$length !important;
+			}
+
+			.#{$abbrev}-y-#{$size} {
+				#{$prop}-top: $length !important;
+				#{$prop}-bottom: $length !important;
+			}
+
+			.#{$abbrev}-y-minus-#{$size} {
+				#{$prop}-top: -$length !important;
+				#{$prop}-bottom: -$length !important;
+			}
+		}
+	}
+}

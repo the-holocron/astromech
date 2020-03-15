@@ -1,0 +1,117 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// The display property accepts a handful of values and we support many of them with utility classes. We purposefully don’t provide every value as a utility, so here’s what we support:
+/// @name .d-{size}-none, .d-{size}-inline, .d-{size}-inline-block, .d-{size}-block, .d-{size}-tabe, .d-{size}-table-cell, .d-{size}-flex, .d-{size}-inline-flex
+/// @since 2.0.0 - The Jedi
+/// @example html
+/// <div class="d-xs-inline bg-success">d-xs-inline</div>
+/// <div class="d-xs-inline bg-success">d-xs-inline</div>
+/// <span class="d-xs-block bg-primary">d-xs-block</span>
+/// <div class="d-xs-inline-block bg-warning">d-xs-inline-block</div>
+/// <div class="d-xs-inline-block bg-warning">d-xs-inline-block</div>
+@mixin display-helpers($breakpoints) {
+	.d {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-none {
+					display: none !important;
+				}
+
+				&-#{$breakpoint}-inline {
+					display: inline !important;
+				}
+
+				&-#{$breakpoint}-inline-block {
+					display: inline-block !important;
+				}
+
+				&-#{$breakpoint}-block {
+					display: block !important;
+				}
+
+				&-#{$breakpoint}-table {
+					display: table !important;
+				}
+
+				&-#{$breakpoint}-table-cell {
+					display: table-cell !important;
+				}
+
+				&-#{$breakpoint}-flex {
+					display: flex !important;
+				}
+
+				&-#{$breakpoint}-inline-flex {
+					display: inline-flex !important;
+				}
+
+				&-#{$breakpoint}-flow-root {
+					display: flow-root !important;
+				}
+			}
+		}
+	}
+}
+
+/// Make an element visibile or invisible; will still take up space on the page
+/// @name .visible, .invisible
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <a class="visible" href="#content">Skip to main content</a>
+/// <a class="invisible" href="#content">Skip to main content</a>
+@mixin visibility-helpers() {
+	.visible {
+		visibility: visible !important;
+	}
+
+	.invisible {
+		visibility: hidden !important;
+	}
+}
+
+/// Hide an element to all devices **except screen readers** with `.sr-only`. Combine `.sr-only` with `.sr-only-focusable` to show the element again when it’s focused (e.g. by a keyboard-only user).
+///
+/// Press `<tab />` to show the example.
+/// @name .sr-only, .sr-only-focusable
+/// @link http://a11yproject.com/posts/how-to-hide-content/
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+@mixin accessible-helpers() {
+	$size: .0625rem;
+
+	.sr-only {
+		position: absolute;
+		width: $size;
+		height: $size;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		margin: -$size; // stylelint-disable-line sh-waqar/declaration-use-variable
+		border: 0;
+		padding: 0;
+	}
+
+	/// Use in conjunction with .sr-only to only display content when it's focused.
+	/// Useful for "Skip to main content" links
+	/// @since 0.1.0 - The O.G.
+	/// @author HTML5 Boilerplate
+	/// @link http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+	/// @example scss - usage
+	///   .sr-only {
+	///     @include sr-only();
+	///   }
+	.sr-only-focusable {
+		&:active,
+		&:focus {
+			position: static;
+			width: auto;
+			height: auto;
+			overflow: visible;
+			clip: auto;
+			margin: 0;
+		}
+	}
+}

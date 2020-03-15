@@ -1,0 +1,98 @@
+/* stylelint-disable declaration-no-important, no-duplicate-selectors */
+////
+/// @author Mark Otto
+////
+
+/// Position an element at the top of the viewport, from edge to edge. Be sure you understand the ramifications of fixed position in your project; you may need to add aditional CSS.
+/// If you need an example, you can check out the header, toolbar and footer in the docs site as they're all fixed positioned.
+/// @since 2.0.0 - The Jedi
+@mixin pos-fix($zindex) {
+	.pos-fix {
+		position: fixed !important;
+		z-index: $zindex;
+	}
+}
+@mixin position-helpers() {
+	/// Use these shorthand utilities for quickly configuring the position of an element. You can position absolute, relative or sticky.
+	/// @since 2.0.0 - The Jedi
+	/// @name .pos-abs, .pos-rel, .pos-sticky, pos-static
+	/// @example html
+	/// <div class="pos-rel" style="height: 100px;">
+	///   <div class="pos-abs pos-t pos-x bg-gray-lighter text-xs-center">absolute top</div>
+	///   <div class="pos-abs pos-r pos-y bg-gray-darker">absolute right</div>
+	///   <div class="pos-abs pos-b pos-x bg-gray-light text-xs-center">absolute bottom</div>
+	///   <div class="pos-abs pos-l pos-y bg-gray-dark">absolute left</div>
+	/// </div>
+	.pos {
+		@each $prop, $abbrev in (absolute: abs, relative: rel, sticky: sticky, static: static) {
+			&-#{$abbrev} {
+				position: #{$prop} !important;
+			}
+		}
+	}
+
+	/// Use these shorthand utilities for quickly configuring the position of an element. These are typically reserved for absolute, fixed or sticky position and allow you to force elements to any position on the axis as well along the axis.
+	/// @name .pos-t, .pos-r, .pos-b, .pos-l, .pos-a, .pos-x, .pos-y
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <div class="pos-rel" style="height: 100px;">
+	///   <div class="pos-abs pos-t pos-x bg-gray-lighter text-xs-center">absolute top</div>
+	///   <div class="pos-abs pos-r pos-y bg-gray-darker">absolute right</div>
+	///   <div class="pos-abs pos-b pos-x bg-gray-light text-xs-center">absolute bottom</div>
+	///   <div class="pos-abs pos-l pos-y bg-gray-dark">absolute left</div>
+	/// </div>
+	.pos {
+		@each $prop, $abbrev in (top: t, right: r, bottom: b, left: l) {
+			&-#{$abbrev} {
+				#{$prop}: 0 !important;
+			}
+		}
+
+		// a = All sides
+		&-a {
+			top: 0 !important;
+			right: 0 !important;
+			bottom: 0 !important;
+			left: 0 !important;
+		}
+
+		// Axes
+		&-x {
+			right: 0 !important;
+			left: 0 !important;
+		}
+
+		&-y {
+			top: 0 !important;
+			bottom: 0 !important;
+		}
+	}
+
+	/// Need to perfectly center things along the x or y-axis, or perhaps both?  Use these utiltie classes to help.
+	/// @name .pos-a-c, .pos-x-c, .pos-y-c
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <div class="pos-rel" style="height: 100px;">
+	///   <div class="pos-abs pos-a-c bg-gray-lighter text-xs-center">absolute centered on both axis</div>
+	///   <div class="pos-abs pos-x-c bg-gray-darker">absolute centered on x axis</div>
+	///   <div class="pos-abs pos-y-c bg-gray-dark">absolute centered on y axis</div>
+	/// </div>
+	.pos {
+		&-a-c {
+			top: 50%;
+			right: 0;
+			left: 0;
+			transform: translateY(-50%);
+		}
+
+		&-x-c {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&-y-c {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+}

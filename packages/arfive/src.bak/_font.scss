@@ -1,0 +1,80 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Newton Koumantzelis
+////
+
+/// Quickly change the weight (boldness) of text or italicize text.
+/// @name .font-weight-bold, .font-weight-semibold, .font-weight-normal, .font-weight-light, .font-weight-thin, .font-italic
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="font-weight-bold">Bold text.</p>
+/// <p class="font-weight-semibold">Semi-Bold text.</p>
+/// <p class="font-weight-normal">Normal weight text.</p>
+/// <p class="font-weight-light">Light weight text.</p>
+/// <p class="font-weight-thin">Thin weight text.</p>
+/// <p class="font-italic">Italic text.</p>
+@mixin font-weight-bold($weight) {
+	.font-weight-bold,
+	.font-weight-heavy {
+		font-weight: $weight !important;
+	}
+}
+@mixin font-weight-semibold($weight) {
+	.font-weight-semibold {
+		font-weight: $weight !important;
+	}
+}
+@mixin font-weight-normal($weight) {
+	.font-weight-normal {
+		font-weight: $weight !important;
+	}
+}
+@mixin font-weight-light($weight) {
+	.font-weight-light {
+		font-weight: $weight !important;
+	}
+}
+@mixin font-weight-thin($weight) {
+	.font-weight-thin {
+		font-weight: $weight !important;
+	}
+}
+@mixin font-italic() {
+	.font-italic {
+		font-style: italic !important;
+	}
+}
+
+/// Need to change the size of the font, use these classes to ensure.
+/// @name .font-size-xs, .font-size-sm, .font-size-md, .font-size-lg
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="font-size-xs">.font-size-xs</p>
+/// <p class="font-size-sm">.font-size-sm</p>
+/// <p class="font-size-md">.font-size-md</p>
+/// <p class="font-size-lg">.font-size-lg</p>
+@mixin font-size-xxs() {
+	.font-size-xxs {
+		font-size: .65rem !important; // stylelint-disable-line sh-waqar/declaration-use-variable, scale-unlimited/declaration-strict-value
+	}
+}
+@mixin font-size-xs($size) {
+	.font-size-xs {
+		font-size: $size !important;
+	}
+}
+@mixin font-size-sm($size) {
+	.font-size-sm {
+		font-size: $size !important;
+	}
+}
+@mixin font-size-md($size) {
+	.font-size-md {
+		font-size: $size !important;
+	}
+}
+@mixin font-size-lg($size) {
+	.font-size-lg {
+		font-size: $size !important;
+	}
+}

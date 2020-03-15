@@ -1,0 +1,64 @@
+/* stylelint-disable declaration-no-important */
+
+////
+/// @author Mark Otto
+////
+
+/// Creates border-radius
+/// @since 0.1.0
+/// @param {Number} $radius [.125rem] - a valid CSS unit to create a border-radius on all sides
+/// @example scss
+///   .example {
+///       @include border-radius();
+///   }
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+
+/// Creates border-top-radius
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the top
+/// @example scss
+///   .example {
+///       @include border-top-radius(2px);
+///   }
+@mixin border-top-radius($radius) {
+	border-top-left-radius: $radius;
+	border-top-right-radius: $radius;
+}
+
+/// Creates border-right-radius
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the right
+/// @example scss
+///   .example {
+///       @include border-right-radius(2px);
+///   }
+@mixin border-right-radius($radius) {
+	border-top-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+}
+
+/// Creates border-bottom-radius
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the bottom
+/// @example scss
+///   .example {
+///       @include border-bottom-radius(2px);
+///   }
+@mixin border-bottom-radius($radius) {
+	border-bottom-right-radius: $radius;
+	border-bottom-left-radius: $radius;
+}
+
+/// Creates border-left-radius
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the left
+/// @example scss
+///   .example {
+///       @include border-left-radius(2px);
+///   }
+@mixin border-left-radius($radius) {
+	border-top-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+}

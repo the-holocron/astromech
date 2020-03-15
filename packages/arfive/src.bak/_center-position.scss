@@ -1,0 +1,31 @@
+////
+/// @author Mark Otto
+////
+
+/// Creates border-radius
+/// @since 0.1.0 - The O.G.
+/// @param {CSS Unit} $radius [.125rem] - a valid CSS unit to create a border-radius on all sides
+/// @output CSS properties
+/// @example scss
+///   .example {
+///     @include border-radius();
+///   }
+@mixin vertical-center() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/// Creates border-radius
+/// @since 0.1.0 - The O.G.
+/// @param {CSS Unit} $radius [.125rem] - a valid CSS unit to create a border-radius on all sides
+/// @output CSS properties
+/// @example scss
+///   .example {
+///     @include border-radius();
+///   }
+@mixin horizontal-center() {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}

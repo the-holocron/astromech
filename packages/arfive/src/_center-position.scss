@@ -1,0 +1,27 @@
+////
+/// @author Mark Otto
+////
+
+/// Centers an item absolutely in the vertical center
+/// @since 0.1.0
+/// @example scss
+///   .example {
+///       @include center-vertical();
+///   }
+@mixin center-vertical() {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/// Centers an item absolutely in the horizontal center
+/// @since 0.1.0
+/// @example scss
+///   .example {
+///       @include center-horizontal();
+///   }
+@mixin center-horizontal() {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}

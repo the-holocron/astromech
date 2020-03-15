@@ -1,0 +1,77 @@
+////
+/// @author Mark Otto
+////
+
+/// Creates hover mixin
+/// @since 0.1.0 - The O.G.
+/// @output CSS :hover property
+/// @content styles used on hover states
+/// @example scss
+///   .test {
+///     @include hover {
+///       text-decoration: underline;
+///     }
+///   }
+@mixin hover {
+	&:hover {
+		@content;
+	}
+}
+
+/// Creates hover, focus combo mixin
+/// @since 0.1.0 - The O.G.
+/// @output CSS :hover and :focus properties
+/// @content styles used on focus and hover states
+/// @example scss
+///   .test {
+///     @include hover-focus {
+///       text-decoration: underline;
+///       outline: 1px solid blue;
+///     }
+///   }
+@mixin hover-focus {
+	&:focus,
+	&.is-focused,
+	&:hover {
+		@content;
+	}
+}
+
+/// Creates hover, focus and parent combo mixin
+/// @since 0.1.0 - The O.G.
+/// @output CSS :hover, :focus properties, and whatever class uses this
+/// @content styles used on selector, focus and hover states
+/// @example scss
+///   .test {
+///     @include plain-hover-focus {
+///       background-color: blue;
+///     }
+///   }
+@mixin plain-hover-focus {
+	&,
+	&:focus,
+	&.is-focused,
+	&:hover {
+		@content;
+	}
+}
+
+/// Creates hover, focus, and active combo mixin
+/// @since 0.1.0 - The O.G.
+/// @output CSS :hover, :active, and :focus properties
+/// @content styles used on focus, active and hover states
+/// @example scss
+///   .test {
+///     @include hover-focus-active {
+///       background-color: blue;
+///     }
+///   }
+@mixin hover-focus-active {
+	&:focus,
+	&.is-focused,
+	&:active,
+	&.is-active,
+	&:hover {
+		@content;
+	}
+}

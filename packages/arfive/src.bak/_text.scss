@@ -1,0 +1,231 @@
+/* stylelint-disable declaration-no-important */
+
+////
+/// @author Mark Otto
+////
+
+/// Easily realign text to components with text alignment classes. All classes come with responsive abilities as well. The `{size}` correlates to the breakpoints that exist already, while the `{position}` can be anything listed in the example snippet.
+/// @name .text-{size}-{position}
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="text-xs-left">Left aligned text on xs screens.</p>
+/// <p class="text-xs-center">Center aligned text on xs screens.</p>
+/// <p class="text-xs-right">Right aligned text on xs screens.</p>
+/// <p class="text-xs-justify">Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens.</p>
+/// <p class="text-xs-nowrap">No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens.</p>
+/// <p class="text-xs-truncate">Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens.</p>
+/// <p class="text-xs-break-word">A_super_really_long_name_that_needs_a_break_in_it_somewhere_so_we_use_CSS_to_force_one.</p>
+@mixin text-helpers($breakpoints) {
+	.text {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-left {
+					text-align: left !important;
+				}
+
+				&-#{$breakpoint}-right {
+					text-align: right !important;
+				}
+
+				&-#{$breakpoint}-center {
+					text-align: center !important;
+				}
+
+				&-#{$breakpoint}-justify {
+					text-align: justify !important;
+				}
+
+				&-#{$breakpoint}-nowrap {
+					white-space: nowrap !important;
+				}
+
+				&-#{$breakpoint}-truncate {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+				}
+
+				&-#{$breakpoint}-break-word {
+					word-break: break-all !important;
+				}
+			}
+		}
+	}
+}
+@mixin text-emphasis-variant($parent, $color) {
+	#{$parent} {
+		color: $color !important;
+	}
+
+	a#{$parent} {
+		@include hover-focus() {
+			color: darken($color, 10%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+		}
+	}
+}
+
+/// Convey meaning through color with a handful of color utility classes. Includes support for styling links with hover states, too.
+/// @name .text-{color}
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="text-primary">.text-primary</p>
+/// <p class="text-secondary">.text-secondary</p>
+/// <p class="text-success">.text-success</p>
+/// <p class="text-info">.text-info</p>
+/// <p class="text-warning">.text-warning</p>
+/// <p class="text-danger">.text-danger</p>
+/// <p class="text-black">.text-black</p>
+/// <p class="text-gray-darkest">.text-gray-darkest</p>
+/// <p class="text-gray-darker">.text-gray-darker</p>
+/// <p class="text-gray-dark">.text-gray-dark</p>
+/// <p class="text-gray">.text-gray, .text-muted</p>
+/// <p class="bg-black text-gray-light">.text-gray-light</p>
+/// <p class="bg-black text-gray-lighter">.text-gray-lighter</p>
+/// <p class="bg-black text-gray-lightest">.text-gray-lightest</p>
+/// <p class="bg-black text-white">.text-white</p>
+/// <p class="bg-black text-body-bg">.text-body-bg</p>
+/// <p class="text-body">.text-body</p>
+@mixin text-muted($color) {
+	.text-muted {
+		color: $color !important;
+	}
+}
+@mixin text-inherit() {
+	.text-inherit {
+		&,
+		&:hover,
+		&:focus {
+			color: inherit !important;
+			text-decoration: inherit !important;
+		}
+	}
+}
+@mixin text-reset($line-height, $family: "sans-serify", $weight: normal) {
+	.text-reset {
+		font-family: $family;
+		/* We deliberately do NOT reset font-size. */
+		font-style: normal;
+		font-weight: $weight;
+		letter-spacing: normal;
+		line-break: auto;
+		line-height: $line-height;
+		text-align: left; // Fallback for where `start` is not supported
+		text-align: start;
+		text-decoration: none;
+		text-shadow: none;
+		text-transform: none;
+		white-space: normal;
+		word-break: normal;
+		word-spacing: normal;
+		word-wrap: normal;
+	}
+}
+
+/// Change the font family with these classes
+/// @name .text-sans-serif, .text-serif, .text-monospace, .text-number
+/// @since 1.0.0 - The Sith
+/// @example html
+/// <p class="text-sans-serif">Sans Serif text.</p>
+/// <p class="text-serif">Serif text.</p>
+/// <p class="text-monospace">Monospaced text.</p>
+/// <p class="text-number">Tabular lined text.</p>
+@mixin text-sans-serif($family: "sans-serif") {
+	.text-sans-serif {
+		font-family: $family !important;
+	}
+}
+@mixin text-serif($family: serif) {
+	.text-serif {
+		font-family: $family !important;
+	}
+}
+@mixin text-monospace($family: monospace) {
+	.text-monospace {
+		font-family: $family !important;
+	}
+}
+
+// https://www.client9.com/css-georgia-font-stack-with-tabular-numbers/
+// https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric
+@mixin text-number() {
+	.text-number {
+		font-feature-settings: "tnum" !important;
+		font-variant-numeric: tabular-nums;
+	}
+}
+
+/// Shrink the spacing between leters
+/// @since 1.0.0 - The Sith
+/// @example html
+/// <p class="text-narrow">Narrow text.</p>
+@mixin text-narrow() {
+	.text-narrow {
+		letter-spacing: -.0625rem !important;
+	}
+}
+
+/// Transform text in components with text capitalization classes.
+/// @name .text-lowercase, .text-uppercase, .text-capitalize
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="text-lowercase">Lowercased text.</p>
+/// <p class="text-uppercase">Uppercased text.</p>
+/// <p class="text-capitalize">CapiTaliZed text.</p>
+@mixin text-lowercase() {
+	.text-lowercase {
+		text-transform: lowercase !important;
+	}
+}
+@mixin text-uppercase() {
+	.text-uppercase {
+		text-transform: uppercase !important;
+	}
+}
+@mixin text-capitalize() {
+	.text-capitalize {
+		text-transform: capitalize !important;
+	}
+}
+
+/// Add an underline decoration to your heading.
+/// @since 2.18.0 - The Jedi
+/// @example html
+/// <h2 class="text-underline">A sample underlined heading</h2>
+@mixin text-underline($border-color, $border-width: 1px) {
+	.text-underline {
+		border-bottom: $border-width solid $border-color !important;
+		padding-bottom: .25em !important;
+	}
+}
+
+/// Enable scrollable blocks of code Use `<pre>`s for multiple lines of code. Once again, be sure to escape any angle brackets in the code for proper rendering. You may optionally add the `.pre-scrollable` class, which will set a max-height of 350px and provide a y-axis scrollbar
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <pre class="pre-scrollable"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur venenatis ante, vel venenatis magna placerat et. Praesent molestie velit vitae ante ultrices tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec arcu enim, scelerisque eget turpis nec, ultrices faucibus purus. In convallis lectus vel scelerisque cursus. Duis et vestibulum augue. Duis tempor libero nulla, et egestas ligula efficitur sed. Fusce ultrices arcu augue, et scelerisque turpis placerat consectetur. Nunc hendrerit quam neque, eu rutrum leo dapibus ut. Nullam blandit, elit non mollis dignissim, ipsum risus pharetra ligula, vel dictum neque tortor et felis. Curabitur a tortor quam. Donec at nibh nisl. Ut nunc nisl, bibendum a semper id, suscipit vitae augue. Sed venenatis dui nulla, sed vulputate mauris gravida nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed quam eget lectus dapibus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur venenatis ante, vel venenatis magna placerat et. Praesent molestie velit vitae ante ultrices tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec arcu enim, scelerisque eget turpis nec, ultrices faucibus purus. In convallis lectus vel scelerisque cursus. Duis et vestibulum augue. Duis tempor libero nulla, et egestas ligula efficitur sed. Fusce ultrices arcu augue, et scelerisque turpis placerat consectetur. Nunc hendrerit quam neque, eu rutrum leo dapibus ut. Nullam blandit, elit non mollis dignissim, ipsum risus pharetra ligula, vel dictum neque tortor et felis. Curabitur a tortor quam. Donec at nibh nisl. Ut nunc nisl, bibendum a semper id, suscipit vitae augue. Sed venenatis dui nulla, sed vulputate mauris gravida nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed quam eget lectus dapibus euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur venenatis ante, vel venenatis magna placerat et. Praesent molestie velit vitae ante ultrices tempus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec arcu enim, scelerisque eget turpis nec, ultrices faucibus purus. In convallis lectus vel scelerisque cursus. Duis et vestibulum augue. Duis tempor libero nulla, et egestas ligula efficitur sed. Fusce ultrices arcu augue, et scelerisque turpis placerat consectetur. Nunc hendrerit quam neque, eu rutrum leo dapibus ut. Nullam blandit, elit non mollis dignissim, ipsum risus pharetra ligula, vel dictum neque tortor et felis. Curabitur a tortor quam. Donec at nibh nisl. Ut nunc nisl, bibendum a semper id, suscipit vitae augue. Sed venenatis dui nulla, sed vulputate mauris gravida nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed quam eget lectus dapibus euismod. </p></pre>
+@mixin pre-scrollable($height) {
+	.pre-scrollable {
+		max-height: ($height * 20) !important;
+		overflow-y: scroll !important;
+	}
+}
+
+/// Builds on `abbr`
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p>Lorem ipsum <abbr class="initialism" title="dolor">dolor</abbr> sit amet, consectetur adipiscing elit.</p>
+@mixin initialism($font-size) {
+	.initialism {
+		font-size: $font-size !important;
+		text-transform: uppercase !important;
+	}
+}
+
+/// Reset the line-height to 1 in order to remove it, rather than inherit.
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="line-height-reset">Lorem ipsum dolor sit amet.</p>
+@mixin line-height-reset($line-height: 1) {
+	.line-height-reset {
+		line-height: $line-height !important;
+	}
+}

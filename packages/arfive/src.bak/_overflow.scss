@@ -1,0 +1,56 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// Need to hide content that is flowing over its container? Or maybe add scroll bars?  Then use these utility classes to override the default properties.
+/// @name .overflow-{size}-{axis}-{property}
+/// @since 2.0.0 - The Jedi
+/// @example html
+/// <p class="overflow-xs-auto">Left aligned text on xs screens.</p>
+/// <p class="overflow-xs-hidden">Center aligned text on xs screens.</p>
+/// <p class="overflow-xs-scroll">Right aligned text on xs screens.</p>
+/// <p class="overflow-xs-visible">Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens.</p>
+@mixin overflow($breakpoints) {
+	.overflow {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-auto {
+					overflow: auto !important;
+				}
+
+				&-#{$breakpoint}-hidden {
+					overflow: hidden !important;
+				}
+
+				&-#{$breakpoint}-scroll {
+					overflow: scroll !important;
+				}
+
+				&-#{$breakpoint}-visible {
+					overflow: visible !important;
+				}
+			}
+
+			@each $axis in x, y {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$axis}-#{$breakpoint}-auto {
+						overflow-#{$axis}: auto !important;
+					}
+
+					&-#{$axis}-#{$breakpoint}-hidden {
+						overflow-#{$axis}: hidden !important;
+					}
+
+					&-#{$axis}-#{$breakpoint}-scroll {
+						overflow-#{$axis}: scroll !important;
+					}
+
+					&-#{$axis}-#{$breakpoint}-visible {
+						overflow-#{$axis}: visible !important;
+					}
+				}
+			}
+		}
+	}
+}

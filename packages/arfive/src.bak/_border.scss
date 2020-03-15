@@ -1,0 +1,236 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Newton Koumantzelis
+////
+
+@mixin border-variant($direction: all, $color: grey, $width: 1px) {
+	@if $direction == "all" {
+		border: $width solid $color !important;
+	} @else {
+		border-#{$direction}: $width solid $color !important;
+	}
+}
+
+/// Adds a border to all sides using the default border color
+/// @since 2.0.0 - The Jedi
+/// @example html
+/// <span class="border p-a-half bg-gray-lightest">Border on all sides</span>
+@mixin border-helpers() {
+	/// Removes the borders on all sides
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <span class="border-0 p-a-half bg-gray-lightest">Border on no sides</span>
+	.border-0 {
+		@include border-variant("all", transparent, 0);
+	}
+
+	/// Removes a border on the x-axis
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <span class="border border-x-0 p-a-half bg-gray-lightest">Border on left side</span>
+	.border-x-0 {
+		@include border-variant(right, transparent, 0);
+		@include border-variant(left, transparent, 0);
+	}
+
+	/// Removes a border on the y-axis
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <span class="border border-y-0 p-a-half bg-gray-lightest">Border on left side</span>
+	.border-y-0 {
+		@include border-variant(top, transparent, 0);
+		@include border-variant(bottom, transparent, 0);
+	}
+
+	/// Rounds the corners enough to form a perfect circle
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-circle" alt="Generic responsive image">
+	.border-rounded-circle {
+		@include border-radius(100%, true);
+	}
+
+	/// Resets the rounding corners back to squared off
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-0" alt="Generic responsive image">
+	.border-rounded-0 {
+		@include border-radius(0, true);
+	}
+
+	/// Resets the rounding corners back to squared off on the top
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-0-top" alt="Generic responsive image">
+	.border-rounded-0-top {
+		@include border-top-radius(0, true);
+	}
+
+	/// Resets the rounding corners back to squared off on the right
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-0-right" alt="Generic responsive image">
+	.border-rounded-0-right {
+		@include border-right-radius(0, true);
+	}
+
+	/// Resets the rounding corners back to squared off on the bottom
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-0-bottom" alt="Generic responsive image">
+	.border-rounded-0-bottom {
+		@include border-bottom-radius(0, true);
+	}
+
+	/// Resets the rounding corners back to squared off on the left
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-0-left" alt="Generic responsive image">
+	.border-rounded-0-left {
+		@include border-left-radius(0, true);
+	}
+}
+@mixin border-colors($colors) {
+	@each $name, $color in $colors {
+		/// Adds a border to all sides using the default state colors
+		/// @since 2.0.0 - The Jedi
+		/// @name border-$state
+		/// @example html
+		/// <span class="border-success p-a-half bg-gray-lightest">Success border on all sides</span>
+		/// <span class="border-error p-a-half bg-gray-lightest">Error border on all sides</span>
+		/// <span class="border-warning p-a-half bg-gray-lightest">Warning border on all sides</span>
+		/// <span class="border-info p-a-half bg-gray-lightest">Info border on all sides</span>
+		.border-#{$name} {
+			@include border-variant("all", nth($color, 1));
+		}
+	}
+}
+@mixin border-shades($dark, $light) {
+	.border {
+		@include border-variant("all", $dark);
+	}
+
+	@each $direction in top, right, bottom, left {
+		/// Adds a border to a side using the default border color
+		/// @name .border-top, .border-right, .border-bottom, .border-left
+		/// @since 2.0.0 - The Jedi
+		/// @example html
+		/// <span class="border-left p-a-half bg-gray-lightest">Border on left side</span>
+		/// <span class="border-top p-a-half bg-gray-lightest">Border on top side</span>
+		/// <span class="border-bottom p-a-half bg-gray-lightest">Border on bottom side</span>
+		/// <span class="border-right p-a-half bg-gray-lightest">Border on right side</span>
+		.border-#{$direction},
+		.border-#{$direction}-dark,
+		.border-#{$direction}-outer {
+			@include border-variant($direction, $dark);
+		}
+
+		/// Adds a border to a side using the default border color
+		/// @name .border-top, .border-right, .border-bottom, .border-left
+		/// @since 2.0.0 - The Jedi
+		/// @example html
+		/// <span class="border-left-light p-a-half bg-gray-darkest">Border on left side</span>
+		/// <span class="border-top-light p-a-half bg-gray-darkest">Border on top side</span>
+		/// <span class="border-bottom-light p-a-half bg-gray-darkest">Border on bottom side</span>
+		/// <span class="border-right-light p-a-half bg-gray-darkest">Border on right side</span>
+		.border-#{$direction}-light,
+		.border-#{$direction}-inner {
+			@include border-variant($direction, $light);
+		}
+
+		/// Removes a border on a side
+		/// @name .border-top-0, .border-right-0, .border-bottom-0, .border-left-0
+		/// @since 2.0.0 - The Jedi
+		/// @example html
+		/// <span class="border border-left-0 p-a-half bg-gray-lightest">Border on left side</span>
+		/// <span class="border border-top-0 p-a-half bg-gray-lightest">Border on top side</span>
+		/// <span class="border border-bottom-0 p-a-half bg-gray-lightest">Border on bottom side</span>
+		/// <span class="border border-right-0 p-a-half bg-gray-lightest">Border on right side</span>
+		.border-#{$direction}-0 {
+			@include border-variant($direction, transparent, 0);
+		}
+	}
+
+	/// Adds a border on the x-axis
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <span class="border-x p-a-half bg-gray-lightest">Border on left side</span>
+	.border-x {
+		@include border-variant(right, $dark);
+		@include border-variant(left, $dark);
+	}
+
+	/// Adds a border on the y-axis
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <span class="border-y p-a-half bg-gray-lightest">Border on left side</span>
+	.border-y {
+		@include border-variant(top, $dark);
+		@include border-variant(bottom, $dark);
+	}
+}
+@mixin border-radius-helpers($small, $medium, $large, $xlarge) {
+	/// Rounds the corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded" alt="Generic responsive image">
+	.border-rounded {
+		@include border-radius($medium, true);
+	}
+
+	/// Rounds the corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-sm" alt="Generic responsive image">
+	.border-rounded-sm {
+		@include border-radius($small, true);
+	}
+
+	/// Rounds the corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-sm" alt="Generic responsive image">
+	.border-rounded-lg {
+		@include border-radius($large, true);
+	}
+
+	/// Rounds the corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-sm" alt="Generic responsive image">
+	.border-rounded-xl {
+		@include border-radius($xlarge, true);
+	}
+
+	/// Rounds the top corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-top" alt="Generic responsive image">
+	.border-rounded-top {
+		@include border-top-radius($medium, true);
+	}
+
+	/// Rounds the right side corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-right" alt="Generic responsive image">
+	.border-rounded-right {
+		@include border-right-radius($medium, true);
+	}
+
+	/// Rounds the bottom corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-bottom" alt="Generic responsive image">
+	.border-rounded-bottom {
+		@include border-bottom-radius($medium, true);
+	}
+
+	/// Rounds the right side corners
+	/// @since 2.0.0 - The Jedi
+	/// @example html
+	/// <img src="https://unsplash.it/75/75?random" class="border-rounded-left" alt="Generic responsive image">
+	.border-rounded-left {
+		@include border-left-radius($medium, true);
+	}
+}

@@ -1,0 +1,28 @@
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// The display property accepts a handful of values and we support many of them with utility classes. We purposefully don’t provide every value as a utility, so here’s what we support:
+/// @name .d-{size}-none, .d-{size}-inline, .d-{size}-inline-block, .d-{size}-block, .d-{size}-tabe, .d-{size}-table-cell, .d-{size}-flex, .d-{size}-inline-flex
+/// @since 2.0.0 - The Jedi
+/// @example html
+/// <div class="hidden-xl-up bg-success">hidden on x-large screens and up</div>
+/// <div class="hidden-sm-down bg-success">hidden on smaller screens and down</div>
+@mixin hidden($breakpoints) {
+	.hidden {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-up {
+					display: none !important;
+				}
+			}
+
+			@include media-breakpoint-down($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-down {
+					display: none !important;
+				}
+			}
+		}
+	}
+}

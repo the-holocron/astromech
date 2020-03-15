@@ -1,0 +1,204 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/slide" as sclass;
+
+@include describe("mixins: slide with namespace & custom class") {
+	@include it("should slide in & down") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-in-down('.test');
+			}
+
+			@include expect {
+				@keyframes slide-in-down {
+					from {
+						visibility: visible;
+						transform: translate3d(0, -200%, 0);
+					}
+
+					to {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				.test.slide-in-down {
+					animation-name: slide-in-down;
+				}
+			}
+		}
+	}
+
+	@include it("should slide in & left") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-in-left('.test');
+			}
+
+			@include expect {
+				@keyframes slide-in-left {
+					from {
+						visibility: visible;
+						transform: translate3d(-200%, 0, 0);
+					}
+
+					to {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				.test.slide-in-left {
+					animation-name: slide-in-left;
+				}
+			}
+		}
+	}
+
+	@include it("should slide in & right") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-in-right('.test');
+			}
+
+			@include expect {
+				@keyframes slide-in-right {
+					from {
+						visibility: visible;
+						transform: translate3d(200%, 0, 0);
+					}
+
+					to {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				.test.slide-in-right {
+					animation-name: slide-in-right;
+				}
+			}
+		}
+	}
+
+	@include it("should slide in & up") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-in-up('.test');
+			}
+
+			@include expect {
+				@keyframes slide-in-up {
+					from {
+						visibility: visible;
+						transform: translate3d(0, 200%, 0);
+					}
+
+					to {
+						transform: translate3d(0, 0, 0);
+					}
+				}
+
+				.test.slide-in-up {
+					animation-name: slide-in-up;
+				}
+			}
+		}
+	}
+
+	@include it("should slide out & down") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-out-down('.test');
+			}
+
+			@include expect {
+				@keyframes slide-out-down {
+					from {
+						transform: translate3d(0, 0, 0);
+					}
+
+					to {
+						visibility: hidden;
+						transform: translate3d(0, 300%, 0);
+					}
+				}
+
+				.test.slide-out-down {
+					animation-name: slide-out-down;
+				}
+			}
+		}
+	}
+
+	@include it("should slide out & left") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-out-left('.test');
+			}
+
+			@include expect {
+				@keyframes slide-out-left {
+					from {
+						transform: translate3d(0, 0, 0);
+					}
+
+					to {
+						visibility: hidden;
+						transform: translate3d(-200%, 0, 0);
+					}
+				}
+
+				.test.slide-out-left {
+					animation-name: slide-out-left;
+				}
+			}
+		}
+	}
+
+	@include it("should slide out & right") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-out-right('.test');
+			}
+
+			@include expect {
+				@keyframes slide-out-right {
+					from {
+						transform: translate3d(0, 0, 0);
+					}
+
+					to {
+						visibility: hidden;
+						transform: translate3d(200%, 0, 0);
+					}
+				}
+
+				.test.slide-out-right {
+					animation-name: slide-out-right;
+				}
+			}
+		}
+	}
+
+	@include it("should slide out & up") {
+		@include assert() {
+			@include output {
+				@include sclass.slide-out-up('.test');
+			}
+
+			@include expect {
+				@keyframes slide-out-up {
+					from {
+						transform: translate3d(0, 0, 0);
+					}
+
+					to {
+						visibility: hidden;
+						transform: translate3d(0, -200%, 0);
+					}
+				}
+
+				.test.slide-out-up {
+					animation-name: slide-out-up;
+				}
+			}
+		}
+	}
+}

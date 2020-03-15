@@ -1,0 +1,68 @@
+/* stylelint-disable declaration-no-important, selector-no-qualifying-type */
+////
+/// @author Mark Otto
+////
+
+@mixin bg-variant($parent, $color, $text-color) {
+	@if not check-contrast($color, $text-color) {
+		$text-color: white; // stylelint-disable-line color-named
+	}
+
+	#{$parent} {
+		background-color: $color !important;
+		color: $text-color !important;
+
+		h1,
+		.h1,
+		h2,
+		.h2,
+		h3,
+		.h3,
+		h4,
+		.h4,
+		h5,
+		.h5,
+		h6,
+		.h6 {
+			color: inherit !important;
+		}
+	}
+
+	a#{$parent} {
+		@include hover-focus() {
+			background-color: tint($color, 50%); // stylelint-disable-line sh-waqar/declaration-use-variable
+		}
+	}
+}
+@mixin bg-transparent() {
+	.bg-transparent {
+		background-color: transparent !important;
+
+		&,
+		h1,
+		.h1,
+		h2,
+		.h2,
+		h3,
+		.h3,
+		h4,
+		.h4,
+		h5,
+		.h5,
+		h6,
+		.h6 {
+			color: inherit !important;
+		}
+	}
+
+	a.bg-transparent {
+		@include hover-focus() {
+			background-color: transparent;
+		}
+	}
+}
+@mixin box-shadow-none() {
+	.box-shadow-none {
+		box-shadow: none !important;
+	}
+}
