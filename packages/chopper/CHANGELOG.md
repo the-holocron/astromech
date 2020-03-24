@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/the-holocron/astromech/compare/@theholocron/chopper@0.2.5...@theholocron/chopper@0.3.0) (2020-03-24)
+
+
+### Features
+
+* add in json file util ([d380f02](https://github.com/the-holocron/astromech/commit/d380f027f309e05d553011f28f7b19c88119bf00))
+
+
+
+
+
 ## [0.2.5](https://github.com/the-holocron/astromech/compare/@theholocron/chopper@0.2.4...@theholocron/chopper@0.2.5) (2020-03-14)
 
 **Note:** Version bump only for package @theholocron/chopper

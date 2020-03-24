@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.4](https://github.com/the-holocron/astromech/compare/@theholocron/arfour@0.1.3...@theholocron/arfour@0.1.4) (2020-03-24)
+
+
+### Reverts
+
+* Revert "chore: clean up README" ([c873dca](https://github.com/the-holocron/astromech/commit/c873dca911f73302867111acef373b69f96fcb15))
+
+
+
+
+
 ## [0.1.3](https://github.com/the-holocron/astromech/compare/@theholocron/arfour@0.1.2...@theholocron/arfour@0.1.3) (2020-03-14)
 
 **Note:** Version bump only for package @theholocron/arfour
