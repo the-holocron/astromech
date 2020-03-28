@@ -1,0 +1,100 @@
+@use "../config";
+
+/* stylelint-disable declaration-no-important, no-duplicate-selectors */
+////
+/// @author Mark Otto
+////
+
+/// Use these shorthand utilities for quickly configuring the position of an element. You can position absolute, relative or sticky.
+/// @since 2.0.0 - The Jedi
+/// @name .pos-abs, .pos-rel, .pos-sticky, pos-static
+/// @example html
+/// <div class="pos-rel" style="height: 100px;">
+///   <div class="pos-abs pos-t pos-x bg-gray-lighter text-xs-center">absolute top</div>
+///   <div class="pos-abs pos-r pos-y bg-gray-darker">absolute right</div>
+///   <div class="pos-abs pos-b pos-x bg-gray-light text-xs-center">absolute bottom</div>
+///   <div class="pos-abs pos-l pos-y bg-gray-dark">absolute left</div>
+/// </div>
+@mixin position($prefix: position, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (absolute, fixed, relative, sticky, static) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						position: #{$prop} !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						position: #{$prop} !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						position: #{$prop} !important;
+					}
+				}
+			}
+		}
+	}
+
+	@each $prop in (top, right, bottom, left) {
+		@each $value in (-100, -50, 0, 50, 100) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					.#{$prop}-#{$breakpoint}-#{$value},
+					.#{$prop}-#{$breakpoint}-#{$value}-up {
+						#{$prop}: $value !important;
+					}
+
+					.xaxis-#{$breakpoint}-#{$value},
+					.xaxis-#{$breakpoint}-#{$value}-up {
+						right: $value !important;
+						left: $value !important;
+					}
+
+					.yaxis-#{$breakpoint}-#{$value},
+					.yaxis-#{$breakpoint}-#{$value}-up {
+						top: $value !important;
+						bottom: $value !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					.#{$prop}-#{$breakpoint}-#{$value}-down {
+						#{$prop}: $value !important;
+					}
+
+					.xaxis-#{$breakpoint}-#{$value}-down {
+						right: $value !important;
+						left: $value !important;
+					}
+
+					.yaxis-#{$breakpoint}-#{$value}-down {
+						top: $value !important;
+						bottom: $value !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					.#{$prop}-#{$breakpoint}-#{$value}-only {
+						#{$prop}: $value !important;
+					}
+
+					.xaxis-#{$breakpoint}-#{$value}-only {
+						right: $value !important;
+						left: $value !important;
+					}
+
+					.yaxis-#{$breakpoint}-#{$value}-only {
+						top: $value !important;
+						bottom: $value !important;
+					}
+				}
+			}
+		}
+	}
+}

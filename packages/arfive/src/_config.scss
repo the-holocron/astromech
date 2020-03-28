@@ -1,0 +1,26 @@
+////
+/// @since 0.1.0
+////
+
+/// Default set of breakpoints
+/// @prop {Number} $xs [0] - extra short amount of time
+/// @prop {Number} $sm [34em] - screens between ~544px and ~767px wide
+/// @prop {Number} $md [48em] - screens between ~768px and ~991px wide
+/// @prop {Number} $lg [62em] - screens between ~992px and ~1199px wide
+/// @prop {Number} $xl [75em] - screens larger than ~1200px wide
+$breakpoints: (
+	"xs": "0",
+	"sm": "34em",
+	"md": "48em",
+	"lg": "62em",
+	"xl": "75em",
+) !default;
+
+$font-size: (
+	"1": ".75rem", // ~14px
+	"2": ".85rem", // ~16px
+	"3": "1rem", // 18px
+	"4": "1.25rem", // ~21px
+	"5": "1.5rem", // ~27px
+	"6": "2rem", // 36px
+) !default;

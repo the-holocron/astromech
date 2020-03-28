@@ -1,0 +1,42 @@
+@use "../config";
+
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// The display property accepts a handful of values and we support many of them with utility classes. We purposefully don’t provide every value as a utility, so here’s what we support:
+/// @name .d-{size}-none, .d-{size}-inline, .d-{size}-inline-block, .d-{size}-block, .d-{size}-tabe, .d-{size}-table-cell, .d-{size}-flex, .d-{size}-inline-flex
+/// @since 0.1.0
+/// @example html
+/// <div class="d-xs-inline bg-success">d-xs-inline</div>
+/// <div class="d-xs-inline bg-success">d-xs-inline</div>
+/// <span class="d-xs-block bg-primary">d-xs-block</span>
+/// <div class="d-xs-inline-block bg-warning">d-xs-inline-block</div>
+/// <div class="d-xs-inline-block bg-warning">d-xs-inline-block</div>
+@mixin display($prefix: display, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (block, contents, flex, flow-root, grid, inline, inline-block, inline-flex, inline-grid, inline-table, list-item, none, table, table-cell) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						display: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						display: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						display: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+@use "../config";
+
+/* stylelint-disable declaration-no-important */
+
+////
+/// @author Mark Otto
+////
+
+/// Easily realign text to components with text alignment classes. All classes come with responsive abilities as well. The `{size}` correlates to the breakpoints that exist already, while the `{position}` can be anything listed in the example snippet.
+/// @name .text-{size}-{position}
+/// @since 0.1.0 - The O.G.
+/// @example html
+/// <p class="text-xs-left">Left aligned text on xs screens.</p>
+/// <p class="text-xs-center">Center aligned text on xs screens.</p>
+/// <p class="text-xs-right">Right aligned text on xs screens.</p>
+/// <p class="text-xs-justify">Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens. Justified text on xs screens.</p>
+/// <p class="text-xs-nowrap">No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens. No wrap text on xs screens.</p>
+/// <p class="text-xs-truncate">Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens. Truncate text on xs screens.</p>
+/// <p class="text-xs-break-word">A_super_really_long_name_that_needs_a_break_in_it_somewhere_so_we_use_CSS_to_force_one.</p>
+@mixin text-align($prefix: text-align, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (center, end, inherit, initial, justify, left, right, start, unset) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						text-align: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						text-align: $prop !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						text-align: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin whitespace($prefix: white-space, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (normal, nowrap, pre, pre-line, pre-wrap) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						white-space: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						white-space: $prop !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						white-space: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin wordbreak($prefix: word-break, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (break-all, break-word, inherit, initial, keep-all, normal, unset) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						word-break: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						word-break: $prop !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						word-break: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

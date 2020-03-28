@@ -1,0 +1,37 @@
+@use "../config";
+
+/* stylelint-disable declaration-no-important */
+////
+/// @author Mark Otto
+////
+
+/// Make an element visibile or invisible; will still take up space on the page
+/// @name .visible, .invisible
+/// @since 0.1.0
+/// @example html
+/// <a class="visibile-xs-up" href="#content">Skip to main content</a>
+/// <a class="invisible-xs-down" href="#content">Skip to main content</a>
+@mixin visibility($breakpoints: config.$breakpoints) {
+	@each $prop, $abbrev in (collapse: collapse, visible: visible, hidden: invisible) {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint},
+				#{$abbrev}-#{$breakpoint}-up {
+					visibility: $prop !important;
+				}
+			}
+
+			@include media-breakpoint-down($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint}-down {
+					visibility: $prop !important;
+				}
+			}
+
+			@include media-breakpoint-only($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint}-only {
+					visibility: $prop !important;
+				}
+			}
+		}
+	}
+}
