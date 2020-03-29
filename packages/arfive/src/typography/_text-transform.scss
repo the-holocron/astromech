@@ -1,0 +1,34 @@
+@use "../config";
+
+/// The text-transform property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform
+/// @param {String} $prefix ["text-transform"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include text-transform($prefix: ttransform, $breakpoints: ("sm": 480px));
+@mixin text-transform($prefix: text-transform, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (capitalize, inherit, initial, lowercase, none, unset, uppercase) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						text-transform: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						text-transform: $prop !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						text-transform: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@use "../config";
+
+/// The flex-wrap property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap
+/// @param {String} $prefix ["flex-wrap"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include flex-wrap($prefix: fw, $breakpoints: ("sm": 480px));
+@mixin flex-wrap($prefix: flex-wrap, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (inherit, initial, nowrap, unset, wrap, wrap-reverse) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						flex-wrap: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						flex-wrap: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						flex-wrap: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

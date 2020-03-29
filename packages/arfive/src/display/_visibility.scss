@@ -1,0 +1,32 @@
+@use "../config";
+
+/// The visibility property can show, hide and change the context
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include visibility($breakpoints: ("sm": 480px));
+@mixin visibility($breakpoints: config.$breakpoints) {
+	@each $prop, $abbrev in (collapse: collapse, visible: visible, hidden: invisible) {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint},
+				#{$abbrev}-#{$breakpoint}-up {
+					visibility: $prop !important;
+				}
+			}
+
+			@include media-breakpoint-down($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint}-down {
+					visibility: $prop !important;
+				}
+			}
+
+			@include media-breakpoint-only($breakpoint, $breakpoints) {
+				#{$abbrev}-#{$breakpoint}-only {
+					visibility: $prop !important;
+				}
+			}
+		}
+	}
+}

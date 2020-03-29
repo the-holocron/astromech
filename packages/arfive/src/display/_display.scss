@@ -1,0 +1,35 @@
+@use "../config";
+
+/// The display property can show, hide and change the context
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
+/// @param {String} $prefix ["display"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include display($prefix: d, $breakpoints: ("sm": 480px));
+@mixin display($prefix: display, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (block, contents, flex, flow-root, grid, inline, inline-block, inline-flex, inline-grid, inline-table, list-item, none, table, table-cell) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						display: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						display: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						display: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

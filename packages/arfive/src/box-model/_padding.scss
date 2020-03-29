@@ -1,0 +1,94 @@
+@use "../config";
+
+/// The padding property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/padding
+/// @param {String} $prefix ["padding"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include padding($prefix: p, $breakpoints: ("sm": 480px));
+@mixin padding($prefix: padding, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (top, right, bottom, left) {
+			@each $key, $value in map-merge((auto: auto), (0: 0), config.$spacers) {
+				@each $breakpoint in map-keys($breakpoints) {
+					@include media-breakpoint-up($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value},
+						&-#{$prop}-#{$breakpoint}-#{$value}-up {
+							padding-#{$prop}: $value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value},
+						&-x-#{$breakpoint}-#{$value}-up,
+						&-xaxis-#{$breakpoint}-#{$value},
+						&-xaxis-#{$breakpoint}-#{$value}-up {
+							padding-right: $value !important;
+							padding-left: $value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value},
+						&-y-#{$breakpoint}-#{$value}-up,
+						&-yaxis-#{$breakpoint}-#{$value},
+						&-yaxis-#{$breakpoint}-#{$value}-up {
+							padding-top: $value !important;
+							padding-bottom: $value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value},
+						&-a-#{$breakpoint}-#{$value}-up,
+						&-all-#{$breakpoint}-#{$value},
+						&-all-#{$breakpoint}-#{$value}-up {
+							padding: $value !important;
+						}
+					}
+
+					@include media-breakpoint-down($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value}-down {
+							padding-#{$prop}: $value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value}-down,
+						&-xaxis-#{$breakpoint}-#{$value}-down {
+							padding-right: $value !important;
+							padding-left: $value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value}-down,
+						&-yaxis-#{$breakpoint}-#{$value}-down {
+							padding-top: $value !important;
+							padding-bottom: $value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value}-down,
+						&-all-#{$breakpoint}-#{$value}-down {
+							padding: $value !important;
+						}
+					}
+
+					@include media-breakpoint-only($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value}-only {
+							padding-#{$prop}: $value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value}-only,
+						&-xaxis-#{$breakpoint}-#{$value}-only {
+							padding-right: $value !important;
+							padding-left: $value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value}-only,
+						&-yaxis-#{$breakpoint}-#{$value}-only {
+							padding-top: $value !important;
+							padding-bottom: $value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value}-only,
+						&-all-#{$breakpoint}-#{$value}-only {
+							padding: $value !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,41 +1,43 @@
 @use "config";
-@use "bounce" as *;
-@use "fade" as *;
-@use "slide" as *;
+@use "breakpoints" as *;
+@use "display" as *;
+@use "positioning" as *;
+@use "box-model" as *;
+@use "typography" as *;
 
-// base
-@include animate(config.$base-class);
+// display
+@include display($breakpoints: config.$breakpoints);
+@include hidden($breakpoints: config.$breakpoints);
+@include visibility($breakpoints: config.$breakpoints);
 
-// bounce
-@include bounce-back-forth(config.$base-class);
-@include bounce-in-down(config.$base-class);
-@include bounce-in-left(config.$base-class);
-@include bounce-in-right(config.$base-class);
-@include bounce-in-up(config.$base-class);
-@include bounce-out-down(config.$base-class);
-@include bounce-out-left(config.$base-class);
-@include bounce-out-right(config.$base-class);
-@include bounce-out-up(config.$base-class);
+// positioning
+@include flex-direction($breakpoints: config.$breakpoints);
+@include flex-wrap($breakpoints: config.$breakpoints);
+@include align-content($breakpoints: config.$breakpoints);
+@include align-items($breakpoints: config.$breakpoints);
+@include align-self($breakpoints: config.$breakpoints);
+@include justify-content($breakpoints: config.$breakpoints);
+@include justify-items($breakpoints: config.$breakpoints);
+@include justify-self($breakpoints: config.$breakpoints);
+@include place-content($breakpoints: config.$breakpoints);
+@include place-items($breakpoints: config.$breakpoints);
+@include place-self($breakpoints: config.$breakpoints);
+@include position($breakpoints: config.$breakpoints);
+@include float($breakpoints: config.$breakpoints);
+@include clear($breakpoints: config.$breakpoints);
 
-// fade
-@include fade-flash(config.$base-class);
-@include fade-in-down(config.$base-class);
-@include fade-in-left(config.$base-class);
-@include fade-in-right(config.$base-class);
-@include fade-in-up(config.$base-class);
-@include fade-in(config.$base-class);
-@include fade-out-down(config.$base-class);
-@include fade-out-left(config.$base-class);
-@include fade-out-right(config.$base-class);
-@include fade-out-up(config.$base-class);
-@include fade-out(config.$base-class);
+// box-model
+@include width($breakpoints: config.$breakpoints);
+@include height($breakpoints: config.$breakpoints);
+@include overflow($breakpoints: config.$breakpoints);
+@include margin($breakpoints: config.$breakpoints);
+@include padding($breakpoints: config.$breakpoints);
 
-// slide
-@include slide-in-down(config.$base-class);
-@include slide-in-left(config.$base-class);
-@include slide-in-right(config.$base-class);
-@include slide-in-up(config.$base-class);
-@include slide-out-down(config.$base-class);
-@include slide-out-left(config.$base-class);
-@include slide-out-right(config.$base-class);
-@include slide-out-up(config.$base-class);
+// typography
+@include font-size($font-sizes: config.$font-sizes, $breakpoints: config.$breakpoints);
+@include text-align($breakpoints: config.$breakpoints);
+@include text-overflow($breakpoints: config.$breakpoints);
+@include text-transform($breakpoints: config.$breakpoints);
+@include valign($breakpoints: config.$breakpoints);
+@include white-space($breakpoints: config.$breakpoints);
+@include word-break($breakpoints: config.$breakpoints);

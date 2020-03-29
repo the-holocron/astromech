@@ -1,0 +1,55 @@
+@use "../config";
+
+/// The overflow property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/overflow
+/// @param {String} $prefix ["overflow"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include overflow($prefix: o, $breakpoints: ("sm": 480px));
+@mixin overflow($prefix: overflow, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (auto, hidden, overlay, scroll, visible) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						overflow: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						overflow: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						overflow: $prop !important;
+					}
+				}
+
+			@each $axis in x, y {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$axis}-#{$breakpoint}-#{$prop},
+					&-#{$axis}-#{$breakpoint}-#{$prop}-up {
+						overflow-#{$axis}: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$axis}-#{$breakpoint}-#{$prop}-down {
+						overflow-#{$axis}: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$axis}-#{$breakpoint}-#{$prop}-only {
+						overflow-#{$axis}: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

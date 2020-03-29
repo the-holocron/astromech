@@ -1,0 +1,35 @@
+@use "../config";
+
+/// The justify-content property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+/// @param {String} $prefix ["justify-content"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include justify-content($prefix: jc, $breakpoints: ("sm": 480px));
+@mixin justify-content($prefix: justify-content, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (baseline, center, end, flex-end, flex-start, inherit, initial, left, normal, right, safe, space-around, space-between, space-evenly, start,  stretch, unsafe, unset) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						justify-content: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						justify-content: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						justify-content: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

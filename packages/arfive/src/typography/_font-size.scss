@@ -1,0 +1,36 @@
+@use "../config";
+
+/// The font-size property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
+/// @param {String} $prefix ["font-size"] - a CSS class name that will prefix all helpers
+/// @param {Map} $font-sizes [ config.$font-sizes ] - a map of font sizes
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include font-size($prefix: fsize, $breakpoints: ("sm": 480px));
+@mixin font-size($prefix: font-size, $font-sizes: config.$font-sizes, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in $font-sizes {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						font-size: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						font-size: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						font-size: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

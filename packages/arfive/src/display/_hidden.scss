@@ -1,0 +1,31 @@
+@use "../config";
+
+/// A shortcut to hide/display:none things
+/// @since 0.1.0
+/// @param {String} $prefix ["hidden"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include hidden($prefix: hide, $breakpoints: ("sm": 480px));
+@mixin hidden($prefix: hidden, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $breakpoint in map-keys($breakpoints) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-up {
+					display: none !important;
+				}
+			}
+
+			@include media-breakpoint-down($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-down {
+					display: none !important;
+				}
+			}
+
+			@include media-breakpoint-only($breakpoint, $breakpoints) {
+				&-#{$breakpoint}-only {
+					display: none !important;
+				}
+			}
+		}
+	}
+}

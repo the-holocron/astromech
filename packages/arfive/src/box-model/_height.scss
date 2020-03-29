@@ -1,0 +1,37 @@
+@use "../config";
+
+/// The height property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/height
+/// @param {String} $prefix ["height"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include height($prefix: h, $breakpoints: ("sm": 480px));
+@mixin height($prefix: height, $breakpoints: config.$breakpoints) {
+	@each $prop in (max-, min-, "") {
+		.#{$prop}#{$prefix} {
+			@each $breakpoint in map-keys($breakpoints) {
+				@each $size, $length in (auto: auto, 0: 0, 25: 25%, 50: 50%, 75: 75%, 100: 100%) {
+					@include media-breakpoint-up($breakpoint, $breakpoints) {
+						&-#{$breakpoint}-#{$size},
+						&-#{$breakpoint}-#{$size} {
+							#{$prop}height: $length !important;
+						}
+					}
+
+					@include media-breakpoint-down($breakpoint, $breakpoints) {
+						&-#{$breakpoint}-#{$size}-down {
+							#{$prop}height: $length !important;
+						}
+					}
+
+					@include media-breakpoint-only($breakpoint, $breakpoints) {
+						&-#{$breakpoint}-#{$size}-only {
+							#{$prop}height: $length !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}

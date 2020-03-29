@@ -1,0 +1,35 @@
+@use "../config";
+
+/// The justify-items property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items
+/// @param {String} $prefix ["justify-items"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include justify-items($prefix: fd, $breakpoints: ("sm": 480px));
+@mixin justify-items($prefix: justify-items, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (baseline, center, end, flex-end, flex-start, inherit, initial, left, normal, right, safe, self-end, self-start, start,  stretch, unsafe, unset) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						justify-items: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						justify-items: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						justify-items: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

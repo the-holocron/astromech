@@ -1,0 +1,34 @@
+@use "../config";
+
+/// The text-align property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+/// @param {String} $prefix ["text-align"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include text-align($prefix: talign, $breakpoints: ("sm": 480px));
+@mixin text-align($prefix: text-align, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (center, end, inherit, initial, justify, left, right, start, unset) {
+			@each $breakpoint in map-keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop},
+					&-#{$breakpoint}-#{$prop}-up {
+						text-align: $prop !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-down {
+						text-align: $prop !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$prop}-only {
+						text-align: $prop !important;
+					}
+				}
+			}
+		}
+	}
+}

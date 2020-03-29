@@ -1,0 +1,164 @@
+@use "../config";
+
+/// The margin property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/margin
+/// @param {String} $prefix ["margin"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include margin($prefix: m, $breakpoints: ("sm": 480px));
+@mixin margin($prefix: margin, $breakpoints: config.$breakpoints) {
+	.#{$prefix} {
+		@each $prop in (top, right, bottom, left) {
+			@each $key, $value in map-merge((auto: auto), (0: 0), config.$spacers) {
+				@each $breakpoint in map-keys($breakpoints) {
+					@include media-breakpoint-up($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value},
+						&-#{$prop}-#{$breakpoint}-#{$value}-up {
+							margin-#{$prop}: $value !important;
+						}
+
+						&-#{$prop}-#{$breakpoint}-minus-#{$value},
+						&-#{$prop}-#{$breakpoint}-minus-#{$value}-up {
+							margin-#{$prop}: -$value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value},
+						&-x-#{$breakpoint}-#{$value}-up,
+						&-xaxis-#{$breakpoint}-#{$value},
+						&-xaxis-#{$breakpoint}-#{$value}-up {
+							margin-right: $value !important;
+							margin-left: $value !important;
+						}
+
+						&-x-#{$breakpoint}-minus-#{$value},
+						&-x-#{$breakpoint}-minus-#{$value}-up,
+						&-xaxis-#{$breakpoint}-minus-#{$value},
+						&-xaxis-#{$breakpoint}-minus-#{$value}-up {
+							margin-right: -$value !important;
+							margin-left: -$value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value},
+						&-y-#{$breakpoint}-#{$value}-up,
+						&-yaxis-#{$breakpoint}-#{$value},
+						&-yaxis-#{$breakpoint}-#{$value}-up {
+							margin-top: $value !important;
+							margin-bottom: $value !important;
+						}
+
+						&-y-#{$breakpoint}-minus-#{$value},
+						&-y-#{$breakpoint}-minus-#{$value}-up,
+						&-yaxis-#{$breakpoint}-minus-#{$value},
+						&-yaxis-#{$breakpoint}-minus-#{$value}-up {
+							margin-top: -$value !important;
+							margin-bottom: -$value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value},
+						&-a-#{$breakpoint}-#{$value}-up,
+						&-all-#{$breakpoint}-#{$value},
+						&-all-#{$breakpoint}-#{$value}-up {
+							margin: $value !important;
+						}
+
+						&-a-#{$breakpoint}-minus-#{$value},
+						&-a-#{$breakpoint}-minus-#{$value}-up,
+						&-all-#{$breakpoint}-minus-#{$value},
+						&-all-#{$breakpoint}-minus-#{$value}-up {
+							margin: -$value !important;
+						}
+					}
+
+					@include media-breakpoint-down($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value}-down {
+							margin-#{$prop}: $value !important;
+						}
+
+						&-#{$prop}-#{$breakpoint}-minus-#{$value}-down {
+							margin-#{$prop}: -$value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value}-down,
+						&-xaxis-#{$breakpoint}-#{$value}-down {
+							margin-right: $value !important;
+							margin-left: $value !important;
+						}
+
+						&-x-#{$breakpoint}-minus-#{$value}-down,
+						&-xaxis-#{$breakpoint}-minus-#{$value}-down {
+							margin-right: -$value !important;
+							margin-left: -$value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value}-down,
+						&-yaxis-#{$breakpoint}-#{$value}-down {
+							margin-top: $value !important;
+							margin-bottom: $value !important;
+						}
+
+						&-y-#{$breakpoint}-minus-#{$value}-down,
+						&-yaxis-#{$breakpoint}-minus-#{$value}-down {
+							margin-top: -$value !important;
+							margin-bottom: -$value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value}-down,
+						&-all-#{$breakpoint}-#{$value}-down {
+							margin: $value !important;
+						}
+
+						&-a-#{$breakpoint}-minus-#{$value}-down,
+						&-all-#{$breakpoint}-minus-#{$value}-down {
+							margin: -$value !important;
+						}
+					}
+
+					@include media-breakpoint-only($breakpoint, $breakpoints) {
+						&-#{$prop}-#{$breakpoint}-#{$value}-only {
+							margin-#{$prop}: $value !important;
+						}
+
+						&-#{$prop}-#{$breakpoint}-minus-#{$value}-only {
+							margin-#{$prop}: -$value !important;
+						}
+
+						&-x-#{$breakpoint}-#{$value}-only,
+						&-xaxis-#{$breakpoint}-#{$value}-only {
+							margin-right: $value !important;
+							margin-left: $value !important;
+						}
+
+						&-x-#{$breakpoint}-minus-#{$value}-only,
+						&-xaxis-#{$breakpoint}-minus-#{$value}-only {
+							margin-right: -$value !important;
+							margin-left: -$value !important;
+						}
+
+						&-y-#{$breakpoint}-#{$value}-only,
+						&-yaxis-#{$breakpoint}-#{$value}-only {
+							margin-top: $value !important;
+							margin-bottom: $value !important;
+						}
+
+						&-y-#{$breakpoint}-minus-#{$value}-only,
+						&-yaxis-#{$breakpoint}-minus-#{$value}-only {
+							margin-top: -$value !important;
+							margin-bottom: -$value !important;
+						}
+
+						&-a-#{$breakpoint}-#{$value}-only,
+						&-all-#{$breakpoint}-#{$value}-only {
+							margin: $value !important;
+						}
+
+						&-a-#{$breakpoint}-minus-#{$value}-only,
+						&-all-#{$breakpoint}-minus-#{$value}-only {
+							margin: -$value !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
