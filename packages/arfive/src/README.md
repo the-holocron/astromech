@@ -1,13 +1,24 @@
-<a id="general-variable-breakpoints"></a>
+# Configuration
 
-# $breakpoints
+All of the following configuration maps can be overridden, but by default if you pass nothing to a mixin, these are what is provided.
+
+## Table of Contents
+
+<!-- toc -->
+
+* [`$breakpoints`](#breakpoints)
+* [`$font-size`](#font-size)
+
+<!-- tocstop -->
+
+## `$breakpoints`
 
 Default set of breakpoints
 
 + **Group:** General
 + **Access:** public
 
-## Properties
+### Properties
 
 | Name  | Type                                                             | Description                             | Default |
 | :---- | :--------------------------------------------------------------- | :-------------------------------------- | :------ |
@@ -17,20 +28,18 @@ Default set of breakpoints
 | `$lg` | **[Number](https://sass-lang.com/documentation/values/numbers)** | screens between ~992px and ~1199px wide | `62em`  |
 | `$xl` | **[Number](https://sass-lang.com/documentation/values/numbers)** | screens larger than ~1200px wide        | `75em`  |
 
-## Since
+### Since
 
 + **0.1.0**
 
-<a id="general-variable-font-size"></a>
-
-# $font-size
+## `$font-size`
 
 Default set of font-sizes
 
 + **Group:** General
 + **Access:** public
 
-## Properties
+### Properties
 
 | Name | Type                                                             | Description                     | Default   |
 | :--- | :--------------------------------------------------------------- | :------------------------------ | :-------- |
@@ -41,7 +50,6 @@ Default set of font-sizes
 | `$5` | **[Number](https://sass-lang.com/documentation/values/numbers)** | larger font size, about ~27px   | `1.5rem`  |
 | `$6` | **[Number](https://sass-lang.com/documentation/values/numbers)** | largest font size, 36px         | `2rem`    |
 
-## Since
+### Since
 
 + **0.1.0**
-

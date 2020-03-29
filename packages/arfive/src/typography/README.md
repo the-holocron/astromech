@@ -2,7 +2,7 @@
 
 These utilities all revolve around the typography, such as sizing, alignment, transformation, white space etc. Use these to force a elements text to display accordingly. All of these deal exclusively with positioning and not styling such as color or backgrounds All of these deal exclusively with positioning and not styling such as color or backgrounds.
 
-### Table of Contents
+## Table of Contents
 
 <!-- toc -->
 
@@ -23,7 +23,7 @@ The font-size property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
@@ -31,17 +31,17 @@ The font-size property
 | `$font-sizes`  | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of font sizes                           | `config.$font-sizes`  |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include font-size($prefix: fsize, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/font-size>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -52,24 +52,24 @@ The text-align property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"text-align"`        |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include text-align($prefix: talign, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/text-align>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -80,24 +80,24 @@ The text-overflow property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"text-overflow"`     |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include text-overflow($prefix: toverflow, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -108,24 +108,24 @@ The text-transform property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"text-transform"`    |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include text-transform($prefix: ttransform, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -136,24 +136,24 @@ The vertical-align property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"valign"`            |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include valign($prefix: va, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -164,24 +164,24 @@ The white-space property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"white-space"`       |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include white-space($prefix: white-space, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/white-space>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -192,24 +192,24 @@ The word-break property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"word-break"`        |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include word-break($prefix: wbreak, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/word-break>
 
-#### Since
+### Since
 
 + **0.1.0**
 

@@ -2,7 +2,7 @@
 
 Positioning utilities all revolve around positioning elements around the page, such as flexbox, floats, position, etc. Use these to force a element to layout accordingly.
 
-### Table of Contents
+## Table of Contents
 
 <!-- toc -->
 
@@ -30,24 +30,24 @@ The align-content property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"align-content"`     |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include align-content($prefix: ac, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/align-content>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -58,24 +58,24 @@ The align-items property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"align-items"`       |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include align-items($prefix: ai, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/display>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -86,24 +86,24 @@ The align-self property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"align-self"`        |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include align-self($prefix: as, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/align-self>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -114,24 +114,24 @@ The clear property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"clear"`             |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include clear($prefix: c, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/clear>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -142,24 +142,24 @@ The flex-direction property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"flex-direction"`    |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include flex-direction($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -170,24 +170,24 @@ The flex-wrap property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"flex-wrap"`         |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include flex-wrap($prefix: fw, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -198,24 +198,24 @@ The float property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"float"`             |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include float($prefix: pull, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/float>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -226,24 +226,24 @@ The justify-content property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"justify-content"`   |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include justify-content($prefix: jc, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -254,24 +254,24 @@ The justify-items property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"justify-items"`     |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include justify-items($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -282,24 +282,24 @@ The justify-self property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"justify-self"`      |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include justify-self($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -310,24 +310,24 @@ The place-content property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"place-content"`     |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include place-content($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/place-content>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -338,24 +338,24 @@ The place-items property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"place-items"`       |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include place-items($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/place-items>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -366,24 +366,24 @@ The place-self property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"place-self"`        |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include place-self($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/place-self>
 
-#### Since
+### Since
 
 + **0.1.0**
 
@@ -394,24 +394,24 @@ The position property
 + **Group:** General
 + **Access:** public
 
-#### Parameters
+### Parameters
 
 | Name           | Type                                                             | Description                                   | Default               |
 | :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
 | `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"position"`          |
 | `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
 
-#### Examples
+### Examples
 
 ```scss
 @include position($prefix: fd, $breakpoints: ("sm": 480px));
 ```
 
-#### Links
+### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/position>
 
-#### Since
+### Since
 
 + **0.1.0**
 
