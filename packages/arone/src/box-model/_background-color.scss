@@ -1,0 +1,31 @@
+@use "../../node_modules/@theholocron/arfour/src/a11y" as *;
+@use "../../node_modules/@theholocron/arfour/src/color" as *;
+@use "../utilities/hover" as *;
+/* stylelint-disable declaration-no-important */
+/// Creates background color variants
+/// @since 0.1.0
+/// @param {String} $parent - a CSS selector; should not include an HTML element
+/// @param {Color} $bgcolor - the background color; will check the contrast with the $color
+/// @param {Color} $color - the text color
+/// @param {Color} $alt-color [rgb(255, 255, 255)] - a fallback color if for if the $color provided fails A11Y check
+/// @example scss
+///   .example {
+///     @include bg-color-variant('.bg-test', black, white);
+///   }
+@mixin background-color($parent, $bg-color, $color, $alt-color: rgb(255,255,255)) {
+	@if not check-contrast($bg-color, $color) {
+		$color: $alt-color;
+	}
+
+	#{$parent} {
+		background-color: $bg-color !important;
+		color: $color !important;
+	}
+
+	a#{$parent} {
+		@include hover-focus() {
+			background-color: tint($bg-color, 75%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+			text-decoration-color: shade($bg-color, 50%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+		}
+	}
+}

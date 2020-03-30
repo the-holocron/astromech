@@ -1,0 +1,26 @@
+////
+/// @author Mark Otto
+////
+
+/// Centers a element absolutely on any or multiple planes
+/// @since 0.1.0
+/// @param {String} $position ['vertical'] - The position or plane to center
+/// @example scss
+///   .example {
+///     @include center();
+///   }
+@mixin center($position: null) {
+	position: absolute;
+
+	@if $position == "horizontal" or $position == "x" {
+		left: 50%;
+		transform: translateX(-50%);
+	} @else if $position == "vertical" or $position == "y" {
+		top: 50%;
+		transform: translateY(-50%);
+	} @else {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}

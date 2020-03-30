@@ -1,0 +1,50 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/positioning" as *;
+
+@include describe("mixin: center") {
+	@include it("it should absolutely center an element in both x & y planes") {
+		@include assert() {
+
+			@include output {
+				@include center();
+			}
+
+			@include expect {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	}
+
+	@include it("it should absolutely center an element in the vertical plane") {
+		@include assert() {
+
+			@include output {
+				@include center('vertical');
+			}
+
+			@include expect {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	@include it("it should absolutely center an element in the horizontal plane") {
+		@include assert() {
+
+			@include output {
+				@include center('horizontal');
+			}
+
+			@include expect {
+				position: absolute;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

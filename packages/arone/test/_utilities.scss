@@ -1,0 +1,172 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/utilities" as *;
+
+$breakpoints: (
+	xs: 0,
+	sm: 34em,
+	md: 48em,
+	lg: 62em,
+	xl: 75em
+);
+
+@include describe("mixin: breakpoint") {
+	@include it("it should output a min width media query given a breakpoint name") {
+		@include assert() {
+
+			@include output {
+				@include media-breakpoint-up(md, $breakpoints) {
+					color: black;
+				};
+			}
+
+			@include expect {
+				@media (min-width: 48em) {
+					color: black;
+				}
+			}
+		}
+	}
+
+	@include it("it should output no min width media query given a breakpoint name") {
+		@include assert() {
+
+			@include output {
+				@include media-breakpoint-up(xxs, $breakpoints) {
+					color: black;
+				};
+			}
+
+			@include expect {
+				color: black;
+			}
+		}
+	}
+
+	@include it("it should output a max width media query given a breakpoint name") {
+		@include assert() {
+
+			@include output {
+				@include media-breakpoint-down(md, $breakpoints) {
+					color: black;
+				};
+			}
+
+			@include expect {
+				@media (max-width: 61.9em) {
+					color: black;
+				}
+			}
+		}
+	}
+
+	@include it("it should output no max width media query given a breakpoint name") {
+		@include assert() {
+
+			@include output {
+				@include media-breakpoint-up(xxl, $breakpoints) {
+					color: black;
+				};
+			}
+
+			@include expect {
+				color: black;
+			}
+		}
+	}
+
+	@include it("it should output a min & max width media query given a breakpoint name") {
+		@include assert() {
+
+			@include output {
+				@include media-breakpoint-only(md, $breakpoints) {
+					color: black;
+				};
+			}
+
+			@include expect {
+				@media (min-width: 48em) and (max-width: 61.9em) {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+@include describe("mixin: hover") {
+	@include it("it should output styles for hover state") {
+		@include assert() {
+
+			@include output {
+				@include hover {
+					text-decoration: underline;
+				};
+			}
+
+			@include expect {
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+		}
+	}
+
+	@include it("it should output styles for hover and focus states") {
+		@include assert() {
+
+			@include output {
+				@include hover-focus {
+					text-decoration: underline;
+				};
+			}
+
+			@include expect {
+				&:focus,
+				&.is-focused,
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+		}
+	}
+
+	@include it("it should output styles for parent, hover, and focus states") {
+		@include assert() {
+
+			@include output {
+				@include plain-hover-focus {
+					text-decoration: underline;
+				};
+			}
+
+			@include expect {
+				&,
+				&:focus,
+				&.is-focused,
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+		}
+	}
+
+	@include it("it should output styles for hover, focus, and active states") {
+		@include assert() {
+
+			@include output {
+				@include hover-focus-active {
+					text-decoration: underline;
+				};
+			}
+
+			@include expect {
+				&:focus,
+				&.is-focused,
+				&:active,
+				&.is-active,
+				&:hover {
+					text-decoration: underline;
+				};
+			}
+		}
+	}
+}

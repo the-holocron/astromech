@@ -1,0 +1,22 @@
+@use "../../node_modules/@theholocron/arfour/src/color" as *;
+@use "../utilities/hover" as *;
+/* stylelint-disable declaration-no-important */
+/// Creates text color variants
+/// @since 0.1.0
+/// @param {String} $parent - a CSS selector; should not include an HTML element
+/// @param {Color} $color - the text color
+/// @example scss
+///   .example {
+///     @include text-color('.text-test', black, white);
+///   }
+@mixin text-color($parent, $color) {
+	#{$parent} {
+		color: $color !important;
+	}
+
+	a#{$parent} {
+		@include hover-focus() {
+			color: shade($color, 25%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+		}
+	}
+}

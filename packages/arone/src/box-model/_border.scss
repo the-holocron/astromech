@@ -1,0 +1,19 @@
+@use "sass:list";
+/* stylelint-disable declaration-no-important */
+/// Creates border variants
+/// @since 0.1.0
+/// @param {String} $direction - either bottom, left, top, or right; if you don't provide then it defaults to all sides
+/// @param {Color} $color - a valid CSS color
+/// @param {String} $style - a valid border style
+/// @param {Number} $width - a valid number
+/// @example scss
+///   .example {
+///     @include border(right, red, solid, 2px);
+///   }
+@mixin border($direction: null, $color: inherit, $style: solid, $width: .0625rem) {
+	@if list.index((right, top, left, bottom), $direction) {
+		border-#{$direction}: $width $style $color !important;
+	} @else {
+		border: $width $style $color !important;
+	}
+}
