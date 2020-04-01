@@ -1,18 +1,13 @@
 @use "../node_modules/sass-true/sass/true" as *;
-@use "sass:list";
+@use "../src/list" as *;
 
-@include describe("function: contains; deprecated in favor of list.index()") {
-	@include it("it should return true when the variable is in the list") {
-		$test: if(list.index(("one", "two", "three"), "one"), true, false);
-		$expected: true;
+@include describe("list") {
+	@include describe("collect") {
+		@include it("it should return a flattened list when given multiple lists") {
+			$test: collect(("one", "two", "three"), ("four", "five", "six"), ("seven", "eight", "nine"));
+			$expected: ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
 
-		@include assert-equal($test, $expected, "Return true");
-	}
-
-	@include it("it should return false when the variable is not in the list") {
-		$test: if(list.index(("one", "two", "three"), "four"), true, false);
-		$expected: false;
-
-		@include assert-equal($test, $expected, "Return false");
+			@include assert-equal($test, $expected, "Return a flattened list");
+		}
 	}
 }

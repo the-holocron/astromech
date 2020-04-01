@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/str" as *;
 
@@ -109,6 +110,31 @@
 		@include it("it should return the number without the unit, when given a number with a unit") {
 			$test: strip-unit(4px);
 			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct number");
+		}
+	}
+
+	@include describe("to-length") {
+		@include it("it should return a value with the unit") {
+			$test: to-length(4, "px");
+			$expected: 4px;
+
+			@include assert-equal($test, $expected, "Return the correct number");
+		}
+	}
+
+	@include describe("to-number") {
+		@include it("it should return a number when given a string") {
+			$test: meta.type-of(to-number(4px));
+			$expected: number;
+
+			@include assert-equal($test, $expected, "Return the correct number");
+		}
+
+		@include it("it should return a number with the unit, when given a number with a unit") {
+			$test: to-number(4px);
+			$expected: 4px;
 
 			@include assert-equal($test, $expected, "Return the correct number");
 		}

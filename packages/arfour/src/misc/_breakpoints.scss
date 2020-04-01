@@ -1,5 +1,6 @@
 @use "sass:list";
 @use "sass:map";
+@use "../str/" as *;
 
 ////
 /// @author Mark Otto
@@ -62,5 +63,5 @@
 @function max-width($name, $breakpoints) {
 	$next: next($name, $breakpoints);
 
-	@return if($next, min-width($next, $breakpoints) - .02, null);
+	@return if($next, to-number(min-width($next, $breakpoints)) - .02, null);
 }
