@@ -1,4 +1,7 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
 /// The overflow property
 /// @since 0.1.0
@@ -8,45 +11,48 @@
 /// @example scss
 ///   @include overflow($prefix: o, $breakpoints: ("sm": 480px));
 @mixin overflow($prefix: overflow, $breakpoints: config.$breakpoints) {
+	$property: "overflow";
+
 	.#{$prefix} {
-		@each $prop in (auto, hidden, overlay, scroll, visible) {
-			@each $breakpoint in map-keys($breakpoints) {
+		@each $syntax in syntaxes.$overflow {
+			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop},
-					&-#{$breakpoint}-#{$prop}-up {
-						overflow: $prop !important;
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-down {
-						overflow: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-only {
-						overflow: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
 					}
 				}
 
-			@each $axis in x, y {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$axis}-#{$breakpoint}-#{$prop},
-					&-#{$axis}-#{$breakpoint}-#{$prop}-up {
-						overflow-#{$axis}: $prop !important;
+				@each $axis in x, y {
+					@include media-breakpoint-up($breakpoint, $breakpoints) {
+						&-#{$axis}-#{$breakpoint}-#{$syntax},
+						&-#{$axis}-#{$breakpoint}-#{$syntax}-up {
+							#{$property}-#{$axis}: $syntax !important;
+						}
 					}
-				}
 
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$axis}-#{$breakpoint}-#{$prop}-down {
-						overflow-#{$axis}: $prop !important;
+					@include media-breakpoint-down($breakpoint, $breakpoints) {
+						&-#{$axis}-#{$breakpoint}-#{$syntax}-down {
+							#{$property}-#{$axis}: $syntax !important;
+						}
 					}
-				}
 
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$axis}-#{$breakpoint}-#{$prop}-only {
-						overflow-#{$axis}: $prop !important;
+					@include media-breakpoint-only($breakpoint, $breakpoints) {
+						&-#{$axis}-#{$breakpoint}-#{$syntax}-only {
+							#{$property}-#{$axis}: $syntax !important;
+						}
 					}
 				}
 			}

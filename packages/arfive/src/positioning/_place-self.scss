@@ -1,32 +1,37 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
 /// The place-self property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/place-self
-/// @param {String} $prefix ["place-self"] - a CSS class name that will prefix all helpers
+/// @param {String} $className ["place-self"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include place-self($prefix: fd, $breakpoints: ("sm": 480px));
-@mixin place-self($prefix: place-self, $breakpoints: config.$breakpoints) {
-	.#{$prefix} {
-		@each $prop in (baseline, center, end, flex-end, flex-start, inherit, initial, left, normal, right, safe, self-end, self-start, start,  stretch, unsafe, unset) {
-			@each $breakpoint in map-keys($breakpoints) {
+///   @include place-self($className: ps, $breakpoints: ("sm": 480px));
+@mixin place-self($className: place-self, $breakpoints: config.$breakpoints) {
+	$property: "place-self";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$place-self {
+			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop},
-					&-#{$breakpoint}-#{$prop}-up {
-						place-self: $prop !important;
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-down {
-						place-self: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-only {
-						place-self: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
 					}
 				}
 			}

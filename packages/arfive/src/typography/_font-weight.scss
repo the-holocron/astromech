@@ -3,18 +3,18 @@
 @use "../config";
 @use "../syntaxes";
 
-/// The display property
+/// The font-weight property
 /// @since 0.1.0
-/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
-/// @param {String} $className ["display"] - a CSS class name that will className all helpers
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+/// @param {String} $className ["font-weight"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include display($className: d, $breakpoints: ("sm": 480px));
-@mixin display($className: display, $breakpoints: config.$breakpoints) {
-	$property: "display";
+///   @include font-weight($className: fd, $breakpoints: ("sm": 480px));
+@mixin font-weight($className: font-weight, $breakpoints: config.$breakpoints) {
+	$property: "font-weight";
 
 	.#{$className} {
-		@each $syntax in syntaxes.$display {
+		@each $syntax in config.collect(config.$font-weights, syntaxes.$font-weight) {
 			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
 					&-#{$breakpoint}-#{$syntax},

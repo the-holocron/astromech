@@ -1,0 +1,82 @@
+@use "sass:list";
+
+
+@function collect($maps...) {
+	$collection: ();
+
+	@each $map in $maps {
+		$collection: list.join($collection, $map);
+	}
+
+	@return $collection;
+}
+
+////
+/// @since 0.1.0
+////
+
+/// Default set of directions for the box model
+/// @prop {String} $all [''] - all sides of the box model
+/// @prop {String} $bottom ['bottom'] - only the bottom side will be affected
+/// @prop {String} $left ['left'] - only the left side will be affected
+/// @prop {String} $right ['right'] - only the right side will be affected
+/// @prop {String} $top ['top'] - only the top will be affected
+$box-directions: (
+	"all": "",
+	"bottom": "bottom",
+	"left": "left",
+	"right": "right",
+	"top": "top",
+) !default;
+
+$all: (inherit, initial, unset);
+$absolute-size: (xx-small, x-small, small, medium, large, x-large, xx-large, xxx-large);
+$baseline-position: (baseline, first, last);
+$box: (border-box, content-box, padding-box);
+$compat: (searchfield, textarea, push-button, button-bevel, slider-horizontal, checkbox, radio, square-button, menulist, menulist-button, listbox, meter, progress-bar);
+$content-distribution: (space-around, space-between, space-evenly, stretch);
+$content-position: (center, end, flex-end, flex-start, start);
+$display-box: (contents, none);
+$display-inside: (flow, flow-root, table, flex, grid, ruby);
+$display-internal: (table-row-group, table-header-group, table-footer-group, table-row, table-cell, table-column-group, table-column, table-caption, ruby-base, ruby-text, ruby-base-container, ruby-text-container);
+$display-legacy: (inline-block, inline-list-item, inline-table, inline-flex, inline-grid);
+$display-listitem: (list-item);
+$display-outside: (block, inline, run-in);
+$overflow-position: (safe, unsafe);
+$relative-size: (larger, smaller);
+$self-position: (center, end, flex-end, flex-start, self-end, self-start, start);
+$text-decoration-line: (blink, grammar-error, line-through, none, overline, spelling-error, underline);
+$text-decoration-style: (dash, dotted, double, solid, wavy);
+
+$appearance: collect(auto, button, none, textfield, $compat, $all);
+$align-content: collect(normal, $baseline-position, $content-distribution, $content-position, $overflow-position, $all);
+$align-items: collect(normal, stretch, $baseline-position, $overflow-position, $self-position, $all);
+$align-self: collect(auto, normal, stretch, $baseline-position, $overflow-position, $self-position, $all);
+$box-decoration-break: collect(clone, slice, $all);
+$box-sizing: collect(border-box, content-box, $all);
+$clear: collect(both, inline-end, inline-start, left, none, right, $all);
+$display: collect($display-outside, $display-inside, $display-listitem, $display-internal, $display-box, $display-legacy, $all);
+$flex-direction: collect(column, column-reverse, row, row-reverse, $all);
+$flex-wrap: collect(nowrap, wrap, wrap-reverse, $all);
+$flex-flow: collect($flex-direction, $flex-wrap);
+$float: collect(left, inline-end, inline-start, none, right, $all);
+$font-size: collect($absolute-size, $relative-size, $all);
+$font-style: collect(italic, normal, oblique, $all);
+$font-weight: collect(bolder, lighter, $all);
+$justify-content: collect(normal, left, right, $content-distribution, $content-position, $overflow-position, $all);
+$justify-items: collect(normal, center, left, right, stretch, $baseline-position, $overflow-position, $self-position, $all);
+$justify-self: collect(auto, normal, left, right, stretch, $baseline-position, $overflow-position, $self-position, $all);
+$overflow: collect(auto, clip, hidden, overlay, scroll, visible, $all);
+$place-content: collect($align-content, $justify-content);
+$place-items: collect($align-items, $justify-items);
+$place-self: collect($align-self, $justify-self);
+$position: collect(absolute, fixed, relative, sticky, static, $all);
+$single-animation-direction: collect(alternate, alternate-reverse, normal, reverse, $all);
+$text-align: collect(center, end, justify, left, match-parent, right, start, $all);
+$text-decoration: collect($text-decoration-line, $text-decoration-style, $all);
+$text-overflow: collect(clip, ellipsis, $all);
+$text-transform: collect(capitalize, full-width, full-width-kana, lowercase, none, uppercase, $all);
+$vertical-align: collect(baseline, bottom, middle, sub, super, text-bottom, text-top, top, $all);
+$visibility: collect(collapse, hidden, visible, $all);
+$white-space: collect(break-spaces, normal, nowrap, pre, pre-line, pre-wrap, $all);
+$word-break: collect(break-all, break-word, keep-all, normal, $all);

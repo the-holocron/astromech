@@ -3,18 +3,18 @@
 @use "../config";
 @use "../syntaxes";
 
-/// The display property
+/// The box-sizing property
 /// @since 0.1.0
-/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
-/// @param {String} $className ["display"] - a CSS class name that will className all helpers
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+/// @param {String} $className ["text-decoration"] - a CSS class name that will prefix all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include display($className: d, $breakpoints: ("sm": 480px));
-@mixin display($className: display, $breakpoints: config.$breakpoints) {
-	$property: "display";
+///   @include box-sizing($className: tdec, $breakpoints: ("sm": 480px));
+@mixin box-sizing($className: "box-sizing", $breakpoints: config.$breakpoints) {
+	$property: "box-sizing";
 
 	.#{$className} {
-		@each $syntax in syntaxes.$display {
+		@each $syntax in syntaxes.$box-sizing {
 			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
 					&-#{$breakpoint}-#{$syntax},

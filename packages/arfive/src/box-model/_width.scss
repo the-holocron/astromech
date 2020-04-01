@@ -1,33 +1,38 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
 
-/// The width property
+/// The width prefixerty
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/width
-/// @param {String} $prefix ["width"] - a CSS class name that will prefix all helpers
+/// @param {String} $className ["width"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $sizing [ config.$sizing ] - a map of sizing prefixs
 /// @example scss
-///   @include width($prefix: w, $breakpoints: ("sm": 480px));
-@mixin width($prefix: width, $breakpoints: config.$breakpoints) {
-	@each $prop in (max-, min-, '') {
-		.#{$prop}#{$prefix} {
-			@each $breakpoint in map-keys($breakpoints) {
-				@each $size, $length in (auto: auto, 0: 0, 25: 25%, 50: 50%, 75: 75%, 100: 100%) {
+///   @include width($className: w, $breakpoints: ("sm": 480px));
+@mixin width($className: width, $breakpoints: config.$breakpoints, $sizing: config.$sizing) {
+	$property: "width";
+
+	@each $prefix in config.$sizing-prefixes {
+		.#{$prefix}#{$className} {
+			@each $breakpoint in map.keys($breakpoints) {
+				@each $key, $value in $sizing {
 					@include media-breakpoint-up($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$size},
-						&-#{$breakpoint}-#{$size} {
-							#{$prop}width: $length !important;
+						&-#{$breakpoint}-#{$key},
+						&-#{$breakpoint}-#{$key} {
+							#{$prefix}#{$property}: $value !important;
 						}
 					}
 
 					@include media-breakpoint-down($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$size}-down {
-							#{$prop}width: $length !important;
+						&-#{$breakpoint}-#{$key}-down {
+							#{$prefix}#{$property}: $value !important;
 						}
 					}
 
 					@include media-breakpoint-only($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$size}-only {
-							#{$prop}width: $length !important;
+						&-#{$breakpoint}-#{$key}-only {
+							#{$prefix}#{$property}: $value !important;
 						}
 					}
 				}

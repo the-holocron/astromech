@@ -1,3 +1,5 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
 
 /// The padding property
@@ -5,86 +7,88 @@
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 /// @param {String} $prefix ["padding"] - a CSS class name that will prefix all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $spacing [ config.$spacing ] - a map of spacing
 /// @example scss
 ///   @include padding($prefix: p, $breakpoints: ("sm": 480px));
-@mixin padding($prefix: padding, $breakpoints: config.$breakpoints) {
-	.#{$prefix} {
-		@each $prop in (top, right, bottom, left) {
-			@each $key, $value in map-merge((auto: auto), (0: 0), config.$spacers) {
-				@each $breakpoint in map-keys($breakpoints) {
+@mixin padding($className: padding, $breakpoints: config.$breakpoints, $spacing: config.$spacing) {
+	$property: "padding";
+
+	.#{$className} {
+		@each $key, $value in map.merge((auto: auto), $spacing) {
+			@each $abbrev, $direction in config.$box-directions {
+				@each $breakpoint in map.keys($breakpoints) {
+					$prefix: "-";
+					@if ($direction == "") {
+						$prefix: "";
+					}
+
 					@include media-breakpoint-up($breakpoint, $breakpoints) {
-						&-#{$prop}-#{$breakpoint}-#{$value},
-						&-#{$prop}-#{$breakpoint}-#{$value}-up {
-							padding-#{$prop}: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-#{$key},
+						&-#{$abbrev}-#{$breakpoint}-#{$key}-up {
+							#{$property}#{$prefix}#{$direction}: $value !important;
 						}
 
-						&-x-#{$breakpoint}-#{$value},
-						&-x-#{$breakpoint}-#{$value}-up,
-						&-xaxis-#{$breakpoint}-#{$value},
-						&-xaxis-#{$breakpoint}-#{$value}-up {
-							padding-right: $value !important;
-							padding-left: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-minus-#{$key},
+						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-up {
+							#{$property}#{$prefix}#{$direction}: -$value !important;
 						}
 
-						&-y-#{$breakpoint}-#{$value},
-						&-y-#{$breakpoint}-#{$value}-up,
-						&-yaxis-#{$breakpoint}-#{$value},
-						&-yaxis-#{$breakpoint}-#{$value}-up {
-							padding-top: $value !important;
-							padding-bottom: $value !important;
-						}
+						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
+							@each $side in $sides {
+								&-#{$axis}-#{$breakpoint}-#{$key},
+								&-#{$axis}-#{$breakpoint}-#{$key}-up {
+									#{$property}-#{$side}: $value !important;
+								}
 
-						&-a-#{$breakpoint}-#{$value},
-						&-a-#{$breakpoint}-#{$value}-up,
-						&-all-#{$breakpoint}-#{$value},
-						&-all-#{$breakpoint}-#{$value}-up {
-							padding: $value !important;
+								&-#{$axis}-#{$breakpoint}-minus-#{$key},
+								&-#{$axis}-#{$breakpoint}-minus-#{$key}-up {
+									#{$property}-#{$side}: -$value !important;
+								}
+							}
 						}
 					}
 
 					@include media-breakpoint-down($breakpoint, $breakpoints) {
-						&-#{$prop}-#{$breakpoint}-#{$value}-down {
-							padding-#{$prop}: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-#{$key}-down {
+							#{$property}#{$prefix}#{$direction}: $value !important;
 						}
 
-						&-x-#{$breakpoint}-#{$value}-down,
-						&-xaxis-#{$breakpoint}-#{$value}-down {
-							padding-right: $value !important;
-							padding-left: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-down {
+							#{$property}#{$prefix}#{$direction}: -$value !important;
 						}
 
-						&-y-#{$breakpoint}-#{$value}-down,
-						&-yaxis-#{$breakpoint}-#{$value}-down {
-							padding-top: $value !important;
-							padding-bottom: $value !important;
-						}
+						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
+							@each $side in $sides {
+								&-#{$axis}-#{$breakpoint}-#{$key}-down {
+									#{$property}-#{$side}: $value !important;
+								}
 
-						&-a-#{$breakpoint}-#{$value}-down,
-						&-all-#{$breakpoint}-#{$value}-down {
-							padding: $value !important;
+								&-#{$axis}-#{$breakpoint}-minus-#{$key}-down {
+									#{$property}-#{$side}: -$value !important;
+								}
+							}
 						}
 					}
 
 					@include media-breakpoint-only($breakpoint, $breakpoints) {
-						&-#{$prop}-#{$breakpoint}-#{$value}-only {
-							padding-#{$prop}: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-#{$key}-only {
+							#{$property}#{$prefix}#{$direction}: $value !important;
 						}
 
-						&-x-#{$breakpoint}-#{$value}-only,
-						&-xaxis-#{$breakpoint}-#{$value}-only {
-							padding-right: $value !important;
-							padding-left: $value !important;
+						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-only {
+							#{$property}#{$prefix}#{$direction}: -$value !important;
 						}
 
-						&-y-#{$breakpoint}-#{$value}-only,
-						&-yaxis-#{$breakpoint}-#{$value}-only {
-							padding-top: $value !important;
-							padding-bottom: $value !important;
-						}
+						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
+							@each $side in $sides {
+								&-#{$axis}-#{$breakpoint}-#{$key}-only {
+									#{$property}-#{$side}: $value !important;
+								}
 
-						&-a-#{$breakpoint}-#{$value}-only,
-						&-all-#{$breakpoint}-#{$value}-only {
-							padding: $value !important;
+								&-#{$axis}-#{$breakpoint}-minus-#{$key}-only {
+									#{$property}-#{$side}: -$value !important;
+								}
+							}
 						}
 					}
 				}

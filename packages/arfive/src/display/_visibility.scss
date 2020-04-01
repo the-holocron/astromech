@@ -1,30 +1,37 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
-/// The visibility property can show, hide and change the context
+/// The visibility property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
 ///   @include visibility($breakpoints: ("sm": 480px));
-@mixin visibility($breakpoints: config.$breakpoints) {
-	@each $prop, $abbrev in (collapse: collapse, visible: visible, hidden: invisible) {
-		@each $breakpoint in map-keys($breakpoints) {
-			@include media-breakpoint-up($breakpoint, $breakpoints) {
-				#{$abbrev}-#{$breakpoint},
-				#{$abbrev}-#{$breakpoint}-up {
-					visibility: $prop !important;
-				}
-			}
+@mixin visibility($className: "visibility", $breakpoints: config.$breakpoints) {
+	$property: "visibility";
 
-			@include media-breakpoint-down($breakpoint, $breakpoints) {
-				#{$abbrev}-#{$breakpoint}-down {
-					visibility: $prop !important;
+	.#{$className} {
+		@each $syntax in syntaxes.$visibility {
+			@each $breakpoint in map.keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$syntax}-#{$breakpoint},
+					&-#{$syntax}-#{$breakpoint}-up {
+						#{$property}: $syntax !important;
+					}
 				}
-			}
 
-			@include media-breakpoint-only($breakpoint, $breakpoints) {
-				#{$abbrev}-#{$breakpoint}-only {
-					visibility: $prop !important;
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$syntax}-#{$breakpoint}-down {
+						#{$property}: $syntax !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$syntax}-#{$breakpoint}-only {
+						#{$property}: $syntax !important;
+					}
 				}
 			}
 		}

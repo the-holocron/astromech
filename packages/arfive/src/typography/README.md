@@ -8,6 +8,7 @@ These utilities all revolve around the typography, such as sizing, alignment, tr
 
 * [`@mixin font-size`](#mixin-font-size)
 * [`@mixin text-align`](#mixin-text-align)
+* [`@mixin text-decoration`](#mixin-text-decoration)
 * [`@mixin text-overflow`](#mixin-text-overflow)
 * [`@mixin text-transform`](#mixin-text-transform)
 * [`@mixin valign`](#mixin-valign)
@@ -68,6 +69,34 @@ The text-align property
 ### Links
 
 + <https://developer.mozilla.org/en-US/docs/Web/CSS/text-align>
+
+### Since
+
++ **0.1.0**
+
+## `@mixin text-decoration`
+
+The text-decoration property
+
++ **Group:** General
++ **Access:** public
+
+### Parameters
+
+| Name           | Type                                                             | Description                                   | Default               |
+| :------------- | :--------------------------------------------------------------- | :-------------------------------------------- | :-------------------- |
+| `$prefix`      | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name that will prefix all helpers | `"text-decoration"`        |
+| `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints                     | `config.$breakpoints` |
+
+### Examples
+
+```scss
+@include text-decoration($prefix: tdec, $breakpoints: ("sm": 480px));
+```
+
+### Links
+
++ <https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration>
 
 ### Since
 

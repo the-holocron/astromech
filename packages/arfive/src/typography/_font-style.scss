@@ -3,18 +3,18 @@
 @use "../config";
 @use "../syntaxes";
 
-/// The display property
+/// The font-style property
 /// @since 0.1.0
-/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/display
-/// @param {String} $className ["display"] - a CSS class name that will className all helpers
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+/// @param {String} $className ["font-style"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include display($className: d, $breakpoints: ("sm": 480px));
-@mixin display($className: display, $breakpoints: config.$breakpoints) {
-	$property: "display";
+///   @include font-style($className: fd, $breakpoints: ("sm": 480px));
+@mixin font-style($className: font-style, $breakpoints: config.$breakpoints) {
+	$property: "font-style";
 
 	.#{$className} {
-		@each $syntax in syntaxes.$display {
+		@each $syntax in syntaxes.$font-style {
 			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
 					&-#{$breakpoint}-#{$syntax},

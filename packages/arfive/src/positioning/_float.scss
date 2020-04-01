@@ -1,32 +1,37 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
 /// The float property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/float
-/// @param {String} $prefix ["float"] - a CSS class name that will prefix all helpers
+/// @param {String} $className ["float"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include float($prefix: pull, $breakpoints: ("sm": 480px));
-@mixin float($prefix: float, $breakpoints: config.$breakpoints) {
-	.#{$prefix} {
-		@each direction in (left, none, right) {
-			@each $breakpoint in map-keys($breakpoints) {
+///   @include float($className: pull, $breakpoints: ("sm": 480px));
+@mixin float($className: float, $breakpoints: config.$breakpoints) {
+	$property: "float";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$float {
+			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$direction},
-					&-#{$breakpoint}-#{$direction}-up {
-						float: $direction !important;
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$direction}-down {
-						float: $direction !important;
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$direction}-only {
-						float: $direction !important;
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
 					}
 				}
 			}

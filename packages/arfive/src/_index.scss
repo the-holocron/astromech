@@ -1,17 +1,17 @@
 @use "config";
-@use "breakpoints" as *;
 @use "display" as *;
 @use "positioning" as *;
 @use "box-model" as *;
 @use "typography" as *;
+@use "animation" as *;
 
 // display
 @include display($breakpoints: config.$breakpoints);
-@include hidden($breakpoints: config.$breakpoints);
 @include visibility($breakpoints: config.$breakpoints);
 
 // positioning
 @include flex-direction($breakpoints: config.$breakpoints);
+@include flex-flow($breakpoints: config.$breakpoints);
 @include flex-wrap($breakpoints: config.$breakpoints);
 @include align-content($breakpoints: config.$breakpoints);
 @include align-items($breakpoints: config.$breakpoints);
@@ -27,17 +27,24 @@
 @include clear($breakpoints: config.$breakpoints);
 
 // box-model
-@include width($breakpoints: config.$breakpoints);
-@include height($breakpoints: config.$breakpoints);
+@include box-sizing($breakpoints: config.$breakpoints);
+@include width($breakpoints: config.$breakpoints, $sizing: config.$sizing);
+@include height($breakpoints: config.$breakpoints, $sizing: config.$sizing);
 @include overflow($breakpoints: config.$breakpoints);
-@include margin($breakpoints: config.$breakpoints);
-@include padding($breakpoints: config.$breakpoints);
+@include margin($breakpoints: config.$breakpoints, $spacing: config.$spacing);
+@include padding($breakpoints: config.$breakpoints, $spacing: config.$spacing);
+@include appearance($breakpoints: config.$breakpoints);
+@include box-decoration-break($breakpoints: config.$breakpoints);
 
 // typography
-@include font-size($font-sizes: config.$font-sizes, $breakpoints: config.$breakpoints);
+@include font-size($breakpoints: config.$breakpoints, $font-sizes: config.$font-sizes);
 @include text-align($breakpoints: config.$breakpoints);
+@include text-decoration($breakpoints: config.$breakpoints);
 @include text-overflow($breakpoints: config.$breakpoints);
 @include text-transform($breakpoints: config.$breakpoints);
 @include valign($breakpoints: config.$breakpoints);
 @include white-space($breakpoints: config.$breakpoints);
 @include word-break($breakpoints: config.$breakpoints);
+
+// animation
+@include animation-direction($breakpoints: config.$breakpoints);

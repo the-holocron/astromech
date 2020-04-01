@@ -52,10 +52,10 @@
     "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
     "@theholocron/stylelint-config": "latest",
-    "lerna": "^3.20.2",
-    "markdown-toc": "^1.2.0"
+    "lerna": "^3.20.2"
   },
   "dependencies": {
+    "@theholocron/arfour": "file:packages/arfour",
     "@theholocron/beebee": "file:packages/beebee",
     "@theholocron/chopper": "file:packages/chopper"
   }

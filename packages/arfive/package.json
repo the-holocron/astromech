@@ -23,24 +23,28 @@
     "extends": "@theholocron/stylelint-config",
     "rules": {
       "declaration-no-important": false,
-      "max-nesting-depth": false
+      "max-nesting-depth": 5,
+      "plugin/stylelint-selector-no-empty": false
     }
   },
   "scripts": {
     "sassdoc": "sassdoc src --dest docs",
     "docs": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
+    "dist": "sass --load-path=node_modules src/_index.scss dist/arfive.css",
+    "postdist": "sass --load-path=node_modules --style=compressed src/_index.scss dist/arfive.min.css",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
-    "lint": "stylelint src/**/*.scss",
-    "test": "mocha",
-    "test:integration": "sass --no-source-map test/integration.test.scss test/integration.test.css"
+    "lint": "stylelint src/**/*.scss"
+  },
+  "dependencies": {
+    "@theholocron/arone": "file:../arone"
+  },
+  "peerDependencies": {
+    "sass": "^1.26.3"
   },
   "devDependencies": {
     "mocha": "^7.0.0",
-    "sass": "^1.25.0",
+    "sass": "^1.26.3",
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.1"
-  },
-  "peerDependencies": {
-    "sass": "^1.25.0"
   }
 }

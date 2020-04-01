@@ -1,32 +1,37 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
 /// The clear property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/clear
-/// @param {String} $prefix ["clear"] - a CSS class name that will prefix all helpers
+/// @param {String} $className ["clear"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include clear($prefix: c, $breakpoints: ("sm": 480px));
-@mixin clear($prefix: clear, $breakpoints: config.$breakpoints) {
-	.#{$prefix} {
-		@each $prop in (both, left, none, right) {
-			@each $breakpoint in map-keys($breakpoints) {
+///   @include clear($className: c, $breakpoints: ("sm": 480px));
+@mixin clear($className: clear, $breakpoints: config.$breakpoints) {
+	$property: "clear";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$clear {
+			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop},
-					&-#{$breakpoint}-#{$prop}-up {
-						clear: $prop !important;
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-down {
-						clear: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-only {
-						clear: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
 					}
 				}
 			}

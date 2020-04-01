@@ -19,15 +19,93 @@ $breakpoints: (
 /// Default set of font-sizes
 /// @prop {Number} $1 [.75rem] - smallest font size, about ~14px
 /// @prop {Number} $2 [.85rem] - smaller font size, about ~16px
-/// @prop {Number} $3 [1rem] - medium font size, 18pxx
+/// @prop {Number} $3 [1rem] - medium font size, 18px
 /// @prop {Number} $4 [1.25rem] - large font size, about ~21px
 /// @prop {Number} $5 [1.5rem] - larger font size, about ~27px
 /// @prop {Number} $6 [2rem] - largest font size, 36px
-$font-size: (
+$font-sizes: (
 	"1": ".75rem",
 	"2": ".85rem",
 	"3": "1rem",
 	"4": "1.25rem",
 	"5": "1.5rem",
 	"6": "2rem",
+) !default;
+
+/// Base line multiplier for spacing
+/// @type Number
+$spacer: 1 !default;
+
+/// Default set of spacing
+/// @prop {Number} $0 [0] - reset the size to 0
+/// @prop {Number} $eighth [.125rem] - 1/8th the size of the default spacer
+/// @prop {Number} $qtr [.25rem] - 1/4th the size of the default spacer
+/// @prop {Number} $half [.5rem] - 1/2 the size of the default spacer
+/// @prop {Number} $3qtr [.75rem] - 3/4th the size of the default spacer
+/// @prop {Number} $1 [1rem] - the size of the default spacer
+/// @prop {Number} $2 [2rem] - 2 times the size of the default spacer
+/// @prop {Number} $3 [3rem] - 3 times the size of the default spacer
+$spacing: (
+	"0": 0,
+	"eighth": "#{($spacer / 8)}rem",
+	"qtr": "#{($spacer / 4)}rem",
+	"half": "#{($spacer / 2)}rem",
+	"3qtr": "#{($spacer * 3 / 4)}rem",
+	"1": "#{$spacer}rem",
+	"2": "#{($spacer * 2)}rem",
+	"3": "#{($spacer * 3)}rem",
+) !default;
+
+/// Default set of sizing
+/// @prop {String} $auto [auto] - 75% of the total containers space
+/// @prop {Number} $0 [0] - 0% of the total containers space
+/// @prop {Number} $25 [25%] - 25% of the total containers space
+/// @prop {Number} $50 [50%] - 50% of the total containers space
+/// @prop {Number} $75 [75%] - 75% of the total containers space
+/// @prop {Number} $100 [100%] - 100% of the total containers space
+$sizing: (
+	"auto": "auto",
+	"0": 0,
+	"25": "25%",
+	"50": "50%",
+	"75": "75%",
+	"100": "100%",
+) !default;
+
+$sizing-prefixes: (max-, min-, "") !default;
+
+/// Default set of directions for the box model
+/// @prop {String} $all [''] - all sides of the box model
+/// @prop {String} $bottom ['bottom'] - only the bottom side will be affected
+/// @prop {String} $left ['left'] - only the left side will be affected
+/// @prop {String} $right ['right'] - only the right side will be affected
+/// @prop {String} $top ['top'] - only the top will be affected
+$box-directions: (
+	"all": "",
+	"bottom": "bottom",
+	"left": "left",
+	"right": "right",
+	"top": "top",
+) !default;
+
+/// Default set of weights
+/// @prop {String} $thin [100] - thin font weight
+/// @prop {String} $slim [200] - slim font weight
+/// @prop {String} $light [300] - light font weight
+/// @prop {String} $normal [400] - normal font weight; matches normal keyword
+/// @prop {Number} $slightlybold [500] - slightly bold
+/// @prop {Number} $semibold [600] - semi bold weight
+/// @prop {Number} $bold [700] - bold font weight, matches bold keyword
+/// @prop {Number} $thick [800] - dark font weight
+/// @prop {Number} $heavy [900] - darkest font weight
+$font-weights: (
+	"thin": 100,
+	"slim": 200,
+	"light": 300,
+	"normal": 400,
+	"slightlybold": 500,
+	"semibold": 600,
+	"bold": 700,
+	"thick": 800,
+	"heavy": 900,
 ) !default;

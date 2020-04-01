@@ -1,32 +1,37 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
 @use "../config";
+@use "../syntaxes";
 
 /// The place-content property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/place-content
-/// @param {String} $prefix ["place-content"] - a CSS class name that will prefix all helpers
+/// @param {String} $className ["place-content"] - a CSS class name that will className all helpers
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
-///   @include place-content($prefix: fd, $breakpoints: ("sm": 480px));
-@mixin place-content($prefix: place-content, $breakpoints: config.$breakpoints) {
-	.#{$prefix} {
-		@each $prop in (baseline, center, end, flex-end, flex-start, inherit, initial, left, normal, right, safe, space-around, space-between, space-evenly, start,  stretch, unsafe, unset) {
-			@each $breakpoint in map-keys($breakpoints) {
+///   @include place-content($className: fd, $breakpoints: ("sm": 480px));
+@mixin place-content($className: place-content, $breakpoints: config.$breakpoints) {
+	$property: "place-content";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$place-content {
+			@each $breakpoint in map.keys($breakpoints) {
 				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop},
-					&-#{$breakpoint}-#{$prop}-up {
-						place-content: $prop !important;
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-down {
-						place-content: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
 					}
 				}
 
 				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$prop}-only {
-						place-content: $prop !important;
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
 					}
 				}
 			}
