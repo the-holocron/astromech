@@ -32,11 +32,11 @@
 /// @since 0.1.0
 /// @param {String} $name - the name for the breakpoint
 /// @param {Map} $breakpoints - a map of grid breakpoints
-/// @return {CSS Unit | null } the minimum value is calculated as the minimum of the next one or `null` for the smallest (first) breakpoint
+/// @return {Number | null } the minimum value is calculated as the minimum of the next one or `null` for the smallest (first) breakpoint
 /// @example scss
 ///    @include breakpoint-min(sm, (xs: 0, sm: 34rem, md: 45rem))
 ///    // 34rem
-@function min($name, $breakpoints) {
+@function min-width($name, $breakpoints) {
 	$min: map.get($breakpoints, $name);
 
 	@return if($min != 0, $min, null);
@@ -46,12 +46,12 @@
 /// @since 0.1.0
 /// @param {String} $name - the name for the breakpoint
 /// @param {Map} $breakpoints - a map of grid breakpoints
-/// @return {CSS Unit | null } the maximum value is calculated as the minimum of the next one less 0.1 or `null` for the largest (last) breakpoint.
+/// @return {Number | null } the maximum value is calculated as the minimum of the next one less 0.1 or `null` for the largest (last) breakpoint.
 /// @example scss
 ///    @include breakpoint-max(sm, (xs: 0, sm: 34rem, md: 45rem))
 ///    // 44.9rem
-@function max($name, $breakpoints) {
+@function max-width($name, $breakpoints) {
 	$next: next($name, $breakpoints);
 
-	@return if($next, min($next, $breakpoints) - .1, null);
+	@return if($next, min-width($next, $breakpoints) - .02, null);
 }

@@ -1,117 +1,115 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/color" as *;
 
-@include describe("function: force-rgb(a)") {
+@include describe("color") {
+	@include describe("rgb") {
+		@include describe("force-rgb") {
+			@include it("it should return an rgb string thats matches the color input") {
+				$test: rgb(255, 0, 0);
+				$expected: rgb(255, 0, 0);
 
-	@include it("it should return an rgb string thats matches the color input") {
-		$test: rgb(255, 0, 0);
-		$expected: rgb(255, 0, 0);
+				@include assert-equal($test, $expected, "Return the color as an rgb string");
+			}
+		}
 
-		@include assert-equal($test, $expected, "Return the color as an rgb string");
+		@include describe("force-rgba") {
+			@include it("it should return an rgba string thats matches the color input") {
+				$test: rgba(255, 0, 0, 1);
+				$expected: rgba(255, 0, 0, 1);
+
+				@include assert-equal($test, $expected, "Return the color as an rgba string");
+			}
+		}
 	}
 
-	@include it("it should return an rgba string thats matches the color input") {
-		$test: rgba(255, 0, 0, 1);
-		$expected: rgba(255, 0, 0, 1);
+	@include describe("luminance") {
+		@include it("it should return the luminance number when given a color") {
+			$test: luminance(#f90);
+			$expected: 0.4404246557;
 
-		@include assert-equal($test, $expected, "Return the color as an rgba string");
-	}
-}
+			@include assert-equal($test, $expected, "Return a number less than 1", true);
+		}
 
-@include describe("function: luminance") {
+		@include it("it should return the luminance number when given a color") {
+			$test: luminance(#bada55);
+			$expected: 0.6123778773;
 
-	@include it("it should return the luminance number when given a color") {
-		$test: luminance(#f90);
-		$expected: 0.4404246557;
-
-		@include assert-equal($test, $expected, "Return a number less than 1", true);
-	}
-
-	@include it("it should return the luminance number when given a color") {
-		$test: luminance(#bada55);
-		$expected: 0.6123778773;
-
-		@include assert-equal($test, $expected, "Return a number less than 1", true);
-	}
-}
-
-@include describe("function: scale-light") {
-
-	@include it("it should change the first colors lightness") {
-		$test: scale-light(#00adbb, #fcfa50, 4.5, "lighten", 25);
-		$expected: white;
-
-		@include assert-equal($test, $expected, "Return the color as an rgb string");
+			@include assert-equal($test, $expected, "Return a number less than 1", true);
+		}
 	}
 
-	@include it("it should change the first colors darkness") {
-		$test: scale-light(#00adbb, #333e48, 4.5, "darken", 25);
-		$expected: #000c0d;
+	@include describe("scale-light") {
+		@include it("it should change the first colors lightness") {
+			$test: scale-light(#00adbb, #fcfa50, 4.5, "lighten", 25);
+			$expected: white;
 
-		@include assert-equal(inspect($test), inspect($expected), "Return the color as an rgb string");
-	}
-}
+			@include assert-equal($test, $expected, "Return the color as an rgb string");
+		}
 
-@include describe("function: scale-luminance") {
+		@include it("it should change the first colors darkness") {
+			$test: scale-light(#00adbb, #333e48, 4.5, "darken", 25);
+			$expected: #000c0d;
 
-	@include it("it should change the color to have the required luminance") {
-		$test: scale-luminance(rgb(0, 173, 187), .44042);
-		$expected: #00c4d3;
-
-		@include assert-equal(inspect($test), inspect($expected), "Return the correct color");
-	}
-}
-
-@include describe("function: shade") {
-
-	@include it("it should return a color thats a percentage darker when given a color") {
-		$test: shade(rgb(255, 0, 0), 30%);
-		$expected: #b30000;
-
-		@include assert-equal($test, $expected, "Return the color 30% darker");
-	}
-}
-
-@include describe("function: srgb") {
-
-	@include it("it should return a number less than 1") {
-		$test: srgb(.0003);
-		$expected: .98838;
-
-		@include assert-equal($test, $expected, "Return a number less than 1");
+			@include assert-equal(inspect($test), inspect($expected), "Return the color as an rgb string");
+		}
 	}
 
-	@include it("it should return a number greater than 1") {
-		$test: srgb(.0025);
-		$expected: 8.2365;
+	@include describe("scale-luminance") {
+		@include it("it should change the color to have the required luminance") {
+			$test: scale-luminance(rgb(0, 173, 187), .44042);
+			$expected: #00c4d3;
 
-		@include assert-equal($test, $expected, "Return a number greater than 1");
-	}
-}
-
-@include describe("function: tint") {
-
-	@include it("it should return a color thats a percentage lighter when given a color") {
-		$test: tint(rgb(255, 0, 0), 30%);
-		$expected: #ff4d4d;
-
-		@include assert-equal($test, $expected, "Return the color 30% lighter");
-	}
-}
-
-@include describe("function: xyz") {
-
-	@include it("it should return pow() if value is greater than .03928") {
-		$test: xyz(100);
-		$expected: 0.1274376804;
-
-		@include assert-equal($test, $expected, "Return pow()", true);
+			@include assert-equal(inspect($test), inspect($expected), "Return the correct color");
+		}
 	}
 
-	@include it("it should return a value if value is less than or equal to .03928") {
-		$test: xyz(1);
-		$expected: 0.000303527;
+	@include describe("shade") {
+		@include it("it should return a color thats a percentage darker when given a color") {
+			$test: shade(rgb(255, 0, 0), 30%);
+			$expected: #b30000;
 
-		@include assert-equal($test, $expected, "Return a value", true);
+			@include assert-equal($test, $expected, "Return the color 30% darker");
+		}
+	}
+
+	@include describe("srgb") {
+		@include it("it should return a number less than 1") {
+			$test: srgb(.0003);
+			$expected: .98838;
+
+			@include assert-equal($test, $expected, "Return a number less than 1");
+		}
+
+		@include it("it should return a number greater than 1") {
+			$test: srgb(.0025);
+			$expected: 8.2365;
+
+			@include assert-equal($test, $expected, "Return a number greater than 1");
+		}
+	}
+
+	@include describe("tint") {
+		@include it("it should return a color thats a percentage lighter when given a color") {
+			$test: tint(rgb(255, 0, 0), 30%);
+			$expected: #ff4d4d;
+
+			@include assert-equal($test, $expected, "Return the color 30% lighter");
+		}
+	}
+
+	@include describe("xyz") {
+		@include it("it should return pow() if value is greater than .03928") {
+			$test: xyz(100);
+			$expected: 0.1274376804;
+
+			@include assert-equal($test, $expected, "Return pow()", true);
+		}
+
+		@include it("it should return a value if value is less than or equal to .03928") {
+			$test: xyz(1);
+			$expected: 0.000303527;
+
+			@include assert-equal($test, $expected, "Return a value", true);
+		}
 	}
 }
