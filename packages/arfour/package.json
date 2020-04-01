@@ -20,7 +20,11 @@
     "access": "public"
   },
   "stylelint": {
-    "extends": "@theholocron/stylelint-config"
+    "extends": "@theholocron/stylelint-config",
+    "rules": {
+      "declaration-no-important": false,
+      "max-nesting-depth": false
+    }
   },
   "scripts": {
     "sassdoc": "sassdoc src --dest docs",
@@ -31,11 +35,11 @@
   },
   "devDependencies": {
     "mocha": "^7.0.0",
-    "sass": "^1.25.0",
+    "sass": "^1.26.3",
     "sass-true": "^5.0.0",
     "sassdoc": "^2.7.1"
   },
   "peerDependencies": {
-    "sass": "^1.25.0"
+    "sass": "^1.26.3"
   }
 }

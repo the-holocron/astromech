@@ -1,0 +1,17 @@
+@use "sass:list";
+
+/// Joins more than 1 list into a flattened list
+/// @since 0.1.0
+/// @param {List} $lists - any number of lists to combine
+/// @return {List} a flattened list
+/// @example scss
+///    $somecollection: collect($list1, $list2, ...);
+@function collect($lists...) {
+	$collection: ();
+
+	@each $list in $lists {
+		$collection: list.join($collection, $list);
+	}
+
+	@return $collection;
+}

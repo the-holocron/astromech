@@ -7,11 +7,11 @@
 $base-class: ".animate" !default;
 
 /// Default set of animation durations
-/// @prop {CSS Unit} $xs [.125s] - extra short amount of time
-/// @prop {CSS Unit} $sm [.25s] - small amount of time
-/// @prop {CSS Unit} $md [.5s] - medium amount of time
-/// @prop {CSS Unit} $lg [1s] - large amount of time
-/// @prop {CSS Unit} $xl [1.5s] - extra large amount of time
+/// @prop {Number} $xs [.125s] - extra short amount of time
+/// @prop {Number} $sm [.25s] - small amount of time
+/// @prop {Number} $md [.5s] - medium amount of time
+/// @prop {Number} $lg [1s] - large amount of time
+/// @prop {Number} $xl [1.5s] - extra large amount of time
 $duration: (
 	"xs": ".125s",
 	"sm": ".25s",
