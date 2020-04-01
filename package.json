@@ -34,7 +34,7 @@
     "branch": "master"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna exec npm install",
     "commit": "commit",
     "dist": "lerna run dist",
     "toc": "lerna run toc",
