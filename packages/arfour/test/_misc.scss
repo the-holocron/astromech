@@ -1,0 +1,80 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/misc" as *;
+
+@include describe("miscellaneous") {
+	@include describe("breakpoint") {
+		@include describe("next") {
+			@include test("it should return the next breakpoint when given a name and breakpoints") {
+				$test: next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px));
+				$expected: md;
+
+				@include assert-equal($test, $expected, "Return the next breakpoint");
+			}
+
+			@include test("it should return the next breakpoint when given a name, breakpoints and a set of names") {
+				$test: next(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px), (xs sm md lg xl));
+				$expected: md;
+
+				@include assert-equal($test, $expected, "Return the next breakpoint");
+			}
+
+			@include test("it should return null when given the last breakpoint") {
+				$test: next(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px), (xs sm md lg xl));
+				$expected: null;
+
+				@include assert-equal($test, $expected, "Return null for the last breakpoint");
+			}
+		}
+
+		@include describe("min-width") {
+			@include test("it should return the minimum breakpoint value when given a key") {
+				$test: min-width(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px));
+				$expected: 576px;
+
+				@include assert-equal($test, $expected, "Return the minimum value");
+			}
+
+			@include test("it should return null for the first breakpoint if equal to zero") {
+				$test: min-width(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px));
+				$expected: null;
+
+				@include assert-equal($test, $expected, "Return null for the first breakpoint");
+			}
+		}
+
+		@include describe("max-width") {
+			@include test("it should return the maximum breakpoint value when given a key") {
+				$test: max-width(sm, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px));
+				$expected: 767.98px;
+
+				@include assert-equal($test, $expected, "Return the minimum value");
+			}
+
+			@include test("it should return null for the first breakpoint if equal to zero") {
+				$test: max-width(xl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px));
+				$expected: null;
+
+				@include assert-equal($test, $expected, "Return null for the last breakpoint");
+			}
+		}
+	}
+
+	@include describe("map-deep-get") {
+		@include test("it should return a value when given a deeply nested map") {
+			$test: map-deep-get((
+				typography: (
+					family: (monospace: monospace),
+					size: (md: 1rem),
+					weight: (normal: 400),
+					line-height: (md: 1.5)
+				)),
+				"typography",
+				"family",
+				"monospace"
+			);
+			$expected: monospace;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+}

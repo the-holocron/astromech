@@ -2,7 +2,6 @@
 @use "sass:list";
 
 @include describe("function: contains; deprecated in favor of list.index()") {
-
 	@include it("it should return true when the variable is in the list") {
 		$test: if(list.index(("one", "two", "three"), "one"), true, false);
 		$expected: true;

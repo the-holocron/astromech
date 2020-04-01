@@ -1,124 +1,143 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/math" as *;
 
-@include describe("function: math") {
+@include describe("math") {
+	@include describe("average") {
+		@include it("it should return average, when given a two numbers") {
+			$test: average(10, 20);
+			$expected: 15;
 
-	@include it("it should return average, when given a two numbers") {
+			@include assert-equal($test, $expected, "Return the correct average", true);
+		}
 
-		$test: average(10, 20);
-		$expected: 15;
+		@include it("it should return average, when given a larger set of numbers") {
+			$test: average(5, 10, 15, 20, 50);
+			$expected: 20;
 
-		@include assert-equal($test, $expected, "Return the correct average", true);
+			@include assert-equal($test, $expected, "Return the correct decimal", true);
+		}
 	}
 
-	@include it("it should return average, when given a larger set of numbers") {
-		$test: average(5, 10, 15, 20, 50);
-		$expected: 20;
+	@include describe("circle") {
+		@include describe("deg45") {
+			@include it("it should return the 45 degree of a circle") {
+				$test: deg45();
+				$expected: 0.7853981634;
 
-		@include assert-equal($test, $expected, "Return the correct decimal", true);
+				@include assert-equal($test, $expected, "Return the correct value", true);
+			}
+		}
+
+		@include describe("circle-angle") {
+			@include it("it should return the radius of a circle when given a size") {
+				$test: circle-angle(10);
+				$expected: 12;
+
+				@include assert-equal($test, $expected, "Return the correct value", true);
+			}
+		}
+
+		@include describe("circle-normal") {
+			@include it("it should return the angle of a circle when given a size") {
+				$test: circle-normal(10);
+				$expected: 17;
+
+				@include assert-equal($test, $expected, "Return the correct value", true);
+			}
+		}
+	}
+
+	@include describe("exp") {
+		@include it("it should return E^x, when given a positive number") {
+			$test: exp(1);
+			$expected: 2.7182818285;
+
+			@include assert-equal($test, $expected, "Return the correct integer", true);
+		}
+
+		@include it("it should return E^x, when given a negative number") {
+			$test: exp(-1);
+			$expected: 0.3678794412;
+
+			@include assert-equal($test, $expected, "Return the correct decimal", true);
+		}
+	}
+
+	@include describe("fact") {
+		@include it("it should return 1 factorial when provided 0") {
+			$test: fact(0);
+			$expected: 1;
+
+			@include assert-equal($test, $expected, "Return 1");
+		}
+
+		@include it("it should return a number factorial when provided a number") {
+			$test: fact(8);
+			$expected: 40320;
+
+			@include assert-equal($test, $expected, "Return the correct number");
+		}
+
+		@include it("it should return null when passed a negative number") {
+			$test: fact(-1, true);
+			$expected: null;
+
+			@include assert-equal($test, $expected, "Return null");
+		}
+	}
+
+	@include describe("frexp") {
+		@include it("it should return a list with the correct values, when given a negative number") {
+			$test: frexp(-1);
+			$expected: (.5, 1);
+
+			@include assert-equal($test, $expected, "Return the correct list");
+		}
+
+		@include it("it should return a list with the correct values, when given a decimal") {
+			$test: frexp(.25);
+			$expected: (.5, -1);
+
+			@include assert-equal($test, $expected, "Return the correct list");
+		}
+
+		@include it("it should return a list with the correct values, when given a positive number") {
+			$test: frexp(2);
+			$expected: (.5, 2);
+
+			@include assert-equal($test, $expected, "Return the correct list");
+		}
+	}
+
+	@include describe("ldexp") {
+		@include it("it should return a number when given a list") {
+			$test: ldexp(.5, 1);
+			$expected: 1;
+
+			@include assert-equal($test, $expected, "Return 1");
+		}
+
+		@include it("it should return a decimal when given a list") {
+			$test: ldexp(.5, -1);
+			$expected: .25;
+
+			@include assert-equal($test, $expected, "Return the correct decimal");
+		}
+
+		@include it("it should return a number when given a list") {
+			$test: ldexp(.5, 2);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct number");
+		}
+	}
+
+	@include describe("rad") {
+		@include it("it should return a radian when given a degree") {
+			$test: rad(45deg);
+			$expected: 0.7853981634;
+
+			@include assert-equal($test, $expected, "Return the correct number", true);
+		}
 	}
 }
-
-@include describe("function: exp") {
-
-	@include it("it should return E^x, when given a positive number") {
-
-		$test: exp(1);
-		$expected: 2.7182818285;
-
-		@include assert-equal($test, $expected, "Return the correct integer", true);
-	}
-
-	@include it("it should return E^x, when given a negative number") {
-		$test: exp(-1);
-		$expected: 0.3678794412;
-
-		@include assert-equal($test, $expected, "Return the correct decimal", true);
-	}
-}
-
-@include describe("function: fact") {
-
-	@include it("it should return 1 factorial when provided 0") {
-
-		$test: fact(0);
-		$expected: 1;
-
-		@include assert-equal($test, $expected, "Return 1");
-	}
-
-	@include it("it should return a number factorial when provided a number") {
-		$test: fact(8);
-		$expected: 40320;
-
-		@include assert-equal($test, $expected, "Return the correct number");
-	}
-
-	@include it("it should return null when passed a negative number") {
-		$test: fact(-1, true);
-		$expected: null;
-
-		@include assert-equal($test, $expected, "Return null");
-	}
-}
-
-@include describe("function: frexp") {
-
-	@include it("it should return a list with the correct values, when given a negative number") {
-		$test: frexp(-1);
-		$expected: (.5, 1);
-
-		@include assert-equal($test, $expected, "Return the correct list");
-	}
-
-	@include it("it should return a list with the correct values, when given a decimal") {
-		$test: frexp(.25);
-		$expected: (.5, -1);
-
-		@include assert-equal($test, $expected, "Return the correct list");
-	}
-
-	@include it("it should return a list with the correct values, when given a positive number") {
-		$test: frexp(2);
-		$expected: (.5, 2);
-
-		@include assert-equal($test, $expected, "Return the correct list");
-	}
-}
-
-@include describe("function: ldexp") {
-
-	@include it("it should return a number when given a list") {
-		$test: ldexp(.5, 1);
-		$expected: 1;
-
-		@include assert-equal($test, $expected, "Return 1");
-	}
-
-	@include it("it should return a decimal when given a list") {
-		$test: ldexp(.5, -1);
-		$expected: .25;
-
-		@include assert-equal($test, $expected, "Return the correct decimal");
-	}
-
-	@include it("it should return a number when given a list") {
-		$test: ldexp(.5, 2);
-		$expected: 2;
-
-		@include assert-equal($test, $expected, "Return the correct number");
-	}
-}
-
-@include describe("function: rad") {
-
-	@include it("it should return a radian when given a degree") {
-
-		$test: rad(45deg);
-		$expected: 0.7853981634;
-
-		@include assert-equal($test, $expected, "Return the correct number", true);
-	}
-
-}
-

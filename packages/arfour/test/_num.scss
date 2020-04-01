@@ -1,60 +1,59 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/num" as *;
 
-@include describe("function: in-bounds") {
+@include describe("number") {
+	@include describe("in-bounds") {
+		@include it("it should return true if value is within bounds") {
+			$test: in-bounds(5, 0, 10);
+			$expected: true;
 
-	@include it("it should return true if value is within bounds") {
-		$test: in-bounds(5, 0, 10);
-		$expected: true;
+			@include assert-equal($test, $expected, "Return true");
+		}
 
-		@include assert-equal($test, $expected, "Return true");
+		@include it("it should return false if value is not within bounds") {
+			$test: in-bounds(15, 0, 10);
+			$expected: false;
+
+			@include assert-equal($test, $expected, "Return false");
+		}
 	}
 
-	@include it("it should return false if value is not within bounds") {
-		$test: in-bounds(15, 0, 10);
-		$expected: false;
+	@include describe("is-nan") {
+		@include it("it should return false when given a number") {
+			$test: is-nan(10);
+			$expected: false;
 
-		@include assert-equal($test, $expected, "Return false");
-	}
-}
+			@include assert-equal($test, $expected, "Return false because its not a number");
+		}
 
-@include describe("function: is-nan") {
+		@include it("it should return true when given anything but a number") {
+			$test: is-nan("test");
+			$expected: true;
 
-	@include it("it should return false when given a number") {
-		$test: is-nan(10);
-		$expected: false;
-
-		@include assert-equal($test, $expected, "Return false because its not a number");
-	}
-
-	@include it("it should return true when given anything but a number") {
-		$test: is-nan("test");
-		$expected: true;
-
-		@include assert-equal($test, $expected, "Return true because its Infinity");
-	}
-}
-
-@include describe("function: valid-quantity") {
-
-	@include it("it should return false when given not a number") {
-		$test: valid-quantity("foo");
-		$expected: false;
-
-		@include assert-equal($test, $expected, "Return false because its not a number");
+			@include assert-equal($test, $expected, "Return true because its Infinity");
+		}
 	}
 
-	@include it("it should return false when given a number with a unit") {
-		$test: valid-quantity(10px);
-		$expected: false;
+	@include describe("valid-quantity") {
+		@include it("it should return false when given not a number") {
+			$test: valid-quantity("foo");
+			$expected: false;
 
-		@include assert-equal($test, $expected, "Return false because a unit was provided");
-	}
+			@include assert-equal($test, $expected, "Return false because its not a number");
+		}
 
-	@include it("it should return true when given a unitless number") {
-		$test: valid-quantity(10);
-		$expected: true;
+		@include it("it should return false when given a number with a unit") {
+			$test: valid-quantity(10px);
+			$expected: false;
 
-		@include assert-equal($test, $expected, "Return true because its a unitless number");
+			@include assert-equal($test, $expected, "Return false because a unit was provided");
+		}
+
+		@include it("it should return true when given a unitless number") {
+			$test: valid-quantity(10);
+			$expected: true;
+
+			@include assert-equal($test, $expected, "Return true because its a unitless number");
+		}
 	}
 }
