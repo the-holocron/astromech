@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/the-holocron/astromech/compare/@theholocron/arfour@0.1.4...@theholocron/arfour@0.2.0) (2020-04-01)
+
+
+### Features
+
+* update breakpoint mixins names; update tests ([f5547c0](https://github.com/the-holocron/astromech/commit/f5547c011ea31c544eb94a99aa4cb01252d2a3d2))
+
+
+
+
+
 ## [0.1.4](https://github.com/the-holocron/astromech/compare/@theholocron/arfour@0.1.3...@theholocron/arfour@0.1.4) (2020-03-24)
 
 
