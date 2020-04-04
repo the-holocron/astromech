@@ -1,0 +1,20 @@
+@use "../config";
+
+/// The transition-duration property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration
+/// @param {String} $className ["transition-duration"] - a CSS class name that will className all helpers
+/// @param {Map} $weights [config.$transition-durations] - a map of font weights
+/// @example scss
+///   @include transition-duration($className: adur);
+@mixin transition-duration($className: transition-duration, $durations: config.$durations) {
+	$property: "transition-duration";
+
+	.#{$className} {
+		@each $key, $value in $durations {
+			&-#{$key} {
+				#{$property}: $value !important;
+			}
+		}
+	}
+}

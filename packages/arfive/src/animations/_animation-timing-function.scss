@@ -1,0 +1,24 @@
+@use "../config";
+@use "../syntaxes";
+
+/// The animation-timing-function property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+/// @param {String} $className ["animation-timing-function"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include animation-timing-function($className: atf);
+@mixin animation-timing-function($className: "animation-timing-function", $timing-function: config.$cubic-bezier) {
+	$property: "animation-timing-function";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$animation-timing-function {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+
+		&-cubic-bezier {
+			#{$property}: $timing-function !important;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
+@use "../config";
+@use "../syntaxes";
+
+/// The touch-action property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/touch-action
+/// @param {String} $className ["touch-action"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include touch-action($className: of, $breakpoints: ("sm": 480px));
+@mixin touch-action($className: "touch-action", $breakpoints: config.$breakpoints) {
+	$property: "touch-action";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$touch-action {
+			@each $breakpoint in map.keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
+					}
+				}
+
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
+					}
+				}
+			}
+		}
+	}
+}

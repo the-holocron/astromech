@@ -36,7 +36,8 @@
     "lint": "stylelint src/**/*.scss"
   },
   "dependencies": {
-    "@theholocron/arone": "file:../arone"
+    "@theholocron/arone": "file:../arone",
+    "@theholocron/arfour": "file:../arfour"
   },
   "peerDependencies": {
     "sass": "^1.26.3"

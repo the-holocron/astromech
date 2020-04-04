@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The cursor property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
+/// @param {String} $className ["cursor"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include cursor($className: c);
+@mixin cursor($className: "cursor") {
+	$property: "cursor";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$cursor {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

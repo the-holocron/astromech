@@ -1,0 +1,7 @@
+@use "./index" as *;
+
+@include font-family();
+@include font-size();
+@include font-style();
+@include font-weight();
+@include line-height();

@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The box-sizing property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+/// @param {String} $className ["box-sizing"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include box-sizing($className: bs);
+@mixin box-sizing($className: "box-sizing") {
+	$property: "box-sizing";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$box-sizing {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

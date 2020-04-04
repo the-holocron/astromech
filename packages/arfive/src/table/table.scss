@@ -1,0 +1,7 @@
+@use "./index" as *;
+
+@include border-collapse();
+@include caption-side();
+@include empty-cells();
+@include table-layout();
+@include vertical-align();

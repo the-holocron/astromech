@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The appearance property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/appearance
+/// @param {String} $className ["appearance"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include appearance($className: a);
+@mixin appearance($className: "appearance") {
+	$property: "appearance";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$appearance {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

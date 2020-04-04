@@ -1,0 +1,9 @@
+@use "./index" as *;
+
+@include appearance();
+@include box-sizing();
+@include cursor();
+@include outline-style();
+@include resize();
+@include text-overflow();
+@include user-select();

@@ -1,0 +1,11 @@
+@use "./index" as *;
+
+@include align-content();
+@include align-items();
+@include align-self();
+@include justify-content();
+@include justify-items();
+@include justify-self();
+@include place-content();
+@include place-items();
+@include place-self();

@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The outline-style property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style
+/// @param {String} $className ["outline-style"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include outline-style($className: os);
+@mixin outline-style($className: "outline-style") {
+	$property: "outline-style";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$outline-style {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

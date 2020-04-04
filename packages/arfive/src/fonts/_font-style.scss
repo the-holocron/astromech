@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The font-style property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
+/// @param {String} $className ["font-style"] - a CSS class name that will className all helpers
+/// @example scss
+///   @include font-style($className: fs);
+@mixin font-style($className: font-style) {
+	$property: "font-style";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$font-style {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

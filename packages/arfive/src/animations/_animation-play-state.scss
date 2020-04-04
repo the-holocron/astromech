@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The animation-play-state property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state
+/// @param {String} $className ["animation-play-state"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include animation-play-state($className: atf);
+@mixin animation-play-state($className: "animation-play-state") {
+	$property: "animation-play-state";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$animation-play-state {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

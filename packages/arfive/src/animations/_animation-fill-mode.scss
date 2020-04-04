@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The animation-fill-mode property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode
+/// @param {String} $className ["animation-fill-mode"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include animation-fill-mode($className: afm);
+@mixin animation-fill-mode($className: "animation-fill-mode") {
+	$property: "animation-fill-mode";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$animation-fill-mode {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

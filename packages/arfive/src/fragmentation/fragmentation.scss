@@ -1,0 +1,6 @@
+@use "./index" as *;
+
+@include box-decoration-break();
+@include break-after();
+@include break-before();
+@include break-inside();

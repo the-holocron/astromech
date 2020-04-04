@@ -1,0 +1,9 @@
+@use "./index" as *;
+
+@include line-break();
+@include overflow-wrap();
+@include text-align();
+@include text-justify();
+@include text-transform();
+@include white-space();
+@include word-break();

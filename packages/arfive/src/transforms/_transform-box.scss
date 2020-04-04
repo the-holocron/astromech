@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
+@use "../config";
+@use "../syntaxes";
+
+/// The transform-box property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/transform-box
+/// @param {String} $className ["transform-box"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @example scss
+///   @include transform-box($className: wbreak, $breakpoints: ("sm": 480px));
+@mixin transform-box($className: transform-box, $breakpoints: config.$breakpoints) {
+	$property: "transform-box";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$transform-box {
+			@each $breakpoint in map.keys($breakpoints) {
+				@include media-breakpoint-up($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax},
+					&-#{$breakpoint}-#{$syntax}-up {
+						#{$property}: $syntax !important;
+					}
+				}
+
+				@include media-breakpoint-down($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax}-down {
+						#{$property}: $syntax !important;
+					}
+				}
+				@include media-breakpoint-only($breakpoint, $breakpoints) {
+					&-#{$breakpoint}-#{$syntax}-only {
+						#{$property}: $syntax !important;
+					}
+				}
+			}
+		}
+	}
+}

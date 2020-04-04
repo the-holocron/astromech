@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The line-break property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/line-break
+/// @param {String} $className ["line-break"] - a CSS class name that will className all helpers
+/// @example scss
+///   @include line-break($className: fs);
+@mixin line-break($className: line-break) {
+	$property: "line-break";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$line-break {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

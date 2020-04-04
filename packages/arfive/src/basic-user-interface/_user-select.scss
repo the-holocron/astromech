@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The user-select property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+/// @param {String} $className ["user-select"] - a CSS class name that will className all helpers
+/// @example scss
+///   @include user-select($className: us);
+@mixin user-select($className: user-select) {
+	$property: "user-select";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$user-select {
+			&-#{$syntax}-up {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

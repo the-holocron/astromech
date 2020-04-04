@@ -1,0 +1,24 @@
+@use "../config";
+@use "../syntaxes";
+
+/// The transition-timing-function property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function
+/// @param {String} $className ["transition-timing-function"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include transition-timing-function($className: atf);
+@mixin transition-timing-function($className: "transition-timing-function", $timing-function: config.$cubic-bezier) {
+	$property: "transition-timing-function";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$timing-function {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+
+		&-cubic-bezier {
+			#{$property}: $timing-function !important;
+		}
+	}
+}

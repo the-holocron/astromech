@@ -1,0 +1,19 @@
+@use "../syntaxes";
+
+/// The animation-direction property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
+/// @param {String} $className ["animation-direction"] - a CSS class name that will prefix all helpers
+/// @example scss
+///   @include animation-direction($className: adir);
+@mixin animation-direction($className: "animation-direction") {
+	$property: "animation-direction";
+
+	.#{$className} {
+		@each $syntax in syntaxes.$animation-direction {
+			&-#{$syntax} {
+				#{$property}: $syntax !important;
+			}
+		}
+	}
+}

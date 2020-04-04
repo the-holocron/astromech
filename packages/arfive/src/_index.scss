@@ -1,50 +1,134 @@
 @use "config";
-@use "display" as *;
-@use "positioning" as *;
+@use "animations" as *;
+@use "backgrounds-borders" as *;
+@use "basic-user-interface" as *;
+@use "box-alignment" as *;
 @use "box-model" as *;
-@use "typography" as *;
-@use "animation" as *;
-
-// display
-@include display($breakpoints: config.$breakpoints);
-@include visibility($breakpoints: config.$breakpoints);
-
-// positioning
-@include flex-direction($breakpoints: config.$breakpoints);
-@include flex-flow($breakpoints: config.$breakpoints);
-@include flex-wrap($breakpoints: config.$breakpoints);
-@include align-content($breakpoints: config.$breakpoints);
-@include align-items($breakpoints: config.$breakpoints);
-@include align-self($breakpoints: config.$breakpoints);
-@include justify-content($breakpoints: config.$breakpoints);
-@include justify-items($breakpoints: config.$breakpoints);
-@include justify-self($breakpoints: config.$breakpoints);
-@include place-content($breakpoints: config.$breakpoints);
-@include place-items($breakpoints: config.$breakpoints);
-@include place-self($breakpoints: config.$breakpoints);
-@include position($breakpoints: config.$breakpoints);
-@include float($breakpoints: config.$breakpoints);
-@include clear($breakpoints: config.$breakpoints);
-
-// box-model
-@include box-sizing($breakpoints: config.$breakpoints);
-@include width($breakpoints: config.$breakpoints, $sizing: config.$sizing);
-@include height($breakpoints: config.$breakpoints, $sizing: config.$sizing);
-@include overflow($breakpoints: config.$breakpoints);
-@include margin($breakpoints: config.$breakpoints, $spacing: config.$spacing);
-@include padding($breakpoints: config.$breakpoints, $spacing: config.$spacing);
-@include appearance($breakpoints: config.$breakpoints);
-@include box-decoration-break($breakpoints: config.$breakpoints);
-
-// typography
-@include font-size($breakpoints: config.$breakpoints, $font-sizes: config.$font-sizes);
-@include text-align($breakpoints: config.$breakpoints);
-@include text-decoration($breakpoints: config.$breakpoints);
-@include text-overflow($breakpoints: config.$breakpoints);
-@include text-transform($breakpoints: config.$breakpoints);
-@include valign($breakpoints: config.$breakpoints);
-@include white-space($breakpoints: config.$breakpoints);
-@include word-break($breakpoints: config.$breakpoints);
+@use "display" as *;
+@use "flexible-box-layout" as *;
+@use "fonts" as *;
+@use "fragmentation" as *;
+@use "images" as *;
+@use "miscellaneous" as *;
+@use "overflow" as *;
+@use "pointer-events" as *;
+@use "positioning" as *;
+@use "table" as *;
+@use "text" as *;
+@use "text-decoration" as *;
+@use "transforms" as *;
+@use "transitions" as *;
 
 // animation
-@include animation-direction($breakpoints: config.$breakpoints);
+@include animation-direction();
+@include animation-duration();
+@include animation-fill-mode();
+@include animation-play-state();
+@include animation-timing-function();
+
+// background & borders
+@include background-attachment();
+@include background-clip();
+@include background-origin();
+@include background-repeat();
+@include background-size();
+@include border-style();
+
+// basic user interface
+@include appearance();
+@include box-sizing();
+@include cursor();
+@include outline-style();
+@include resize();
+@include text-overflow();
+@include user-select();
+
+// box alignment
+@include align-content();
+@include align-items();
+@include align-self();
+@include justify-content();
+@include justify-items();
+@include justify-self();
+@include place-content();
+@include place-items();
+@include place-self();
+
+// box-model
+@include height();
+@include margin();
+@include overscroll-behavior();
+@include padding();
+@include visibility();
+@include width();
+
+// display
+@include display();
+
+// flexible box layout
+@include flex-direction();
+@include flex-flow();
+@include flex-wrap();
+
+// fonts
+@include font-family();
+@include font-size();
+@include font-style();
+@include font-weight();
+@include line-height();
+
+// fragmentation
+@include box-decoration-break();
+@include break-after();
+@include break-before();
+@include break-inside();
+
+// images
+@include object-fit();
+
+// miscellaneous
+@include all();
+@include text-rendering();
+
+// overflow
+@include overflow();
+
+// pointer events
+@include pointer-events();
+@include touch-action();
+
+// positioning
+@include clear();
+@include float();
+@include position();
+
+// table
+@include border-collapse();
+@include caption-side();
+@include empty-cells();
+@include table-layout();
+@include vertical-align();
+
+// text decoration
+@include text-decoration();
+@include text-decoration-skip-ink();
+@include text-decoration-style();
+
+// text
+@include line-break();
+@include overflow-wrap();
+@include text-align();
+@include text-justify();
+@include text-transform();
+@include white-space();
+@include word-break();
+
+// transforms
+@include backface-visibility();
+@include perspective-origin();
+@include transform-box();
+@include transform-style();
+
+// transitions
+@include transition-duration();
+@include transition-timing-function();
