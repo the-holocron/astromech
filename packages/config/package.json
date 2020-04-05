@@ -23,7 +23,8 @@
     "extends": "@theholocron/stylelint-config"
   },
   "scripts": {
-    "docs": "sassdoc2md src/_index.scss src/README.md",
+    "docs": "sassdoc src/_index.scss --dest ../../docs/config",
+    "readme": "sassdoc2md src/_index.scss src/README.md",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/README.md",
     "lint": "stylelint src/**/*.scss",
     "test": "mocha"
@@ -34,6 +35,8 @@
   "devDependencies": {
     "mocha": "^7.0.0",
     "sass": "^1.26.3",
-    "sass-true": "^5.0.0"
+    "sass-true": "^5.0.0",
+    "sassdoc": "^2.7.1"
+
   }
 }

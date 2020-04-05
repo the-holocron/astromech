@@ -7,7 +7,7 @@
 	@include describe("color") {
 		@include test("it should return a color") {
 			$test: map.get($border-colors, "mid");
-			$expected: gray;
+			$expected: gray; /* stylelint-disable-line color-named */
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
