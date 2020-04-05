@@ -1,0 +1,304 @@
+@use "sass:map";
+@use "sass:meta";
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src" as *;
+
+@include describe("border") {
+	@include describe("color") {
+		@include test("it should return a color") {
+			$test: map.get($border-colors, "mid");
+			$expected: gray;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a map") {
+			$test: meta.type-of($border-colors);
+			$expected: map;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("radius") {
+		@include test("it should return a radius") {
+			$test: map.get($border-radii, "round");
+			$expected: "100%";
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a map") {
+			$test: meta.type-of($border-radii);
+			$expected: map;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return the default radius") {
+			$test: $border-radius;
+			$expected: ".5rem";
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("width") {
+		@include test("it should return a width") {
+			$test: map.get($border-widths, "sm");
+			$expected: ".125rem";
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a map") {
+			$test: meta.type-of($border-widths);
+			$expected: map;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return the default width") {
+			$test: $border-width;
+			$expected: ".1875rem";
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+}
+
+@include describe("box-direction") {
+	@include test("it should return a direction") {
+		$test: map.get($box-directions, "bottom");
+		$expected: "bottom";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($box-directions);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("breakpoint") {
+	@include test("it should return a breakpoint") {
+		$test: map.get($breakpoints, "xs");
+		$expected: "0";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($breakpoints);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("cubic-bezier") {
+	@include test("it should return the default cubic-bezier") {
+		$test: $cubic-bezier;
+		$expected: "cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("duration") {
+	@include test("it should return a duration") {
+		$test: map.get($durations, "lg");
+		$expected: "1s";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($durations);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default duration") {
+		$test: $duration;
+		$expected: ".25s";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("font-family") {
+	@include test("it should return a font family") {
+		$test: map.get($font-families, "serif");
+		$expected: "georgia, Times New Roman, times, serif";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($font-families);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default font family") {
+		$test: $font-family;
+		$expected: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, arial, sans-serif";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("font-weight") {
+	@include test("it should return a font weight") {
+		$test: map.get($font-weights, "normal");
+		$expected: 400;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($font-weights);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("font-size") {
+	@include test("it should return a font size") {
+		$test: map.get($font-sizes, "3");
+		$expected: "1rem";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($font-sizes);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default font size") {
+		$test: $font-size;
+		$expected: "1rem";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("line-height") {
+	@include test("it should return a line height") {
+		$test: map.get($line-heights, "md");
+		$expected: 1.25;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($line-heights);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default line height") {
+		$test: $line-height;
+		$expected: 1.5;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default line height for headings") {
+		$test: $line-height-heading;
+		$expected: 1.2;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("opacity") {
+	@include test("it should return an opacity") {
+		$test: map.get($opacities, "visible");
+		$expected: 1;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($font-sizes);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("spacing") {
+	@include test("it should return a spacing") {
+		$test: map.get($spacing, "3");
+		$expected: "3rem";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($spacing);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return the default spacing") {
+		$test: $spacer;
+		$expected: 1;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
+@include describe("sizing") {
+	@include test("it should return a sizing") {
+		$test: map.get($sizing, "75");
+		$expected: "75%";
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($sizing);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include describe("prefixes") {
+		@include test("it should return a list") {
+			$test: meta.type-of($sizing-prefixes);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+}
+
+@include describe("z-index") {
+	@include test("it should return a z index") {
+		$test: map.get($z-indices, "level-3");
+		$expected: 3000;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($z-indices);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
