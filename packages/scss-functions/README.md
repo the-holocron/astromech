@@ -1,4 +1,4 @@
-# Arfour [![npm](https://img.shields.io/npm/v/@theholocron/arfour)](https://www.npmjs.com/package/@theholocron/arfour)
+# (S)CSS Functions [![npm](https://img.shields.io/npm/v/@theholocron/scss-functions)](https://www.npmjs.com/package/@theholocron/scss-functions)
 
  This utility droid provides a set of single-purpose, functions for writing (S)CSS within the Galaxy.",
 
@@ -7,7 +7,7 @@
 ## Installation
 
 ```shell
-$ npm install --save-dev @theholocron/arfour
+$ npm install --save-dev @theholocron/scss-functions
 ```
 
 ## Table of Contents
@@ -24,11 +24,11 @@ $ npm install --save-dev @theholocron/arfour
 ## Usage
 
 ```scss
-@use "@theholocron/arfour/src" as arfour;
+@use "@theholocron/scss-functions/src" as scss-functions;
 
 .example {
-	border: .0625rem solid arfour.shade(#8ce2d4, 25%);
-	background-color: arfour.best-contrast(#8ce2d4, #fff, #000, 4.5, 4.5);
+	border: .0625rem solid scss-functions.shade(#8ce2d4, 25%);
+	background-color: scss-functions.best-contrast(#8ce2d4, #fff, #000, 4.5, 4.5);
 }
 ```
 
