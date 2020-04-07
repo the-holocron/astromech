@@ -1,0 +1,108 @@
+@use "sass:list";
+@use "../node_modules/@theholocron/scss-functions/src/list" as *;
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L2-L4
+$absolute-size: (xx-small, x-small, small, medium, large, x-large, xx-large, xxx-large);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L23-L25
+$attachment: (scroll, fixed, local);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L44-L46
+$baseline-position: (baseline, first, last);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L59-L61
+$bg-size: (auto, cover, contain);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L68-L70
+$box: (border-box, content-box, padding-box);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L125-L127
+$compat: (searchfield, textarea, push-button, button-bevel, slider-horizontal, checkbox, radio, square-button, menulist, menulist-button, listbox, meter, progress-bar);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L152-L154
+$content-distribution: (space-around, space-between, space-evenly, stretch);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L158-L160
+$content-position: (center, end, flex-end, flex-start, start);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L182-L184
+$cubic-bezier-timing-function: (ease, ease-in, ease-out, ease-in-out);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L191-L193
+$display-box: (contents, none);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L194-L196
+$display-inside: (flow, flow-root, table, flex, grid, ruby);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L197-199
+$display-internal: (table-row-group, table-header-group, table-footer-group, table-row, table-cell, table-column-group, table-column, table-caption, ruby-base, ruby-text, ruby-base-container, ruby-text-container);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L200-L202
+$display-legacy: (inline-block, inline-list-item, inline-table, inline-flex, inline-grid);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L203-L205
+$display-listitem: list.append((), list-item);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L206-L208
+$display-outside: (block, inline, run-in);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L296-L298
+$generic-family: (cursive, fantasy);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L386-L388
+$line-style: (none, hidden, dotted, dashed, solid, double, groove, ridge, inset, outset);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L503-L505
+$overflow-position: (safe, unsafe);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L560-L562
+$relative-size: (larger, smaller);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L563-L565
+$repeat-style: (repeat-x, repeat-y, repeat, space, round, no-repeat);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L611-L613
+$self-position: (center, end, flex-end, flex-start, self-end, self-start, start);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L647-L649
+$single-animation-direction: (alternate, alternate-reverse, normal, reverse);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L650-L652
+$single-animation-fill-mode: (backwards, both, forwards, none);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L656-L658
+$single-animation-play-state: (running, paused);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L671-L673
+$step-timing-function: (step-start, step-end);
+
+/// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L710-L712
+/// @require {variable} $cubic-bezier-timing-function
+/// @require {variable} $step-timing-function
+$timing-function: collect(linear, $cubic-bezier-timing-function, $step-timing-function);

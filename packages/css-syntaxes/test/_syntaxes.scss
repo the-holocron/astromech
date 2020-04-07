@@ -1,0 +1,604 @@
+@use "sass:list";
+@use "sass:meta";
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src" as *;
+
+@include describe("syntaxes") {
+	@include describe("absolute-size") {
+		@include test("it should return a syntax") {
+			$test: list.nth($absolute-size, 1);
+			$expected: xx-small;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($absolute-size);
+			$expected: 8;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($absolute-size);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("attachment") {
+		@include test("it should return a syntax") {
+			$test: list.nth($attachment, 1);
+			$expected: scroll;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($attachment);
+			$expected: 3;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($attachment);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("baseline-position") {
+		@include test("it should return a syntax") {
+			$test: list.nth($baseline-position, 1);
+			$expected: baseline;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($baseline-position);
+			$expected: 3;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($baseline-position);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("bg-size") {
+		@include test("it should return a syntax") {
+			$test: list.nth($bg-size, 1);
+			$expected: auto;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($bg-size);
+			$expected: 3;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($bg-size);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("box") {
+		@include test("it should return a syntax") {
+			$test: list.nth($box, 1);
+			$expected: border-box;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($box);
+			$expected: 3;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($box);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("compat") {
+		@include test("it should return a syntax") {
+			$test: list.nth($compat, 1);
+			$expected: searchfield;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($compat);
+			$expected: 13;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($compat);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("content-distribution") {
+		@include test("it should return a syntax") {
+			$test: list.nth($content-distribution, 1);
+			$expected: space-around;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($content-distribution);
+			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($content-distribution);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("content-position") {
+		@include test("it should return a syntax") {
+			$test: list.nth($content-position, 1);
+			$expected: center;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($content-position);
+			$expected: 5;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($content-position);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("cubic-bezier-timing-function") {
+		@include test("it should return a syntax") {
+			$test: list.nth($cubic-bezier-timing-function, 1);
+			$expected: ease;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($cubic-bezier-timing-function);
+			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($cubic-bezier-timing-function);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-box") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-box, 1);
+			$expected: contents;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-box);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-box);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-inside") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-inside, 1);
+			$expected: flow;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-inside);
+			$expected: 6;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-inside);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-internal") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-internal, 1);
+			$expected: table-row-group;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-internal);
+			$expected: 12;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-internal);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-legacy") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-legacy, 1);
+			$expected: inline-block;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-legacy);
+			$expected: 5;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-legacy);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-listitem") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-listitem, 1);
+			$expected: list-item;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-listitem);
+			$expected: 1;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-listitem);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("display-outside") {
+		@include test("it should return a syntax") {
+			$test: list.nth($display-outside, 1);
+			$expected: block;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($display-outside);
+			$expected: 3;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($display-outside);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("generic-family") {
+		@include test("it should return a syntax") {
+			$test: list.nth($generic-family, 1);
+			$expected: cursive;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($generic-family);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($generic-family);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("line-style") {
+		@include test("it should return a syntax") {
+			$test: list.nth($line-style, 1);
+			$expected: none;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($line-style);
+			$expected: 10;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($line-style);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("overflow-position") {
+		@include test("it should return a syntax") {
+			$test: list.nth($overflow-position, 1);
+			$expected: safe;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($overflow-position);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($overflow-position);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("relative-size") {
+		@include test("it should return a syntax") {
+			$test: list.nth($relative-size, 1);
+			$expected: larger;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($relative-size);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($relative-size);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("repeat-style") {
+		@include test("it should return a syntax") {
+			$test: list.nth($repeat-style, 1);
+			$expected: repeat-x;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($repeat-style);
+			$expected: 6;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($repeat-style);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("self-position") {
+		@include test("it should return a syntax") {
+			$test: list.nth($self-position, 1);
+			$expected: center;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($self-position);
+			$expected: 7;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($self-position);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("single-animation-direction") {
+		@include test("it should return a syntax") {
+			$test: list.nth($single-animation-direction, 1);
+			$expected: alternate;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($single-animation-direction);
+			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($single-animation-direction);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("single-animation-fill-mode") {
+		@include test("it should return a syntax") {
+			$test: list.nth($single-animation-fill-mode, 1);
+			$expected: backwards;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($single-animation-fill-mode);
+			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($single-animation-fill-mode);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("single-animation-play-state") {
+		@include test("it should return a syntax") {
+			$test: list.nth($single-animation-play-state, 1);
+			$expected: running;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($single-animation-play-state);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($single-animation-play-state);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("step-timing-function") {
+		@include test("it should return a syntax") {
+			$test: list.nth($step-timing-function, 1);
+			$expected: step-start;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($step-timing-function);
+			$expected: 2;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($step-timing-function);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("timing-function") {
+		@include test("it should return a syntax") {
+			$test: list.nth($timing-function, 1);
+			$expected: linear;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($timing-function);
+			$expected: 7;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($timing-function);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+}

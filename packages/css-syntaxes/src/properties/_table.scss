@@ -1,0 +1,23 @@
+////
+/// @group Table
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/border-collapse
+$border-collapse: (collapse, separate);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/caption-side
+$caption-side: (top, bottom, block-start, block-end, inline-start, inline-end);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/empty-cells
+$empty-cells: (hide, show);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/table-layout
+$table-layout: (auto, fixed);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/vertical-align
+$vertical-align: (baseline, bottom, middle, sub, super, text-bottom, text-top, top);

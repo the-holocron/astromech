@@ -1,0 +1,21 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list" as *;
+
+////
+/// @group Text Decoration
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+$text-decoration-line: (blink, grammar-error, line-through, none, overline, spelling-error, underline);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+$text-decoration-style: (dash, dotted, double, solid, wavy);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration
+$text-decoration: collect($text-decoration-line, $text-decoration-style);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+$text-decoration-skip-ink: (auto, all, none);

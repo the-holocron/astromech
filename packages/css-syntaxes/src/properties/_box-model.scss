@@ -1,0 +1,21 @@
+@use "../custom";
+
+////
+/// @group Box Model
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/height
+$height: custom.$sizing;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
+$overscroll-behavior: (auto, contain, none);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/visibility
+$visibility: (collapse, hidden, visible);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/width
+$width: custom.$sizing;

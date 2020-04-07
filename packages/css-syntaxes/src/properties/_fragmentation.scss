@@ -1,0 +1,21 @@
+@use "../custom";
+
+////
+/// @group Fragmentation
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
+$box-decoration-break: (clone, slice);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/break-after
+$break-after: custom.$break;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/break-before
+$break-before: custom.$break;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/break-inside
+$break-inside: (auto, avoid, avoid-page, avoid-column, avoid-region);

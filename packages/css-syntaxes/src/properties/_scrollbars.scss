@@ -1,0 +1,11 @@
+////
+/// @group Scrollbars
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scrollbar-color
+$scrollbar-color: (auto, dark, light);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
+$scrollbar-width: (auto, thin, none);

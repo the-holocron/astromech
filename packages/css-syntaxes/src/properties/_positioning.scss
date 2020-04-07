@@ -1,0 +1,21 @@
+@use "sass:list";
+
+////
+/// @group Positioning
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/clear
+$clear: (both, inline-end, inline-start, left, none, right);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/float
+$float: (left, inline-end, inline-start, none, right);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/position
+$position: (absolute, fixed, relative, sticky, static);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/z-index
+$z-index: list.append((), auto);

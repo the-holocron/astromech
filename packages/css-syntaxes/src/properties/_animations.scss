@@ -1,0 +1,21 @@
+@use "../syntaxes" as *;
+
+////
+/// @group Animations
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-direction
+$animation-direction: $single-animation-direction;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
+$animation-fill-mode: $single-animation-fill-mode;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-play-state
+$animation-play-state: $single-animation-play-state;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
+$animation-timing-function: $timing-function;

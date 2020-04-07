@@ -1,0 +1,23 @@
+@use "./positioning";
+
+////
+/// @group Scroll Snap
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align
+$scroll-snap-align: (none, start, end, center);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
+$scroll-snap-stop: (normal, always);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+$scroll-snap-type: (none, x, y, block, inline, both);
+
+/// These are optionals for scroll-snap-type that can be combined with any of the syntaxes
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+/// @requires $scroll-snap-type
+$scroll-snap-type-optionals: (mandatory, proximity);

@@ -1,0 +1,29 @@
+@use "../syntaxes" as *;
+
+////
+/// @group Backgrounds & Borders
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/background-attachment
+$background-attachment: $attachment;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/background-clip
+$background-clip: $box;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/background-origin
+$background-origin: $box;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/background-repeat
+$background-repeat: $repeat-style;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/background-size
+$background-size: $bg-size;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/border-style
+$border-style: $line-style;

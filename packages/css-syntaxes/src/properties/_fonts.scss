@@ -1,0 +1,22 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Fonts
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/font-family
+$font-family: $generic-family;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/font-size
+$font-size: collect($absolute-size, $relative-size);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/font-style
+$font-style: (italic, normal, oblique);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/font-weight
+$font-weight: (bolder, lighter);

@@ -1,0 +1,11 @@
+////
+/// @group Miscellaneous
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/all
+$all: (inherit, initial, unset);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-rendering
+$text-rendering: (auto, geometricPrecision, optimizeSpeed, optimizeLegibility);

@@ -1,0 +1,42 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Box Alignment
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/align-content
+$align-content: collect(normal, $baseline-position, $content-distribution, $content-position, $overflow-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/align-items
+$align-items: collect(normal, stretch, $baseline-position, $overflow-position, $self-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/align-self
+$align-self: collect(auto, normal, stretch, $baseline-position, $overflow-position, $self-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/justify-content
+$justify-content: collect(normal, left, right, $content-distribution, $content-position, $overflow-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/justify-items
+$justify-items: collect(normal, center, left, right, stretch, $baseline-position, $overflow-position, $self-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/justify-self
+$justify-self: collect(auto, normal, left, right, stretch, $baseline-position, $overflow-position, $self-position);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/place-content
+$place-content: collect($align-content, $justify-content);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/place-items
+$place-items: collect($align-items, $justify-items);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/place-self
+$place-self: collect($align-self, $justify-self);

@@ -1,0 +1,31 @@
+////
+/// @group Text
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/line-break
+$line-break: (auto, loose, normal, strict, anywhere);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+$overflow-wrap: (anywhere, break-word, normal);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-align
+$text-align: (center, end, justify, left, match-parent, right, start);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-justify
+$text-justify: (auto, inter-character, inter-word, none);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-transform
+$text-transform: (capitalize, full-width, full-width-kana, lowercase, none, uppercase);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/white-space
+$white-space: (break-spaces, normal, nowrap, pre, pre-line, pre-wrap);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/word-break
+$word-break: (break-all, break-word, keep-all, normal);

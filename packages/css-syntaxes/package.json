@@ -1,0 +1,44 @@
+{
+  "name": "@theholocron/css-syntaxes",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/css-syntaxes#readme",
+  "description": "This utility droid provides a set of single-purpose, functional utilities for writing CSS within the Galaxy.",
+  "author": "Newton Koumantzelis",
+  "version": "0.0.0",
+  "main": "src/_index.scss",
+  "files": [
+    "src"
+  ],
+  "repository": "https://github.com/the-holocron/astromech.git",
+  "bugs": "https://github.com/the-holocron/astromech/issues",
+  "releases": "https://github.com/the-holocron/astromech/releases",
+  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "license": "GPL-3.0",
+  "browserslist": [
+    "extends @theholocron/browserslist-config"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "stylelint": {
+    "extends": "@theholocron/stylelint-config"
+  },
+  "scripts": {
+    "docs": "sassdoc src/**/*.scss --dest ../../docs/syntaxes",
+    "readme": "sassdoc2md src/_index.scss src/README.md",
+    "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
+    "lint": "stylelint src/**/*.scss",
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@theholocron/scss-functions": "file:../scss-functions"
+  },
+  "peerDependencies": {
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.0",
+    "sass": "^1.26.3",
+    "sass-true": "^5.0.0",
+    "sassdoc": "^2.7.1"
+  }
+}

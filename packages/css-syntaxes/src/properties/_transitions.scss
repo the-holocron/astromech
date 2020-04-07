@@ -1,0 +1,9 @@
+@use "../syntaxes" as *;
+
+////
+/// @group Transitions
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/transition-timing-function
+$transition-timing-function: $timing-function;

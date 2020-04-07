@@ -1,0 +1,35 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list" as *;
+@use "../syntaxes" as *;
+@use "./backgrounds-borders";
+
+////
+/// @group Basic User Interface
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/appearance
+$appearance: collect(auto, button, none, textfield, $compat);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/box-sizing
+$box-sizing: (border-box, content-box);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/cursor
+$cursor: (auto, default, none, context-menu, help, pointer, progress, wait, cell, crosshair, text, vertical-text, alias, copy, move, no-drop, not-allowed, e-resize, n-resize, ne-resize, nw-resize, s-resize, se-resize, sw-resize, w-resize, ew-resize, ns-resize, nesw-resize, nwse-resize, col-resize, row-resize, all-scroll, zoom-in, zoom-out, grab, grabbing);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/outline-style
+$outline-style: collect(auto, backgrounds-borders.$border-style);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/resize
+$resize: (none, both, horizontal, vertical, block, inline);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-overflow
+$text-overflow: (clip, ellipsis);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/user-select
+$user-select: (all, auto, contain, none, text);

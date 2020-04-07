@@ -1,0 +1,21 @@
+@use "./positioning";
+
+////
+/// @group Transforms
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+$backface-visibility: (visible, hidden);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+$perspective-origin: positioning.$position;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/transform-box
+$transform-box: (border-box, fill-box, view-box);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/transform-style
+$transform-style: (flat, preserve-3d);
