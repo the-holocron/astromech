@@ -26,6 +26,7 @@
     "docs": "sassdoc src/**/*.scss --dest ../../docs/animate",
     "readme": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
     "dist": "sass --load-path=node_modules src:dist",
+    "postdist": "sass --style=compressed src/animate.scss:dist/animate.min.css src/bounce/bounce.scss:dist/bounce/bounce.min.css src/fade/fade.scss:dist/fade/fade.min.css src/slide/slide.scss:dist/slide/slide.min.css",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
     "lint": "stylelint src/**/*.scss",
     "test": "mocha",
