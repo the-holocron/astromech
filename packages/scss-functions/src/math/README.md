@@ -68,10 +68,6 @@ deg45 // 0.70710678
 
 * **0.1.0**
 
-### Authors
-
-* Newton Koumantzelis
-
 ## `@function circle-angle`
 
 Gets the radius of a circle
@@ -91,15 +87,11 @@ CSS Unit - an offset used for box-shadow
 
 ### Dependencies
 
-* **[`@function deg45](#general-function-deg45)**
+* **[`@function deg45`](#general-function-deg45)**
 
 ### Since
 
 * **0.1.0**
-
-### Authors
-
-* Newton Koumantzelis
 
 ## `@function circle-normal`
 
@@ -120,15 +112,11 @@ CSS Unit - an offset used for box-shadow
 
 ### Dependencies
 
-* **[`@function deg45](#general-function-deg45)**
+* **[`@function deg45`](#general-function-deg45)**
 
 ### Since
 
 * **0.1.0**
-
-### Authors
-
-* Newton Koumantzelis
 
 ## `@function exp`
 
