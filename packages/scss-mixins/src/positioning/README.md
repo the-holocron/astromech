@@ -14,14 +14,14 @@ Positioning utilities all revolve around positioning elements around the page, s
 
 Centers a element absolutely on any or multiple planes
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
 | Name        | Type                                                             | Description                     | Default      |
 | :---------- | :--------------------------------------------------------------- | :------------------------------ | :----------- |
-| `$position` | **[String](https://sass-lang.com/documentation/values/strings)** | The position or plane to center | `'vertical'` |
+| `$position` | **[String](https://sass-lang.com/documentation/values/strings)** | The position or plane to center | `null` |
 
 ### Examples
 
@@ -33,9 +33,9 @@ Centers a element absolutely on any or multiple planes
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 

@@ -1,6 +1,10 @@
-@use "../../node_modules/@theholocron/arfour/src/a11y" as *;
-@use "../../node_modules/@theholocron/arfour/src/color" as *;
-@use "../utilities/hover" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/a11y" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/color" as *;
+@use "../pseudo-classes/hover" as *;
+
+////
+/// @group Backgrounds & Borders
+////
 /* stylelint-disable declaration-no-important */
 /// Creates background color variants
 /// @since 0.1.0

@@ -1,5 +1,9 @@
-@use "../../node_modules/@theholocron/arfour/src/color" as *;
-@use "../utilities/hover" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/color" as *;
+@use "../pseudo-classes/hover" as *;
+
+////
+/// @group Text
+////
 /* stylelint-disable declaration-no-important */
 /// Creates text color variants
 /// @since 0.1.0

@@ -1,5 +1,6 @@
 ////
 /// @author Mark Otto
+/// @group Pseudo-Classes
 ////
 
 /// Creates hover mixin
@@ -11,7 +12,7 @@
 ///       text-decoration: underline;
 ///     }
 ///   }
-@mixin hover {
+@mixin hover() {
 	&:hover {
 		@content;
 	}
@@ -27,7 +28,7 @@
 ///       outline: 1px solid blue;
 ///     }
 ///   }
-@mixin hover-focus {
+@mixin hover-focus() {
 	&:focus,
 	&.is-focused,
 	&:hover {
@@ -44,7 +45,7 @@
 ///       background-color: blue;
 ///     }
 ///   }
-@mixin plain-hover-focus {
+@mixin plain-hover-focus() {
 	&,
 	&:focus,
 	&.is-focused,
@@ -62,7 +63,7 @@
 ///       background-color: blue;
 ///     }
 ///   }
-@mixin hover-focus-active {
+@mixin hover-focus-active() {
 	&:focus,
 	&.is-focused,
 	&:active,

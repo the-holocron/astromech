@@ -1,0 +1,233 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/pseudo-classes" as *;
+
+$breakpoints: (
+	xs: 0,
+	sm: 34em,
+	md: 48em,
+	lg: 62em,
+	xl: 75em
+);
+
+@include describe("pseudo-classes") {
+	@include describe("hover") {
+		@include it("it should output styles for hover state") {
+			@include assert() {
+
+				@include output() {
+					@include hover() {
+						text-decoration: underline;
+					}
+				}
+
+				@include expect() {
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		@include it("it should output styles for hover and focus states") {
+			@include assert() {
+
+				@include output() {
+					@include hover-focus() {
+						text-decoration: underline;
+					}
+				}
+
+				@include expect() {
+					&:focus,
+					&.is-focused,
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		@include it("it should output styles for parent, hover, and focus states") {
+			@include assert() {
+
+				@include output() {
+					@include plain-hover-focus() {
+						text-decoration: underline;
+					}
+				}
+
+				@include expect() {
+					&,
+					&:focus,
+					&.is-focused,
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		@include it("it should output styles for hover, focus, and active states") {
+			@include assert() {
+
+				@include output() {
+					@include hover-focus-active() {
+						text-decoration: underline;
+					}
+				}
+
+				@include expect() {
+					&:focus,
+					&.is-focused,
+					&:active,
+					&.is-active,
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("nth-child") {
+		@include describe("has-nth") {
+			@include it("it should output styles for nth child") {
+				@include assert() {
+
+					@include output() {
+						@include has-nth("n + 4", "li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(n+4):first-child,
+						&:nth-last-child(n+4):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("at-least") {
+			@include it("it should output styles for elements at least n") {
+				@include assert() {
+
+					@include output() {
+						@include at-least("4", "li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(n+4):first-child,
+						&:nth-last-child(n+4):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("at-most") {
+			@include it("it should output styles for elements that are at most n") {
+				@include assert() {
+
+					@include output() {
+						@include at-most("4", "li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(-n+4):first-child,
+						&:nth-last-child(-n+4):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("divisible-by") {
+			@include it("it should output styles for elements that are divisible by n") {
+				@include assert() {
+
+					@include output() {
+						@include divisible-by("4", 0, "li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(4n+0):first-child,
+						&:nth-last-child(4n+0):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("has-exactly") {
+			@include it("it should output styles for exactly n elements only") {
+				@include assert() {
+
+					@include output() {
+						@include has-exactly("4", "li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(4):first-child,
+						&:nth-last-child(4):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("has-odd") {
+			@include it("it should output styles for odd elements only") {
+				@include assert() {
+
+					@include output() {
+						@include has-odd("li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(odd):first-child,
+						&:nth-last-child(odd):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+
+		@include describe("has-even") {
+			@include it("it should output styles for even elements only") {
+				@include assert() {
+
+					@include output() {
+						@include has-even("li") {
+							text-decoration: underline;
+						}
+					}
+
+					@include expect() {
+						&:nth-last-child(even):first-child,
+						&:nth-last-child(even):first-child ~ li {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+	}
+}

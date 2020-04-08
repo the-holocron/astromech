@@ -1,6 +1,6 @@
 {
-  "name": "@theholocron/arone",
-  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/arone#readme",
+  "name": "@theholocron/scss-mixins",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/scss-mixins#readme",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing CSS within the Galaxy.",
   "author": "Newton Koumantzelis",
   "version": "0.0.0",
@@ -26,14 +26,14 @@
     }
   },
   "scripts": {
-    "sassdoc": "sassdoc src --dest docs",
-    "docs": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
+    "docs": "sassdoc src/**/*.scss --dest ../../docs/mixins",
+    "readme": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
     "lint": "stylelint src/**/*.scss --syntax scss",
     "test": "mocha"
   },
   "dependencies": {
-    "@theholocron/arfour": "file:../arfour"
+    "@theholocron/scss-functions": "file:../scss-functions"
   },
   "peerDependencies": {
     "sass": "^1.26.3"

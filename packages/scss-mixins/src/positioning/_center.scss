@@ -1,10 +1,11 @@
 ////
 /// @author Mark Otto
+/// @group Positioning
 ////
 
 /// Centers a element absolutely on any or multiple planes
 /// @since 0.1.0
-/// @param {String} $position ['vertical'] - The position or plane to center
+/// @param {String} $position [null] - The position or plane to center
 /// @example scss
 ///   .example {
 ///     @include center();

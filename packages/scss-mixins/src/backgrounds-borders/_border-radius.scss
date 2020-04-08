@@ -1,10 +1,11 @@
 ////
 /// @author Mark Otto
+/// @group Backgrounds & Borders
 ////
 
 /// Creates border-radius
 /// @since 0.1.0
-/// @param {Number} $radius [.125rem] - a valid CSS unit to create a border-radius on all sides
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on all sides
 /// @example scss
 ///   .example {
 ///     @include border-radius();

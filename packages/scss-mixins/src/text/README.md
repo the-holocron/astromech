@@ -1,4 +1,4 @@
-# Typography
+# Text
 
 These utilities all revolve around the typography, such as sizing, alignment, transformation, white space etc. Use these to force a elements text to display accordingly. All of these deal exclusively with positioning and not styling such as color or backgrounds All of these deal exclusively with positioning and not styling such as color or backgrounds.
 
@@ -14,8 +14,8 @@ These utilities all revolve around the typography, such as sizing, alignment, tr
 
 Creates text color variants
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -34,4 +34,4 @@ Creates text color variants
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**

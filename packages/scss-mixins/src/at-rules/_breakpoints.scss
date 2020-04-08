@@ -1,7 +1,8 @@
-@use "../../node_modules/@theholocron/arfour/src/misc/breakpoints" as breakpoint;
+@use "../../node_modules/@theholocron/scss-functions/src/misc/breakpoints" as breakpoint;
 
 ////
 /// @author Mark Otto
+/// @group At-Rules
 ////
 
 /// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.

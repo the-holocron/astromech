@@ -1,14 +1,11 @@
-# Utilities
+# Pseudo-Classes
 
-These are miscellaneous utilities that affect hover, focus or active states, responsiveness and `nth-child` selectors.
+A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, [`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) can be used to change a button's color when the user's pointer hovers over it.
 
 ## Table of Contents
 
 <!-- toc -->
 
-* [`@mixin media-breakpoint-up`](#mixin-media-breakpoint-up)
-* [`@mixin media-breakpoint-down`](#mixin-media-breakpoint-down)
-* [`@mixin media-breakpoint-only`](#mixin-media-breakpoint-only)
 * [`@mixin hover`](#mixin-hover)
 * [`@mixin hover-focus`](#mixin-hover-focus)
 * [`@mixin plain-hover-focus`](#mixin-plain-hover-focus)
@@ -23,165 +20,12 @@ These are miscellaneous utilities that affect hover, focus or active states, res
 
 <!-- tocstop -->
 
-## `@mixin media-breakpoint-up`
-
-Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
-
-+ **Group:** General
-+ **Access:** public
-
-### Parameters
-
-| Name           | Type                                                             | Description                 | Default |
-| :------------- | :--------------------------------------------------------------- | :-------------------------- | :------ |
-| `$name`        | **[String](https://sass-lang.com/documentation/values/strings)** | the name for the breakpoint | -       |
-| `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints   | -       |
-
-### Contents
-
-applies to the given breakpoint and wider.
-
-### Examples
-
-```scss
-.test {
-  @include media-breakpoint-up('md') {
-    width: 25%;
-  }
-}
-```
-
-### Dependents
-
-+ **`@mixin media-breakpoint-only** Media between the breakpoint's minimum and maximum widths.
-  No minimum for the smallest breakpoint, and no maximum for the largest one.
-
-### Since
-
-+ **0.1.0**
-
-### Authors
-
-+ Mark Otto
-
-## `@mixin media-breakpoint-down`
-
-Media of at most the maximum breakpoint width. No query for the largest breakpoint.
-
-+ **Group:** General
-+ **Access:** public
-
-### Parameters
-
-| Name           | Type                                                             | Description                 | Default |
-| :------------- | :--------------------------------------------------------------- | :-------------------------- | :------ |
-| `$name`        | **[String](https://sass-lang.com/documentation/values/strings)** | the name for the breakpoint | -       |
-| `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints   | -       |
-
-### Contents
-
-applies to the given breakpoint and narrower.
-
-### Examples
-
-```scss
-.test {
-  @include media-breakpoint-down('md') {
-    width: 100%;
-  }
-}
-```
-
-### Dependents
-
-+ **`@mixin media-breakpoint-only** Media between the breakpoint's minimum and maximum widths.
-  No minimum for the smallest breakpoint, and no maximum for the largest one.
-
-### Since
-
-+ **0.1.0**
-
-### Authors
-
-+ Mark Otto
-
-## `@mixin media-breakpoint-only`
-
-Media between the breakpoint's minimum and maximum widths.
-No minimum for the smallest breakpoint, and no maximum for the largest one.
-
-+ **Group:** General
-+ **Access:** public
-
-### Parameters
-
-| Name           | Type                                                             | Description                 | Default |
-| :------------- | :--------------------------------------------------------------- | :-------------------------- | :------ |
-| `$name`        | **[String](https://sass-lang.com/documentation/values/strings)** | the name for the breakpoint | -       |
-| `$breakpoints` | **[Map](https://sass-lang.com/documentation/values/maps)**       | a map of grid breakpoints   | -       |
-
-### Contents
-
-applies only to the given breakpoint, not viewports any wider or narrower.
-
-### Examples
-
-```scss
-.test {
-  @include media-breakpoint-only('md') {
-    width: 50%;
-  }
-}
-```
-
-### Dependencies
-
-+ **[`@mixin media-breakpoint-up](##general-mixin-media-breakpoint-up)**
-+ **[`@mixin media-breakpoint-down](##general-mixin-media-breakpoint-down)**
-
-### Since
-
-+ **0.1.0**
-
-### Authors
-
-+ Mark Otto
-
-## `@mixin hover`
-
-Creates hover mixin
-
-+ **Group:** General
-+ **Access:** public
-
-### Contents
-
-styles used on hover states
-
-### Examples
-
-```scss
-.test {
-  @include hover {
-    text-decoration: underline;
-  }
-}
-```
-
-### Since
-
-+ **0.1.0**
-
-### Authors
-
-+ Mark Otto
-
 ## `@mixin hover-focus`
 
 Creates hover, focus combo mixin
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Contents
 
@@ -200,18 +44,18 @@ styles used on focus and hover states
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin plain-hover-focus`
 
 Creates hover, focus and parent combo mixin
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Contents
 
@@ -229,18 +73,18 @@ styles used on selector, focus and hover states
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin hover-focus-active`
 
 Creates hover, focus, and active combo mixin
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Contents
 
@@ -258,18 +102,18 @@ styles used on focus, active and hover states
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin has-nth`
 
 Creates has-nth
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -286,7 +130,7 @@ styles used on a narrowed set of elements
 
 ```scss
 li {
-   @include has-nth('n + 4', 'li') {
+   @include has-nth('n * 4', 'li') {
       color: blue;
    }
 }
@@ -294,27 +138,27 @@ li {
 
 ### Dependents
 
-+ **`@mixin at-least** Creates at-least
-+ **`@mixin at-most** Creates at-most
-+ **`@mixin divisible-by** Creates divisible-by
-+ **`@mixin has-exactly** Creates has-exactly
-+ **`@mixin has-odd** Creates has-odd
-+ **`@mixin has-even** Creates has-even
+* **`@mixin at-least** Creates at-least
+* **`@mixin at-most** Creates at-most
+* **`@mixin divisible-by** Creates divisible-by
+* **`@mixin has-exactly** Creates has-exactly
+* **`@mixin has-odd** Creates has-odd
+* **`@mixin has-even** Creates has-even
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin at-least`
 
 Creates at-least
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -339,22 +183,22 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin at-most`
 
 Creates at-most
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -379,22 +223,22 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin divisible-by`
 
 Creates divisible-by
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -420,22 +264,22 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin has-exactly`
 
 Creates has-exactly
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -460,22 +304,22 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin has-odd`
 
 Creates has-odd
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -499,22 +343,22 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 
 ## `@mixin has-even`
 
 Creates has-even
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -538,13 +382,13 @@ li {
 
 ### Dependencies
 
-+ **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[`@mixin has-nth](##general-mixin-has-nth)**
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Adam Giese
+* Adam Giese
 

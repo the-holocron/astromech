@@ -1,6 +1,6 @@
-# Box Model
+# Backgrounds & Borders
 
-Box model utilities all revolve around the box-model properties, such as width, height, overflow, margin, padding, etc. Use these to force a element to size accordingly.
+From adding gradients, background images, and rounded corners, backgrounds and borders are the answer to a lot of styling questions in CSS.
 
 ## Table of Contents
 
@@ -20,8 +20,8 @@ Box model utilities all revolve around the box-model properties, such as width, 
 
 Creates background color variants
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -42,20 +42,20 @@ Creates background color variants
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ## `@mixin border-radius`
 
 Creates border-radius
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
 | Name      | Type                                                             | Description                                             | Default   |
 | :-------- | :--------------------------------------------------------------- | :------------------------------------------------------ | :-------- |
-| `$radius` | **[Number](https://sass-lang.com/documentation/values/numbers)** | a valid CSS unit to create a border-radius on all sides | `.125rem` |
+| `$radius` | **[Number](https://sass-lang.com/documentation/values/numbers)** | a valid CSS unit to create a border-radius on all sides | -         |
 
 ### Examples
 
@@ -67,18 +67,18 @@ Creates border-radius
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin border-top-radius`
 
 Creates border-top-radius
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -96,18 +96,18 @@ Creates border-top-radius
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin border-right-radius`
 
 Creates border-right-radius
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -125,18 +125,18 @@ Creates border-right-radius
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin border-bottom-radius`
 
 Creates border-bottom-radius
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -154,18 +154,18 @@ Creates border-bottom-radius
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin border-left-radius`
 
 Creates border-left-radius
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -183,18 +183,18 @@ Creates border-left-radius
 
 ### Since
 
-+ **0.1.0**
+* **0.1.0**
 
 ### Authors
 
-+ Mark Otto
+* Mark Otto
 
 ## `@mixin border`
 
 Creates border variants
 
-+ **Group:** General
-+ **Access:** public
+* **Group:** General
+* **Access:** public
 
 ### Parameters
 
@@ -215,5 +215,4 @@ Creates border variants
 
 ### Since
 
-+ **0.1.0**
-
+* **0.1.0**

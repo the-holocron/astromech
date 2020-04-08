@@ -1,0 +1,27 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/text" as *;
+
+@include describe("text") {
+	@include describe("text-color") {
+		@include it("it should output a text color") {
+			@include assert() {
+
+				@include output() {
+					@include text-color(".test", red);
+				}
+
+				@include expect() {
+					.test {
+						color: red !important;
+					}
+
+					a.test:focus,
+					a.test.is-focused,
+					a.test:hover {
+						color: #bf0000 !important;
+					}
+				}
+			}
+		}
+	}
+}

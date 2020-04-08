@@ -2,10 +2,11 @@
 @use "true";
 
 // Tests
-@use "./box-model";
+@use "./at-rules";
+@use "./pseudo-classes";
+@use "./backgrounds-borders";
 @use "./positioning";
-@use "./typography";
-@use "./utilities";
+@use "./text";
 
 // Report
-@include true.report;
+@include true.report();
