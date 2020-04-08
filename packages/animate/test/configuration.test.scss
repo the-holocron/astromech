@@ -7,4 +7,4 @@
 @use "./slide-with-configuration";
 
 // Report
-@include true.report;
+@include true.report();

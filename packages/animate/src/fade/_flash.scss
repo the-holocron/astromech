@@ -2,10 +2,10 @@
 
 /// This will take the element and fade it in from its current position.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include fade-flash();
-@mixin fade-flash($class: config.$base-class) {
+@mixin fade-flash($className: config.$base-class) {
 	@keyframes flash {
 		from,
 		50%,
@@ -19,7 +19,7 @@
 		}
 	}
 
-	#{$class}.flash {
+	.#{$className}.flash {
 		animation-name: flash;
 	}
 }

@@ -1,30 +1,19 @@
 @use "sass:map";
-@use "config";
+@use "../node_modules/@theholocron/config/src" as astromech;
+@use "./config";
 
 /// The base class for all animations.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $class ["animate"] - a CSS class name to add to activate the animation
 /// @example scss
-///   @include animate();
-@mixin animate($class: config.$base-class) {
-	#{$class} {
-		animation-duration: map.get(config.$duration, "md");
+///   @include animate($className: "anime", $duration: 2s);
+@mixin animate($className: config.$base-class) {
+	.#{$className} {
+		animation-duration: astromech.$duration;
 		animation-fill-mode: both;
 
 		&.infinite {
 			animation-iteration-count: infinite;
-		}
-
-		&.slow {
-			animation-duration: map.get(config.$duration, lg);
-		}
-
-		&.medium {
-			animation-duration: map.get(config.$duration, md);
-		}
-
-		&.fast {
-			animation-duration: map.get(config.$duration, sm);
 		}
 	}
 }

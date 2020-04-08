@@ -1,14 +1,14 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/fade" as *;
 
-@include describe("mixins: fade with configuration") {
+@include describe("fade with configuration") {
 	@include it("should fade & flash") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-flash();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes flash {
 					from,
 					50%,
@@ -31,11 +31,11 @@
 
 	@include it("should fade in & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-in-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-in-down {
 					from {
 						opacity: 0;
@@ -57,11 +57,11 @@
 
 	@include it("should fade in & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-in-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-in-left {
 					from {
 						opacity: 0;
@@ -83,11 +83,11 @@
 
 	@include it("should fade in & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-in-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-in-right {
 					from {
 						opacity: 0;
@@ -109,11 +109,11 @@
 
 	@include it("should fade in & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-in-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-in-up {
 					from {
 						opacity: 0;
@@ -135,11 +135,11 @@
 
 	@include it("should fade in") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-in();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-in {
 					from {
 						opacity: 0;
@@ -159,11 +159,11 @@
 
 	@include it("should fade out & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-out-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-out-down {
 					from {
 						opacity: 1;
@@ -184,11 +184,11 @@
 
 	@include it("should fade out & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-out-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-out-left {
 					from {
 						opacity: 1;
@@ -209,11 +209,11 @@
 
 	@include it("should fade out & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-out-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-out-right {
 					from {
 						opacity: 1;
@@ -234,11 +234,11 @@
 
 	@include it("should fade out & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-out-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-out-up {
 					from {
 						opacity: 1;
@@ -259,11 +259,11 @@
 
 	@include it("should fade out") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include fade-out();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes fade-out {
 					from {
 						opacity: 1;

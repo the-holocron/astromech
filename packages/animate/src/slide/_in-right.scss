@@ -2,10 +2,10 @@
 
 /// This will take the element and slide it from the right.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include slide-in-right();
-@mixin slide-in-right($class: config.$base-class) {
+@mixin slide-in-right($className: config.$base-class) {
 	@keyframes slide-in-right {
 		from {
 			visibility: visible;
@@ -17,7 +17,7 @@
 		}
 	}
 
-	#{$class}.slide-in-right {
+	.#{$className}.slide-in-right {
 		animation-name: slide-in-right;
 	}
 }

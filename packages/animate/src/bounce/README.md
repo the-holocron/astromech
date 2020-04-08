@@ -29,7 +29,7 @@ This will take the element and animate it from the top down with a bounce at the
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -52,7 +52,7 @@ This will take the element and animate it from the top down with a bounce at the
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -75,7 +75,7 @@ This will take the element and animate it from the left down with a bounce at th
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -98,7 +98,7 @@ This will take the element and animate it from the right down with a bounce at t
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -121,7 +121,7 @@ This will take the element and animate it from the bottom down with a bounce at 
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -144,7 +144,7 @@ This will take the element and animate it from the its current position with a b
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -167,7 +167,7 @@ This will take the element and animate it from the its current position with a b
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -190,7 +190,7 @@ This will take the element and animate it from the its current position with a b
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -213,7 +213,7 @@ This will take the element and animate it from the its current position with a b
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 

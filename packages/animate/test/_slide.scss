@@ -1,14 +1,14 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/slide" as *;
 
-@include describe("mixins: slide") {
+@include describe("slide") {
 	@include it("should slide in & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-in-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-in-down {
 					from {
 						visibility: visible;
@@ -29,11 +29,11 @@
 
 	@include it("should slide in & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-in-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-in-left {
 					from {
 						visibility: visible;
@@ -54,11 +54,11 @@
 
 	@include it("should slide in & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-in-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-in-right {
 					from {
 						visibility: visible;
@@ -79,11 +79,11 @@
 
 	@include it("should slide in & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-in-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-in-up {
 					from {
 						visibility: visible;
@@ -104,11 +104,11 @@
 
 	@include it("should slide out & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-out-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-out-down {
 					from {
 						transform: translate3d(0, 0, 0);
@@ -129,11 +129,11 @@
 
 	@include it("should slide out & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-out-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-out-left {
 					from {
 						transform: translate3d(0, 0, 0);
@@ -154,11 +154,11 @@
 
 	@include it("should slide out & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-out-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-out-right {
 					from {
 						transform: translate3d(0, 0, 0);
@@ -179,11 +179,11 @@
 
 	@include it("should slide out & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include slide-out-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes slide-out-up {
 					from {
 						transform: translate3d(0, 0, 0);

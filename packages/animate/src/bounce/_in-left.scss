@@ -2,10 +2,10 @@
 
 /// This will take the element and animate it from the left down with a bounce at the end.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include bounce-in-left();
-@mixin bounce-in-left($class: config.$base-class) {
+@mixin bounce-in-left($className: config.$base-class) {
 	@keyframes bounce-in-left {
 		from,
 		60%,
@@ -38,7 +38,7 @@
 		}
 	}
 
-	#{$class}.bounce-in-left {
+	.#{$className}.bounce-in-left {
 		animation-name: bounce-in-left;
 	}
 }

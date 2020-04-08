@@ -2,10 +2,10 @@
 
 /// This will take the element and animate it from the its current position with a bounce and then exit to through the left.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include bounce-out-left();
-@mixin bounce-out-left($class: config.$base-class) {
+@mixin bounce-out-left($className: config.$base-class) {
 	@keyframes bounce-out-left {
 		20% {
 			opacity: 1;
@@ -18,7 +18,7 @@
 		}
 	}
 
-	#{$class}.bounce-out-left {
+	.#{$className}.bounce-out-left {
 		animation-name: bounce-out-left;
 	}
 }

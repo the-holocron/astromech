@@ -1,0 +1,536 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>@theholocron/animate - v0.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="@theholocron/animate - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>This utility droid provides a set of single-purpose, functional utilities for writing (S)CSS animation within the Galaxy.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/the-holocron/astromech/tree/master/packages/animate#readme">@theholocron/animate - v0.0.0</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-back-forth" data-type="mixin"><a href="#undefined-mixin-bounce-back-forth">bounce-back-forth</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-flash" data-type="mixin"><a href="#undefined-mixin-fade-flash">fade-flash</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-in-down" data-type="mixin"><a href="#undefined-mixin-bounce-in-down">bounce-in-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-in-down" data-type="mixin"><a href="#undefined-mixin-fade-in-down">fade-in-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-in-down" data-type="mixin"><a href="#undefined-mixin-slide-in-down">slide-in-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-in-left" data-type="mixin"><a href="#undefined-mixin-bounce-in-left">bounce-in-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-in-left" data-type="mixin"><a href="#undefined-mixin-fade-in-left">fade-in-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-in-left" data-type="mixin"><a href="#undefined-mixin-slide-in-left">slide-in-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-in-right" data-type="mixin"><a href="#undefined-mixin-bounce-in-right">bounce-in-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-in-right" data-type="mixin"><a href="#undefined-mixin-fade-in-right">fade-in-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-in-right" data-type="mixin"><a href="#undefined-mixin-slide-in-right">slide-in-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-in-up" data-type="mixin"><a href="#undefined-mixin-bounce-in-up">bounce-in-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-in-up" data-type="mixin"><a href="#undefined-mixin-fade-in-up">fade-in-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-in-up" data-type="mixin"><a href="#undefined-mixin-slide-in-up">slide-in-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-in" data-type="mixin"><a href="#undefined-mixin-fade-in">fade-in</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-out-down" data-type="mixin"><a href="#undefined-mixin-bounce-out-down">bounce-out-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-out-down" data-type="mixin"><a href="#undefined-mixin-fade-out-down">fade-out-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-out-down" data-type="mixin"><a href="#undefined-mixin-slide-out-down">slide-out-down</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-out-left" data-type="mixin"><a href="#undefined-mixin-bounce-out-left">bounce-out-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-out-left" data-type="mixin"><a href="#undefined-mixin-fade-out-left">fade-out-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-out-left" data-type="mixin"><a href="#undefined-mixin-slide-out-left">slide-out-left</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-out-right" data-type="mixin"><a href="#undefined-mixin-bounce-out-right">bounce-out-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-out-right" data-type="mixin"><a href="#undefined-mixin-fade-out-right">fade-out-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-out-right" data-type="mixin"><a href="#undefined-mixin-slide-out-right">slide-out-right</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="bounce-out-up" data-type="mixin"><a href="#undefined-mixin-bounce-out-up">bounce-out-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-out-up" data-type="mixin"><a href="#undefined-mixin-fade-out-up">fade-out-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="slide-out-up" data-type="mixin"><a href="#undefined-mixin-slide-out-up">slide-out-up</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="fade-out" data-type="mixin"><a href="#undefined-mixin-fade-out">fade-out</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-bounce-back-forth"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-back-forth">bounce-back-forth</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-back-forth($className: &quot;.animate&quot;) { 
+	$width: if(math.is-unitless($width), math.percentage($width), $width);
+	$offset: 100% - $width;
+
+	@keyframes bounce-back-forth {
+		0% {
+			opacity: .5;
+			width: $width;
+			margin-left: 0;
+		}
+
+		50% {
+			opacity: .75;
+			width: 100%;
+			margin-left: 0;
+		}
+
+		100% {
+			opacity: .5;
+			width: $width;
+			margin-left: $offset;
+		}
+	}
+
+	.#{$className}.bounce-back-forth {
+		animation-name: bounce-back-forth;
+	}
+ }" data-collapsed="@mixin bounce-back-forth($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-back-forth($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the top down with a bounce at the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-back-forth();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-flash"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-flash">fade-flash</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-flash($className: &quot;.animate&quot;) { 
+	@keyframes flash {
+		from,
+		50%,
+		to {
+			opacity: .8;
+		}
+
+		25%,
+		75% {
+			opacity: .15;
+		}
+	}
+
+	.#{$className}.flash {
+		animation-name: flash;
+	}
+ }" data-collapsed="@mixin fade-flash($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-flash($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from its current position.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-flash();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-in-down"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-in-down">bounce-in-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-in-down($className: &quot;.animate&quot;) { 
+	@keyframes bounce-in-down {
+		from,
+		60%,
+		75%,
+		90%,
+		to {
+			animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		}
+
+		0% {
+			opacity: 0;
+			transform: translate3d(0, -100vh, 0);
+		}
+
+		60% {
+			opacity: 1;
+			transform: translate3d(0, 1.5625rem, 0);
+		}
+
+		75% {
+			transform: translate3d(0, -.625rem, 0);
+		}
+
+		90% {
+			transform: translate3d(0, .3125rem, 0);
+		}
+
+		to {
+			transform: none;
+		}
+	}
+
+	.#{$className}.bounce-in-down {
+		animation-name: bounce-in-down;
+	}
+ }" data-collapsed="@mixin bounce-in-down($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-in-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the top down with a bounce at the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-in-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-in-down"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in-down">fade-in-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in-down($className: &quot;.animate&quot;) { 
+	@keyframes fade-in-down {
+		from {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	.#{$className}.fade-in-down {
+		animation-name: fade-in-down;
+	}
+ }" data-collapsed="@mixin fade-in-down($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-in-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from the top.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-in-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-in-down"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-in-down">slide-in-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-in-down($className: &quot;.animate&quot;) { 
+	@keyframes slide-in-down {
+		from {
+			visibility: visible;
+			transform: translate3d(0, -200%, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-in-down {
+		animation-name: slide-in-down;
+	}
+ }" data-collapsed="@mixin slide-in-down($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-in-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it from the top.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-in-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-in-left"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-in-left">bounce-in-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-in-left($className: &quot;.animate&quot;) { 
+	@keyframes bounce-in-left {
+		from,
+		60%,
+		75%,
+		90%,
+		to {
+			animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		}
+
+		0% {
+			opacity: 0;
+			transform: translate3d(-100vw, 0, 0);
+		}
+
+		60% {
+			opacity: 1;
+			transform: translate3d(1.5625rem, 0, 0);
+		}
+
+		75% {
+			transform: translate3d(-.625rem, 0, 0);
+		}
+
+		90% {
+			transform: translate3d(.3125rem, 0, 0);
+		}
+
+		to {
+			transform: none;
+		}
+	}
+
+	.#{$className}.bounce-in-left {
+		animation-name: bounce-in-left;
+	}
+ }" data-collapsed="@mixin bounce-in-left($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-in-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the left down with a bounce at the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-in-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-in-left"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in-left">fade-in-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in-left($className: &quot;.animate&quot;) { 
+	@keyframes fade-in-left {
+		from {
+			opacity: 0;
+			transform: translate3d(-100%, 0, 0);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	.#{$className}.fade-in-left {
+		animation-name: fade-in-left;
+	}
+ }" data-collapsed="@mixin fade-in-left($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-in-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from the left.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-in-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-in-left"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-in-left">slide-in-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-in-left($className: &quot;.animate&quot;) { 
+	@keyframes slide-in-left {
+		from {
+			visibility: visible;
+			transform: translate3d(-200%, 0, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-in-left {
+		animation-name: slide-in-left;
+	}
+ }" data-collapsed="@mixin slide-in-left($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-in-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it from the left.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-in-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-in-right"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-in-right">bounce-in-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-in-right($className: &quot;.animate&quot;) { 
+	@keyframes bounce-in-right {
+		from,
+		60%,
+		75%,
+		90%,
+		to {
+			animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		}
+
+		from {
+			opacity: 0;
+			transform: translate3d(100vw, 0, 0);
+		}
+
+		60% {
+			opacity: 1;
+			transform: translate3d(-1.5625rem, 0, 0);
+		}
+
+		75% {
+			transform: translate3d(.625rem, 0, 0);
+		}
+
+		90% {
+			transform: translate3d(-.3125rem, 0, 0);
+		}
+
+		to {
+			transform: none;
+		}
+	}
+
+	.#{$className}.bounce-in-right {
+		animation-name: bounce-in-right;
+	}
+ }" data-collapsed="@mixin bounce-in-right($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-in-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the right down with a bounce at the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-in-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-in-right"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in-right">fade-in-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in-right($className: &quot;.animate&quot;) { 
+	@keyframes fade-in-right {
+		from {
+			opacity: 0;
+			transform: translate3d(100%, 0, 0);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	.#{$className}.fade-in-right {
+		animation-name: fade-in-right;
+	}
+ }" data-collapsed="@mixin fade-in-right($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-in-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from the right.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-in-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-in-right"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-in-right">slide-in-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-in-right($className: &quot;.animate&quot;) { 
+	@keyframes slide-in-right {
+		from {
+			visibility: visible;
+			transform: translate3d(200%, 0, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-in-right {
+		animation-name: slide-in-right;
+	}
+ }" data-collapsed="@mixin slide-in-right($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-in-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it from the right.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-in-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-in-up"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-in-up">bounce-in-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-in-up($className: &quot;.animate&quot;) { 
+	@keyframes bounce-in-up {
+		from,
+		60%,
+		75%,
+		90%,
+		to {
+			animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		}
+
+		from {
+			opacity: 0;
+			transform: translate3d(0, 100vh, 0);
+		}
+
+		60% {
+			opacity: 1;
+			transform: translate3d(0, -1.5625rem, 0);
+		}
+
+		75% {
+			transform: translate3d(0, .625rem, 0);
+		}
+
+		90% {
+			transform: translate3d(0, -.3125rem, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.#{$className}.bounce-in-up {
+		animation-name: bounce-in-up;
+	}
+ }" data-collapsed="@mixin bounce-in-up($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-in-up($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the bottom down with a bounce at the end.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-in-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-in-up"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in-up">fade-in-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in-up($classNameName: &quot;.animate&quot;) { 
+	@keyframes fade-in-up {
+		from {
+			opacity: 0;
+			transform: translate3d(0, 100%, 0);
+		}
+
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	.#{$classNameName}.fade-in-up {
+		animation-name: fade-in-up;
+	}
+ }" data-collapsed="@mixin fade-in-up($classNameName: &quot;.animate&quot;) { ... }"><code>@mixin fade-in-up($classNameName: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from the bottom.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$classNameName</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-in-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-in-up"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-in-up">slide-in-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-in-up($className: &quot;.animate&quot;) { 
+	@keyframes slide-in-up {
+		from {
+			visibility: visible;
+			transform: translate3d(0, 200%, 0);
+		}
+
+		to {
+			transform: translate3d(0, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-in-up {
+		animation-name: slide-in-up;
+	}
+ }" data-collapsed="@mixin slide-in-up($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-in-up($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it from the bottom.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-in-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-in"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-in">fade-in</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-in($className: &quot;.animate&quot;) { 
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
+
+	.#{$className}.fade-in {
+		animation-name: fade-in;
+	}
+ }" data-collapsed="@mixin fade-in($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-in($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it in from its current position.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-in();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-out-down"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-out-down">bounce-out-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-out-down($className: &quot;.animate&quot;) { 
+	@keyframes bounce-out-down {
+		20% {
+			transform: translate3d(0, .625rem, 0);
+		}
+
+		40%,
+		45% {
+			opacity: 1;
+			transform: translate3d(0, -1.5625rem, 0);
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(0, 100vh, 0);
+		}
+	}
+
+	.#{$className}.bounce-out-down {
+		animation-name: bounce-out-down;
+	}
+ }" data-collapsed="@mixin bounce-out-down($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-out-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the its current position with a bounce and then exit to through the bottom.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-out-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-out-down"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out-down">fade-out-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out-down($className: &quot;.animate&quot;) { 
+	@keyframes fade-out-down {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(0, 100%, 0);
+		}
+	}
+
+	.#{$className}.fade-out-down {
+		animation-name: fade-out-down;
+	}
+ }" data-collapsed="@mixin fade-out-down($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-out-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it out from the bottom.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-out-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-out-down"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-out-down">slide-out-down</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-out-down($className: &quot;.animate&quot;) { 
+	@keyframes slide-out-down {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			transform: translate3d(0, 300%, 0);
+		}
+	}
+
+	.#{$className}.slide-out-down {
+		animation-name: slide-out-down;
+	}
+ }" data-collapsed="@mixin slide-out-down($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-out-down($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it out from the down.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-out-down();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-out-left"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-out-left">bounce-out-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-out-left($className: &quot;.animate&quot;) { 
+	@keyframes bounce-out-left {
+		20% {
+			opacity: 1;
+			transform: translate3d(1.5625rem, 0, 0);
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(-100vw, 0, 0);
+		}
+	}
+
+	.#{$className}.bounce-out-left {
+		animation-name: bounce-out-left;
+	}
+ }" data-collapsed="@mixin bounce-out-left($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-out-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the its current position with a bounce and then exit to through the left.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-out-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-out-left"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out-left">fade-out-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out-left($className: &quot;.animate&quot;) { 
+	@keyframes fade-out-left {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(-100%, 0, 0);
+		}
+	}
+
+	.#{$className}.fade-out-left {
+		animation-name: fade-out-left;
+	}
+ }" data-collapsed="@mixin fade-out-left($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-out-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it out from the left.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-out-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-out-left"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-out-left">slide-out-left</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-out-left($className: &quot;.animate&quot;) { 
+	@keyframes slide-out-left {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			transform: translate3d(-200%, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-out-left {
+		animation-name: slide-out-left;
+	}
+ }" data-collapsed="@mixin slide-out-left($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-out-left($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it out from the left.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-out-left();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-out-right"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-out-right">bounce-out-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-out-right($className: &quot;.animate&quot;) { 
+	@keyframes bounce-out-right {
+		20% {
+			opacity: 1;
+			transform: translate3d(-1.5625rem, 0, 0);
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(100vw, 0, 0);
+		}
+	}
+
+	.#{$className}.bounce-out-right {
+		animation-name: bounce-out-right;
+	}
+ }" data-collapsed="@mixin bounce-out-right($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-out-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the its current position with a bounce and then exit to through the right.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-out-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-out-right"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out-right">fade-out-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out-right($className: &quot;.animate&quot;) { 
+	@keyframes fade-out-right {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+
+	.#{$className}.fade-out-right {
+		animation-name: fade-out-right;
+	}
+ }" data-collapsed="@mixin fade-out-right($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-out-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it out from the right.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-out-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-out-right"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-out-right">slide-out-right</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-out-right($className: &quot;.animate&quot;) { 
+	@keyframes slide-out-right {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			transform: translate3d(200%, 0, 0);
+		}
+	}
+
+	.#{$className}.slide-out-right {
+		animation-name: slide-out-right;
+	}
+ }" data-collapsed="@mixin slide-out-right($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-out-right($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it out from the right.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-out-right();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-bounce-out-up"><h3 class="item__heading"><a class="item__name" href="#mixin-bounce-out-up">bounce-out-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin bounce-out-up($className: &quot;.animate&quot;) { 
+	@keyframes bounce-out-up {
+		20% {
+			transform: translate3d(0, -.625rem, 0);
+		}
+
+		40%,
+		45% {
+			opacity: 1;
+			transform: translate3d(0, 1.5625rem, 0);
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(0, -100vh, 0);
+		}
+	}
+
+	.#{$className}.bounce-out-up {
+		animation-name: bounce-out-up;
+	}
+ }" data-collapsed="@mixin bounce-out-up($className: &quot;.animate&quot;) { ... }"><code>@mixin bounce-out-up($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and animate it from the its current position with a bounce and then exit to through the top.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include bounce-out-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-out-up"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out-up">fade-out-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out-up($className: &quot;.animate&quot;) { 
+	@keyframes fade-out-up {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+			transform: translate3d(0, -100%, 0);
+		}
+	}
+
+	.#{$className}.fade-out-up {
+		animation-name: fade-out-up;
+	}
+ }" data-collapsed="@mixin fade-out-up($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-out-up($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it out from the top.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-out-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-slide-out-up"><h3 class="item__heading"><a class="item__name" href="#mixin-slide-out-up">slide-out-up</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin slide-out-up($className: &quot;.animate&quot;) { 
+	@keyframes slide-out-up {
+		from {
+			transform: translate3d(0, 0, 0);
+		}
+
+		to {
+			visibility: hidden;
+			transform: translate3d(0, -200%, 0);
+		}
+	}
+
+	.#{$className}.slide-out-up {
+		animation-name: slide-out-up;
+	}
+ }" data-collapsed="@mixin slide-out-up($className: &quot;.animate&quot;) { ... }"><code>@mixin slide-out-up($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and slide it out from the top.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include slide-out-up();</code></pre></div></section><section class="main__item container item" id="undefined-mixin-fade-out"><h3 class="item__heading"><a class="item__name" href="#mixin-fade-out">fade-out</a></h3><span class="item__since">Since 0.1.0</span><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin fade-out($className: &quot;.animate&quot;) { 
+	@keyframes fade-out {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+
+	.#{$className}.fade-out {
+		animation-name: fade-out;
+	}
+ }" data-collapsed="@mixin fade-out($className: &quot;.animate&quot;) { ... }"><code>@mixin fade-out($className: &quot;.animate&quot;) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>This will take the element and fade it out from its current position.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$className</code></th><td data-label="desc"><p>a CSS class name to add to activate the animation</p></td><td data-label="type"><code>String</code></td><td data-label="default"><code>&quot;.animate&quot;</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include fade-out();</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/the-holocron/astromech/tree/master/packages/animate#readme">@theholocron/animate</a><!-- Version --> <span class="project-info__version">- v0.0.0</span><!-- License --> <span class="project-info__license">, under GPL-3.0</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

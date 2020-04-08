@@ -1,9 +1,9 @@
 {
-  "name": "@theholocron/arthree",
-  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/arthree#readme",
+  "name": "@theholocron/animate",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/animate#readme",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing (S)CSS animation within the Galaxy.",
   "author": "Newton Koumantzelis",
-  "version": "0.1.3",
+  "version": "0.0.0",
   "main": "src/_index.scss",
   "files": [
     "src"
@@ -23,20 +23,24 @@
     "extends": "@theholocron/stylelint-config"
   },
   "scripts": {
-    "sassdoc": "sassdoc src --dest docs",
-    "docs": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
+    "docs": "sassdoc src/**/*.scss --dest ../../docs/animate",
+    "readme": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
+    "dist": "sass --load-path=node_modules src:dist",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
     "lint": "stylelint src/**/*.scss",
     "test": "mocha",
     "test:integration": "sass --no-source-map test/integration.test.scss test/integration.test.css"
   },
-  "devDependencies": {
-    "mocha": "^7.0.0",
-    "sass": "^1.25.0",
-    "sass-true": "^5.0.0",
-    "sassdoc": "^2.7.1"
+  "dependencies": {
+    "@theholocron/config": "file:../config"
   },
   "peerDependencies": {
-    "sass": "^1.25.0"
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.0",
+    "sass": "^1.26.3",
+    "sass-true": "^5.0.0",
+    "sassdoc": "^2.7.1"
   }
 }

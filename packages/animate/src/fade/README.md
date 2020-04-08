@@ -31,7 +31,7 @@ This will take the element and fade it in from its current position.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -54,7 +54,7 @@ This will take the element and fade it in from the top.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -77,7 +77,7 @@ This will take the element and fade it in from the left.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -100,7 +100,7 @@ This will take the element and fade it in from the right.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -123,7 +123,7 @@ This will take the element and fade it in from the bottom.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -146,7 +146,7 @@ This will take the element and fade it in from its current position.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -169,7 +169,7 @@ This will take the element and fade it out from the bottom.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -192,7 +192,7 @@ This will take the element and fade it out from the left.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -215,7 +215,7 @@ This will take the element and fade it out from the right.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -238,7 +238,7 @@ This will take the element and fade it out from the top.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -261,7 +261,7 @@ This will take the element and fade it out from its current position.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 

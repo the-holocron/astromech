@@ -2,10 +2,10 @@
 
 /// This will take the element and animate it from the right down with a bounce at the end.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include bounce-in-right();
-@mixin bounce-in-right($class: config.$base-class) {
+@mixin bounce-in-right($className: config.$base-class) {
 	@keyframes bounce-in-right {
 		from,
 		60%,
@@ -38,7 +38,7 @@
 		}
 	}
 
-	#{$class}.bounce-in-right {
+	.#{$className}.bounce-in-right {
 		animation-name: bounce-in-right;
 	}
 }

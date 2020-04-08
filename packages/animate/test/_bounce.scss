@@ -1,14 +1,14 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/bounce" as *;
 
-@include describe("mixins: bounce") {
+@include describe("bounce") {
 	@include it("should bounce back & forth") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-back-forth();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-back-forth {
 					0% {
 						opacity: .5;
@@ -38,11 +38,11 @@
 
 	@include it("should bounce in & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-in-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-down {
 					from,
 					60%,
@@ -84,11 +84,11 @@
 
 	@include it("should bounce in & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-in-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-left {
 					from,
 					60%,
@@ -130,11 +130,11 @@
 
 	@include it("should bounce in & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-in-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-right {
 					from,
 					60%,
@@ -176,11 +176,11 @@
 
 	@include it("should bounce in & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-in-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-up {
 					from,
 					60%,
@@ -222,11 +222,11 @@
 
 	@include it("should bounce out & down") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-out-down();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-down {
 					20% {
 						transform: translate3d(0, .625rem, 0);
@@ -253,11 +253,11 @@
 
 	@include it("should bounce out & left") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-out-left();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-left {
 					20% {
 						opacity: 1;
@@ -279,11 +279,11 @@
 
 	@include it("should bounce out & right") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-out-right();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-right {
 					20% {
 						opacity: 1;
@@ -305,11 +305,11 @@
 
 	@include it("should bounce out & up") {
 		@include assert() {
-			@include output {
+			@include output() {
 				@include bounce-out-up();
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-up {
 					20% {
 						transform: translate3d(0, -.625rem, 0);

@@ -1,0 +1,13 @@
+@use "./index" as *;
+
+@include fade-flash();
+@include fade-in-down();
+@include fade-in-left();
+@include fade-in-right();
+@include fade-in-up();
+@include fade-in();
+@include fade-out-down();
+@include fade-out-left();
+@include fade-out-right();
+@include fade-out-up();
+@include fade-out();

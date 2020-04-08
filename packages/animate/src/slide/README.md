@@ -28,7 +28,7 @@ This will take the element and slide it from the top.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -51,7 +51,7 @@ This will take the element and slide it from the left.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -74,7 +74,7 @@ This will take the element and slide it from the right.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -97,7 +97,7 @@ This will take the element and slide it from the bottom.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -120,7 +120,7 @@ This will take the element and slide it out from the down.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -143,7 +143,7 @@ This will take the element and slide it out from the left.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -166,7 +166,7 @@ This will take the element and slide it out from the right.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 
@@ -189,7 +189,7 @@ This will take the element and slide it out from the top.
 
 | Name     | Type                                                             | Description                                       | Default      |
 | :------- | :--------------------------------------------------------------- | :------------------------------------------------ | :----------- |
-| `$class` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
+| `$className` | **[String](https://sass-lang.com/documentation/values/strings)** | a CSS class name to add to activate the animation | `".animate"` |
 
 ### Examples
 

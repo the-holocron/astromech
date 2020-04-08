@@ -1,0 +1,11 @@
+@use "./index" as *;
+
+@include bounce-back-forth();
+@include bounce-in-down();
+@include bounce-in-left();
+@include bounce-in-right();
+@include bounce-in-up();
+@include bounce-out-down();
+@include bounce-out-left();
+@include bounce-out-right();
+@include bounce-out-up();

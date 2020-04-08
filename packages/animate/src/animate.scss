@@ -1,0 +1,38 @@
+@use "./index" as *;
+
+// base
+@include animate();
+
+// bounce
+@include bounce-back-forth();
+@include bounce-in-down();
+@include bounce-in-left();
+@include bounce-in-right();
+@include bounce-in-up();
+@include bounce-out-down();
+@include bounce-out-left();
+@include bounce-out-right();
+@include bounce-out-up();
+
+// fade
+@include fade-flash();
+@include fade-in-down();
+@include fade-in-left();
+@include fade-in-right();
+@include fade-in-up();
+@include fade-in();
+@include fade-out-down();
+@include fade-out-left();
+@include fade-out-right();
+@include fade-out-up();
+@include fade-out();
+
+// slide
+@include slide-in-down();
+@include slide-in-left();
+@include slide-in-right();
+@include slide-in-up();
+@include slide-out-down();
+@include slide-out-left();
+@include slide-out-right();
+@include slide-out-up();

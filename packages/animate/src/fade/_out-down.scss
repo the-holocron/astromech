@@ -2,10 +2,10 @@
 
 /// This will take the element and fade it out from the bottom.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include fade-out-down();
-@mixin fade-out-down($class: config.$base-class) {
+@mixin fade-out-down($className: config.$base-class) {
 	@keyframes fade-out-down {
 		from {
 			opacity: 1;
@@ -17,7 +17,7 @@
 		}
 	}
 
-	#{$class}.fade-out-down {
+	.#{$className}.fade-out-down {
 		animation-name: fade-out-down;
 	}
 }

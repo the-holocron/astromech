@@ -2,10 +2,10 @@
 
 /// This will take the element and fade it out from the left.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include fade-out-left();
-@mixin fade-out-left($class: config.$base-class) {
+@mixin fade-out-left($className: config.$base-class) {
 	@keyframes fade-out-left {
 		from {
 			opacity: 1;
@@ -17,7 +17,7 @@
 		}
 	}
 
-	#{$class}.fade-out-left {
+	.#{$className}.fade-out-left {
 		animation-name: fade-out-left;
 	}
 }

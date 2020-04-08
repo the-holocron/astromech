@@ -2,10 +2,10 @@
 
 /// This will take the element and animate it from the its current position with a bounce and then exit to through the right.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include bounce-out-right();
-@mixin bounce-out-right($class: config.$base-class) {
+@mixin bounce-out-right($className: config.$base-class) {
 	@keyframes bounce-out-right {
 		20% {
 			opacity: 1;
@@ -18,7 +18,7 @@
 		}
 	}
 
-	#{$class}.bounce-out-right {
+	.#{$className}.bounce-out-right {
 		animation-name: bounce-out-right;
 	}
 }

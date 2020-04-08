@@ -2,10 +2,10 @@
 
 /// This will take the element and animate it from the top down with a bounce at the end.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include bounce-in-down();
-@mixin bounce-in-down($class: config.$base-class) {
+@mixin bounce-in-down($className: config.$base-class) {
 	@keyframes bounce-in-down {
 		from,
 		60%,
@@ -38,7 +38,7 @@
 		}
 	}
 
-	#{$class}.bounce-in-down {
+	.#{$className}.bounce-in-down {
 		animation-name: bounce-in-down;
 	}
 }

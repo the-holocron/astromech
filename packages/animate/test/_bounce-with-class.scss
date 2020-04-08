@@ -1,14 +1,14 @@
 @use "../node_modules/sass-true/sass/true" as *;
 @use "../src/bounce" as bclass;
 
-@include describe("mixins: bounce with namespace & custom class") {
+@include describe("bounce with namespace & custom class") {
 	@include it("should bounce back & forth") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-back-forth('.test');
+			@include output() {
+				@include bclass.bounce-back-forth("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-back-forth {
 					0% {
 						opacity: .5;
@@ -38,11 +38,11 @@
 
 	@include it("should bounce in & down") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-in-down('.test');
+			@include output() {
+				@include bclass.bounce-in-down("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-down {
 					from,
 					60%,
@@ -84,11 +84,11 @@
 
 	@include it("should bounce in & left") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-in-left('.test');
+			@include output() {
+				@include bclass.bounce-in-left("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-left {
 					from,
 					60%,
@@ -130,11 +130,11 @@
 
 	@include it("should bounce in & right") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-in-right('.test');
+			@include output() {
+				@include bclass.bounce-in-right("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-right {
 					from,
 					60%,
@@ -176,11 +176,11 @@
 
 	@include it("should bounce in & up") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-in-up('.test');
+			@include output() {
+				@include bclass.bounce-in-up("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-in-up {
 					from,
 					60%,
@@ -222,11 +222,11 @@
 
 	@include it("should bounce out & down") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-out-down('.test');
+			@include output() {
+				@include bclass.bounce-out-down("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-down {
 					20% {
 						transform: translate3d(0, .625rem, 0);
@@ -253,11 +253,11 @@
 
 	@include it("should bounce out & left") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-out-left('.test');
+			@include output() {
+				@include bclass.bounce-out-left("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-left {
 					20% {
 						opacity: 1;
@@ -279,11 +279,11 @@
 
 	@include it("should bounce out & right") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-out-right('.test');
+			@include output() {
+				@include bclass.bounce-out-right("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-right {
 					20% {
 						opacity: 1;
@@ -305,11 +305,11 @@
 
 	@include it("should bounce out & up") {
 		@include assert() {
-			@include output {
-				@include bclass.bounce-out-up('.test');
+			@include output() {
+				@include bclass.bounce-out-up("test");
 			}
 
-			@include expect {
+			@include expect() {
 				@keyframes bounce-out-up {
 					20% {
 						transform: translate3d(0, -.625rem, 0);

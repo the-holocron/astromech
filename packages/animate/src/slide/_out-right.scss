@@ -2,10 +2,10 @@
 
 /// This will take the element and slide it out from the right.
 /// @since 0.1.0
-/// @param {String} $class [".animate"] - a CSS class name to add to activate the animation
+/// @param {String} $className [".animate"] - a CSS class name to add to activate the animation
 /// @example scss
 ///   @include slide-out-right();
-@mixin slide-out-right($class: config.$base-class) {
+@mixin slide-out-right($className: config.$base-class) {
 	@keyframes slide-out-right {
 		from {
 			transform: translate3d(0, 0, 0);
@@ -17,7 +17,7 @@
 		}
 	}
 
-	#{$class}.slide-out-right {
+	.#{$className}.slide-out-right {
 		animation-name: slide-out-right;
 	}
 }
