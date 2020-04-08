@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "../syntaxes" as *;
 
 ////
@@ -27,3 +28,7 @@ $background-size: $bg-size;
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/border-style
 $border-style: $line-style;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/box-shadow
+$box-shadow: list.append((), none);

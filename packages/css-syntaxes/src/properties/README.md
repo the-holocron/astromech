@@ -15,6 +15,7 @@
 * [$background-repeat](#background-repeat)
 * [$background-size](#background-size)
 * [$border-style](#border-style)
+* [$box-shadow](#box-shadow)
 * [$box-sizing](#box-sizing)
 * [$cursor](#cursor)
 * [$outline-style](#outline-style)
@@ -248,6 +249,21 @@
 ### Links
 
 * <https://developer.mozilla.org/docs/Web/CSS/border-style>
+
+### Since
+
+* **0.1.0**
+
+<a id="backgrounds---borders-variable-box-shadow"></a>
+
+## $box-shadow
+
+* **Group:** Backgrounds & borders
+* **Access:** public
+
+### Links
+
+* <https://developer.mozilla.org/docs/Web/CSS/box-shadow>
 
 ### Since
 

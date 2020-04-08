@@ -151,6 +151,22 @@
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
 		}
+
+		@include describe("box-shadow") {
+			@include test("it should return a list of nth length") {
+				$test: list.length($box-shadow);
+				$expected: 1;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($box-shadow);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
 	}
 
 	@include describe("basis user interface") {
