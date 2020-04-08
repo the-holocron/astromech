@@ -1,4 +1,4 @@
-@use "sass:list";
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 
 ////
@@ -7,28 +7,28 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/background-attachment
-$background-attachment: $attachment;
+$background-attachment: flat($attachment, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/background-clip
-$background-clip: $box;
+$background-clip: flat($box, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/background-origin
-$background-origin: $box;
+$background-origin: flat($box, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/background-repeat
-$background-repeat: $repeat-style;
+$background-repeat: flat($repeat-style, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/background-size
-$background-size: $bg-size;
+$background-size: flat($bg-size, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/border-style
-$border-style: $line-style;
+$border-style: flat($line-style, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/box-shadow
-$box-shadow: list.append((), none);
+$box-shadow: flat(none, $global);

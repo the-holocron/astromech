@@ -1,4 +1,5 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
 @use "../custom";
 
 ////
@@ -7,8 +8,8 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/pointer-events
-$pointer-events: collect(auto, none, custom.$pointer-events-svg-only);
+$pointer-events: flat(auto, none, custom.$pointer-events-svg-only, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/touch-action
-$touch-action: (auto, none, pan-x, pan-left, pan-right, pan-y, pan-up, pan-down, pinch-zoom, manipulation);
+$touch-action: flat(auto, none, pan-x, pan-left, pan-right, pan-y, pan-up, pan-down, pinch-zoom, manipulation, $global);

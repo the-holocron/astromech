@@ -1,4 +1,5 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
 
 ////
 /// @group Text Decoration
@@ -6,16 +7,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
-$text-decoration-line: (blink, grammar-error, line-through, none, overline, spelling-error, underline);
+$text-decoration-line: flat(blink, grammar-error, line-through, none, overline, spelling-error, underline, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
-$text-decoration-style: (dash, dotted, double, solid, wavy);
+$text-decoration-style: flat(dash, dotted, double, solid, wavy, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration
-$text-decoration: collect($text-decoration-line, $text-decoration-style);
+$text-decoration: flat($text-decoration-line, $text-decoration-style);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
-$text-decoration-skip-ink: (auto, all, none);
+$text-decoration-skip-ink: flat(auto, all, none, $global);

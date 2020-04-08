@@ -5,12 +5,16 @@
 /// @param {List} $lists - any number of lists to combine
 /// @return {List} a flattened list
 /// @example scss
-///    $somecollection: collect($list1, $list2, ...);
-@function collect($lists...) {
+///    $somecollection: flat($list1, $list2, ...);
+@function flat($lists...) {
 	$collection: ();
 
 	@each $list in $lists {
-		$collection: list.join($collection, $list);
+		@each $item in $list {
+			@if list.index($collection, $item) == null {
+				$collection: list.append($collection, $item, $separator: comma);
+			}
+		}
 	}
 
 	@return $collection;

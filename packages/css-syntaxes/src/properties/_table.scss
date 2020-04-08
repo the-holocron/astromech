@@ -1,23 +1,26 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
 ////
 /// @group Table
 ////
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/border-collapse
-$border-collapse: (collapse, separate);
+$border-collapse: flat(collapse, separate, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/caption-side
-$caption-side: (top, bottom, block-start, block-end, inline-start, inline-end);
+$caption-side: flat(top, bottom, block-start, block-end, inline-start, inline-end, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/empty-cells
-$empty-cells: (hide, show);
+$empty-cells: flat(hide, show, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/table-layout
-$table-layout: (auto, fixed);
+$table-layout: flat(auto, fixed, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/vertical-align
-$vertical-align: (baseline, bottom, middle, sub, super, text-bottom, text-top, top);
+$vertical-align: flat(baseline, bottom, middle, sub, super, text-bottom, text-top, top, $global);

@@ -1,3 +1,5 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
 @use "../custom";
 
 ////
@@ -6,16 +8,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/height
-$height: custom.$sizing;
+$height: flat(custom.$sizing, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
-$overscroll-behavior: (auto, contain, none);
+$overscroll-behavior: flat(auto, contain, none, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/visibility
-$visibility: (collapse, hidden, visible);
+$visibility: flat(collapse, hidden, visible, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/width
-$width: custom.$sizing;
+$width: flat(custom.$sizing, $global);

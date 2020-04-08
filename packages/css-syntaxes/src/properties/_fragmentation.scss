@@ -1,3 +1,5 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
 @use "../custom";
 
 ////
@@ -6,16 +8,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/box-decoration-break
-$box-decoration-break: (clone, slice);
+$box-decoration-break: flat(clone, slice, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/break-after
-$break-after: custom.$break;
+$break-after: flat(custom.$break, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/break-before
-$break-before: custom.$break;
+$break-before: flat(custom.$break, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/break-inside
-$break-inside: (auto, avoid, avoid-page, avoid-column, avoid-region);
+$break-inside: flat(auto, avoid, avoid-page, avoid-column, avoid-region, $global);

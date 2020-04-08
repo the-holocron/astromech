@@ -1,4 +1,5 @@
-@use "sass:list";
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
 
 ////
 /// @group Positioning
@@ -6,16 +7,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/clear
-$clear: (both, inline-end, inline-start, left, none, right);
+$clear: flat(both, inline-end, inline-start, left, none, right, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/float
-$float: (left, inline-end, inline-start, none, right);
+$float: flat(left, inline-end, inline-start, none, right, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/position
-$position: (absolute, fixed, relative, sticky, static);
+$position: flat(absolute, fixed, relative, sticky, static, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/z-index
-$z-index: list.append((), auto);
+$z-index: flat(auto, $global);

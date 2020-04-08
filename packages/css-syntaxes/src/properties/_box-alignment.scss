@@ -1,4 +1,4 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 
 ////
@@ -7,36 +7,36 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/align-content
-$align-content: collect(normal, $baseline-position, $content-distribution, $content-position, $overflow-position);
+$align-content: flat(normal, $baseline-position, $content-distribution, $content-position, $overflow-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/align-items
-$align-items: collect(normal, stretch, $baseline-position, $overflow-position, $self-position);
+$align-items: flat(normal, stretch, $baseline-position, $overflow-position, $self-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/align-self
-$align-self: collect(auto, normal, stretch, $baseline-position, $overflow-position, $self-position);
+$align-self: flat(auto, normal, stretch, $baseline-position, $overflow-position, $self-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/justify-content
-$justify-content: collect(normal, left, right, $content-distribution, $content-position, $overflow-position);
+$justify-content: flat(normal, left, right, $content-distribution, $content-position, $overflow-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/justify-items
-$justify-items: collect(normal, center, left, right, stretch, $baseline-position, $overflow-position, $self-position);
+$justify-items: flat(normal, center, left, right, stretch, $baseline-position, $overflow-position, $self-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/justify-self
-$justify-self: collect(auto, normal, left, right, stretch, $baseline-position, $overflow-position, $self-position);
+$justify-self: flat(auto, normal, left, right, stretch, $baseline-position, $overflow-position, $self-position, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/place-content
-$place-content: collect($align-content, $justify-content);
+$place-content: flat($align-content, $justify-content);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/place-items
-$place-items: collect($align-items, $justify-items);
+$place-items: flat($align-items, $justify-items);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/place-self
-$place-self: collect($align-self, $justify-self);
+$place-self: flat($align-self, $justify-self);

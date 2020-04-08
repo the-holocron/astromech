@@ -1,4 +1,4 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 @use "./backgrounds-borders";
 
@@ -8,28 +8,28 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/appearance
-$appearance: collect(auto, button, none, textfield, $compat);
+$appearance: flat(auto, button, none, textfield, $compat, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/box-sizing
-$box-sizing: (border-box, content-box);
+$box-sizing: flat(border-box, content-box, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/cursor
-$cursor: (auto, default, none, context-menu, help, pointer, progress, wait, cell, crosshair, text, vertical-text, alias, copy, move, no-drop, not-allowed, e-resize, n-resize, ne-resize, nw-resize, s-resize, se-resize, sw-resize, w-resize, ew-resize, ns-resize, nesw-resize, nwse-resize, col-resize, row-resize, all-scroll, zoom-in, zoom-out, grab, grabbing);
+$cursor: flat(auto, default, none, context-menu, help, pointer, progress, wait, cell, crosshair, text, vertical-text, alias, copy, move, no-drop, not-allowed, e-resize, n-resize, ne-resize, nw-resize, s-resize, se-resize, sw-resize, w-resize, ew-resize, ns-resize, nesw-resize, nwse-resize, col-resize, row-resize, all-scroll, zoom-in, zoom-out, grab, grabbing, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/outline-style
-$outline-style: collect(auto, backgrounds-borders.$border-style);
+$outline-style: flat(auto, backgrounds-borders.$border-style);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/resize
-$resize: (none, both, horizontal, vertical, block, inline);
+$resize: flat(none, both, horizontal, vertical, block, inline, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/text-overflow
-$text-overflow: (clip, ellipsis);
+$text-overflow: flat(clip, ellipsis, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/user-select
-$user-select: (all, auto, contain, none, text);
+$user-select: flat(all, auto, contain, none, text, $global);

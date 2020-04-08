@@ -1,3 +1,4 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 
 ////
@@ -6,16 +7,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/animation-direction
-$animation-direction: $single-animation-direction;
+$animation-direction: flat($single-animation-direction, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/animation-fill-mode
-$animation-fill-mode: $single-animation-fill-mode;
+$animation-fill-mode: flat($single-animation-fill-mode, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/animation-play-state
-$animation-play-state: $single-animation-play-state;
+$animation-play-state: flat($single-animation-play-state, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/animation-timing-function
-$animation-timing-function: $timing-function;
+$animation-timing-function: flat($timing-function, $global);

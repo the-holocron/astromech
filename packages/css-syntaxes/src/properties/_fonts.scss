@@ -1,4 +1,4 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 
 ////
@@ -7,16 +7,16 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-family
-$font-family: $generic-family;
+$font-family: flat($generic-family, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-size
-$font-size: collect($absolute-size, $relative-size);
+$font-size: flat($absolute-size, $relative-size, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-style
-$font-style: (italic, normal, oblique);
+$font-style: flat(italic, normal, oblique, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-weight
-$font-weight: (bolder, lighter);
+$font-weight: flat(bolder, lighter, $global);

@@ -9,7 +9,7 @@
 		@include describe("animation-direction") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($animation-direction);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -25,7 +25,7 @@
 		@include describe("animation-fill-mode") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($animation-fill-mode);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -41,7 +41,7 @@
 		@include describe("animation-play-state") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($animation-play-state);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -57,7 +57,7 @@
 		@include describe("animation-timing-function") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($animation-timing-function);
-				$expected: 7;
+				$expected: 10;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -75,7 +75,7 @@
 		@include describe("background-attachment") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($background-attachment);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -91,7 +91,7 @@
 		@include describe("background-clip") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($background-clip);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -107,7 +107,7 @@
 		@include describe("background-origin") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($background-origin);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -123,7 +123,7 @@
 		@include describe("background-size") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($background-size);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -139,7 +139,7 @@
 		@include describe("border-style") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($border-style);
-				$expected: 10;
+				$expected: 13;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -155,7 +155,7 @@
 		@include describe("box-shadow") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($box-shadow);
-				$expected: 1;
+				$expected: 4;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -180,7 +180,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($appearance);
-				$expected: 17;
+				$expected: 20;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -203,7 +203,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($box-sizing);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -226,7 +226,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($cursor);
-				$expected: 36;
+				$expected: 39;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -249,7 +249,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($outline-style);
-				$expected: 11;
+				$expected: 14;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -272,7 +272,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($resize);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -295,7 +295,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-overflow);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -318,7 +318,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($user-select);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -343,7 +343,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($align-content);
-				$expected: 15;
+				$expected: 18;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -366,7 +366,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($align-items);
-				$expected: 14;
+				$expected: 17;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -389,7 +389,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($align-self);
-				$expected: 15;
+				$expected: 18;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -412,7 +412,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($justify-content);
-				$expected: 14;
+				$expected: 17;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -435,7 +435,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($justify-items);
-				$expected: 17;
+				$expected: 19;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -458,7 +458,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($justify-self);
-				$expected: 17;
+				$expected: 20;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -481,7 +481,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($place-content);
-				$expected: 29;
+				$expected: 20;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -504,7 +504,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($place-items);
-				$expected: 31;
+				$expected: 19;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -527,7 +527,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($place-self);
-				$expected: 32;
+				$expected: 20;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -545,7 +545,7 @@
 		@include describe("height") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($height);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -568,7 +568,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($overscroll-behavior);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -591,7 +591,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($visibility);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -607,7 +607,7 @@
 		@include describe("width") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($width);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -642,7 +642,7 @@
 	@include describe("display") {
 		@include test("it should return a list of nth length") {
 			$test: list.length($display);
-			$expected: 29;
+			$expected: 32;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -666,7 +666,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($flex-direction);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -689,7 +689,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($flex-wrap);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -705,7 +705,7 @@
 		@include describe("flex-wrap") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($flex-flow);
-				$expected: 7;
+				$expected: 10;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -723,7 +723,7 @@
 		@include describe("font-family") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($font-family);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -739,7 +739,7 @@
 		@include describe("font-size") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($font-size);
-				$expected: 10;
+				$expected: 13;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -762,7 +762,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($font-style);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -785,7 +785,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($font-weight);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -810,7 +810,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($box-decoration-break);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -826,7 +826,7 @@
 		@include describe("break-after") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($break-after);
-				$expected: 14;
+				$expected: 17;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -842,7 +842,7 @@
 		@include describe("break-before") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($break-before);
-				$expected: 14;
+				$expected: 17;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -865,7 +865,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($break-inside);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -890,7 +890,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($object-fit);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -938,7 +938,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-rendering);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -962,7 +962,7 @@
 
 		@include test("it should return a list of nth length") {
 			$test: list.length($overflow);
-			$expected: 6;
+			$expected: 9;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -986,7 +986,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($pointer-events);
-				$expected: 10;
+				$expected: 13;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1009,7 +1009,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($touch-action);
-				$expected: 10;
+				$expected: 13;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1034,7 +1034,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($clear);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1057,7 +1057,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($float);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1080,7 +1080,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($position);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1103,7 +1103,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($z-index);
-				$expected: 1;
+				$expected: 4;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1128,7 +1128,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($scroll-snap-align);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1151,7 +1151,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($scroll-snap-stop);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1174,7 +1174,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($scroll-snap-type);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1222,7 +1222,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($scrollbar-color);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1245,7 +1245,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($scrollbar-width);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1270,7 +1270,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($border-collapse);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1293,7 +1293,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($caption-side);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1316,7 +1316,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($caption-side);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1339,7 +1339,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($empty-cells);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1362,7 +1362,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($table-layout);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1385,7 +1385,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($vertical-align);
-				$expected: 8;
+				$expected: 11;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1410,7 +1410,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-decoration-line);
-				$expected: 7;
+				$expected: 10;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1433,7 +1433,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-decoration-style);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1449,7 +1449,7 @@
 		@include describe("text-decoration") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-decoration);
-				$expected: 12;
+				$expected: 15;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1472,7 +1472,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-decoration-skip-ink);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1497,7 +1497,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($line-break);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1520,7 +1520,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($overflow-wrap);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1543,7 +1543,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-align);
-				$expected: 7;
+				$expected: 10;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1566,7 +1566,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-justify);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1589,7 +1589,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-transform);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1612,7 +1612,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($white-space);
-				$expected: 6;
+				$expected: 9;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1635,7 +1635,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($word-break);
-				$expected: 4;
+				$expected: 7;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1660,7 +1660,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($backface-visibility);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1676,7 +1676,7 @@
 		@include describe("perspective-origin") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($perspective-origin);
-				$expected: 5;
+				$expected: 8;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1699,7 +1699,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($transform-box);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1722,7 +1722,7 @@
 
 			@include test("it should return a list of nth length") {
 				$test: list.length($transform-style);
-				$expected: 2;
+				$expected: 5;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1740,7 +1740,7 @@
 		@include describe("transition-timing-function") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($transition-timing-function);
-				$expected: 7;
+				$expected: 10;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
@@ -1764,7 +1764,7 @@
 			}
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-orientation);
-				$expected: 3;
+				$expected: 6;
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}

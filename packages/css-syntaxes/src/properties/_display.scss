@@ -1,4 +1,4 @@
-@use "../../node_modules/@theholocron/scss-functions/src/list/collect" as *;
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
 @use "../syntaxes" as *;
 
 ////
@@ -7,4 +7,4 @@
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/display
-$display: collect($display-outside, $display-inside, $display-listitem, $display-internal, $display-box, $display-legacy);
+$display: flat($display-outside, $display-inside, $display-listitem, $display-internal, $display-box, $display-legacy, $global);

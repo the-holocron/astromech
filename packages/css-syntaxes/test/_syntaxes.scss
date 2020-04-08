@@ -119,29 +119,6 @@
 		}
 	}
 
-	@include describe("color") {
-		@include test("it should return a syntax") {
-			$test: list.nth($color, 1);
-			$expected: transparent;
-
-			@include assert-equal($test, $expected, "Return the correct value");
-		}
-
-		@include test("it should return a list of nth length") {
-			$test: list.length($color);
-			$expected: 150;
-
-			@include assert-equal($test, $expected, "Return the correct value");
-		}
-
-		@include test("it should return a list") {
-			$test: meta.type-of($color);
-			$expected: list;
-
-			@include assert-equal($test, $expected, "Return the correct value");
-		}
-	}
-
 	@include describe("compat") {
 		@include test("it should return a syntax") {
 			$test: list.nth($compat, 1);
@@ -428,7 +405,7 @@
 
 		@include test("it should return a list of nth length") {
 			$test: list.length($named-color);
-			$expected: 149;
+			$expected: 150;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
