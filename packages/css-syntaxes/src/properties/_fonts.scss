@@ -18,5 +18,9 @@ $font-size: flat($absolute-size, $relative-size, $global);
 $font-style: flat(italic, normal, oblique, $global);
 
 /// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/font-variant-numeric
+$font-variant-numeric: flat(normal, $numeric-figure-values, $numeric-spacing-values, $numeric-fraction-values, ordinal, slashed-zero, $global);
+
+/// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-weight
 $font-weight: flat(bolder, lighter, $global);

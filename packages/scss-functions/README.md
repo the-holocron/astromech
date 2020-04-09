@@ -24,11 +24,11 @@ $ npm install --save-dev @theholocron/scss-functions
 ## Usage
 
 ```scss
-@use "@theholocron/scss-functions/src" as scss-functions;
+@use "./node_modules/@theholocron/scss-functions/src" as scss-functions;
 
 .example {
-	border: .0625rem solid scss-functions.shade(#8ce2d4, 25%);
-	background-color: scss-functions.best-contrast(#8ce2d4, #fff, #000, 4.5, 4.5);
+    border: .0625rem solid scss-functions.shade(#8ce2d4, 25%);
+    background-color: scss-functions.best-contrast(#8ce2d4, #fff, #000, 4.5, 4.5);
 }
 ```
 

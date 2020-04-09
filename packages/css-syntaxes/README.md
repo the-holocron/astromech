@@ -1,6 +1,6 @@
 # CSS Syntaxes [![npm](https://img.shields.io/npm/v/@theholocron/css-syntaxes)](https://www.npmjs.com/package/@theholocron/css-syntaxes)
 
-This utility droid provides a set of [CSS syntaxes](https://github.com/mdn/data/blob/master/css/syntaxes.md) for writing (S)CSS within the Galaxy.
+This utility droid provides a set of [CSS syntaxes](https://github.com/mdn/data/blob/master/css/syntaxes.md) for writing (S)CSS functional helpers or mixins within the Galaxy.
 
 ![R1 series droid](./r-1.jpg)
 
@@ -24,7 +24,7 @@ $ npm install --save-dev @theholocron/css-syntaxes
 
 ```scss
 // include all variables with 'astromech' as the namespace
-@use "@theholocron/css-syntaxes/src" as astromech;
+@use "./node_modules/@theholocron/css-syntaxes/src" as astromech;
 
 .animation-direction {
     @each $syntax in astromech.$animation-direction {

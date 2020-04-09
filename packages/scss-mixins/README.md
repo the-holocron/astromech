@@ -25,16 +25,16 @@ $ npm install --save-dev @theholocron/scss-mixins
 ```scss
 // include all utilities with 'scss-mixins' as the namespace
 // calls all mixins and will include in CSS output
-@use "@theholocron/scss-mixins/src" as scss-mixins;
+@use "./node_modules/@theholocron/scss-mixins/src" as scss-mixins;
 
 // include only a specific group of mixins
-@use "@theholocron/scss-mixins/src/box-model" as *;
+@use "./node_modules/@theholocron/scss-mixins/src/box-model" as *;
 // call the mixins from this group
 @include background-color();
 @include border();
 
 // use only a specific mixin
-@use "@theholocron/scss-mixins/src/box-model/border-radius" as *;
+@use "./node_modules/@theholocron/scss-mixins/src/box-model/border-radius" as *;
 // call the mixin you want to use
 @include border-top-radius();
 @include border-right-radius();

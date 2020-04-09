@@ -123,6 +123,32 @@
 				}
 			}
 		}
+
+		@include it("it should output a border radius on all sides when given a radius and no direction") {
+			@include assert() {
+
+				@include output() {
+					@include border-radii(3px);
+				}
+
+				@include expect() {
+					border-radius: 3px;
+				}
+			}
+		}
+		@include it("it should output a border radius on any side when given a radius and direction") {
+			@include assert() {
+
+				@include output() {
+					@include border-radii(3px, bottom);
+				}
+
+				@include expect() {
+					border-bottom-right-radius: 3px;
+					border-bottom-left-radius: 3px;
+				}
+			}
+		}
 	}
 
 	@include describe("border") {

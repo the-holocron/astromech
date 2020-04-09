@@ -189,6 +189,22 @@ $font-weights: (
 	"heavy": 900,
 ) !default;
 
+/// Default set of letter-spacings
+/// @since 0.1.0
+/// @group Fonts
+/// @prop {Number} xs [-.125rem] - smallest letter spacing; ~-2px
+/// @prop {Number} sm [-.0625rem] - smaller letter spacing, ~-1px
+/// @prop {Number} md[0] - 0 letter spacing; text is normal; used to reset
+/// @prop {Number} lg [.0625rem] - large letter spacing; ~1px
+/// @prop {Number} xl [.125rem] - larger letter spacing; ~2px
+$letter-spacings: (
+	"xs": -.125rem,
+	"sm": -.0625rem,
+	"md": 0,
+	"lg": .0625rem,
+	"xl": .125rem,
+) !default;
+
 /// Default set of line heights
 /// @since 0.1.0
 /// @group Fonts

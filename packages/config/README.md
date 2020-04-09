@@ -24,11 +24,11 @@ $ npm install --save-dev @theholocron/config
 
 ```scss
 // include all variables with 'astromech' as the namespace
-@use "@theholocron/config/src" as astromech;
+@use "./node_modules/@theholocron/config/src" as astromech;
 
 // use all utilities with a different set of breakpoints
 // calls all mixins and will include in CSS output
-@use "@theholocron/config/src" as astromech with (
+@use "./node_modules/@theholocron/config/src" as astromech with (
     $breakpoints: (
         "xs": "0",
         "sm": "480px",
