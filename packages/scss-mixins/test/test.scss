@@ -3,9 +3,10 @@
 
 // Tests
 @use "./at-rules";
-@use "./pseudo-classes";
 @use "./backgrounds-borders";
+@use "./box-model";
 @use "./positioning";
+@use "./pseudo-classes";
 @use "./text";
 
 // Report

@@ -72,7 +72,7 @@
 			@include assert() {
 
 				@include output() {
-					@include border-top-radius(3px);
+					@include border-radius(3px, top);
 				}
 
 				@include expect() {
@@ -86,12 +86,12 @@
 			@include assert() {
 
 				@include output() {
-					@include border-right-radius(3px);
+					@include border-radius(3px, right);
 				}
 
 				@include expect() {
-					border-top-right-radius: 3px;
 					border-bottom-right-radius: 3px;
+					border-top-right-radius: 3px;
 				}
 			}
 		}
@@ -100,7 +100,7 @@
 			@include assert() {
 
 				@include output() {
-					@include border-bottom-radius(3px);
+					@include border-radius(3px, bottom);
 				}
 
 				@include expect() {
@@ -114,25 +114,25 @@
 			@include assert() {
 
 				@include output() {
-					@include border-left-radius(3px);
+					@include border-radius(3px, left);
 				}
 
 				@include expect() {
-					border-top-left-radius: 3px;
 					border-bottom-left-radius: 3px;
+					border-top-left-radius: 3px;
 				}
 			}
 		}
 
-		@include it("it should output a border radius on all sides when given a radius and no direction") {
+		@include it("it should output a border radius on top left side when given a radius") {
 			@include assert() {
 
 				@include output() {
-					@include border-radii(3px);
+					@include border-radius(3px, top-left);
 				}
 
 				@include expect() {
-					border-radius: 3px;
+					border-top-left-radius: 3px;
 				}
 			}
 		}
@@ -140,12 +140,11 @@
 			@include assert() {
 
 				@include output() {
-					@include border-radii(3px, bottom);
+					@include border-radius(3px, bottom-right);
 				}
 
 				@include expect() {
 					border-bottom-right-radius: 3px;
-					border-bottom-left-radius: 3px;
 				}
 			}
 		}

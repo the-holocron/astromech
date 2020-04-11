@@ -1,0 +1,32 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/box-model" as *;
+
+@include describe("box model") {
+	@include describe("box-spacing") {
+		@include it("it should output a property on all sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include box-spacing(margin, 3px);
+				}
+
+				@include expect() {
+					margin: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a property on top given an input") {
+			@include assert() {
+
+				@include output() {
+					@include box-spacing(margin, 3px, top);
+				}
+
+				@include expect() {
+					margin-top: 3px;
+				}
+			}
+		}
+	}
+}

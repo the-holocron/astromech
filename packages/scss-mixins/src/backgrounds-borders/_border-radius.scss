@@ -2,90 +2,34 @@
 @use "sass:map";
 
 ////
-/// @author Mark Otto
 /// @group Backgrounds & Borders
 ////
 
 /// Creates border-radius
 /// @since 0.1.0
-/// @param {Number} $radius - a valid CSS unit to create a border-radius on all sides
-/// @example scss
-///   .example {
-///     @include border-radius();
-///   }
-@mixin border-radius($radius) {
-	border-radius: $radius;
-}
-
-/// Creates border-top-radius
-/// @since 0.1.0
-/// @param {Number} $radius - a valid CSS unit to create a border-radius on the top
-/// @example scss
-///   .example {
-///     @include border-top-radius(2px);
-///   }
-@mixin border-top-radius($radius) {
-	border-top-left-radius: $radius;
-	border-top-right-radius: $radius;
-}
-
-/// Creates border-right-radius
-/// @since 0.1.0
-/// @param {Number} $radius - a valid CSS unit to create a border-radius on the right
-/// @example scss
-///   .example {
-///     @include border-right-radius(2px);
-///   }
-@mixin border-right-radius($radius) {
-	border-top-right-radius: $radius;
-	border-bottom-right-radius: $radius;
-}
-
-/// Creates border-bottom-radius
-/// @since 0.1.0
-/// @param {Number} $radius - a valid CSS unit to create a border-radius on the bottom
-/// @example scss
-///   .example {
-///     @include border-bottom-radius(2px);
-///   }
-@mixin border-bottom-radius($radius) {
-	border-bottom-right-radius: $radius;
-	border-bottom-left-radius: $radius;
-}
-
-/// Creates border-left-radius
-/// @since 0.1.0
-/// @param {Number} $radius - a valid CSS unit to create a border-radius on the left
-/// @example scss
-///   .example {
-///     @include border-left-radius(2px);
-///   }
-@mixin border-left-radius($radius) {
-	border-top-left-radius: $radius;
-	border-bottom-left-radius: $radius;
-}
-
-/// Creates border-radii helpers
-/// @since 0.1.0
 /// @param {Number} $radius - a valid CSS unit to create a border-radius on the left
 /// @param {String} $direction - a valid box direction
 /// @example scss
 ///   .example {
-///     @include border-left-radius(2px);
+///     @include border-radius(2px, left);
 ///   }
-@mixin border-radii($radius, $direction: null) {
+@mixin border-radius($radius, $direction: null) {
 	$directions: (
 		"bottom": (bottom-right, bottom-left),
+		"bottom-left": (bottom-left),
+		"bottom-right": (bottom-right),
 		"left": (bottom-left, top-left),
 		"right": (bottom-right, top-right),
 		"top": (top-left, top-right),
+		"top-left": (top-left),
+		"top-right": (top-right),
 	);
 
-	@if list.index((right, top, left, bottom), $direction) {
-		@each $corner in map.get($directions, $direction) {
-			border-#{$corner}-radius: $radius;
+	@if list.index(map.keys($directions), $direction) {
+		@each $side in map.get($directions, $direction) {
+			border-#{$side}-radius: $radius;
 		}
 	} @else {
-		@include border-radius($radius);
+		border-radius: $radius;
 	}
 }
