@@ -193,6 +193,22 @@
 	}
 }
 
+@include describe("letter-spacings") {
+	@include test("it should return a letter-spacing") {
+		$test: map.get($letter-spacings, "md");
+		$expected: 0;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+
+	@include test("it should return a map") {
+		$test: meta.type-of($letter-spacings);
+		$expected: map;
+
+		@include assert-equal($test, $expected, "Return the correct value");
+	}
+}
+
 @include describe("line-height") {
 	@include test("it should return a line height") {
 		$test: map.get($line-heights, "md");
