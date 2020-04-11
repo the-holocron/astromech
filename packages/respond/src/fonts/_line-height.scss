@@ -1,64 +1,17 @@
 @use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The line-height property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/line-height
 /// @param {String} $className ["line-height"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
-/// @param {Map} $line-heights [ config.$line-heights ] - a map of font sizes
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @param {Map} $line-heights [config.$line-heights] - a map of font sizes
 /// @example scss
 ///   @include line-height($className: fsize, $breakpoints: ("sm": 480px));
-@mixin line-height($className: line-height, $breakpoints: config.$breakpoints, $line-heights: config.$line-heights) {
-	$property: "line-height";
-
-	.#{$className} {
-		@each $key, $value in map.merge((normal: normal), $line-heights) {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$key},
-					&-#{$breakpoint}-#{$key}-up {
-						#{$property}: $value !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$key}-down {
-						#{$property}: $value !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$key}-only {
-						#{$property}: $value !important;
-					}
-				}
-			}
-		}
-
-		@each $syntax in syntaxes.$all {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+@mixin line-height($className: "line-height", $breakpoints: config.$breakpoints, $line-heights: config.$line-heights) {
+	@include utils.responsive-properties-map($properties: map.merge((normal: normal), $line-heights), $property: "line-height", $className: $className, $breakpoints: $breakpoints);
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$line-height, $property: "line-height", $className: $className, $breakpoints: $breakpoints);
 }

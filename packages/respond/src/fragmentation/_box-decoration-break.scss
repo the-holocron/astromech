@@ -1,40 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The box-decoration-break property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break
 /// @param {String} $className ["box-decoration-break"] - a CSS class name that will prefix all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include box-decoration-break($className: tdec, $breakpoints: ("sm": 480px));
 @mixin box-decoration-break($className: "box-decoration-break", $breakpoints: config.$breakpoints) {
-	$property: "box-decoration-break";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$box-decoration-break {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$box-decoration-break, $property: "box-decoration-break", $className: $className, $breakpoints: $breakpoints);
 }

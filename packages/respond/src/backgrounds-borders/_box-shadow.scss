@@ -1,0 +1,14 @@
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
+
+/// The box-shadow property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow
+/// @param {String} $className ["box-shadow"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @example scss
+///   @include box-shadow($className: bs, $breakpoints: ("sm": 480px));
+@mixin box-shadow($className: "box-shadow", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$box-shadow, $property: "box-shadow", $className: $className, $breakpoints: $breakpoints);
+}

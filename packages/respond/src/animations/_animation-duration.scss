@@ -1,20 +1,14 @@
-@use "../config";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../utils";
 
 /// The animation-duration property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
 /// @param {String} $className ["animation-duration"] - a CSS class name that will className all helpers
-/// @param {Map} $weights [config.$animation-durations] - a map of font weights
+/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $weights [config.$animation-durations] - a map of timing function durations
 /// @example scss
-///   @include animation-duration($className: adur);
-@mixin animation-duration($className: animation-duration, $durations: config.$durations) {
-	$property: "animation-duration";
-
-	.#{$className} {
-		@each $key, $value in $durations {
-			&-#{$key} {
-				#{$property}: $value !important;
-			}
-		}
-	}
+///   @include animation-duration($className: adur, $breakpoints: ("sm": 480px));
+@mixin animation-duration($className: "animation-duration", $breakpoints: config.$breakpoints, $durations: config.$durations) {
+	@include utils.responsive-properties-map($properties: $durations, $property: "animation-duration", $className: $className, $breakpoints: $breakpoints);
 }

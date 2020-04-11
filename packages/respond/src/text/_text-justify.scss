@@ -1,43 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The text-justify property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-justify
 /// @param {String} $className ["text-justify"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include text-justify($className: tdec, $breakpoints: ("sm": 480px));
-@mixin text-justify($className: text-justify, $breakpoints: config.$breakpoints) {
-	$property: "text-justify";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$text-justify {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						text-align: justify !important;
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						text-align: justify !important;
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						text-align: justify !important;
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+///   @include text-justify($className: tj, $breakpoints: ("sm": 480px));
+@mixin text-justify($className: "text-justify", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$text-justify, $property: "text-justify", $className: $className, $breakpoints: $breakpoints);
 }

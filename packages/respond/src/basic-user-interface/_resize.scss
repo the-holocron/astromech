@@ -1,19 +1,14 @@
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The resize property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/resize
 /// @param {String} $className ["resize"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include resize($className: r);
-@mixin resize($className: "resize") {
-	$property: "resize";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$resize {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-		}
-	}
+///   @include resize($className: r, $breakpoints: ("sm": 480px));
+@mixin resize($className: "resize", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$resize, $property: "resize", $className: $className, $breakpoints: $breakpoints);
 }

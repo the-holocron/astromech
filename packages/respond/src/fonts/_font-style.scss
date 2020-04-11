@@ -1,19 +1,14 @@
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The font-style property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/font-style
 /// @param {String} $className ["font-style"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include font-style($className: fs);
-@mixin font-style($className: font-style) {
-	$property: "font-style";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$font-style {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-		}
-	}
+///   @include font-style($className: fs, $breakpoints: ("sm": 480px));
+@mixin font-style($className: "font-style", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$font-style, $property: "font-style", $className: $className, $breakpoints: $breakpoints);
 }

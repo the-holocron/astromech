@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../utils";
+
+/// The order property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/order
+/// @param {String} $className ["order"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @param {Map} $orders [()] - a map names to order values
+/// @example scss
+///   @include order($className: o, $breakpoints: ("sm": 480px));
+@mixin order($className: order, $breakpoints: config.$breakpoints, $orders: ()) {
+	@include utils.responsive-properties-map($properties: map.merge((first: -1), $orders), $property: "order", $className: $className, $breakpoints: $breakpoints);
+}

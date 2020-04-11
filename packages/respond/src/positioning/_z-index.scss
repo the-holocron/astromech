@@ -1,0 +1,15 @@
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
+
+/// The z-index property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+/// @param {String} $className ["z-index"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @example scss
+///   @include z-index($className: d, $breakpoints: ("sm": 480px));
+@mixin z-index($className: "z-index", $breakpoints: config.$breakpoints, $z-indices: config.$z-indices) {
+	@include utils.responsive-properties-map($properties: $z-indices, $property: "z-index", $className: $className, $breakpoints: $breakpoints);
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$z-index, $property: "z-index", $className: $className, $breakpoints: $breakpoints);
+}

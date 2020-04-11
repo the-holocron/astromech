@@ -1,44 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The border-style property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/border-style
 /// @param {String} $className ["border-style"] - a CSS class name that will prefix all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include border-style($className: bs, $breakpoints: ("sm": 480px));
 @mixin border-style($className: "border-style", $breakpoints: config.$breakpoints) {
-	$property: "border-style";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$border-style {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$border-style, $property: "border-style", $className: $className, $breakpoints: $breakpoints);
 }

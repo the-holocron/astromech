@@ -1,39 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The text-overflow property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-overflow
 /// @param {String} $className ["text-overflow"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include text-overflow($className: toverflow, $breakpoints: ("sm": 480px));
-@mixin text-overflow($className: text-overflow, $breakpoints: config.$breakpoints) {
-	$property: "text-overflow";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$text-overflow {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+@mixin text-overflow($className: "text-overflow", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$text-overflow, $property: "text-overflow", $className: $className, $breakpoints: $breakpoints);
 }

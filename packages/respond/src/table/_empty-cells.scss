@@ -1,41 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The empty-cells property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells
 /// @param {String} $className ["empty-cells"] - a CSS class name that will prefix all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include empty-cells($className: tdec, $breakpoints: ("sm": 480px));
+///   @include empty-cells($className: ec, $breakpoints: ("sm": 480px));
 @mixin empty-cells($className: "empty-cells", $breakpoints: config.$breakpoints) {
-	$property: "empty-cells";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$empty-cells {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$empty-cells, $property: "empty-cells", $className: $className, $breakpoints: $breakpoints);
 }
-

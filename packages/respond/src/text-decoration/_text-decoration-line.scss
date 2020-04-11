@@ -1,0 +1,14 @@
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
+
+/// The text-decoration-line property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line
+/// @param {String} $className ["text-decoration-line"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @example scss
+///   @include text-decoration-line($className: tdl, $breakpoints: ("sm": 480px));
+@mixin text-decoration-line($className: "text-decoration-line", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$text-decoration-line, $property: "text-decoration-line", $className: $className, $breakpoints: $breakpoints);
+}

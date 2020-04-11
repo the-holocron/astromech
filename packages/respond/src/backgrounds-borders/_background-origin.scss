@@ -1,44 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The background-origin property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin
 /// @param {String} $className ["background-origin"] - a CSS class name that will prefix all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include background-origin($className: bo, $breakpoints: ("sm": 480px));
 @mixin background-origin($className: "background-origin", $breakpoints: config.$breakpoints) {
-	$property: "background-origin";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$background-origin {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$background-origin, $property: "background-origin", $className: $className, $breakpoints: $breakpoints);
 }

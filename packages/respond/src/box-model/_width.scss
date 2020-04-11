@@ -1,64 +1,18 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The width prefixerty
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/width
 /// @param {String} $className ["width"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
-/// @param {Map} $sizing [ config.$sizing ] - a map of sizing prefixs
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @param {Map} $sizing [config.$sizing] - a map of sizing prefixs
 /// @example scss
 ///   @include width($className: w, $breakpoints: ("sm": 480px));
-@mixin width($className: width, $breakpoints: config.$breakpoints, $sizing: config.$sizing) {
-	$property: "width";
-
+@mixin width($className: "width", $breakpoints: config.$breakpoints, $sizing: config.$sizing) {
 	@each $prefix in config.$sizing-prefixes {
-		.#{$prefix}#{$className} {
-			@each $breakpoint in map.keys($breakpoints) {
-				@each $key, $value in $sizing {
-					@include media-breakpoint-up($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$key},
-						&-#{$breakpoint}-#{$key} {
-							#{$prefix}#{$property}: $value !important;
-						}
-					}
-
-					@include media-breakpoint-down($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$key}-down {
-							#{$prefix}#{$property}: $value !important;
-						}
-					}
-
-					@include media-breakpoint-only($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$key}-only {
-							#{$prefix}#{$property}: $value !important;
-						}
-					}
-				}
-
-				@each $syntax in syntaxes.$width {
-					@include media-breakpoint-up($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$syntax},
-						&-#{$breakpoint}-#{$syntax}-up {
-							#{$property}: $syntax !important;
-						}
-					}
-
-					@include media-breakpoint-down($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$syntax}-down {
-							#{$property}: $syntax !important;
-						}
-					}
-
-					@include media-breakpoint-only($breakpoint, $breakpoints) {
-						&-#{$breakpoint}-#{$syntax}-only {
-							#{$property}: $syntax !important;
-						}
-					}
-				}
-			}
-		}
+		@include utils.responsive-properties-map($properties: $sizing, $property: "#{$prefix}width", $className: #{$prefix}#{$className}, $breakpoints: $breakpoints);
+		@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$width, $property: "#{$prefix}width", $className: #{$prefix}#{$className}, $breakpoints: $breakpoints);
 	}
 }

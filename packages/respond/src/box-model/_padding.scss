@@ -1,94 +1,54 @@
 @use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/scss-mixins/src/at-rules/breakpoints" as *;
+@use "../../node_modules/@theholocron/scss-mixins/src/backgrounds-borders/margin-padding" as *;
 
 /// The padding property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/padding
 /// @param {String} $prefix ["padding"] - a CSS class name that will prefix all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
-/// @param {Map} $spacing [ config.$spacing ] - a map of spacing
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @param {Map} $spacing [config.$spacing] - a map of spacing
 /// @example scss
 ///   @include padding($prefix: p, $breakpoints: ("sm": 480px));
-@mixin padding($className: padding, $breakpoints: config.$breakpoints, $spacing: config.$spacing) {
-	$property: "padding";
-
+@mixin padding($className: "padding", $breakpoints: config.$breakpoints, $spacing: config.$spacing) {
 	.#{$className} {
 		@each $key, $value in map.merge((auto: auto), $spacing) {
-			@each $abbrev, $direction in config.$box-directions {
-				@each $breakpoint in map.keys($breakpoints) {
-					$prefix: "-";
-					@if ($direction == "") {
-						$prefix: "";
-					}
+			@each $abbrev, $direction in map.merge((x: x, y: y), config.$box-directions) {
+				&-#{$abbrev}-#{$key} {
+					@include box-spacing("padding", $value !important, $direction);
+				}
 
+				@each $breakpoint in map.keys($breakpoints) {
 					@include media-breakpoint-up($breakpoint, $breakpoints) {
 						&-#{$abbrev}-#{$breakpoint}-#{$key},
 						&-#{$abbrev}-#{$breakpoint}-#{$key}-up {
-							#{$property}#{$prefix}#{$direction}: $value !important;
+							@include box-spacing("padding", $value !important, $direction);
 						}
 
 						&-#{$abbrev}-#{$breakpoint}-minus-#{$key},
 						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-up {
-							#{$property}#{$prefix}#{$direction}: -$value !important;
-						}
-
-						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
-							@each $side in $sides {
-								&-#{$axis}-#{$breakpoint}-#{$key},
-								&-#{$axis}-#{$breakpoint}-#{$key}-up {
-									#{$property}-#{$side}: $value !important;
-								}
-
-								&-#{$axis}-#{$breakpoint}-minus-#{$key},
-								&-#{$axis}-#{$breakpoint}-minus-#{$key}-up {
-									#{$property}-#{$side}: -$value !important;
-								}
-							}
+							@include box-spacing("padding", -$value !important, $direction);
 						}
 					}
 
 					@include media-breakpoint-down($breakpoint, $breakpoints) {
 						&-#{$abbrev}-#{$breakpoint}-#{$key}-down {
-							#{$property}#{$prefix}#{$direction}: $value !important;
+							@include box-spacing("padding", $value !important, $direction);
 						}
 
 						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-down {
-							#{$property}#{$prefix}#{$direction}: -$value !important;
-						}
-
-						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
-							@each $side in $sides {
-								&-#{$axis}-#{$breakpoint}-#{$key}-down {
-									#{$property}-#{$side}: $value !important;
-								}
-
-								&-#{$axis}-#{$breakpoint}-minus-#{$key}-down {
-									#{$property}-#{$side}: -$value !important;
-								}
-							}
+							@include box-spacing("padding", -$value !important, $direction);
 						}
 					}
 
 					@include media-breakpoint-only($breakpoint, $breakpoints) {
 						&-#{$abbrev}-#{$breakpoint}-#{$key}-only {
-							#{$property}#{$prefix}#{$direction}: $value !important;
+							@include box-spacing("padding", $value !important, $direction);
 						}
 
 						&-#{$abbrev}-#{$breakpoint}-minus-#{$key}-only {
-							#{$property}#{$prefix}#{$direction}: -$value !important;
-						}
-
-						@each $axis, $sides in (x: (right, left), y: (top, bottom)) {
-							@each $side in $sides {
-								&-#{$axis}-#{$breakpoint}-#{$key}-only {
-									#{$property}-#{$side}: $value !important;
-								}
-
-								&-#{$axis}-#{$breakpoint}-minus-#{$key}-only {
-									#{$property}-#{$side}: -$value !important;
-								}
-							}
+							@include box-spacing("padding", -$value !important, $direction);
 						}
 					}
 				}

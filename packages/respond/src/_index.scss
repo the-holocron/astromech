@@ -1,9 +1,9 @@
-@use "config";
 @use "animations" as *;
 @use "backgrounds-borders" as *;
 @use "basic-user-interface" as *;
 @use "box-alignment" as *;
 @use "box-model" as *;
+@use "color" as *;
 @use "display" as *;
 @use "flexible-box-layout" as *;
 @use "fonts" as *;
@@ -13,6 +13,8 @@
 @use "overflow" as *;
 @use "pointer-events" as *;
 @use "positioning" as *;
+@use "scroll-snap" as *;
+@use "scrollbar" as *;
 @use "table" as *;
 @use "text" as *;
 @use "text-decoration" as *;
@@ -32,6 +34,7 @@
 @include background-origin();
 @include background-repeat();
 @include background-size();
+@include border-radii();
 @include border-style();
 
 // basic user interface
@@ -62,6 +65,9 @@
 @include visibility();
 @include width();
 
+// color
+@include opacity();
+
 // display
 @include display();
 
@@ -69,11 +75,13 @@
 @include flex-direction();
 @include flex-flow();
 @include flex-wrap();
+@include order();
 
 // fonts
 @include font-family();
 @include font-size();
 @include font-style();
+@include font-variant-numeric();
 @include font-weight();
 @include line-height();
 
@@ -101,6 +109,16 @@
 @include clear();
 @include float();
 @include position();
+@include z-index();
+
+// scroll-snap
+@include scroll-snap-align();
+@include scroll-snap-stop();
+@include scroll-snap-type();
+
+// scrollbar
+@include scrollbar-color();
+@include scrollbar-width();
 
 // table
 @include border-collapse();
@@ -111,10 +129,12 @@
 
 // text decoration
 @include text-decoration();
+@include text-decoration-line();
 @include text-decoration-skip-ink();
 @include text-decoration-style();
 
 // text
+@include letter-spacing();
 @include line-break();
 @include overflow-wrap();
 @include text-align();

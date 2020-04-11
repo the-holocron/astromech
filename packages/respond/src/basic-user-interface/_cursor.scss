@@ -1,19 +1,14 @@
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The cursor property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/cursor
 /// @param {String} $className ["cursor"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include cursor($className: c);
-@mixin cursor($className: "cursor") {
-	$property: "cursor";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$cursor {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-		}
-	}
+///   @include cursor($className: c, $breakpoints: ("sm": 480px));
+@mixin cursor($className: "cursor", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$cursor, $property: "cursor", $className: $className, $breakpoints: $breakpoints);
 }

@@ -1,5 +1,6 @@
 @use "./index" as *;
 
+@include letter-spacing();
 @include line-break();
 @include overflow-wrap();
 @include text-align();

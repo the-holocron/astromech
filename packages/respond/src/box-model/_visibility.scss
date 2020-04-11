@@ -1,40 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The visibility property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
 /// @param {String} $className ["visibility"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include visibility($breakpoints: ("sm": 480px));
 @mixin visibility($className: "visibility", $breakpoints: config.$breakpoints) {
-	$property: "visibility";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$visibility {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$syntax}-#{$breakpoint},
-					&-#{$syntax}-#{$breakpoint}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$syntax}-#{$breakpoint}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$syntax}-#{$breakpoint}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-	}
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$visibility, $property: "visibility", $className: $className, $breakpoints: $breakpoints);
 }

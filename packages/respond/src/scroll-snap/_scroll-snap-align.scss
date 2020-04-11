@@ -1,0 +1,14 @@
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
+
+/// The scroll-snap-align property
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-align
+/// @param {String} $className ["scroll-snap-align"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
+/// @example scss
+///   @include scroll-snap-align($className: bc, $breakpoints: ("sm": 480px));
+@mixin scroll-snap-align($className: "scroll-snap-align", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$scroll-snap-align, $property: "scroll-snap-align", $className: $className, $breakpoints: $breakpoints);
+}

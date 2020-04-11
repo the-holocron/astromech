@@ -1,19 +1,14 @@
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The outline-style property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/outline-style
 /// @param {String} $className ["outline-style"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include outline-style($className: os);
-@mixin outline-style($className: "outline-style") {
-	$property: "outline-style";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$outline-style {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-		}
-	}
+///   @include outline-style($className: os, $breakpoints: ("sm": 480px));
+@mixin outline-style($className: "outline-style", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$outline-style, $property: "outline-style", $className: $className, $breakpoints: $breakpoints);
 }

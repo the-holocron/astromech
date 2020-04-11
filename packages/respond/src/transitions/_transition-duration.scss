@@ -1,20 +1,15 @@
-@use "../config";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The transition-duration property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration
 /// @param {String} $className ["transition-duration"] - a CSS class name that will className all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @param {Map} $weights [config.$transition-durations] - a map of font weights
 /// @example scss
-///   @include transition-duration($className: adur);
-@mixin transition-duration($className: transition-duration, $durations: config.$durations) {
-	$property: "transition-duration";
-
-	.#{$className} {
-		@each $key, $value in $durations {
-			&-#{$key} {
-				#{$property}: $value !important;
-			}
-		}
-	}
+///   @include transition-duration($className: tdur, $breakpoints: ("sm": 480px));
+@mixin transition-duration($className: "transition-duration", $breakpoints: config.$breakpoints, $durations: config.$durations) {
+	@include utils.responsive-properties-map($properties: $durations, $property: "transition-duration", $className: $className, $breakpoints: $breakpoints);
 }

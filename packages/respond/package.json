@@ -1,6 +1,6 @@
 {
-  "name": "@theholocron/arfive",
-  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/arfive#readme",
+  "name": "@theholocron/sledgehammer",
+  "homepage": "https://the-holocron.github.io/sledgehammer",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing CSS within the Galaxy.",
   "author": "Newton Koumantzelis",
   "version": "0.0.0",
@@ -8,10 +8,10 @@
   "files": [
     "src"
   ],
-  "repository": "https://github.com/the-holocron/astromech.git",
-  "bugs": "https://github.com/the-holocron/astromech/issues",
-  "releases": "https://github.com/the-holocron/astromech/releases",
-  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "repository": "https://github.com/the-holocron/sledgehammer.git",
+  "bugs": "https://github.com/the-holocron/sledgehammer/issues",
+  "releases": "https://github.com/the-holocron/sledgehammer/releases",
+  "wiki": "https://github.com/the-holocron/sledgehammer/wiki",
   "license": "GPL-3.0",
   "browserslist": [
     "extends @theholocron/browserslist-config"
@@ -30,14 +30,16 @@
   "scripts": {
     "sassdoc": "sassdoc src --dest docs",
     "docs": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
-    "dist": "sass --load-path=node_modules src/_index.scss dist/arfive.css",
-    "postdist": "sass --load-path=node_modules --style=compressed src/_index.scss dist/arfive.min.css",
+    "dist": "for file in $(find src -type f -name '*.scss' ! -name '_*'); do sass $file:dist/$(basename $file .scss).css; done",
+    "postdist": "for file in $(find src -type f -name '*.scss' ! -name '_*'); do sass --style=compressed $file:dist/$(basename $file .scss).min.css; done",
     "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
     "lint": "stylelint src/**/*.scss"
   },
   "dependencies": {
-    "@theholocron/arone": "file:../arone",
-    "@theholocron/arfour": "file:../arfour"
+    "@theholocron/config": "file:../config",
+    "@theholocron/css-syntaxes": "file:../css-syntaxes",
+    "@theholocron/scss-functions": "file:../scss-functions",
+    "@theholocron/scss-mixins": "file:../scss-mixins"
   },
   "peerDependencies": {
     "sass": "^1.26.3"

@@ -1,72 +1,14 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The clear property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/clear
 /// @param {String} $className ["clear"] - a CSS class name that will className all helpers
-/// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
 ///   @include clear($className: c, $breakpoints: ("sm": 480px));
-@mixin clear($className: clear, $breakpoints: config.$breakpoints) {
-	$property: "clear";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$clear {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-			}
-		}
-
-	////
-	/// @author Nicolas Gallagher
-	////
-
-	/// Clearfix
-	/// For modern browsers
-	/// 1. The space content is one way to avoid an Opera bug when the
-	///    `contenteditable` attribute is included anywhere else in the document.
-	///    Otherwise it causes space to appear at the top and bottom of elements
-	///    that are clearfixed.
-	/// 2. The use of `table` rather than `block` is only necessary if using
-	///    `::before` to contain the top-margins of child elements.
-	/// @link http://nicolasgallagher.com/micro-clearfix-hack/
-	/// @example html
-	///   <div class="clear-fix">...</div>
-		&-fix {
-			@supports not (display: flow-root) {
-				&::before,
-				&::after {
-					display: table; // 2
-					content: " "; // 1
-				}
-
-				&::after {
-					clear: both;
-				}
-			}
-			@supports (display: flow-root) {
-				display: flow-root;
-			}
-		}
-	}
+@mixin clear($className: "clear", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$clear, $property: "clear", $className: $className, $breakpoints: $breakpoints);
 }

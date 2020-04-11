@@ -1,7 +1,6 @@
-@use "sass:map";
-@use "../../node_modules/@theholocron/arone/src/utilities/breakpoints" as *;
-@use "../config";
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The overscroll-behavior property
 /// @since 0.1.0
@@ -10,52 +9,6 @@
 /// @param {Map} $breakpoints [ config.$breakpoints ] - a map of grid breakpoints
 /// @example scss
 ///   @include overscroll-behavior($prefix: o, $breakpoints: ("sm": 480px));
-@mixin overscroll-behavior($prefix: overscroll-behavior, $breakpoints: config.$breakpoints) {
-	$property: "overscroll-behavior";
-
-	.#{$prefix} {
-		@each $syntax in syntaxes.$overscroll-behavior {
-			@each $breakpoint in map.keys($breakpoints) {
-				@include media-breakpoint-up($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax},
-					&-#{$breakpoint}-#{$syntax}-up {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-down($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-down {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@include media-breakpoint-only($breakpoint, $breakpoints) {
-					&-#{$breakpoint}-#{$syntax}-only {
-						#{$property}: $syntax !important;
-					}
-				}
-
-				@each $axis in x, y {
-					@include media-breakpoint-up($breakpoint, $breakpoints) {
-						&-#{$axis}-#{$breakpoint}-#{$syntax},
-						&-#{$axis}-#{$breakpoint}-#{$syntax}-up {
-							#{$property}-#{$axis}: $syntax !important;
-						}
-					}
-
-					@include media-breakpoint-down($breakpoint, $breakpoints) {
-						&-#{$axis}-#{$breakpoint}-#{$syntax}-down {
-							#{$property}-#{$axis}: $syntax !important;
-						}
-					}
-
-					@include media-breakpoint-only($breakpoint, $breakpoints) {
-						&-#{$axis}-#{$breakpoint}-#{$syntax}-only {
-							#{$property}-#{$axis}: $syntax !important;
-						}
-					}
-				}
-			}
-		}
-	}
+@mixin overscroll-behavior($className: "overscroll-behavior", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$overscroll-behavior, $property: "overscroll-behavior", $className: $className, $breakpoints: $breakpoints, $axes: (x, y));
 }

@@ -1,19 +1,14 @@
-@use "../syntaxes";
+@use "../../node_modules/@theholocron/config/src" as config;
+@use "../../node_modules/@theholocron/css-syntaxes/src" as syntaxes;
+@use "../utils";
 
 /// The animation-direction property
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
 /// @param {String} $className ["animation-direction"] - a CSS class name that will prefix all helpers
+/// @param {Map} $breakpoints [config.$breakpoints] - a map of grid breakpoints
 /// @example scss
-///   @include animation-direction($className: adir);
-@mixin animation-direction($className: "animation-direction") {
-	$property: "animation-direction";
-
-	.#{$className} {
-		@each $syntax in syntaxes.$animation-direction {
-			&-#{$syntax} {
-				#{$property}: $syntax !important;
-			}
-		}
-	}
+///   @include animation-direction($className: adir, $breakpoints: ("sm": 480px));
+@mixin animation-direction($className: "animation-direction", $breakpoints: config.$breakpoints) {
+	@include utils.responsive-syntaxes-list($syntaxes: syntaxes.$animation-direction, $property: "animation-direction", $className: $className, $breakpoints: $breakpoints);
 }
