@@ -558,6 +558,29 @@
 			}
 		}
 
+		@include describe("margin") {
+			@include test("it should return a syntax") {
+				$test: list.nth($margin, 1);
+				$expected: auto;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list of nth length") {
+				$test: list.length($margin);
+				$expected: 4;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($margin);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
 		@include describe("overscroll-behavior") {
 			@include test("it should return a syntax") {
 				$test: list.nth($overscroll-behavior, 1);
@@ -575,6 +598,29 @@
 
 			@include test("it should return a list") {
 				$test: meta.type-of($overscroll-behavior);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
+		@include describe("padding") {
+			@include test("it should return a syntax") {
+				$test: list.nth($margin, 1);
+				$expected: auto;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list of nth length") {
+				$test: list.length($margin);
+				$expected: 4;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($margin);
 				$expected: list;
 
 				@include assert-equal($test, $expected, "Return the correct value");
@@ -792,6 +838,22 @@
 
 			@include test("it should return a list") {
 				$test: meta.type-of($font-weight);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
+		@include describe("line-height") {
+			@include test("it should return a list of nth length") {
+				$test: list.length($line-height);
+				$expected: 3;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($height);
 				$expected: list;
 
 				@include assert-equal($test, $expected, "Return the correct value");
@@ -1487,6 +1549,29 @@
 	}
 
 	@include describe("text") {
+		@include describe("letter-spacing") {
+			@include test("it should return a syntax") {
+				$test: list.nth($letter-spacing, 1);
+				$expected: normal;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list of nth length") {
+				$test: list.length($letter-spacing);
+				$expected: 4;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($letter-spacing);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
 		@include describe("line-break") {
 			@include test("it should return a syntax") {
 				$test: list.nth($line-break, 1);

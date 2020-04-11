@@ -11,8 +11,16 @@
 $height: flat(custom.$sizing, $global);
 
 /// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/margin
+$margin: flat(auto, $global);
+
+/// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/overscroll-behavior
 $overscroll-behavior: flat(auto, contain, none, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/padding
+$padding: flat(auto, $global);
 
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/visibility

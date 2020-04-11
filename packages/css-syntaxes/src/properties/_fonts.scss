@@ -24,3 +24,7 @@ $font-variant-numeric: flat(normal, $numeric-figure-values, $numeric-spacing-val
 /// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/font-weight
 $font-weight: flat(bolder, lighter, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/line-height
+$line-height: $global;
