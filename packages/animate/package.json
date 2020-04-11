@@ -1,6 +1,6 @@
 {
   "name": "@theholocron/animate",
-  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/animate#readme",
+  "homepage": "https://the-holocron.github.io/animate",
   "description": "This utility droid provides a set of single-purpose, functional utilities for writing (S)CSS animation within the Galaxy.",
   "author": "Newton Koumantzelis",
   "version": "0.0.0",
@@ -8,10 +8,10 @@
   "files": [
     "src"
   ],
-  "repository": "https://github.com/the-holocron/astromech.git",
-  "bugs": "https://github.com/the-holocron/astromech/issues",
-  "releases": "https://github.com/the-holocron/astromech/releases",
-  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "repository": "https://github.com/the-holocron/animate.git",
+  "bugs": "https://github.com/the-holocron/animate/issues",
+  "releases": "https://github.com/the-holocron/animate/releases",
+  "wiki": "https://github.com/the-holocron/animate/wiki",
   "license": "GPL-3.0",
   "browserslist": [
     "extends @theholocron/browserslist-config"
@@ -23,7 +23,7 @@
     "extends": "@theholocron/stylelint-config"
   },
   "scripts": {
-    "docs": "sassdoc src/**/*.scss --dest ../../docs/animate",
+    "docs": "sassdoc src --dest docs",
     "readme": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
     "dist": "sass --load-path=node_modules src:dist",
     "postdist": "sass --style=compressed src/animate.scss:dist/animate.min.css src/bounce/bounce.scss:dist/bounce/bounce.min.css src/fade/fade.scss:dist/fade/fade.min.css src/slide/slide.scss:dist/slide/slide.min.css",
