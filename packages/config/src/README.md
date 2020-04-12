@@ -47,9 +47,7 @@ Default cubic bezier function
 Default set of animation durations
 
 + **Group**: Animations, transitions
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -84,9 +82,7 @@ Default animation duration
 Default set of border colors
 
 + **Group**: Backgrounds & borders
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -102,9 +98,7 @@ Default set of border colors
 Default set of border radii
 
 + **Group**: Backgrounds & borders
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -140,9 +134,7 @@ Default border radius
 Default set of border-widths
 
 + **Group**: Backgrounds & borders
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -190,9 +182,7 @@ Base line multiplier for spacing
 Default set of spacing
 
 + **Group**: Box model
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -217,9 +207,7 @@ Default set of spacing
 Default set of sizing
 
 + **Group**: Box model
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -247,9 +235,7 @@ Sizing prefixes used for widths and heights
 Base line multiplier for spacing
 
 + **Group**: Color
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -266,9 +252,7 @@ Base line multiplier for spacing
 Default set of font families
 
 + **Group**: Fonts
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -301,9 +285,7 @@ Default font family
 Default set of font sizes
 
 + **Group**: Fonts
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -339,9 +321,7 @@ Default font size
 Default set of font weights
 
 + **Group**: Fonts
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -363,9 +343,7 @@ Default set of font weights
 Default set of letter-spacings
 
 + **Group**: Fonts
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -383,9 +361,7 @@ Default set of letter-spacings
 Default set of line heights
 
 + **Group**: Fonts
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -434,9 +410,7 @@ Default line-height for headings
 Default set of directions for the box model
 
 + **Group**: Fragmentation
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -454,9 +428,7 @@ Default set of directions for the box model
 Default set of breakpoints
 
 + **Group**: Media queries
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
@@ -474,9 +446,7 @@ Default set of breakpoints
 Default set of z-indicies
 
 + **Group**: Positioning
-
 + **Access**: public
-
 + **Since**: 0.1.0
 
 ### Properties
