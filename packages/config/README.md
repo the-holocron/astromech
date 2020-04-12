@@ -26,8 +26,8 @@ $ npm install --save-dev @theholocron/config
 // include all variables with 'astromech' as the namespace
 @use "./node_modules/@theholocron/config/src" as astromech;
 
-// use all utilities with a different set of breakpoints
-// calls all mixins and will include in CSS output
+// override parts of the config with a different set of breakpoints
+// still includes all others untouched
 @use "./node_modules/@theholocron/config/src" as astromech with (
     $breakpoints: (
         "xs": "0",
@@ -38,6 +38,7 @@ $ npm install --save-dev @theholocron/config
     )
 );
 
+// use new variables in a mixin or (S)CSS
 @media (min-width: map.get(astromech.$breakpoints, "xs")) {
    ...
 }

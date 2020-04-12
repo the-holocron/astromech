@@ -40,6 +40,7 @@ The best way to find out what's available is to check out the [source code](./sr
 
 - [**accessibility**](./src/a11y/README.md) - check contrast to ensure its compliant, fix contrast, choose the best color to match a level of contrast, and more.
 - [**color**](./src/color/README.md) - a set of functions that work with, on and/or manipulate colors.
+- [**list**](./src/list/README.md) - a set of functions that deal with lists.
 - [**math**](./src/math/README.md) - a translation of mathematical functions into (S)CSS.
 - [**miscellaneous**](./src/misc/README.md) - various functions that deal with breakpoints and deeply nested maps and lists.
 - [**number**](./src/num/README.md) - functions that manipulate numbers; check if a value is a number, within a bounds, etc.
