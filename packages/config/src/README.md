@@ -4,7 +4,7 @@ A set of non-theme based variables for writing (S)CSS.
 
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>
-<!-- toc -->
+
 * [$cubic-bezier](#cubic-bezier)
 * [$durations](#durations)
 * [$duration](#duration)
@@ -30,7 +30,7 @@ A set of non-theme based variables for writing (S)CSS.
 * [$box-directions](#box-directions)
 * [$breakpoints](#breakpoints)
 * [$z-indices](#z-indices)
-<!-- tocstop -->
+
 </details>
 
 ## $cubic-bezier
