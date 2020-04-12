@@ -33,20 +33,24 @@ A set of non-theme based variables for writing (S)CSS.
 <!-- tocstop -->
 </details>
 
-## $cubic-bezier <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $cubic-bezier
 
 Default cubic bezier function
 
-**Group**: Animations, transitions
-**Access**: public
-**Type**: [`Function`](https://sass-lang.com/documentation/values/functions)
++ **Group**: Animations, transitions
++ **Access**: public
++ **Type**: [`Function`](https://sass-lang.com/documentation/values/functions)
++ **Since**: 0.1.0
 
-## $durations <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $durations
 
 Default set of animation durations
 
-**Group**: Animations, transitions
-**Access**: public
++ **Group**: Animations, transitions
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -62,24 +66,28 @@ Default set of animation durations
 
 + **$duration** Default animation duration
 
-## $duration <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $duration
 
 Default animation duration
 
-**Group**: Animations, transitions
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Animations, transitions
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$durations](#animations--transitions-variable-durations)** - map of durations
 
-## $border-colors <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $border-colors
 
 Default set of border colors
 
-**Group**: Backgrounds & borders
-**Access**: public
++ **Group**: Backgrounds & borders
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -89,12 +97,15 @@ Default set of border colors
 | `mid`   | [`Color`](https://sass-lang.com/documentation/values/colors) | middle contrasted border color | `rgb(128, 128, 128)` |
 | `light` | [`Color`](https://sass-lang.com/documentation/values/colors) | light border color             | `rgb(255, 255, 255)` |
 
-## $border-radii <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $border-radii
 
 Default set of border radii
 
-**Group**: Backgrounds & borders
-**Access**: public
++ **Group**: Backgrounds & borders
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -111,24 +122,28 @@ Default set of border radii
 
 + **$border-radius** Default border radius
 
-## $border-radius <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $border-radius
 
 Default border radius
 
-**Group**: Backgrounds & borders
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Backgrounds & borders
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$border-radii](#backgrounds---borders-variable-border-radii)** - map of border radii
 
-## $border-widths <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $border-widths
 
 Default set of border-widths
 
-**Group**: Backgrounds & borders
-**Access**: public
++ **Group**: Backgrounds & borders
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -144,36 +159,41 @@ Default set of border-widths
 
 + **$border-width** Default border width
 
-## $border-width <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $border-width
 
 Default border width
 
-**Group**: Backgrounds & borders
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Backgrounds & borders
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$border-widths](#backgrounds---borders-variable-border-widths)** - map of border widths
 
-## $spacer <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $spacer
 
 Base line multiplier for spacing
 
-**Group**: Box model
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Box model
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependents
 
 + **$spacing** Default set of spacing
 
-## $spacing <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $spacing
 
 Default set of spacing
 
-**Group**: Box model
-**Access**: public
++ **Group**: Box model
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -192,12 +212,15 @@ Default set of spacing
 
 + **[$spacer](#box-model-variable-spacer)** - multiplier for creating map
 
-## $sizing <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $sizing
 
 Default set of sizing
 
-**Group**: Box model
-**Access**: public
++ **Group**: Box model
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -210,20 +233,24 @@ Default set of sizing
 | `75`   | [`Number`](https://sass-lang.com/documentation/values/numbers) | 75% of the total containers space  | `75%`   |
 | `100`  | [`Number`](https://sass-lang.com/documentation/values/numbers) | 100% of the total containers space | `100%`  |
 
-## $sizing-prefixes <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $sizing-prefixes
 
 Sizing prefixes used for widths and heights
 
-**Group**: Box model
-**Access**: public
-**Type**: [`List`](https://sass-lang.com/documentation/values/lists)
++ **Group**: Box model
++ **Access**: public
++ **Type**: [`List`](https://sass-lang.com/documentation/values/lists)
++ **Since**: 0.1.0
 
-## $opacities <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $opacities
 
 Base line multiplier for spacing
 
-**Group**: Color
-**Access**: public
++ **Group**: Color
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -234,12 +261,15 @@ Base line multiplier for spacing
 | `beneath`   | [`Number`](https://sass-lang.com/documentation/values/numbers) | set opacity to force stacking context and lay beneath | `.99`   |
 | `visible`   | [`Number`](https://sass-lang.com/documentation/values/numbers) | set opacity to 1 to be visible                        | `1`     |
 
-## $font-families <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $font-families
 
 Default set of font families
 
-**Group**: Fonts
-**Access**: public
++ **Group**: Fonts
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -253,24 +283,28 @@ Default set of font families
 
 + **$font-family** Default font family
 
-## $font-family <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $font-family
 
 Default font family
 
-**Group**: Fonts
-**Access**: public
-**Type**: [`String`](https://sass-lang.com/documentation/values/strings)
++ **Group**: Fonts
++ **Access**: public
++ **Type**: [`String`](https://sass-lang.com/documentation/values/strings)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$font-families](#fonts-variable-font-families)** - map of font families
 
-## $font-sizes <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $font-sizes
 
 Default set of font sizes
 
-**Group**: Fonts
-**Access**: public
++ **Group**: Fonts
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -287,24 +321,28 @@ Default set of font sizes
 
 + **$font-size** Default font size
 
-## $font-size <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $font-size
 
 Default font size
 
-**Group**: Fonts
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Fonts
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$font-sizes](#fonts-variable-font-sizes)** - map of font sizes
 
-## $font-weights <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $font-weights
 
 Default set of font weights
 
-**Group**: Fonts
-**Access**: public
++ **Group**: Fonts
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -320,12 +358,15 @@ Default set of font weights
 | `thick`    | [`Number`](https://sass-lang.com/documentation/values/numbers) | dark font weight                           | `800`   |
 | `heavy`    | [`Number`](https://sass-lang.com/documentation/values/numbers) | darkest font weight                        | `900`   |
 
-## $letter-spacings <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $letter-spacings
 
 Default set of letter-spacings
 
-**Group**: Fonts
-**Access**: public
++ **Group**: Fonts
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -337,12 +378,15 @@ Default set of letter-spacings
 | `lg`    | [`Number`](https://sass-lang.com/documentation/values/numbers) | large letter spacing; ~1px                      | `.0625rem`  |
 | `xl`    | [`Number`](https://sass-lang.com/documentation/values/numbers) | larger letter spacing; ~2px                     | `.125rem`   |
 
-## $line-heights <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $line-heights
 
 Default set of line heights
 
-**Group**: Fonts
-**Access**: public
++ **Group**: Fonts
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -359,36 +403,41 @@ Default set of line heights
 + **$line-height** Default line-height
 + **$line-height-heading** Default line-height for headings
 
-## $line-height <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $line-height
 
 Default line-height
 
-**Group**: Fonts
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Fonts
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$line-heights](#fonts-variable-line-heights)** - map of line heights
 
-## $line-height-heading <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $line-height-heading
 
 Default line-height for headings
 
-**Group**: Fonts
-**Access**: public
-**Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Group**: Fonts
++ **Access**: public
++ **Type**: [`Number`](https://sass-lang.com/documentation/values/numbers)
++ **Since**: 0.1.0
 
 ### Dependencies
 
 + **[$line-heights](#fonts-variable-line-heights)** - map of line heights
 
-## $box-directions <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $box-directions
 
 Default set of directions for the box model
 
-**Group**: Fragmentation
-**Access**: public
++ **Group**: Fragmentation
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -400,12 +449,15 @@ Default set of directions for the box model
 | `right`  | [`String`](https://sass-lang.com/documentation/values/strings) | only the right side will be affected  | `'right'`  |
 | `top`    | [`String`](https://sass-lang.com/documentation/values/strings) | only the top will be affected         | `'top'`    |
 
-## $breakpoints <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $breakpoints
 
 Default set of breakpoints
 
-**Group**: Media queries
-**Access**: public
++ **Group**: Media queries
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
@@ -417,12 +469,15 @@ Default set of breakpoints
 | `lg` | [`Number`](https://sass-lang.com/documentation/values/numbers) | screens between ~992px and ~1199px wide | `62em`  |
 | `xl` | [`Number`](https://sass-lang.com/documentation/values/numbers) | screens larger than ~1200px wide        | `75em`  |
 
-## $z-indices <div style="float:right; font-size:small; font-weight:normal;">*Since: 0.1.0*</div>
+## $z-indices
 
 Default set of z-indicies
 
-**Group**: Positioning
-**Access**: public
++ **Group**: Positioning
+
++ **Access**: public
+
++ **Since**: 0.1.0
 
 ### Properties
 
