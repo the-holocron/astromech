@@ -116,6 +116,10 @@ $single-animation-direction: (alternate, alternate-reverse, normal, reverse);
 $single-animation-fill-mode: (backwards, both, forwards, none);
 
 /// @since 0.1.0
+/// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L653-L655
+$single-animation-iteration-count: list.append((), infinite);
+
+/// @since 0.1.0
 /// @link https://github.com/mdn/data/blob/master/css/syntaxes.json#L656-L658
 $single-animation-play-state: (running, paused);
 

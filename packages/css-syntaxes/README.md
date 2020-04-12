@@ -26,6 +26,7 @@ $ npm install --save-dev @theholocron/css-syntaxes
 // include all variables with 'astromech' as the namespace
 @use "./node_modules/@theholocron/css-syntaxes/src" as astromech;
 
+// write a helper class for each syntax
 .animation-direction {
     @each $syntax in astromech.$animation-direction {
         &-#{$syntax} {

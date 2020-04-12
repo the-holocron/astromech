@@ -556,6 +556,29 @@
 		}
 	}
 
+	@include describe("single-animation-iteration-count") {
+		@include test("it should return a syntax") {
+			$test: list.nth($single-animation-iteration-count, 1);
+			$expected: infinite;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($single-animation-iteration-count);
+			$expected: 1;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($single-animation-iteration-count);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
 	@include describe("single-animation-play-state") {
 		@include test("it should return a syntax") {
 			$test: list.nth($single-animation-play-state, 1);

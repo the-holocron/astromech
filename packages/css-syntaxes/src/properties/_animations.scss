@@ -14,6 +14,14 @@ $animation-direction: flat($single-animation-direction, $global);
 $animation-fill-mode: flat($single-animation-fill-mode, $global);
 
 /// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-iteration-count
+$animation-iteration-count: flat($single-animation-iteration-count, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/animation-name
+$animation-name: flat(none, $global);
+
+/// @since 0.1.0
 /// @link https://developer.mozilla.org/docs/Web/CSS/animation-play-state
 $animation-play-state: flat($single-animation-play-state, $global);
 

@@ -38,6 +38,45 @@
 			}
 		}
 
+		@include describe("animation-iteration-count") {
+			@include test("it should return a list of nth length") {
+				$test: list.length($animation-iteration-count);
+				$expected: 4;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($animation-iteration-count);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
+		@include describe("animation-name") {
+			@include test("it should return a syntax") {
+				$test: list.nth($animation-name, 1);
+				$expected: none;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list of nth length") {
+				$test: list.length($animation-name);
+				$expected: 4;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+
+			@include test("it should return a list") {
+				$test: meta.type-of($animation-name);
+				$expected: list;
+
+				@include assert-equal($test, $expected, "Return the correct value");
+			}
+		}
+
 		@include describe("animation-play-state") {
 			@include test("it should return a list of nth length") {
 				$test: list.length($animation-play-state);
@@ -1847,6 +1886,7 @@
 
 				@include assert-equal($test, $expected, "Return the correct value");
 			}
+
 			@include test("it should return a list of nth length") {
 				$test: list.length($text-orientation);
 				$expected: 6;
