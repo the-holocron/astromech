@@ -2,8 +2,6 @@
 
 This utility droid provides a set of single-purpose, functional mixins for writing (S)CSS within the Galaxy. 
 
-![arone](./arone.jpg)
-
 ## Installation
 
 ```shell

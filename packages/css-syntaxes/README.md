@@ -2,8 +2,6 @@
 
 This utility droid provides a set of [CSS syntaxes](https://github.com/mdn/data/blob/master/css/syntaxes.md) for writing (S)CSS functional helpers or mixins within the Galaxy.
 
-![R1 series droid](./r-1.jpg)
-
 ## Installation
 
 ```shell

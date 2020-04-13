@@ -2,8 +2,6 @@
 
 This utility droid provides a set of variables for writing (S)CSS within the Galaxy.
 
-![R0 series droid](./r-0.png)
-
 ## Installation
 
 ```shell
