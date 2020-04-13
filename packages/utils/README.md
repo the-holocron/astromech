@@ -1,13 +1,11 @@
-# BeeBee (Ate) [![npm](https://img.shields.io/npm/v/@theholocron/beebee)](https://www.npmjs.com/package/@theholocron/beebee)
+# Utils [![npm](https://img.shields.io/npm/v/@theholocron/utils)](https://www.npmjs.com/package/@theholocron/utils)
 
  This utility droid provides a set of single-purpose, functional utilities for writing Javascript within the Galaxy.
-
-[![BB-8 droid](./beebee.png)](https://starwars.fandom.com/wiki/BB-8)
 
 ## Installation
 
 ```shell
-$ npm install --save-dev @theholocron/beebee
+$ npm install --save-dev @theholocron/utils
 ```
 
 ## Table of Contents
@@ -23,14 +21,14 @@ $ npm install --save-dev @theholocron/beebee
 ## Usage
 
 ```javascript
-import beebee from '@theholocron/beebee';
+import utils from '@theholocron/utils';
 
-beebee.arr.toSentence([ 'foo', 'bar', 'baz' ], ', ', 'or '); // foo, bar, or baz
-beebee.clipboard.copy('bar') // void (copies to OS pasteboard)
-beebee.func.noop() // undefined
-beebee.storage.get('foo') // retreives 'bar' from localstorage at key 'foo'
-beebee.str.isInvalidEmail('foo@example.com') // false
-beebee.uri.isValid('example.com') // false
+utils.arr.toSentence([ 'foo', 'bar', 'baz' ], ', ', 'or '); // foo, bar, or baz
+utils.clipboard.copy('bar') // void (copies to OS pasteboard)
+utils.func.noop() // undefined
+utils.storage.get('foo') // retreives 'bar' from localstorage at key 'foo'
+utils.str.isInvalidEmail('foo@example.com') // false
+utils.uri.isValid('example.com') // false
 ```
 
 _The previous examples are only a sample of what utilities are available._
@@ -39,14 +37,14 @@ _The previous examples are only a sample of what utilities are available._
 
 The best way to find out what's available is to check out the source code.  More documentation and a possible site to explore are set to come.
 
-- [**arr**](./src/arr/README.md) - various functions that deal with arrays.
-- [**clipboard**](./src/clipboard/README.md) - functions that  set the clipboard.
-- [**func**](./src/func/README.md) - various functions that deal with functions.
-- [**obj**](./src/obj/README.md) - various functions that deal with objects.
-- [**p**](./src/p/README.md) - functions that work with Promises.
+- [**Arrays**](./src/arr/README.md) - various functions that deal with arrays.
+- [**Clipboard**](./src/clipboard/README.md) - functions that  set the clipboard.
+- [**Functions**](./src/func/README.md) - various functions that deal with functions.
+- [**Object**](./src/obj/README.md) - various functions that deal with objects.
+- [**Promises**](./src/p/README.md) - functions that work with Promises.
 - [**storage**](./src/storage/README.md) - functions that get, set and delete item(s) in local storage.
-- [**str**](./src/str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
-- [**uri**](./src/uri/README.md) - any function that deals with URIs; add query params, add search
+- [**Strings**](./src/str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
+- [**URIs**](./src/uri/README.md) - any function that deals with URIs; add query params, add search
 
 ## How We Track Changes [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 

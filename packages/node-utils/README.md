@@ -1,13 +1,11 @@
-# Chopper [![npm](https://img.shields.io/npm/v/@theholocron/chopper)](https://www.npmjs.com/package/@theholocron/chopper)
+# Node Utils [![npm](https://img.shields.io/npm/v/@theholocron/node-utils)](https://www.npmjs.com/package/@theholocron/node-utils)
 
 This utility droid provides a set of single-purpose, functional utilities for writing NodeJS within the Galaxy.
-
-[![C1-10P droid](./chopper.png)](https://starwars.fandom.com/wiki/C1-10P)
 
 ## Installation
 
 ```shell
-$ npm install --save-dev @theholocron/chopper
+$ npm install --save-dev @theholocron/node-utils
 ```
 
 ## Table of Contents
@@ -23,14 +21,14 @@ $ npm install --save-dev @theholocron/chopper
 ## Usage
 
 ```javascript
-import chopper from '@theholocron/chopper';
+import utils from '@theholocron/node-utils';
 
-chopper.curl.getHTTPStatus('http://example.com'); // 200
-chopper.file.isFileOfType('/foo/bar/baz.json', 'json') // true
-chopper.git.remote() // 'https://github.com/the-holocron/astromech.git'
-chopper.log.error('foo') // [ERROR] foo
-chopper.semver.increment('1.0.0', 'major') // 2.0.0
-chopper.str.encode('foo') // Zm9v
+utils.curl.getHTTPStatus('http://example.com'); // 200
+utils.file.isFileOfType('/foo/bar/baz.json', 'json') // true
+utils.git.remote() // 'https://github.com/the-holocron/astromech.git'
+utils.log.error('foo') // [ERROR] foo
+utils.semver.increment('1.0.0', 'major') // 2.0.0
+utils.str.encode('foo') // Zm9v
 ```
 
 _The previous examples are only a sample of what utilities are available._
@@ -39,12 +37,12 @@ _The previous examples are only a sample of what utilities are available._
 
 The best way to find out what's available is to check out the source code.  More documentation and a possible site to explore are set to come.
 
-- [**curl**](./src/curl/README.md) - use NodeJS to curl and grab data from sites and/or APIs.
-- [**file**](./src/file/README.md) - a set of functions that work with the Filesystem.
-- [**git**](./src/git/README.md) - a translation of Git operations in NodeJS.
-- [**log**](./src/log/README.md) - various functions that log different types and levels of output to the console
-- [**semver**](./src/semver/README.md) - functions to work with Semantic Versioning and verifying numbers and keywords are valid.
-- [**str**](./src/str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
+- [**Curl**](./src/curl/README.md) - use NodeJS to curl and grab data from sites and/or APIs.
+- [**Files**](./src/file/README.md) - a set of functions that work with the Filesystem.
+- [**Git**](./src/git/README.md) - a translation of Git operations in NodeJS.
+- [**Logs**](./src/log/README.md) - various functions that log different types and levels of output to the console
+- [**SemVer**](./src/semver/README.md) - functions to work with Semantic Versioning and verifying numbers and keywords are valid.
+- [**Strings**](./src/str/README.md) - any function that manipulates strings; input a direction and output the opposite, strip the unit suffix, replace parts of a string, and so on.
 
 ## How We Track Changes [![Keep a Changelog](https://img.shields.io/badge/Keep%20a%20Changelog-1.0.0-orange)](https://keepachangelog.com/en/1.0.0/)
 
