@@ -1,7 +1,0 @@
-@use "./index" as *;
-
-@include animation-direction();
-@include animation-duration();
-@include animation-fill-mode();
-@include animation-play-state();
-@include animation-timing-function();
