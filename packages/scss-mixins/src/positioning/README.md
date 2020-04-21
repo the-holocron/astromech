@@ -1,6 +1,6 @@
 # Positioning
 
-Positioning utilities all revolve around positioning elements around the page, such as flexbox, floats, position, etc. Use these to force a element to layout accordingly.
+CSS Positioned Layout is a module of CSS that defines how to position elements on the page.
 
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>

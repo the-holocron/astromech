@@ -1,9 +1,11 @@
 # Box Model
 
+CSS Basic Box Model is a module of CSS that defines the rectangular boxes—including their padding and margin—that are generated for elements and laid out according to the [visual formatting model](https://developer.mozilla.org/en-US/docs/Web/CSS/Visual_formatting_model).
+
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-+ [box-spacing](#box-spacing)
+* [box-spacing](#box-spacing)
 
 </details>
 
@@ -11,9 +13,9 @@
 
 Creates margin & padding helpers
 
-+ **Group**: Box model
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: Box model
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 

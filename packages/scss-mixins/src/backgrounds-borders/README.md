@@ -1,6 +1,6 @@
 # Backgrounds & Borders
 
-From adding gradients, background images, and rounded corners, backgrounds and borders are the answer to a lot of styling questions in CSS.
+Styles in the CSS Backgrounds and Borders module allow filling backgrounds with color or an image (clipped or resized), or modifying them in other ways. These styles can also decorate borders with lines or images, and make them square or rounded. (Additionally, element boxes can be decorated with a shadow.)
 
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>

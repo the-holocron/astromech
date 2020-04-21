@@ -1,6 +1,6 @@
 # Text
 
-These utilities all revolve around the typography, such as sizing, alignment, transformation, white space etc. Use these to force a elements text to display accordingly. All of these deal exclusively with positioning and not styling such as color or backgrounds All of these deal exclusively with positioning and not styling such as color or backgrounds.
+CSS Text is a module of CSS that defines how to perform text manipulation, like line breaking, justification and alignment, white space handling, and text transformation.
 
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>
