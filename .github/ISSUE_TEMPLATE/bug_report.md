@@ -14,6 +14,8 @@ _Steps to reproduce the behavior_
 3. Scroll down to '....'
 4. See error
 
+Or better yet, provide a link to a [minimal reproducible example](https://stackoverflow.com/help/minimal-reproducible-example).
+
 **Expected behavior**
 _A clear and concise description of what you expected to happen_
 

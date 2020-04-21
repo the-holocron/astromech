@@ -2,7 +2,7 @@
 
 /// Gives us 45 degrees of a circle
 /// @since 0.1.0
-/// @return {Number} 0.7853981634
+/// @return {Number} - 0.7853981634
 @function deg45() {
 	@return math.$pi / 4;
 }
@@ -10,7 +10,7 @@
 /// Gets the radius of a circle
 /// @since 0.1.0
 /// @param {Number} $size - the expected size
-/// @return {Number} an offset used for box-shadow
+/// @return {Number} - an offset used for box-shadow
 @function circle-angle($size) {
 	@return math.round($size * math.sin(deg45())) + ($size / 2);
 }
@@ -18,7 +18,7 @@
 /// Gets the angle of a circle
 /// @since 0.1.0
 /// @param {Number} $size - the expected size
-/// @return {Number} an offset used for box-shadow
+/// @return {Number} - an offset used for box-shadow
 @function circle-normal($size) {
 	@return math.round($size * math.sin(deg45())) + $size;
 }
