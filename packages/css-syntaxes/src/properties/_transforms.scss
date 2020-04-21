@@ -1,0 +1,23 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+@use "./positioning";
+
+////
+/// @group Transforms
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/backface-visibility
+$backface-visibility: flat(visible, hidden, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/perspective-origin
+$perspective-origin: flat(positioning.$position, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/transform-box
+$transform-box: flat(border-box, fill-box, view-box, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/transform-style
+$transform-style: flat(flat, preserve-3d, $global);

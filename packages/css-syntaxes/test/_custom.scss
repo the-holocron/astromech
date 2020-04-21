@@ -1,0 +1,75 @@
+@use "sass:list";
+@use "sass:meta";
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src" as *;
+
+@include describe("custom") {
+	@include describe("break") {
+		@include test("it should return a syntax") {
+			$test: list.nth($break, 1);
+			$expected: auto;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($break);
+			$expected: 14;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($break);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("pointer-events-svg-only") {
+		@include test("it should return a syntax") {
+			$test: list.nth($pointer-events-svg-only, 1);
+			$expected: visiblePainted;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($pointer-events-svg-only);
+			$expected: 8;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($pointer-events-svg-only);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+
+	@include describe("sizing") {
+		@include test("it should return a syntax") {
+			$test: list.nth($sizing, 1);
+			$expected: auto;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list of nth length") {
+			$test: list.length($sizing);
+			$expected: 4;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+
+		@include test("it should return a list") {
+			$test: meta.type-of($sizing);
+			$expected: list;
+
+			@include assert-equal($test, $expected, "Return the correct value");
+		}
+	}
+}

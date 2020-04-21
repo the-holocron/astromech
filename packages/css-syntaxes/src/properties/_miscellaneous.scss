@@ -1,0 +1,14 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Miscellaneous
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/all
+$all: $global;
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-rendering
+$text-rendering: flat(auto, geometricPrecision, optimizeSpeed, optimizeLegibility, $global);

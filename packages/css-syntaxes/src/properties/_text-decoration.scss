@@ -1,0 +1,22 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Text Decoration
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-line
+$text-decoration-line: flat(blink, grammar-error, line-through, none, overline, spelling-error, underline, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-style
+$text-decoration-style: flat(dash, dotted, double, solid, wavy, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration
+$text-decoration: flat($text-decoration-line, $text-decoration-style);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-decoration-skip-ink
+$text-decoration-skip-ink: flat(auto, all, none, $global);

@@ -1,0 +1,180 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/backgrounds-borders" as *;
+
+@include describe("backgrounds & borders") {
+	@include describe("background-color") {
+		@include it("it should output a background color") {
+			@include assert() {
+
+				@include output() {
+					@include background-color(".test", red, white);
+				}
+
+				@include expect() {
+					.test {
+						background-color: red !important;
+						color: white !important;
+					}
+
+					a.test {
+						&:focus,
+						&.is-focused,
+						&:hover {
+							background-color: #ffbfbf !important;
+							text-decoration-color: maroon !important;
+						}
+					}
+				}
+			}
+		}
+
+		@include it("it should output a background color with white text as fallback") {
+			@include assert() {
+
+				@include output() {
+					@include background-color(".test", red, red, lightgray);
+				}
+
+				@include expect() {
+					.test {
+						background-color: red !important;
+						color: lightgray !important;
+					}
+
+					a.test {
+						&:focus,
+						&.is-focused,
+						&:hover {
+							background-color: #ffbfbf !important;
+							text-decoration-color: maroon !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include describe("border-radius") {
+		@include it("it should output a border radius on all sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px);
+				}
+
+				@include expect() {
+					border-radius: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a border radius on top sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, top);
+				}
+
+				@include expect() {
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a border radius on right sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, right);
+				}
+
+				@include expect() {
+					border-bottom-right-radius: 3px;
+					border-top-right-radius: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a border radius on bottom sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, bottom);
+				}
+
+				@include expect() {
+					border-bottom-right-radius: 3px;
+					border-bottom-left-radius: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a border radius on left sides given an input") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, left);
+				}
+
+				@include expect() {
+					border-bottom-left-radius: 3px;
+					border-top-left-radius: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a border radius on top left side when given a radius") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, top-left);
+				}
+
+				@include expect() {
+					border-top-left-radius: 3px;
+				}
+			}
+		}
+		@include it("it should output a border radius on any side when given a radius and direction") {
+			@include assert() {
+
+				@include output() {
+					@include border-radius(3px, bottom-right);
+				}
+
+				@include expect() {
+					border-bottom-right-radius: 3px;
+				}
+			}
+		}
+	}
+
+	@include describe("border") {
+		@include it("it should output a border on all sides when given no input") {
+			@include assert() {
+
+				@include output() {
+					@include border();
+				}
+
+				@include expect() {
+					border: .0625rem solid inherit !important;
+				}
+			}
+		}
+
+		@include it("it should output a border side when given a side") {
+			@include assert() {
+
+				@include output() {
+					@include border($direction: right, $color: red, $style: dotted, $width: 1px);
+				}
+
+				@include expect() {
+					border-right: 1px dotted red !important;
+				}
+			}
+		}
+	}
+}

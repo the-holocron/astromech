@@ -1,0 +1,33 @@
+@use "sass:list";
+@use "sass:map";
+
+////
+/// @group Box Model
+////
+
+/// Creates margin & padding helpers
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the left
+/// @param {String} $direction - a valid box direction
+/// @example scss
+///   .example {
+///     @include box-spacing(margin, 2px);
+///   }
+@mixin box-spacing($property, $value, $direction: null) {
+	$directions: (
+		"bottom": (bottom),
+		"left": (left),
+		"right": (right),
+		"top": (top),
+		"x": (left, right),
+		"y": (bottom, top),
+	);
+
+	@if list.index(map.keys($directions), $direction) {
+		@each $side in map.get($directions, $direction) {
+			#{$property}-#{$side}: $value;
+		}
+	} @else {
+		#{$property}: $value;
+	}
+}

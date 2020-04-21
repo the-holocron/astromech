@@ -1,0 +1,116 @@
+@use "../../node_modules/@theholocron/scss-functions/src/misc/breakpoints" as breakpoint;
+
+////
+/// @author Mark Otto
+/// @group At-Rules
+////
+
+/// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+/// @since 0.1.0
+/// @param {String} $name - the name for the breakpoint
+/// @param {Map} $breakpoints - a map of grid breakpoints
+/// @content applies to the given breakpoint and wider.
+/// @example scss
+///  .test {
+///    @include media-breakpoint-up('md') {
+///      width: 25%;
+///    }
+///  }
+@mixin media-breakpoint-up($name, $breakpoints) {
+	$min: breakpoint.min-width($name, $breakpoints);
+
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+/// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+/// @since 0.1.0
+/// @param {String} $name - the name for the breakpoint
+/// @param {Map} $breakpoints - a map of grid breakpoints
+/// @content applies to the given breakpoint and narrower.
+/// @example scss
+///  .test {
+///    @include media-breakpoint-down('md') {
+///      width: 100%;
+///    }
+///  }
+@mixin media-breakpoint-down($name, $breakpoints) {
+	$max: breakpoint.max-width($name, $breakpoints);
+
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+/// Media that spans multiple breakpoint widths.
+/// Makes the @content apply between the min and max breakpoints
+/// @since 0.1.0
+/// @param {String} $lower - the name for the lower/min breakpoint
+/// @param {String} $upper - the name for the upper/max breakpoint
+/// @param {Map} $breakpoints - a map of grid breakpoints
+/// @content applies only to the given breakpoint, not viewports any wider or narrower.
+/// @example scss
+///  .test {
+///    @include media-breakpoint-between('md', 'xl') {
+///      width: 50%;
+///    }
+///  }
+@mixin media-breakpoint-between($lower, $upper, $breakpoints) {
+	$min: breakpoint.min-width($lower, $breakpoints);
+	$max: breakpoint.max-width($upper, $breakpoints);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include media-breakpoint-up($lower, $breakpoints) {
+			@content;
+		}
+	} @else if $min == null {
+		@include media-breakpoint-down($upper, $breakpoints) {
+			@content;
+		}
+	}
+}
+
+/// Media between the breakpoint's minimum and maximum widths.
+/// No minimum for the smallest breakpoint, and no maximum for the largest one.
+/// @since 0.1.0
+/// @param {String} $name - the name for the breakpoint
+/// @param {Map} $breakpoints - a map of grid breakpoints
+/// @content applies only to the given breakpoint, not viewports any wider or narrower.
+/// @example scss
+///  .test {
+///    @include media-breakpoint-only('md', $breakpoints) {
+///      width: 50%;
+///    }
+///  }
+@mixin media-breakpoint-only($name, $breakpoints) {
+	$min: breakpoint.min-width($name, $breakpoints);
+	$max: breakpoint.max-width($name, $breakpoints);
+
+	@if $min != null and $max != null {
+		@media (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == null {
+		@include media-breakpoint-up($name, $breakpoints) {
+			@content;
+		}
+	} @else if $min == null {
+		@include media-breakpoint-down($name, $breakpoints) {
+			@content;
+		}
+	}
+}
+

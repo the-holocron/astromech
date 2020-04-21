@@ -32,10 +32,12 @@ Check the README for each utility within the `packages` directory for specific u
 
 ## The Packages We Maintain
 
-- [R3](./packages/arthree#readme) - A set of (S)CSS animation utilities.
-- [R4](./packages/arfour#readme) - A set of (S)CSS function utilities.
-- [BB8](./packages/beebee#readme) - A set of JavaScript/ES6 utilities.
-- [Chopper](./packages/chopper#readme) - A set of NodeJS utilities.
+- [Configuration](./packages/config#readme) - A set of variables for writing (S)CSS.
+- [CSS Syntaxes](./packages/css-syntaxes#readme) - A set of CSS syntaxes for writing (S)CSS functional helpers or mixins.
+- [(S)CSS Functions](./packages/scss-functions#readme) - A set of single-purpose, functions for writing (S)CSS.
+- [(S)CSS Mixins](./packages/scss-mixins#readme) - A set of single-purpose, functional mixins for writing (S)CSS.
+- [NodeJS Utils](./packages/node-utils#readme) - A set of single-purpose, functional utilities for writing NodeJS.
+- [Utils](./packages/utils#readme) - A set of single-purpose, functional utilities for writing Javascript.
 
 ## Where to Find Documentation
 

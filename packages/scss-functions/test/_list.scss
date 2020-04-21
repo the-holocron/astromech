@@ -1,0 +1,20 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/list" as *;
+
+@include describe("list") {
+	@include describe("flat") {
+		@include it("it should return a flattened list when given multiple lists") {
+			$test: flat(("one", "two", "three"), ("four", "five", "six"), ("seven", "eight", "nine"));
+			$expected: ("one", "two", "three", "four", "five", "six", "seven", "eight", "nine");
+
+			@include assert-equal($test, $expected, "Return a flattened list");
+		}
+
+		@include it("it should return a flattened list with no duplicates when given multiple lists") {
+			$test: flat(("one", "two", "three"), ("two", "five", "three"), ("seven", "three", "nine"));
+			$expected: ("one",  "two", "three", "five", "seven", "nine");
+
+			@include assert-equal($test, $expected, "Return a flattened list");
+		}
+	}
+}

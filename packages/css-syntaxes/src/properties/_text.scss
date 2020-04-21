@@ -1,0 +1,38 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Text
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/letter-spacing
+$letter-spacing: flat(normal, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/line-break
+$line-break: flat(auto, loose, normal, strict, anywhere, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/overflow-wrap
+$overflow-wrap: flat(anywhere, break-word, normal, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-align
+$text-align: flat(center, end, justify, left, match-parent, right, start, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-justify
+$text-justify: flat(auto, inter-character, inter-word, none, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/text-transform
+$text-transform: flat(capitalize, full-width, full-width-kana, lowercase, none, uppercase, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/white-space
+$white-space: flat(break-spaces, normal, nowrap, pre, pre-line, pre-wrap, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/word-break
+$word-break: flat(break-all, break-word, keep-all, normal, $global);

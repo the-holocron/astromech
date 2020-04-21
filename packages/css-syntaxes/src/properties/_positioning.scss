@@ -1,0 +1,22 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Positioning
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/clear
+$clear: flat(both, inline-end, inline-start, left, none, right, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/float
+$float: flat(left, inline-end, inline-start, none, right, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/position
+$position: flat(absolute, fixed, relative, sticky, static, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/z-index
+$z-index: flat(auto, $global);

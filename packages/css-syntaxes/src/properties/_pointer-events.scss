@@ -1,0 +1,15 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+@use "../custom";
+
+////
+/// @group Pointer Events
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/pointer-events
+$pointer-events: flat(auto, none, custom.$pointer-events-svg-only, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/touch-action
+$touch-action: flat(auto, none, pan-x, pan-left, pan-right, pan-y, pan-up, pan-down, pinch-zoom, manipulation, $global);

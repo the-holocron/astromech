@@ -1,0 +1,133 @@
+@use "../../node_modules/@theholocron/scss-functions/src/num/valid-quantity";
+
+////
+/// @author Adam Giese
+/// @group Pseudo-Classes
+////
+
+/// Creates has-nth
+/// @since 0.1.0
+/// @param {String} $expression - a valid CSS expression
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include has-nth('n + 4', 'li') {
+///       color: blue;
+///    }
+/// }
+@mixin has-nth($expression, $element: "*") {
+	&:nth-last-child(#{$expression}):first-child,
+	&:nth-last-child(#{$expression}):first-child ~ #{$element} {
+		@content;
+	}
+}
+
+/// Creates at-least
+/// @since 0.1.0
+/// @param {Number} $quantity - a number of items to narrow
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include at-least(4, 'li') {
+///       color: blue;
+///    }
+/// }
+@mixin at-least($quantity, $element: "*") {
+	@if valid-quantity($quantity) {
+		@include has-nth("n + #{$quantity}", $element) {
+			@content;
+		}
+	}
+}
+
+/// Creates at-most
+/// @since 0.1.0
+/// @param {Number} $quantity - a number of items to narrow
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include at-most(4, 'li') {
+///       color: blue;
+///    }
+/// }
+@mixin at-most($quantity, $element: "*") {
+	@if valid-quantity($quantity) {
+		@include has-nth("-n + #{$quantity}", $element) {
+			@content;
+		}
+	}
+}
+
+/// Creates divisible-by
+/// @since 0.1.0
+/// @param {Number} $quantity - a number of items to narrow
+/// @param {Number} $offset [0] - a number to add on to narrow
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include divisible-by(4, 0, 'li') {
+///       color: blue;
+///    }
+/// }
+@mixin divisible-by($quantity, $offset: 0, $element: "*") {
+	@if valid-quantity($quantity) {
+		@include has-nth("#{$quantity}n + #{$offset}", $element) {
+			@content;
+		}
+	}
+}
+
+/// Creates has-exactly
+/// @since 0.1.0
+/// @param {Number} $quantity - a number of items to narrow
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include has-exactly(4, 'li') {
+///       color: blue;
+///    }
+/// }
+@mixin has-exactly($quantity, $element: "*") {
+	@if valid-quantity($quantity) {
+		@include has-nth("#{$quantity}", $element) {
+			@content;
+		}
+	}
+}
+
+/// Creates has-odd
+/// @since 0.1.0
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include has-odd('li') {
+///       color: blue;
+///    }
+/// }
+@mixin has-odd($element: "*") {
+	@include has-nth("odd", $element) {
+		@content;
+	}
+}
+
+/// Creates has-even
+/// @since 0.1.0
+/// @param {String} $element ['*'] - a valid CSS selector
+/// @content styles used on a narrowed set of elements
+/// @example scss
+/// li {
+///    @include has-even('li') {
+///       color: blue;
+///    }
+/// }
+@mixin has-even($element: "*") {
+	@include has-nth("even", $element) {
+		@content;
+	}
+}

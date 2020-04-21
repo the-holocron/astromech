@@ -1,0 +1,23 @@
+/// List of syntaxes used for breaks.
+/// @since 0.1.0
+/// @group Fragmentation
+/// @link https://developer.mozilla.org/docs/Web/CSS/break-after
+/// @link https://developer.mozilla.org/docs/Web/CSS/break-before
+$break: (auto, avoid, always, all, avoid-page, page, left, right, recto, verso, avoid-column, column, avoid-region, region);
+
+/// Pointer event syntaxes that only apply to SVG only.  This is a custom collection that was built to signify these events are only used on SVG elements.
+/// @since 0.1.0
+/// @group Pointer Events
+/// @link https://developer.mozilla.org/docs/Web/CSS/pointer-events
+$pointer-events-svg-only: (visiblePainted, visibleFill, visibleStroke, visible, painted, fill, stroke, all);
+
+/// List of syntaxes that are used on min-, max- widths and heights
+/// @since 0.1.0
+/// @group Box Model
+/// @link https://developer.mozilla.org/docs/Web/CSS/height
+/// @link https://developer.mozilla.org/docs/Web/CSS/max-height
+/// @link https://developer.mozilla.org/docs/Web/CSS/min-height
+/// @link https://developer.mozilla.org/docs/Web/CSS/width
+/// @link https://developer.mozilla.org/docs/Web/CSS/max-width
+/// @link https://developer.mozilla.org/docs/Web/CSS/min-width
+$sizing: (auto, fit-content, max-content, min-content);

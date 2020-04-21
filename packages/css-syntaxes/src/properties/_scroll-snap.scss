@@ -1,0 +1,24 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Scroll Snap
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-align
+$scroll-snap-align: flat(none, start, end, center, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-stop
+$scroll-snap-stop: flat(normal, always, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+$scroll-snap-type: flat(none, x, y, block, inline, both, $global);
+
+/// These are optionals for scroll-snap-type that can be combined with any of the syntaxes
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scroll-snap-type
+/// @requires $scroll-snap-type
+$scroll-snap-type-optionals: (mandatory, proximity);

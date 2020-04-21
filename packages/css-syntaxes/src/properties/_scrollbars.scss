@@ -1,0 +1,14 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Scrollbars
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scrollbar-color
+$scrollbar-color: flat(auto, dark, light, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/scrollbar-width
+$scrollbar-width: flat(auto, thin, none, $global);

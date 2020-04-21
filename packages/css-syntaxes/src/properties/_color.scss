@@ -1,0 +1,11 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+@use "./miscellaneous";
+
+////
+/// @group Color
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/opacity
+$opacity: flat(miscellaneous.$all, $global);

@@ -1,0 +1,45 @@
+{
+  "name": "@theholocron/scss-functions",
+  "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/scss-functions#readme",
+  "description": "This utility droid provides a set of single-purpose, functions for writing (S)CSS within the Galaxy.",
+  "author": "Newton Koumantzelis",
+  "version": "0.0.0",
+  "main": "src/_index.scss",
+  "files": [
+    "src"
+  ],
+  "repository": "https://github.com/the-holocron/astromech.git",
+  "bugs": "https://github.com/the-holocron/astromech/issues",
+  "releases": "https://github.com/the-holocron/astromech/releases",
+  "wiki": "https://github.com/the-holocron/astromech/wiki",
+  "license": "GPL-3.0",
+  "browserslist": [
+    "extends @theholocron/browserslist-config"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "stylelint": {
+    "extends": "@theholocron/stylelint-config",
+    "rules": {
+      "declaration-no-important": false,
+      "max-nesting-depth": false
+    }
+  },
+  "scripts": {
+    "docs": "sassdoc src/**/*.scss --dest ../../docs/functions",
+    "readme": "for file in src/**/*.scss; do sassdoc2md $file >> ${file%/*}/README.md; done",
+    "toc": "markdown-toc -i --bullets '*' --maxdepth 2 src/**/README.md",
+    "lint": "stylelint src/**/*.scss",
+    "test": "mocha"
+  },
+  "peerDependencies": {
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.0",
+    "sass": "^1.26.3",
+    "sass-true": "^5.0.0",
+    "sassdoc": "^2.7.1"
+  }
+}

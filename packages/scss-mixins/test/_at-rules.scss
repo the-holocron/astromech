@@ -1,0 +1,101 @@
+@use "../node_modules/sass-true/sass/true" as *;
+@use "../src/at-rules" as *;
+
+$breakpoints: (
+	xs: 0,
+	sm: 34em,
+	md: 48em,
+	lg: 62em,
+	xl: 75em
+);
+
+@include describe("at-rules") {
+	@include describe("breakpoints") {
+		@include describe("media-breakpoint-up") {
+			@include it("it should output a min width media query given a breakpoint name") {
+				@include assert() {
+
+					@include output() {
+						@include media-breakpoint-up(md, $breakpoints) {
+							color: black;
+						}
+					}
+
+					@include expect() {
+						@media (min-width: 48em) {
+							color: black;
+						}
+					}
+				}
+			}
+
+			@include it("it should output no min width media query given a breakpoint name") {
+				@include assert() {
+
+					@include output() {
+						@include media-breakpoint-up(xxs, $breakpoints) {
+							color: black;
+						}
+					}
+
+					@include expect() {
+						color: black;
+					}
+				}
+			}
+		}
+
+		@include describe("media-breakpoint-down") {
+			@include it("it should output a max width media query given a breakpoint name") {
+				@include assert() {
+
+					@include output() {
+						@include media-breakpoint-down(md, $breakpoints) {
+							color: black;
+						}
+					}
+
+					@include expect() {
+						@media (max-width: 61.98em) {
+							color: black;
+						}
+					}
+				}
+			}
+
+			@include it("it should output no max width media query given a breakpoint name") {
+				@include assert() {
+
+					@include output() {
+						@include media-breakpoint-down(xl, $breakpoints) {
+							color: black;
+						}
+					}
+
+					@include expect() {
+						color: black;
+					}
+				}
+			}
+		}
+
+		@include describe("media-breakpoint-only") {
+			@include it("it should output a min & max width media query given a breakpoint name") {
+				@include assert() {
+
+					@include output() {
+						@include media-breakpoint-only(md, $breakpoints) {
+							color: black;
+						}
+					}
+
+					@include expect() {
+						@media (min-width: 48em) and (max-width: 61.98em) {
+							color: black;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,18 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Flexible Box Layout
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/flex-direction
+$flex-direction: flat(column, column-reverse, row, row-reverse, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/flex-wrap
+$flex-wrap: flat(nowrap, wrap, wrap-reverse, $global);
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/flex-flow
+$flex-flow: flat($flex-direction, $flex-wrap);

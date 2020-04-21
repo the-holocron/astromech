@@ -1,0 +1,10 @@
+@use "../../node_modules/@theholocron/scss-functions/src/list/flat" as *;
+@use "../syntaxes" as *;
+
+////
+/// @group Overflow
+////
+
+/// @since 0.1.0
+/// @link https://developer.mozilla.org/docs/Web/CSS/overflow
+$overflow: flat(auto, clip, hidden, overlay, scroll, visible, $global);

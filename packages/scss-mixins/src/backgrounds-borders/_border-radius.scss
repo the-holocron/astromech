@@ -1,0 +1,35 @@
+@use "sass:list";
+@use "sass:map";
+
+////
+/// @group Backgrounds & Borders
+////
+
+/// Creates border-radius
+/// @since 0.1.0
+/// @param {Number} $radius - a valid CSS unit to create a border-radius on the left
+/// @param {String} $direction - a valid box direction
+/// @example scss
+///   .example {
+///     @include border-radius(2px, left);
+///   }
+@mixin border-radius($radius, $direction: null) {
+	$directions: (
+		"bottom": (bottom-right, bottom-left),
+		"bottom-left": (bottom-left),
+		"bottom-right": (bottom-right),
+		"left": (bottom-left, top-left),
+		"right": (bottom-right, top-right),
+		"top": (top-left, top-right),
+		"top-left": (top-left),
+		"top-right": (top-right),
+	);
+
+	@if list.index(map.keys($directions), $direction) {
+		@each $side in map.get($directions, $direction) {
+			border-#{$side}-radius: $radius;
+		}
+	} @else {
+		border-radius: $radius;
+	}
+}
