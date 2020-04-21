@@ -2,20 +2,20 @@
 
 Positioning utilities all revolve around positioning elements around the page, such as flexbox, floats, position, etc. Use these to force a element to layout accordingly.
 
-## Table of Contents
+<details>
+	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-<!-- toc -->
+* [center](#center)
 
-* [`@mixin center`](#mixin-center)
+</details>
 
-<!-- tocstop -->
-
-## `@mixin center`
+## center
 
 Centers a element absolutely on any or multiple planes
 
 * **Group:** General
 * **Access:** public
+* **Since:** 0.1.0
 
 ### Parameters
 
@@ -31,11 +31,6 @@ Centers a element absolutely on any or multiple planes
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
-

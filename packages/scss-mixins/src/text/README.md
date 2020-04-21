@@ -2,20 +2,20 @@
 
 These utilities all revolve around the typography, such as sizing, alignment, transformation, white space etc. Use these to force a elements text to display accordingly. All of these deal exclusively with positioning and not styling such as color or backgrounds All of these deal exclusively with positioning and not styling such as color or backgrounds.
 
-## Table of Contents
+<details>
+	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-<!-- toc -->
+* [text-color](#text-color)
 
-* [`@mixin text-color`](#mixin-text-color)
+<details>
 
-<!-- tocstop -->
-
-## `@mixin text-color`
+## text-color
 
 Creates text color variants
 
 * **Group:** General
 * **Access:** public
+* **Since:** 0.1.0
 
 ### Parameters
 
@@ -31,7 +31,3 @@ Creates text color variants
   @include text-color('.text-test', black, white);
 }
 ```
-
-### Since
-
-* **0.1.0**

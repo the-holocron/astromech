@@ -2,30 +2,30 @@
 
 A CSS pseudo-class is a keyword added to a selector that specifies a special state of the selected element(s). For example, [`:hover`](https://developer.mozilla.org/en-US/docs/Web/CSS/:hover) can be used to change a button's color when the user's pointer hovers over it.
 
-## Table of Contents
+<details>
+	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-<!-- toc -->
+* [hover](#hover)
+* [hover-focus](#hover-focus)
+* [plain-hover-focus](#plain-hover-focus)
+* [hover-focus-active](#hover-focus-active)
+* [has-nth](#has-nth)
+* [at-least](#at-least)
+* [at-most](#at-most)
+* [divisible-by](#divisible-by)
+* [has-exactly](#has-exactly)
+* [has-odd](#has-odd)
+* [has-even](#has-even)
 
-* [`@mixin hover`](#mixin-hover)
-* [`@mixin hover-focus`](#mixin-hover-focus)
-* [`@mixin plain-hover-focus`](#mixin-plain-hover-focus)
-* [`@mixin hover-focus-active`](#mixin-hover-focus-active)
-* [`@mixin has-nth`](#mixin-has-nth)
-* [`@mixin at-least`](#mixin-at-least)
-* [`@mixin at-most`](#mixin-at-most)
-* [`@mixin divisible-by`](#mixin-divisible-by)
-* [`@mixin has-exactly`](#mixin-has-exactly)
-* [`@mixin has-odd`](#mixin-has-odd)
-* [`@mixin has-even`](#mixin-has-even)
+</details>
 
-<!-- tocstop -->
-
-## `@mixin hover-focus`
+## hover-focus
 
 Creates hover, focus combo mixin
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Contents
 
@@ -42,20 +42,17 @@ styles used on focus and hover states
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin plain-hover-focus`
+## plain-hover-focus
 
 Creates hover, focus and parent combo mixin
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Contents
 
@@ -71,20 +68,17 @@ styles used on selector, focus and hover states
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin hover-focus-active`
+## hover-focus-active
 
 Creates hover, focus, and active combo mixin
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Contents
 
@@ -100,20 +94,17 @@ styles used on focus, active and hover states
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin has-nth`
+## has-nth
 
 Creates has-nth
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -138,27 +129,24 @@ li {
 
 ### Dependents
 
-* **`@mixin at-least** Creates at-least
-* **`@mixin at-most** Creates at-most
-* **`@mixin divisible-by** Creates divisible-by
-* **`@mixin has-exactly** Creates has-exactly
-* **`@mixin has-odd** Creates has-odd
-* **`@mixin has-even** Creates has-even
+* **at-least** Creates at-least
+* **at-most** Creates at-most
+* **divisible-by** Creates divisible-by
+* **has-exactly** Creates has-exactly
+* **has-odd** Creates has-odd
+* **has-even** Creates has-even
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin at-least`
+## at-least
 
 Creates at-least
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -183,22 +171,19 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin at-most`
+## at-most
 
 Creates at-most
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -223,22 +208,19 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin divisible-by`
+## divisible-by
 
 Creates divisible-by
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -264,22 +246,19 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin has-exactly`
+## has-exactly
 
 Creates has-exactly
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -304,22 +283,19 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin has-odd`
+## has-odd
 
 Creates has-odd
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -343,22 +319,19 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 
-## `@mixin has-even`
+## has-even
 
 Creates has-even
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -382,13 +355,9 @@ li {
 
 ### Dependencies
 
-* **[`@mixin has-nth](##general-mixin-has-nth)**
+* **[has-nth](#has-nth)**
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Adam Giese
 

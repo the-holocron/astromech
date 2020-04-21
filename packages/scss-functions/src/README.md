@@ -3,43 +3,43 @@
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-+ [best-contrast](#best-contrast)
-+ [check-contrast](#check-contrast)
-+ [fix-color](#fix-color)
-+ [fix-contrast](#fix-contrast)
-+ [get-contrast-ratio](#get-contrast-ratio)
-+ [force-rgb](#force-rgb)
-+ [force-rgba](#force-rgba)
-+ [luminance](#luminance)
-+ [scale-light](#scale-light)
-+ [scale-luminance](#scale-luminance)
-+ [shade](#shade)
-+ [srgb](#srgb)
-+ [tint](#tint)
-+ [xyz](#xyz)
-+ [flat](#flat)
-+ [average](#average)
-+ [deg45](#deg45)
-+ [circle-angle](#circle-angle)
-+ [circle-normal](#circle-normal)
-+ [exp](#exp)
-+ [fact](#fact)
-+ [frexp](#frexp)
-+ [ldexp](#ldexp)
-+ [rad](#rad)
-+ [next](#next)
-+ [min-width](#min-width)
-+ [max-width](#max-width)
-+ [map-deep-get](#map-deep-get)
-+ [in-bounds](#in-bounds)
-+ [is-nan](#is-nan)
-+ [valid-quantity](#valid-quantity)
-+ [opposite-direction](#opposite-direction)
-+ [str-replace-batch](#str-replace-batch)
-+ [str-replace](#str-replace)
-+ [strip-unit](#strip-unit)
-+ [to-length](#to-length)
-+ [to-number](#to-number)
+* [best-contrast](#best-contrast)
+* [check-contrast](#check-contrast)
+* [fix-color](#fix-color)
+* [fix-contrast](#fix-contrast)
+* [get-contrast-ratio](#get-contrast-ratio)
+* [force-rgb](#force-rgb)
+* [force-rgba](#force-rgba)
+* [luminance](#luminance)
+* [scale-light](#scale-light)
+* [scale-luminance](#scale-luminance)
+* [shade](#shade)
+* [srgb](#srgb)
+* [tint](#tint)
+* [xyz](#xyz)
+* [flat](#flat)
+* [average](#average)
+* [deg45](#deg45)
+* [circle-angle](#circle-angle)
+* [circle-normal](#circle-normal)
+* [exp](#exp)
+* [fact](#fact)
+* [frexp](#frexp)
+* [ldexp](#ldexp)
+* [rad](#rad)
+* [next](#next)
+* [min-width](#min-width)
+* [max-width](#max-width)
+* [map-deep-get](#map-deep-get)
+* [in-bounds](#in-bounds)
+* [is-nan](#is-nan)
+* [valid-quantity](#valid-quantity)
+* [opposite-direction](#opposite-direction)
+* [str-replace-batch](#str-replace-batch)
+* [str-replace](#str-replace)
+* [strip-unit](#strip-unit)
+* [to-length](#to-length)
+* [to-number](#to-number)
 
 </details>
 
@@ -47,9 +47,9 @@
 
 Get the best contrasted color when compared against two colors
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -84,19 +84,19 @@ best-contrast(blue, white, black, 4.5, 3)
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
-+ [18th Technique for WCAG 2.0: Contrast Test Procedure](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure)
+* [18th Technique for WCAG 2.0: Contrast Test Procedure](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G18#G18-procedure)
 
 ## check-contrast
 
 Checks if two colors pass minimum contrast requirements
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 1.12.0
+* **Group**: General
+* **Access**: public
+* **Since**: 1.12.0
 
 ### Parameters
 
@@ -130,7 +130,7 @@ check-contrast(#ffbb9b, #91966d, AAALG, true)
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -140,9 +140,9 @@ check-contrast(#ffbb9b, #91966d, AAALG, true)
 
 Tries to fix contrast by adjusting $color1
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -176,7 +176,7 @@ fix-color(#3f464a, #678d7e, AAA)
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -186,9 +186,9 @@ fix-color(#3f464a, #678d7e, AAA)
 
 Tries to fix contrast of both colors by weighted balance (0–100).  0 = don't change first color, change second color; 100 = change first color, don't change second color
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -228,7 +228,7 @@ fix-contrast(#e5eae1, #9dffff, 3)
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -238,9 +238,9 @@ fix-contrast(#e5eae1, #9dffff, 3)
 
 Get a contrast ratio from either a number or keyword
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -256,9 +256,9 @@ Get a contrast ratio from either a number or keyword
 
 Forces RGB channel values to a rgb() string
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -289,15 +289,15 @@ Forces RGB channel values to a rgb() string
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ## force-rgba
 
 Forces RGBA channel values to a rgba() string
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -329,15 +329,15 @@ Forces RGBA channel values to a rgba() string
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ## luminance
 
 Get the luminance of color
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -351,15 +351,15 @@ Get the luminance of color
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ## scale-light
 
 Scales lightness by .1% while checking contrast ratio.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -377,7 +377,7 @@ Scales lightness by .1% while checking contrast ratio.
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -385,13 +385,13 @@ Scales lightness by .1% while checking contrast ratio.
 
 ## scale-luminance
 
-+ [ ] **[TODO]** DRY out the checks on line 36-49
+* [ ] **[TODO]** DRY out the checks on line 36-49
 
 Changes a color to have the required luminance
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -406,15 +406,15 @@ Changes a color to have the required luminance
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ## shade
 
 Darkens a color by mixing it with black
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -437,15 +437,15 @@ a:hover {
 
 ### Author(s)
 
-+ Newton Koumantzelis
+* Newton Koumantzelis
 
 ## srgb
 
 Reverse of xyz()
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -459,7 +459,7 @@ Reverse of xyz()
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -469,9 +469,9 @@ Reverse of xyz()
 
 Lightens a color by mixing it with white
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -494,15 +494,15 @@ a:active {
 
 ### Author(s)
 
-+ Newton Koumantzelis
+* Newton Koumantzelis
 
 ## xyz
 
 Returns an RGB channel processed as XYZ
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -516,7 +516,7 @@ Returns an RGB channel processed as XYZ
 
 ### Author(s)
 
-+ Giana Blantin
+* Giana Blantin
 
 ### Read More
 
@@ -526,9 +526,9 @@ Returns an RGB channel processed as XYZ
 
 Joins more than 1 list into a flattened list
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -550,8 +550,8 @@ $somecollection: flat($list1, $list2, ...);
 
 Get the average of numbers provided a list of numbers
 
-+ **Group**: General
-+ **Access**: public
+* **Group**: General
+* **Access**: public
 
 ### Parameters
 
@@ -574,9 +574,9 @@ average(10, 60, 20);
 
 Gives us 45 degrees of a circle
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Returns
 
@@ -584,16 +584,16 @@ Gives us 45 degrees of a circle
 
 ### Dependents
 
-+ **circle-angle** Gets the radius of a circle
-+ **circle-normal** Gets the angle of a circle
+* **circle-angle** Gets the radius of a circle
+* **circle-normal** Gets the angle of a circle
 
 ## circle-angle
 
 Gets the radius of a circle
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -607,15 +607,15 @@ Gets the radius of a circle
 
 ### Dependencies
 
-+ **[deg45](#deg45)**
+* **[deg45](#deg45)**
 
 ## circle-normal
 
 Gets the angle of a circle
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -629,15 +629,15 @@ Gets the angle of a circle
 
 ### Dependencies
 
-+ **[deg45](#deg45)**
+* **[deg45](#deg45)**
 
 ## exp
 
 Returns E^x, where x is the argument, and E is Euler's constant, the base of the natural logarithms.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -658,15 +658,15 @@ exp(-1) // 0.36788
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## fact
 
 Returns the factorial of a non-negative integer.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -691,15 +691,15 @@ fact(8) // 40320
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## frexp
 
 Returns a two-element list containing the normalized fraction and exponent of number.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -713,15 +713,15 @@ Returns a two-element list containing the normalized fraction and exponent of nu
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## ldexp
 
 Returns $x \* 2^$exp
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -736,15 +736,15 @@ Returns $x \* 2^$exp
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## rad
 
 Returns a radian when given a degree
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -764,7 +764,7 @@ rad(45deg) // 0.78539816
 
 ### Author(s)
 
-+ Daniel Perez Alvarez
+* Daniel Perez Alvarez
 
 ## next
 
@@ -774,9 +774,9 @@ Breakpoints are defined as a map of (name: minimum width), order from small to l
 
 The map defined in the `$grid-breakpoints` global variable is used as the `$breakpoints` argument by default.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -807,7 +807,7 @@ breakpoint `#{$name}` not found in `#{$breakpoints}`
 
 ### Dependents
 
-+ **max-width** Maximum breakpoint width.
+* **max-width** Maximum breakpoint width.
   The maximum value is calculated as the minimum of the next one less 0.02px
   to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
   See <https://www.w3.org/TR/mediaqueries-4/#mq-min-max>
@@ -816,15 +816,15 @@ breakpoint `#{$name}` not found in `#{$breakpoints}`
 
 ### Author(s)
 
-+ Mark Otto
+* Mark Otto
 
 ## min-width
 
 Minimum breakpoint width
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -846,7 +846,7 @@ Minimum breakpoint width
 
 ### Dependents
 
-+ **max-width** Maximum breakpoint width.
+* **max-width** Maximum breakpoint width.
   The maximum value is calculated as the minimum of the next one less 0.02px
   to work around the limitations of `min-` and `max-` prefixes and viewports with fractional widths.
   See <https://www.w3.org/TR/mediaqueries-4/#mq-min-max>
@@ -855,7 +855,7 @@ Minimum breakpoint width
 
 ### Author(s)
 
-+ Mark Otto
+* Mark Otto
 
 ## max-width
 
@@ -866,9 +866,9 @@ See <https://www.w3.org/TR/mediaqueries-4/#mq-min-max>
 Uses 0.02px rather than 0.01px to work around a current rounding bug in Safari.
 See <https://bugs.webkit.org/show_bug.cgi?id=178261>
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -890,12 +890,12 @@ See <https://bugs.webkit.org/show_bug.cgi?id=178261>
 
 ### Dependencies
 
-+ **[next](#next)**
-+ **[min-width](#min-width)**
+* **[next](#next)**
+* **[min-width](#min-width)**
 
 ### Author(s)
 
-+ Mark Otto
+* Mark Otto
 
 { type: 'function', name: 'map-deep-get' }
 { type: 'function', name: 'map-deep-get' }
@@ -904,9 +904,9 @@ See <https://bugs.webkit.org/show_bug.cgi?id=178261>
 
 Searches through maps and grabs the key when it finds the map specified
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -921,15 +921,15 @@ Desired value from the map(s)
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel
 
 ## in-bounds
 
 Checks if value is within specified bounds, inclusive
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -957,15 +957,15 @@ in-bounds(1);
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## is-nan
 
 Check if value is not a number, eg, NaN or Infinity
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -991,15 +991,15 @@ is-nan(1);
 
 ### Author(s)
 
-+ Takeru Suzuki
+* Takeru Suzuki
 
 ## valid-quantity
 
 Creates valid-quantity
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -1021,15 +1021,15 @@ Creates valid-quantity
 
 ### Author(s)
 
-+ Adam Giese
+* Adam Giese
 
 ## opposite-direction
 
 Returns the opposite direction of each direction in a list
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -1055,16 +1055,16 @@ Returns the opposite direction of each direction in a list
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel
 
 ## str-replace-batch
 
 Replaces a batch of substrings (needles) in a string (haystack)
 with a single replacement string.
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -1080,15 +1080,15 @@ with a single replacement string.
 
 ### Author(s)
 
-+ David Khourshid
+* David Khourshid
 
 ## str-replace
 
 Replace `$search` with `$replace` in `$string`
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -1112,15 +1112,15 @@ Replace `$search` with `$replace` in `$string`
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel
 
 ## strip-unit
 
 Strip unit from a number
 
-+ **Group**: General
-+ **Access**: public
-+ **Since**: 0.1.0
+* **Group**: General
+* **Access**: public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -1141,14 +1141,14 @@ strip-unit(5em) // 5
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel
 
 ## to-length
 
 Add `$unit` to `$value`
 
-+ **Group**: General
-+ **Access**: public
+* **Group**: General
+* **Access**: public
 
 ### Parameters
 
@@ -1167,18 +1167,18 @@ Invalid unit `#{$unit}`.
 
 ### Dependents
 
-+ **to-number** Casts a string into a number
+* **to-number** Casts a string into a number
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel
 
 ## to-number
 
 Casts a string into a number
 
-+ **Group**: General
-+ **Access**: public
+* **Group**: General
+* **Access**: public
 
 ### Parameters
 
@@ -1196,8 +1196,8 @@ Value for `to-number` should be a number or a string.
 
 ### Dependencies
 
-+ **[to-length](#to-length)**
+* **[to-length](#to-length)**
 
 ### Author(s)
 
-+ Hugo Giraudel
+* Hugo Giraudel

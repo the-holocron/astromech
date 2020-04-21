@@ -2,26 +2,26 @@
 
 From adding gradients, background images, and rounded corners, backgrounds and borders are the answer to a lot of styling questions in CSS.
 
-## Table of Contents
+<details>
+	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-<!-- toc -->
+* [background-color](#background-color)
+* [border-radius](#border-radius)
+* [border-top-radius](#border-top-radius)
+* [border-right-radius](#border-right-radius)
+* [border-bottom-radius](#border-bottom-radius)
+* [border-left-radius](#border-left-radius)
+* [border](#border)
 
-* [`@mixin background-color`](#mixin-background-color)
-* [`@mixin border-radius`](#mixin-border-radius)
-* [`@mixin border-top-radius`](#mixin-border-top-radius)
-* [`@mixin border-right-radius`](#mixin-border-right-radius)
-* [`@mixin border-bottom-radius`](#mixin-border-bottom-radius)
-* [`@mixin border-left-radius`](#mixin-border-left-radius)
-* [`@mixin border`](#mixin-border)
+</details>
 
-<!-- tocstop -->
-
-## `@mixin background-color`
+## background-color
 
 Creates background color variants
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -40,16 +40,13 @@ Creates background color variants
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-## `@mixin border-radius`
+## border-radius
 
 Creates border-radius
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -65,20 +62,17 @@ Creates border-radius
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin border-top-radius`
+## border-top-radius
 
 Creates border-top-radius
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -94,20 +88,17 @@ Creates border-top-radius
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin border-right-radius`
+## border-right-radius
 
 Creates border-right-radius
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -123,20 +114,17 @@ Creates border-right-radius
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin border-bottom-radius`
+## border-bottom-radius
 
 Creates border-bottom-radius
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -152,20 +140,17 @@ Creates border-bottom-radius
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin border-left-radius`
+## border-left-radius
 
 Creates border-left-radius
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -181,20 +166,17 @@ Creates border-left-radius
 }
 ```
 
-### Since
-
-* **0.1.0**
-
-### Authors
+### Author(s)
 
 * Mark Otto
 
-## `@mixin border`
+## border
 
 Creates border variants
 
 * **Group:** General
 * **Access:** public
+* **Since**: 0.1.0
 
 ### Parameters
 
@@ -212,7 +194,3 @@ Creates border variants
   @include border(right, red, solid, 2px);
 }
 ```
-
-### Since
-
-* **0.1.0**
