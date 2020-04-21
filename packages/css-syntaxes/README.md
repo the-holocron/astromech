@@ -28,12 +28,13 @@ $ npm install --save-dev @theholocron/css-syntaxes
 .animation-direction {
     @each $syntax in syntaxes.$animation-direction {
         &-#{$syntax} {
-            #{$property}: $syntax;
+            animation-direction: $syntax;
         }
     }
 }
 // yields the following and more classes
 // .animation-direction-alternate { animation-direction: alternate; }
+...
 ```
 
 ## Documentation

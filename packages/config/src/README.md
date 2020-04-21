@@ -75,7 +75,7 @@ Default animation duration
 
 ### Dependencies
 
-+ **[$durations](#animations--transitions-variable-durations)** - map of durations
++ **[$durations](#durations)** - map of durations
 
 ## $border-colors
 
@@ -127,7 +127,7 @@ Default border radius
 
 ### Dependencies
 
-+ **[$border-radii](#backgrounds---borders-variable-border-radii)** - map of border radii
++ **[$border-radii](#border-radii)** - map of border radii
 
 ## $border-widths
 
@@ -162,7 +162,7 @@ Default border width
 
 ### Dependencies
 
-+ **[$border-widths](#backgrounds---borders-variable-border-widths)** - map of border widths
++ **[$border-widths](#border-widths)** - map of border widths
 
 ## $spacer
 
@@ -200,7 +200,7 @@ Default set of spacing
 
 ### Dependencies
 
-+ **[$spacer](#box-model-variable-spacer)** - multiplier for creating map
++ **[$spacer](#spacer)** - multiplier for creating map
 
 ## $sizing
 
@@ -278,7 +278,7 @@ Default font family
 
 ### Dependencies
 
-+ **[$font-families](#fonts-variable-font-families)** - map of font families
++ **[$font-families](#font-families)** - map of font families
 
 ## $font-sizes
 
@@ -314,7 +314,7 @@ Default font size
 
 ### Dependencies
 
-+ **[$font-sizes](#fonts-variable-font-sizes)** - map of font sizes
++ **[$font-sizes](#font-sizes)** - map of font sizes
 
 ## $font-weights
 
