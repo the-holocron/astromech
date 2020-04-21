@@ -52,7 +52,7 @@ describe('String utilities', () => {
 			expect(str.toPascalCase(testString)).toBe('ThisIsATestString');
 		});
 
-		it('should return a string formatted as pascal case when given a single word ', () => {
+		it('should return a string formatted as pascal case when given a single word', () => {
 			expect(str.toPascalCase('word')).toBe('Word');
 		});
 
@@ -78,7 +78,7 @@ describe('String utilities', () => {
 			expect(str.toTitleCase(testString)).toBe('This Is A Test String');
 		});
 
-		it('should return a string formatted as title case when given a single word ', () => {
+		it('should return a string formatted as title case when given a single word', () => {
 			expect(str.toTitleCase('word')).toBe('Word');
 		});
 

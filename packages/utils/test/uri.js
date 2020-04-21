@@ -107,7 +107,7 @@ describe('URI utilities', () => {
 			expect(uri.parse('example.com').protocol).toBe('http:'); // The `testURL` set in the Jest Config uses http
 		});
 
-		it('should return each URI segment when a valid relative URI is given ', () => {
+		it('should return each URI segment when a valid relative URI is given', () => {
 			const relativeUrl = uri.parse('/test-page#hash-mark');
 			expect(relativeUrl.hostname).toBe('localhost'); // We want this to detect the hostname when it is not set
 			expect(relativeUrl.pathname).toBe('/test-page');
