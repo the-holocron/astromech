@@ -37,28 +37,28 @@
 ///      color: nth($colors, 1);
 ///   }
 @function fix-contrast($color1, $color2, $min-ratio: config.$default-contrast-ratio, $balance: 50, $test: false) {
-	@if (not check-contrast($color1, $color2, $min-ratio)) {
+	@if (not check-contrast($color1: $color1, $color2: $color2, $min-ratio: $min-ratio)) {
 		// Fix colors
-		$color-fixed-1: fix-color($color1, $color2, $min-ratio);
-		$color-fixed-2: fix-color($color2, $color1, $min-ratio);
+		$color-fixed-1: fix-color($color1: $color1, $color2: $color2, $min-ratio: $min-ratio);
+		$color-fixed-2: fix-color($color1: $color2, $color2: $color1, $min-ratio: $min-ratio);
 
 		// We're fixing both colors, then mixing back the original color using the native Sass function. Easy-peasy
 		$color1: color.mix($color-fixed-1, $color1, $balance);
 		$color2: color.mix($color2, $color-fixed-2, $balance);
 
 		// If the current configuration doesn't work, try to fix it
-		@if (not check-contrast($color1, $color2, $min-ratio)) {
+		@if (not check-contrast($color1: $color1, $color2: $color2, $min-ratio: $min-ratio)) {
 			// This happens if, again, we reach #fff or #000 before we want to
 			@if (not in-bounds(luminance($color-fixed-2), .00002, .99936)) {
 				// So we scale the opposite color to compensate
-				$color1: fix-color($color1, $color2, $min-ratio);
+				$color1: fix-color($color1: $color1, $color2: $color2, $min-ratio: $min-ratio);
 
 				@if not $test {
 					@warn "Your settings didn't work. Modifying first color in an attempt to fix.";
 				}
 			}
 			@if (not in-bounds(luminance($color-fixed-1), .00002, .99936)) {
-				$color2: fix-color($color2, $color1, $min-ratio);
+				$color2: fix-color($color1: $color2, $color2: $color1, $min-ratio: $min-ratio);
 
 				@if not $test {
 					@warn "Your settings didn't work. Modifying second color in an attempt to fix.";

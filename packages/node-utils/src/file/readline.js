@@ -1,5 +1,5 @@
 const { createInterface } = require('readline');
-const string = require('./string');
+const string = require('./str/');
 
 async function updatedByKey (input, key, value, cb) {
 	// create readline interface and output to a new file; can't figure out how to write to same file

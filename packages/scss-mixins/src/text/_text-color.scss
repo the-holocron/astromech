@@ -20,7 +20,7 @@
 
 	a#{$parent} {
 		@include hover-focus() {
-			color: shade($color, 25%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+			color: shade($color: $color, $percent: 25%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
 		}
 	}
 }

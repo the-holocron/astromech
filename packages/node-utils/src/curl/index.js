@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { uri } from '@theholocron/beebee';
+import { uri } from '@theholocron/utils';
 
 const _exec = command =>
 	new Promise((resolve, reject) => {

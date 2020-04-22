@@ -49,5 +49,11 @@
     "diff": "^4.0.2",
     "semver": "^7.1.3",
     "simple-git": "^1.131.0"
+  },
+  "devDependencies": {
+    "@theholocron/babel-preset": "latest",
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/eslint-config": "latest",
+    "@theholocron/jest-preset": "latest"
   }
 }

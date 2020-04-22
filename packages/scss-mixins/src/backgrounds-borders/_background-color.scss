@@ -17,7 +17,7 @@
 ///     @include bg-color-variant('.bg-test', black, white);
 ///   }
 @mixin background-color($parent, $bg-color, $color, $alt-color: rgb(255,255,255)) {
-	@if not check-contrast($bg-color, $color) {
+	@if not check-contrast($color1: $bg-color, $color2: $color) {
 		$color: $alt-color;
 	}
 
@@ -28,8 +28,8 @@
 
 	a#{$parent} {
 		@include hover-focus() {
-			background-color: tint($bg-color, 75%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
-			text-decoration-color: shade($bg-color, 50%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+			background-color: tint($color: $bg-color, $percent: 75%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+			text-decoration-color: shade($color: $bg-color, $percent: 50%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
 		}
 	}
 }

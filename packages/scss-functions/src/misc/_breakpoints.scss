@@ -61,7 +61,7 @@
 ///    @include breakpoint-max(sm, (xs: 0, sm: 34rem, md: 45rem))
 ///    // 44.9rem
 @function max-width($name, $breakpoints) {
-	$next: next($name, $breakpoints);
+	$next: next($name: $name, $breakpoints: $breakpoints);
 
-	@return if($next, to-number(min-width($next, $breakpoints)) - .02, null);
+	@return if($next, to-number(min-width($name: $next, $breakpoints: $breakpoints)) - .02, null);
 }

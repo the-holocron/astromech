@@ -29,22 +29,22 @@
 ///     color: best-contrast(blue, gray, white);
 ///   }
 @function best-contrast($color, $color1, $color2, $ratio1: config.$default-contrast-ratio, $ratio2: $ratio1) {
-	@if (not check-contrast($color, $color1, $ratio1) or not check-contrast($color, $color2, $ratio2)) {
+	@if (not check-contrast($color1: $color, $color2: $color1, $min-ratio: $ratio1) or not check-contrast($color1: $color, $color2: $color2, $min-ratio: $ratio2)) {
 		// First get the luminance of the two static colors
-		$lum1: luminance(fix-color($color1, $color1, $ratio1));
-		$lum2: luminance(fix-color($color2, $color2, $ratio2));
+		$lum1: luminance(fix-color($color1: $color1, $color2: $color1, $min-ratio: $ratio1));
+		$lum2: luminance(fix-color($color1: $color2, $color2: $color2, $min-ratio: $ratio2));
 
 		// Average the luminance together to get the maximum difference
 		$average-lum: average($lum1, $lum2);
 
 		// Then set changing color to this luminance
-		$color: scale-luminance($color, $average-lum);
+		$color: scale-luminance($color: $color, $target-luminance: $average-lum);
 
 		// Warn if it fails contrast check
-		@if (not check-contrast($color, $color1, $ratio1)) {
+		@if (not check-contrast($color1: $color, $color2: $color1, $min-ratio: $ratio1)) {
 			@warn "Your color fails to contrast with #{$color1}";
 		}
-		@if (not check-contrast($color, $color2, $ratio2)) {
+		@if (not check-contrast($color1: $color, $color2: $color2, $min-ratio: $ratio2)) {
 			@warn "Your color fails to contrast with #{$color2}";
 		}
 	}

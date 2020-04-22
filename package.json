@@ -45,12 +45,12 @@
   },
   "devDependencies": {
     "@hidoo/sassdoc-to-markdown": "^0.4.1",
-    "@theholocron/babel-preset": "^0.3.6",
-    "@theholocron/browserslist-config": "^0.1.8",
-    "@theholocron/commitlint-config": "^0.1.7",
-    "@theholocron/eslint-config": "^0.2.4",
+    "@theholocron/babel-preset": "latest",
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/commitlint-config": "latest",
+    "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
-    "@theholocron/stylelint-config": "^0.3.5",
+    "@theholocron/stylelint-config": "latest",
     "lerna": "^3.20.2"
   }
 }

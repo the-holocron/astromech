@@ -20,10 +20,7 @@
     "access": "public"
   },
   "stylelint": {
-    "extends": "@theholocron/stylelint-config",
-    "rules": {
-      "max-nesting-depth": 5
-    }
+    "extends": "@theholocron/stylelint-config"
   },
   "scripts": {
     "docs": "sassdoc src/**/*.scss --dest ../../docs/mixins",
@@ -39,6 +36,9 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
+    "@hidoo/sassdoc-to-markdown": "^0.4.1",
+    "@theholocron/browserslist-config": "latest",
+    "@theholocron/stylelint-config": "latest",
     "mocha": "^7.0.0",
     "sass": "^1.26.3",
     "sass-true": "^5.0.0",

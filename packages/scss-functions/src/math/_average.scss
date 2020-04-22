@@ -1,3 +1,5 @@
+@use "sass:list";
+
 /// Get the average of numbers provided a list of numbers
 /// @param {List} $nums - a list of numbers to average out
 /// @return {Number} - the average of all values
@@ -5,12 +7,12 @@
 ///   average(10, 60, 20);
 ///   // 30
 @function average($nums...) {
-	$length: length($nums);
+	$length: list.length($nums);
 	$sum: 0;
 	$average: 0;
 
 	@for $i from 1 through $length {
-		$sum: $sum + nth($nums, $i);
+		$sum: $sum + list.nth($nums, $i);
 	}
 
 	$average: $sum / $length;

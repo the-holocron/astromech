@@ -1,4 +1,3 @@
-import { str } from '@theholocron/beebee';
 import {
 	F_OK,
 	access,
@@ -8,6 +7,7 @@ import {
 	writeFile,
 } from 'fs';
 import { join } from 'path';
+import { str } from '@theholocron/utils';
 import { decode as strDecode } from '../str/';
 
 export const createJSON = (data, filename) => new Promise((resolve, reject) => {
