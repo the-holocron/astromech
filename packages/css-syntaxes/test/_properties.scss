@@ -1,7 +1,7 @@
 /* stylelint-disable scss/no-duplicate-dollar-variables */
 @use "sass:list";
 @use "sass:meta";
-@use "../node_modules/sass-true/sass/true" as *;
+@use "sass-true/sass/true" as *;
 @use "../src" as *;
 
 @include describe("properties") {

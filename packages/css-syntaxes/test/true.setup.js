@@ -3,9 +3,9 @@
 const { join } = require('path');
 const { runSass } = require('sass-true');
 const sass = require('sass');
-const loadPath = [
+const includePaths = [
     'node_modules',
 ];
 
 const file = join(__dirname, 'test.scss');
-runSass({ file, loadPath }, { describe, it, sass });
+runSass({ file, includePaths }, { describe, it, sass });
