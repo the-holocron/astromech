@@ -1,20 +1,28 @@
 @use "sass:map";
+@use "sass:math";
 
 /// Default set of border colors
 /// @since 0.1.0
 /// @group Backgrounds & Borders
-/// @prop {Color} dark [rgb(0, 0, 0)] - dark border color
+/// @prop {Color} transparent [transparent] - transparent border color
+/// @prop {Color} black [rgb(0, 0, 0)] - black border color
+/// @prop {Color} dark [rgb(64, 64, 64)] - dark border color
 /// @prop {Color} mid [rgb(128, 128, 128)] - middle contrasted border color
-/// @prop {Color} light [rgb(255, 255, 255)] - light border color
+/// @prop {Color} light [rgb(192, 192, 192)] - light border color
+/// @prop {Color} white [rgb(255, 255, 255)] - white border color
 $border-colors: (
-	dark: rgb(0, 0, 0),
+	transparent: transparent,
+	black: rgb(0, 0, 0),
+	dark: rgb(64, 64, 64),
 	mid: rgb(128, 128, 128),
-	light: rgb(255, 255, 255),
+	light: rgb(192, 192, 192),
+	white: rgb(255, 255, 255),
 );
 
 /// Default set of border radii
 /// @since 0.1.0
 /// @group Backgrounds & Borders
+/// @prop {Number} 0 [0] - 0 border radius
 /// @prop {Number} xs [.125rem] - extra small border radius
 /// @prop {Number} sm [.25rem] - small border radius
 /// @prop {Number} md [.5rem] - medium border radius
@@ -22,12 +30,13 @@ $border-colors: (
 /// @prop {Number} xl [2rem] - extra large border radius
 /// @prop {Number} round [100%] - rounded border radius
 $border-radii: (
-	"xs": ".125rem",
-	"sm": ".25rem",
-	"md": ".5rem",
-	"lg": "1rem",
-	"xl": "2rem",
-	"round": "100%",
+	"0": 0,
+	"xs": .125rem,
+	"sm": .25rem,
+	"md": .5rem,
+	"lg": 1rem,
+	"xl": 2rem,
+	"round": 100%,
 ) !default;
 
 /// Default border radius
@@ -40,17 +49,19 @@ $border-radius: map.get($border-radii, "md") !default;
 /// Default set of border-widths
 /// @since 0.1.0
 /// @group Backgrounds & Borders
+/// @prop {Number} 0 [0] - 0 border width
 /// @prop {Number} xs [.0625rem] - extra small border width
 /// @prop {Number} sm [.125rem] - small border width
 /// @prop {Number} md [.1875rem] - medium border width
 /// @prop {Number} lg [.25rem] - large border width
 /// @prop {Number} xl [.5rem] - extra large border width
 $border-widths: (
-	"xs": ".0625rem",
-	"sm": ".125rem",
-	"md": ".1875rem",
-	"lg": ".25rem",
-	"xl": ".5rem",
+	"0": 0,
+	"xs": .0625rem,
+	"sm": .125rem,
+	"md": .1875rem,
+	"lg": .25rem,
+	"xl": .5rem,
 ) !default;
 
 /// Default border width
@@ -63,17 +74,21 @@ $border-width: map.get($border-widths, "md") !default;
 /// Default set of directions for the box model
 /// @since 0.1.0
 /// @group Fragmentation
-/// @prop {String} all [''] - all sides of the box model
-/// @prop {String} bottom ['bottom'] - only the bottom side will be affected
-/// @prop {String} left ['left'] - only the left side will be affected
-/// @prop {String} right ['right'] - only the right side will be affected
-/// @prop {String} top ['top'] - only the top will be affected
+/// @prop {String} all [null] - all sides of the box model
+/// @prop {List} bottom [(bottom)] - only the bottom side will be affected
+/// @prop {List} left [(left)] - only the left side will be affected
+/// @prop {List} right [(right)] - only the right side will be affected
+/// @prop {List} top [(top)] - only the top will be affected
+/// @prop {List} x [(left, right)] - the x axis, both left and right will be affected
+/// @prop {List} y [(bottom, top)] - the x axis, both bottom and top will be affected
 $box-directions: (
-	"all": "",
-	"bottom": "bottom",
-	"left": "left",
-	"right": "right",
-	"top": "top",
+	"all": null,
+	"bottom": (bottom),
+	"left": (left),
+	"right": (right),
+	"top": (top),
+	"x": (left, right),
+	"y": (bottom, top),
 ) !default;
 
 /// Default set of breakpoints
@@ -107,11 +122,11 @@ $cubic-bezier: cubic-bezier(.25, .46, .45, .94) !default;
 /// @prop {Number} lg [1s] - large amount of time
 /// @prop {Number} xl [1.5s] - longest amount of time
 $durations: (
-	"xs": ".125s",
-	"sm": ".25s",
-	"md": ".5s",
-	"lg": "1s",
-	"xl": "1.5s",
+	"xs": .125s,
+	"sm": .25s,
+	"md": .5s,
+	"lg": 1s,
+	"xl": 1.5s,
 ) !default;
 
 /// Default animation duration
@@ -150,12 +165,12 @@ $font-family: map.get($font-families, "sans-serif") !default;
 /// @prop {Number} 5 [1.5rem] - larger font size, about ~27px
 /// @prop {Number} 6 [2rem] - largest font size, 36px
 $font-sizes: (
-	"1": ".75rem",
-	"2": ".85rem",
-	"3": "1rem",
-	"4": "1.25rem",
-	"5": "1.5rem",
-	"6": "2rem",
+	"1": .75rem,
+	"2": .85rem,
+	"3": 1rem,
+	"4": 1.25rem,
+	"5": 1.5rem,
+	"6": 2rem,
 ) !default;
 
 /// Default font size
@@ -253,7 +268,7 @@ $opacities: (
 /// @since 0.1.0
 /// @group Box Model
 /// @type Number
-$spacer: 1 !default;
+$spacer: 1rem !default;
 
 /// Default set of spacing
 /// @since 0.1.0
@@ -269,13 +284,13 @@ $spacer: 1 !default;
 /// @prop {Number} 3 [3rem] - 3 times the size of the default spacer
 $spacing: (
 	"0": 0,
-	"eighth": "#{($spacer / 8)}rem",
-	"qtr": "#{($spacer / 4)}rem",
-	"half": "#{($spacer / 2)}rem",
-	"3qtr": "#{($spacer * 3 / 4)}rem",
-	"1": "#{$spacer}rem",
-	"2": "#{($spacer * 2)}rem",
-	"3": "#{($spacer * 3)}rem",
+	"eighth": ($spacer / 8),
+	"qtr": ($spacer / 4),
+	"half": ($spacer / 2),
+	"3qtr": ($spacer * 3 / 4),
+	"1": $spacer,
+	"2": ($spacer * 2),
+	"3": ($spacer * 3),
 ) !default;
 
 /// Default set of sizing
@@ -283,17 +298,21 @@ $spacing: (
 /// @group Box Model
 /// @prop {String} auto [auto] - 75% of the total containers space
 /// @prop {Number} 0 [0] - 0% of the total containers space
-/// @prop {Number} 25 [25%] - 25% of the total containers space
-/// @prop {Number} 50 [50%] - 50% of the total containers space
-/// @prop {Number} 75 [75%] - 75% of the total containers space
-/// @prop {Number} 100 [100%] - 100% of the total containers space
+/// @prop {Number} qtr [25%] - 25% of the total containers space
+/// @prop {Number} third [33.33%] - 33.33% of the total containers space
+/// @prop {Number} half [50%] - 50% of the total containers space
+/// @prop {Number} 2third [66.67%] - 66.67% of the total containers space
+/// @prop {Number} 3qtr [75%] - 75% of the total containers space
+/// @prop {Number} full [100%] - 100% of the total containers space
 $sizing: (
 	"auto": "auto",
 	"0": 0,
-	"25": "25%",
-	"50": "50%",
-	"75": "75%",
-	"100": "100%",
+	"qtr": math.percentage(1 / 4),
+	"third": math.percentage(1 / 3),
+	"half": math.percentage(1 / 2),
+	"2third": math.percentage(2 / 3),
+	"3qtr": math.percentage(3 / 4),
+	"full": 100%,
 ) !default;
 
 /// Sizing prefixes used for widths and heights

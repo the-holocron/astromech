@@ -23,7 +23,7 @@
 	@include describe("radius") {
 		@include test("it should return a radius") {
 			$test: map.get($border-radii, "round");
-			$expected: "100%";
+			$expected: 100%;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -37,7 +37,7 @@
 
 		@include test("it should return the default radius") {
 			$test: $border-radius;
-			$expected: ".5rem";
+			$expected: .5rem;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -46,7 +46,7 @@
 	@include describe("width") {
 		@include test("it should return a width") {
 			$test: map.get($border-widths, "sm");
-			$expected: ".125rem";
+			$expected: .125rem;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -60,7 +60,7 @@
 
 		@include test("it should return the default width") {
 			$test: $border-width;
-			$expected: ".1875rem";
+			$expected: .1875rem;
 
 			@include assert-equal($test, $expected, "Return the correct value");
 		}
@@ -111,7 +111,7 @@
 @include describe("duration") {
 	@include test("it should return a duration") {
 		$test: map.get($durations, "lg");
-		$expected: "1s";
+		$expected: 1s;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -125,7 +125,7 @@
 
 	@include test("it should return the default duration") {
 		$test: $duration;
-		$expected: ".25s";
+		$expected: .25s;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -173,7 +173,7 @@
 @include describe("font-size") {
 	@include test("it should return a font size") {
 		$test: map.get($font-sizes, "3");
-		$expected: "1rem";
+		$expected: 1rem;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -187,7 +187,7 @@
 
 	@include test("it should return the default font size") {
 		$test: $font-size;
-		$expected: "1rem";
+		$expected: 1rem;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -258,7 +258,7 @@
 @include describe("spacing") {
 	@include test("it should return a spacing") {
 		$test: map.get($spacing, "3");
-		$expected: "3rem";
+		$expected: 3rem;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -272,7 +272,7 @@
 
 	@include test("it should return the default spacing") {
 		$test: $spacer;
-		$expected: 1;
+		$expected: 1rem;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
@@ -280,8 +280,8 @@
 
 @include describe("sizing") {
 	@include test("it should return a sizing") {
-		$test: map.get($sizing, "75");
-		$expected: "75%";
+		$test: map.get($sizing, "3qtr");
+		$expected: 75%;
 
 		@include assert-equal($test, $expected, "Return the correct value");
 	}
