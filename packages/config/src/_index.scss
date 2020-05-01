@@ -1,6 +1,6 @@
 @use "sass:map";
 @use "sass:math";
-
+/* stylelint-disable plugin/stylelint-no-indistinguishable-colors */
 /// Default set of border colors
 /// @since 0.1.0
 /// @group Backgrounds & Borders
@@ -11,13 +11,13 @@
 /// @prop {Color} light [rgb(192, 192, 192)] - light border color
 /// @prop {Color} white [rgb(255, 255, 255)] - white border color
 $border-colors: (
-	transparent: transparent,
-	black: rgb(0, 0, 0),
-	dark: rgb(64, 64, 64),
-	mid: rgb(128, 128, 128),
-	light: rgb(192, 192, 192),
-	white: rgb(255, 255, 255),
-);
+	"transparent": transparent,
+	"black": rgb(0, 0, 0),
+	"dark": rgb(64, 64, 64),
+	"mid": rgb(128, 128, 128),
+	"light": rgb(192, 192, 192),
+	"white": rgb(255, 255, 255),
+) !default;
 
 /// Default set of border radii
 /// @since 0.1.0

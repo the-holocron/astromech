@@ -20,8 +20,8 @@
 @mixin box-model($property, $value, $direction: null) {
 	@if list.index(map-keys(config.$box-directions), $direction) and $direction != "all" {
 		@each $side in map.get(config.$box-directions, $direction) {
-			@if string.index($property, '-') {
-				#{str.replace($property, '-', -#{$side}-)}: $value;
+			@if string.index($property, "-") {
+				#{str.replace($property, "-", -#{$side}-)}: $value;
 			} @else {
 				#{$property}-#{$side}: $value;
 			}
