@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/the-holocron/astromech/compare/@theholocron/scss-mixins@0.1.1...@theholocron/scss-mixins@0.2.0) (2020-05-01)
+
+
+### Features
+
+* add in new box-model mixin; consume it in border helpers ([30a7423](https://github.com/the-holocron/astromech/commit/30a7423262046859e8171a8695277f9115b49f24))
+
+
+
+
+
 ## [0.1.1](https://github.com/the-holocron/astromech/compare/@theholocron/scss-mixins@0.1.0...@theholocron/scss-mixins@0.1.1) (2020-04-23)
 
 

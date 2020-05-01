@@ -3,7 +3,7 @@
   "homepage": "https://github.com/the-holocron/astromech/tree/master/packages/css-syntaxes#readme",
   "description": "This utility droid provides a set of CSS syntaxes for writing (S)CSS functional helpers or mixins within the Galaxy.",
   "author": "Newton Koumantzelis",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "src/_index.scss",
   "files": [
     "src"

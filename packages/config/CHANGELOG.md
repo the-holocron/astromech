@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/the-holocron/astromech/compare/@theholocron/config@0.1.0...@theholocron/config@0.2.0) (2020-05-01)
+
+
+### Features
+
+* add in 0s and keyword vars ([b456613](https://github.com/the-holocron/astromech/commit/b456613b32f3f04f75d0c3e90b1d73b5c26ae1e4))
+
+
+
+
+
 # 0.1.0 (2020-04-22)
 
 
