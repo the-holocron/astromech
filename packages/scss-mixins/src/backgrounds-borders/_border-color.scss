@@ -1,0 +1,17 @@
+@use "../box-model" as *;
+
+////
+/// @group Backgrounds & Borders
+////
+/* stylelint-disable declaration-no-important */
+/// Creates border color variants
+/// @since 0.2.0
+/// @param {String} $direction [null] - either bottom, left, top, or right; if you don't provide then it defaults to all sides
+/// @param {Color} $color [inherit] - a valid CSS color
+/// @example scss
+///   .example {
+///     @include border-color(right, black);
+///   }
+@mixin border-color($color: inherit, $direction: null) {
+	@include box-model($property: border-color, $value: $color, $direction: $direction);
+}

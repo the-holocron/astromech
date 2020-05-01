@@ -5,11 +5,11 @@ CSS Basic Box Model is a module of CSS that defines the rectangular boxes—incl
 <details>
 	<summary><strong>Table of Contents</strong> (click to expand)</summary>
 
-* [box-spacing](#box-spacing)
+* [box-model](#box-model)
 
 </details>
 
-## box-spacing
+## box-model
 
 Creates margin & padding helpers
 
@@ -28,6 +28,6 @@ Creates margin & padding helpers
 
 ```scss
 .example {
-  @include box-spacing(margin, 2px);
+  @include box-model(margin, 2px);
 }
 ```

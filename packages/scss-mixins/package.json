@@ -30,6 +30,7 @@
     "test": "mocha"
   },
   "dependencies": {
+    "@theholocron/config": "file:../config",
     "@theholocron/scss-functions": "file:../scss-functions"
   },
   "peerDependencies": {

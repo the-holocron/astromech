@@ -1,0 +1,32 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:string";
+@use "@theholocron/config/src" as config;
+@use "@theholocron/scss-functions/src/str";
+
+////
+/// @group Box Model
+////
+
+/// Allows one to create helpers for all box directions including different axises
+/// @since 0.1.0
+/// @param {String} $property - a valid CSS property
+/// @param {String | Number} $value - any valid value based on the property passed in
+/// @param {String} $direction - a valid box direction
+/// @example scss
+///   .example {
+///     @include box-model(margin, 2px);
+///   }
+@mixin box-model($property, $value, $direction: null) {
+	@if list.index(map-keys(config.$box-directions), $direction) and $direction != "all" {
+		@each $side in map.get(config.$box-directions, $direction) {
+			@if string.index($property, '-') {
+				#{str.replace($property, '-', -#{$side}-)}: $value;
+			} @else {
+				#{$property}-#{$side}: $value;
+			}
+		}
+	} @else {
+		#{$property}: $value;
+	}
+}

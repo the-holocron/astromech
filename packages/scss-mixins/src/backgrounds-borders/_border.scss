@@ -1,4 +1,4 @@
-@use "sass:list";
+@use "../box-model" as *;
 
 ////
 /// @group Backgrounds & Borders
@@ -14,10 +14,6 @@
 ///   .example {
 ///     @include border(right, red, solid, 2px);
 ///   }
-@mixin border($direction: null, $color: inherit, $style: solid, $width: .0625rem) {
-	@if list.index((right, top, left, bottom), $direction) {
-		border-#{$direction}: $width $style $color !important;
-	} @else {
-		border: $width $style $color !important;
-	}
+@mixin border($width: .0625rem, $style: solid, $color: inherit, $direction: null) {
+	@include box-model($property: border, $value: $width $style $color, $direction: $direction);
 }

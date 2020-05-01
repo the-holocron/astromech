@@ -1,0 +1,17 @@
+@use "../box-model" as *;
+
+////
+/// @group Backgrounds & Borders
+////
+/* stylelint-disable declaration-no-important */
+/// Creates border width variants
+/// @since 0.2.0
+/// @param {String} $direction [null] - either bottom, left, top, or right; if you don't provide then it defaults to all sides
+/// @param {Number} $width [.0625rem] - a valid number
+/// @example scss
+///   .example {
+///     @include border-width(right, 2px);
+///   }
+@mixin border-width($width: .0625rem, $direction: null) {
+	@include box-model($property: border-width, $value: $width, $direction: $direction);
+}

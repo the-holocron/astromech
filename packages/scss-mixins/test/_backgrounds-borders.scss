@@ -54,6 +54,34 @@
 		}
 	}
 
+	@include describe("border-color") {
+		@include it("it should output a border-color on all sides when given no input") {
+			@include assert() {
+
+				@include output() {
+					@include border-color();
+				}
+
+				@include expect() {
+					border-color: inherit;
+				}
+			}
+		}
+
+		@include it("it should output a border color side when given a side") {
+			@include assert() {
+
+				@include output() {
+					@include border-color($direction: right, $color: red);
+				}
+
+				@include expect() {
+					border-right-color: red;
+				}
+			}
+		}
+	}
+
 	@include describe("border-radius") {
 		@include it("it should output a border radius on all sides given an input") {
 			@include assert() {
@@ -150,6 +178,34 @@
 		}
 	}
 
+	@include describe("border-width") {
+		@include it("it should output a border-width on all sides when given no input") {
+			@include assert() {
+
+				@include output() {
+					@include border-width();
+				}
+
+				@include expect() {
+					border-width: .0625rem;
+				}
+			}
+		}
+
+		@include it("it should output a border width side when given a side") {
+			@include assert() {
+
+				@include output() {
+					@include border-width($direction: right, $width: 1rem);
+				}
+
+				@include expect() {
+					border-right-width: 1rem;
+				}
+			}
+		}
+	}
+
 	@include describe("border") {
 		@include it("it should output a border on all sides when given no input") {
 			@include assert() {
@@ -159,7 +215,7 @@
 				}
 
 				@include expect() {
-					border: .0625rem solid inherit !important;
+					border: .0625rem solid inherit;
 				}
 			}
 		}
@@ -172,7 +228,7 @@
 				}
 
 				@include expect() {
-					border-right: 1px dotted red !important;
+					border-right: 1px dotted red;
 				}
 			}
 		}

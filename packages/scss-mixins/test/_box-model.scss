@@ -2,12 +2,12 @@
 @use "../src/box-model" as *;
 
 @include describe("box model") {
-	@include describe("box-spacing") {
+	@include describe("box-model") {
 		@include it("it should output a property on all sides given an input") {
 			@include assert() {
 
 				@include output() {
-					@include box-spacing(margin, 3px);
+					@include box-model(margin, 3px);
 				}
 
 				@include expect() {
@@ -20,11 +20,24 @@
 			@include assert() {
 
 				@include output() {
-					@include box-spacing(margin, 3px, top);
+					@include box-model(margin, 3px, top);
 				}
 
 				@include expect() {
 					margin-top: 3px;
+				}
+			}
+		}
+
+		@include it("it should output a property on top given an input with direction syntax") {
+			@include assert() {
+
+				@include output() {
+					@include box-model(border-width, 3px, top);
+				}
+
+				@include expect() {
+					border-top-width: 3px;
 				}
 			}
 		}
