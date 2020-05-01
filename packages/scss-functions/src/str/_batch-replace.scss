@@ -12,7 +12,7 @@
 /// @param {List | String} $needles - string or list of strings to replace globally
 /// @param {String} $replacement ('') - replacement string to replace needles
 /// @return {String} replaced string
-@function str-replace-batch($haystack, $needles, $replacement: "") {
+@function batch-replace($haystack, $needles, $replacement: "") {
 	$instances: false;
 
 	@if not meta.type-of($needles) == list {

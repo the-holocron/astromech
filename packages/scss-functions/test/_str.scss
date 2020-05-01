@@ -82,17 +82,17 @@
 		}
 	}
 
-	@include describe("str-replace") {
+	@include describe("replace") {
 		@include it("it should return a string that has parts replaced by a given input") {
 			$white: rgb(255, 255, 255);
-			$test: str-replace("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$white}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E", "#", "%23");
+			$test: replace("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#{$white}' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E", "#", "%23");
 			$expected: "data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E";
 
 			@include assert-equal($test, $expected, "Return the string replaced");
 		}
 
 		@include it("it should return a string when it doesn't find the search item") {
-			$test: str-replace("foo", "#", "%23");
+			$test: replace("foo", "#", "%23");
 			$expected: "foo";
 
 			@include assert-equal($test, $expected, "Return the string the same as the input");

@@ -7,8 +7,8 @@ Any function that manipulates strings; input a direction and output the opposite
 <!-- toc -->
 
 * [`@function opposite-direction`](#function-opposite-direction)
-* [`@function str-replace-batch`](#function-str-replace-batch)
-* [`@function str-replace`](#function-str-replace)
+* [`@function batch-replace`](#function-batch-replace)
+* [`@function replace`](#function-replace)
 * [`@function strip-unit`](#function-strip-unit)
 
 <!-- tocstop -->
@@ -50,7 +50,7 @@ Returns the opposite direction of each direction in a list
 
 * Hugo Giraudel
 
-## `@function str-replace-batch`
+## `@function batch-replace`
 
 Replaces a batch of substrings (needles) in a string (haystack) with a single replacement string.
 
@@ -77,7 +77,7 @@ Replaces a batch of substrings (needles) in a string (haystack) with a single re
 
 * David Khourshid
 
-## `@function str-replace`
+## `@function replace`
 
 Replace `$search` with `$replace` in `$string`
 
@@ -100,7 +100,7 @@ Replace `$search` with `$replace` in `$string`
 
 ```scss
 .lato-thin {
-  font-family: str-replace('lato-thin', '-', ' ');
+  font-family: replace('lato-thin', '-', ' ');
 }
 ```
 
