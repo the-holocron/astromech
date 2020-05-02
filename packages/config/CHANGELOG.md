@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/the-holocron/astromech/compare/@theholocron/config@0.2.0...@theholocron/config@0.2.1) (2020-05-02)
+
+
+### Bug Fixes
+
+* strip string of auto config value ([59fba63](https://github.com/the-holocron/astromech/commit/59fba6308202ab46a65f74395a28a1ec64847b74))
+
+
+
+
+
 # [0.2.0](https://github.com/the-holocron/astromech/compare/@theholocron/config@0.1.0...@theholocron/config@0.2.0) (2020-05-01)
 
 
