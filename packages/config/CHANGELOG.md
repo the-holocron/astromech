@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/the-holocron/astromech/compare/@theholocron/config@0.2.1...@theholocron/config@0.3.0) (2020-05-06)
+
+
+### Features
+
+* **config:** add in flexible box orders ([4995038](https://github.com/the-holocron/astromech/commit/4995038cd56d3614929eb69a74fc602aa0f61cf1))
+
+
+
+
+
 ## [0.2.1](https://github.com/the-holocron/astromech/compare/@theholocron/config@0.2.0...@theholocron/config@0.2.1) (2020-05-02)
 
 
