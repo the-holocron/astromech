@@ -7,21 +7,21 @@
 			@include assert() {
 
 				@include output() {
-					@include background-color(".test", red, white);
+					@include background-color("test", red, white);
 				}
 
 				@include expect() {
 					.test {
-						background-color: red !important;
-						color: white !important;
+						background-color: red;
+						color: white;
 					}
 
 					a.test {
 						&:focus,
 						&.is-focused,
 						&:hover {
-							background-color: #ffbfbf !important;
-							text-decoration-color: maroon !important;
+							background-color: #ffbfbf;
+							text-decoration-color: maroon;
 						}
 					}
 				}
@@ -32,21 +32,21 @@
 			@include assert() {
 
 				@include output() {
-					@include background-color(".test", red, red, lightgray);
+					@include background-color("test", red, red, lightgray);
 				}
 
 				@include expect() {
 					.test {
-						background-color: red !important;
-						color: lightgray !important;
+						background-color: red;
+						color: lightgray;
 					}
 
 					a.test {
 						&:focus,
 						&.is-focused,
 						&:hover {
-							background-color: #ffbfbf !important;
-							text-decoration-color: maroon !important;
+							background-color: #ffbfbf;
+							text-decoration-color: maroon;
 						}
 					}
 				}

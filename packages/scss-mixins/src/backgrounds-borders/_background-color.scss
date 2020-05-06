@@ -5,10 +5,10 @@
 ////
 /// @group Backgrounds & Borders
 ////
-/* stylelint-disable declaration-no-important */
+/* stylelint-disable plugin/stylelint-selector-no-empty */
 /// Creates background color variants
 /// @since 0.1.0
-/// @param {String} $parent - a CSS selector; should not include an HTML element
+/// @param {String} $className - a CSS selector; should not include an HTML element
 /// @param {Color} $bgcolor - the background color; will check the contrast with the $color
 /// @param {Color} $color - the text color
 /// @param {Color} $alt-color [rgb(255, 255, 255)] - a fallback color if for if the $color provided fails A11Y check
@@ -16,20 +16,22 @@
 ///   .example {
 ///     @include bg-color-variant('.bg-test', black, white);
 ///   }
-@mixin background-color($parent, $bg-color, $color, $alt-color: rgb(255,255,255)) {
+@mixin background-color($className, $bg-color, $color, $alt-color: rgb(255,255,255), $hover: true) {
 	@if not check-contrast($color1: $bg-color, $color2: $color) {
 		$color: $alt-color;
 	}
 
-	#{$parent} {
-		background-color: $bg-color !important;
-		color: $color !important;
+	.#{$className} {
+		background-color: $bg-color;
+		color: $color;
 	}
 
-	a#{$parent} {
-		@include hover-focus() {
-			background-color: tint($color: $bg-color, $percent: 75%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
-			text-decoration-color: shade($color: $bg-color, $percent: 50%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+	@if $hover {
+		a.#{$className} {
+			@include hover-focus() {
+				background-color: tint($color: $bg-color, $percent: 75%); // stylelint-disable-line sh-waqar/declaration-use-variable
+				text-decoration-color: shade($color: $bg-color, $percent: 50%); // stylelint-disable-line sh-waqar/declaration-use-variable
+			}
 		}
 	}
 }

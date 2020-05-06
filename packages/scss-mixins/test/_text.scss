@@ -7,18 +7,18 @@
 			@include assert() {
 
 				@include output() {
-					@include text-color(".test", red);
+					@include text-color("test", red);
 				}
 
 				@include expect() {
 					.test {
-						color: red !important;
+						color: red;
 					}
 
 					a.test:focus,
 					a.test.is-focused,
 					a.test:hover {
-						color: #bf0000 !important;
+						color: #bf0000;
 					}
 				}
 			}

@@ -4,7 +4,7 @@
 ////
 /// @group Text
 ////
-/* stylelint-disable declaration-no-important */
+/* stylelint-disable plugin/stylelint-selector-no-empty */
 /// Creates text color variants
 /// @since 0.1.0
 /// @param {String} $parent - a CSS selector; should not include an HTML element
@@ -13,14 +13,16 @@
 ///   .example {
 ///     @include text-color('.text-test', black, white);
 ///   }
-@mixin text-color($parent, $color) {
-	#{$parent} {
-		color: $color !important;
+@mixin text-color($className, $color, $hover: true) {
+	.#{$className} {
+		color: $color;
 	}
 
-	a#{$parent} {
-		@include hover-focus() {
-			color: shade($color: $color, $percent: 25%) !important; // stylelint-disable-line sh-waqar/declaration-use-variable
+	@if $hover {
+		a.#{$className} {
+			@include hover-focus() {
+				color: shade($color: $color, $percent: 25%); // stylelint-disable-line sh-waqar/declaration-use-variable
+			}
 		}
 	}
 }
