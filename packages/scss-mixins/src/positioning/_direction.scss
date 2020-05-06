@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "@theholocron/config/src" as config;
+
+////
+/// @group Positioning
+////
+/// Creates directional position variants
+/// @since 0.2.0
+/// @param {Number} $value - a valid number
+/// @param {String} $direction ["all"] - either bottom, left, top, or right; if you don't provide then it defaults to all sides
+/// @example scss
+///   .example {
+///     @include direction(2px, right);
+///   }
+@mixin direction($value, $direction: "all") {
+	@if $direction != "all" {
+		@each $side in map.get(config.$box-directions, $direction) {
+			#{$side}: $value;
+		}
+	} @else {
+		top: $value;
+		right: $value;
+		bottom: $value;
+		left: $value;
+	}
+}

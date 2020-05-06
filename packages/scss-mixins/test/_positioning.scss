@@ -49,4 +49,65 @@
 			}
 		}
 	}
+
+	@include describe("direction") {
+		@include it("it should add a direction to all sides when not given any direction") {
+			@include assert() {
+
+				@include output() {
+					@include direction(50%);
+				}
+
+				@include expect() {
+					top: 50%;
+					right: 50%;
+					bottom: 50%;
+					left: 50%;
+				}
+			}
+		}
+
+		@include it("it should add a direction to all sides when given all direction") {
+			@include assert() {
+
+				@include output() {
+					@include direction(50%, "all");
+				}
+
+				@include expect() {
+					top: 50%;
+					right: 50%;
+					bottom: 50%;
+					left: 50%;
+				}
+			}
+		}
+
+		@include it("it should add a direction to multiple sides when given an axis") {
+			@include assert() {
+
+				@include output() {
+					@include direction(50%, "y");
+				}
+
+				@include expect() {
+					bottom: 50%;
+					top: 50%;
+				}
+			}
+		}
+
+		@include it("it should add a direction to a side when given a direction") {
+			@include assert() {
+
+				@include output() {
+					@include direction(50%, "top");
+				}
+
+				@include expect() {
+					top: 50%;
+				}
+			}
+		}
+	}
 }
