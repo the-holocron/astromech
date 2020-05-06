@@ -136,6 +136,40 @@ $durations: (
 /// @require {variable} $durations - map of durations
 $duration: map.get($durations, "sm") !default;
 
+/// Flexible box layouts factors; used for order, grow, and shrink
+/// @since 0.3.0
+/// @group Color
+/// @prop {Number} first [-1] -force the order, grow or shrink to be first
+/// @prop {Number} 0 [0] - set the factor of 0
+/// @prop {Number} 1 [1] - set the factor of 1
+/// @prop {Number} 2 [2] - set the factor of 2
+/// @prop {Number} 3 [3] - set the factor of 3
+/// @prop {Number} 4 [4] - set the factor of 4
+/// @prop {Number} 5 [5] - set the factor of 5
+/// @prop {Number} 6 [6] - set the factor of 6
+/// @prop {Number} 7 [7] - set the factor of 7
+/// @prop {Number} 8 [8] - set the factor of 8
+/// @prop {Number} 9 [9] - set the factor of 9
+/// @prop {Number} 10 [10] - set the factor of 10
+/// @prop {Number} 11 [12] - set the factor of 11
+/// @prop {Number} 12 [12] - set the factor of 12
+$factors: (
+	"first": -1,
+	"0": 0,
+	"1": 1,
+	"2": 2,
+	"3": 3,
+	"4": 4,
+	"5": 5,
+	"6": 6,
+	"7": 7,
+	"8": 8,
+	"9": 9,
+	"10": 10,
+	"11": 11,
+	"12": 12,
+) !default;
+
 /// Default set of font families
 /// @since 0.1.0
 /// @group Fonts
