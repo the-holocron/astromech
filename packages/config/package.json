@@ -38,7 +38,7 @@
     "@theholocron/stylelint-config": "latest",
     "mocha": "^7.0.0",
     "sass": "^1.26.3",
-    "sass-true": "^5.0.0",
+    "sass-true": "^6.0.0",
     "sassdoc": "^2.7.1"
   }
 }
