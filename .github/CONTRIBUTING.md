@@ -20,7 +20,7 @@ Third-party patches are essential for keeping open-source software great.  In th
 
 1. Make sure you have a GitHub account.
 2. Please ask the [CODEOWNERS](./CODEOWNERS) before making significant changes.  I'd hate for you to put in a lot of work for something that doesn't align with the vision of this project.
-3. Search on Github within the repo for the issue or Pull Request. This means you have to read through the issue(s) in order to determine if your particular issue has already been created. Don't forget to look through the closed ones as well.
+3. Search on GitHub within the repo for the issue or Pull Request. This means you have to read through the issue(s) in order to determine if your particular issue has already been created. Don't forget to look through the closed ones as well.
 4. If the issue has not been fixed then try to reproduce the issue in a fresh clone of the repository off the master branch. Read below on [how to set up your environment](#create-a-pull-request).
 5. Create a [reduced test case](http://css-tricks.com/reduced-test-cases/) as outlined by Chris Coyier of [CSS Tricks](http://css-tricks.com/).  Link to the [Code Pen](http://codepen.io), [JS Bin](http://jsbin.com), or whatever you use, as long as its publicly accessible.
 6. Read our [branching strategy](#branching-strategy), [commit conventions](#commit-conventions) below for tips on how to contribute. We won't accept any pull request that doesn't adhere, so be forewarned.
