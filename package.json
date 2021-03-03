@@ -51,6 +51,6 @@
     "@theholocron/eslint-config": "latest",
     "@theholocron/jest-preset": "latest",
     "@theholocron/stylelint-config": "latest",
-    "lerna": "^3.20.2"
+    "lerna": "^4.0.0"
   }
 }
