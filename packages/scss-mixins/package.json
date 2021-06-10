@@ -37,7 +37,7 @@
     "sass": "^1.26.3"
   },
   "devDependencies": {
-    "@hidoo/sassdoc-to-markdown": "^0.4.1",
+    "@hidoo/sassdoc-to-markdown": "^0.6.0",
     "@theholocron/browserslist-config": "latest",
     "@theholocron/stylelint-config": "latest",
     "mocha": "^7.0.0",
